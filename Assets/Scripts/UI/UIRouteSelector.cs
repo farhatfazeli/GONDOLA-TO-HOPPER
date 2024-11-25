@@ -25,7 +25,7 @@ namespace UI
             dropdown.AddOptions(routeManager.GetRouteNames());
         }
 
-        public void OnRouteSelect(int index)
+        private void OnRouteSelect(int index)
         {
             if (index < 0 || index >= routeManager.routes.Count)
             {
@@ -33,7 +33,7 @@ namespace UI
                 return;
             }
 
-            routeManager.LoadRoute(routeManager.routes[index]);
+            routeManager.InitializeRoute(routeManager.routes[index]);
         }
     }
 }
