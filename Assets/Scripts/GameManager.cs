@@ -13,19 +13,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
-
-    public void AddMoney(int amount)
-    {
-        money += amount;
-    }
-
-    public void SpendMoney(int amount)
-    {
-        if (money >= amount)
-            money -= amount;
-        else
-            Debug.LogWarning("Not enough money!");
-    }
+    
 }
 
 

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117fb7366c7c52d428be881ad99accac, type: 3}
+  m_Name: StocktonDarlington
+  m_EditorClassIdentifier: 
+  routeName: StocktonDarlington
+  startStation: {fileID: 11400000, guid: 31b5cdbf272f4d54a99e1eaf1504f6ad, type: 2}
+  endStation: {fileID: 11400000, guid: 549346d637fc7b6468b9748dc8f82dcc, type: 2}
+  distance: 0
+  travelTime: 0
+  landscapes:
+  - {fileID: 11400000, guid: c3937fa9f2f057e468c4aec82848e275, type: 2}
