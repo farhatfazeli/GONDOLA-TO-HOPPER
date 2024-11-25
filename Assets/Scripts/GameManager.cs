@@ -1,30 +1,61 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Image trainImage;
-    
-    public float trainSpeed = 1f;
-    public float trainSpeedIncrement = 0.1f;
-    public bool isTrainDispatched = false;
-    
-    public AudioSource trainSound;
-    
-    public void DispatchTrain()
+    public static GameManager Instance;
+
+    public int money;
+    public int passengers;
+    public int cargo;
+
+    private void Awake()
     {
-        isTrainDispatched = true;
-        trainSound.Play();
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
-    private void Update()
+    public void AddMoney(int amount)
     {
-        if (!isTrainDispatched)
-            return;
-        trainImage.transform.position += Vector3.right * (Time.deltaTime * trainSpeed);
-        trainSpeed += Time.deltaTime * trainSpeedIncrement;
+        money += amount;
+    }
+
+    public void SpendMoney(int amount)
+    {
+        if (money >= amount)
+            money -= amount;
+        else
+            Debug.LogWarning("Not enough money!");
     }
 }
+
+
+// using System;
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
+// using UnityEngine.UI;
+//
+// public class GameManager : MonoBehaviour
+// {
+//     public Image trainImage;
+//     
+//     public float trainSpeed = 1f;
+//     public float trainSpeedIncrement = 0.1f;
+//     public bool isTrainDispatched = false;
+//     
+//     public AudioSource trainSound;
+//     
+//     public void DispatchTrain()
+//     {
+//         isTrainDispatched = true;
+//         trainSound.Play();
+//     }
+//
+//     private void Update()
+//     {
+//         if (!isTrainDispatched)
+//             return;
+//         trainImage.transform.position += Vector3.right * (Time.deltaTime * trainSpeed);
+//         trainSpeed += Time.deltaTime * trainSpeedIncrement;
+//     }
+// }
