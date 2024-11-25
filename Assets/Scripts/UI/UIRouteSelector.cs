@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI
 {
@@ -13,9 +12,9 @@ namespace UI
         {
             dropdown = GetComponent<TMP_Dropdown>();
             routeManager = FindAnyObjectByType<RouteManager>();
-            
+
             InitializeDropDown();
-            
+
             dropdown.onValueChanged.AddListener(OnRouteSelect);
         }
 
