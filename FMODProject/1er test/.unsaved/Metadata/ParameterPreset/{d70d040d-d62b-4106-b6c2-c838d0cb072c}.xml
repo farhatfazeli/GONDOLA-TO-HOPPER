@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{d70d040d-d62b-4106-b6c2-c838d0cb072c}">
+		<property name="note" />
+		<property name="name">
+			<value>Rails</value>
+		</property>
+		<relationship name="folder">
+			<destination>{82c14fff-c3af-46bc-9f62-1ff693939882}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{0b10aa67-9171-4716-9229-3ac4e04b0b45}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{0b10aa67-9171-4716-9229-3ac4e04b0b45}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
