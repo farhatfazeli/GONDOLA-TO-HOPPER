@@ -27,6 +27,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5637194980808392229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/StreamingAssets/FMOD/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638682332777585046
+  FileSizes:
+  - Name: 
+    Value: 760
+  Exists: 1
 --- !u!114 &-5289832779509270432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,6 +65,33 @@ MonoBehaviour:
   lastModified: 638682247145261733
   FileSizes: []
   Exists: 1
+--- !u!114 &-4481606006835538245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Train n\xB01"
+  m_EditorClassIdentifier: 
+  Path: "event:/Train n\xB01"
+  Guid:
+    Data1: 1295037956
+    Data2: 1235779856
+    Data3: 405527958
+    Data4: 1131873673
+  Banks:
+  - {fileID: 7139974047327886327}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,16 +105,16 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 5114989519681275309}
-  - {fileID: -5289832779509270432}
+  - {fileID: -5637194980808392229}
+  - {fileID: 7139974047327886327}
   EditorEvents:
-  - {fileID: -6291747829865958414}
+  - {fileID: -4481606006835538245}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -5289832779509270432}
+  - {fileID: 7139974047327886327}
   StringsBanks:
-  - {fileID: 5114989519681275309}
-  cacheTime: 638682247145271792
+  - {fileID: -5637194980808392229}
+  cacheTime: 638682332777585046
   cacheVersion: 131621
 --- !u!114 &5114989519681275309
 MonoBehaviour:
@@ -88,4 +135,22 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 760
+  Exists: 1
+--- !u!114 &7139974047327886327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/StreamingAssets/FMOD/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638682332777575035
+  FileSizes: []
   Exists: 1
