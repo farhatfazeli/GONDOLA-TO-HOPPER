@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Workspace" id="{91ff65a1-a219-49f3-a9b9-3d5459eab6bb}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../../../../Documents/GitHub/GONDOLA-TO-HOPPER/Assets/StreamingAssets/FMOD</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{7352d5ee-7d28-46f9-82ee-bb03d9a811c5}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{a277f45e-d1d0-4751-b05d-7bf12f046222}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{e9daae4e-358b-42eb-97c8-1e418cb01d04}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{82c14fff-c3af-46bc-9f62-1ff693939882}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{c17faa23-0fbc-438e-b0ab-06a893e8fa3c}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{aa361397-7979-4e6b-a6d1-fafaf6bbf2e9}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{1d5b3e6f-9bd9-4a2a-95be-f6c8063e4e04}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{1be0b2f5-1dce-4e5b-a075-006fb71494f9}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{556ad3aa-8d7b-45bc-9c0f-2aabbe765368}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{145ae4ef-a31d-4464-a0a8-dbd668a2be44}</destination>
+		</relationship>
+	</object>
+</objects>
