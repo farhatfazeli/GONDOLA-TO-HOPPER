@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CustomEventSystem
 {
-    [CreateAssetMenu(menuName = "ScriptableObjects/CustomEvent")]
+    [CreateAssetMenu(menuName = "CustomEventSystem/CustomEvent")]
     public class CustomEvent : ScriptableObject
     {
         public List<CustomEventListener> listeners = new();

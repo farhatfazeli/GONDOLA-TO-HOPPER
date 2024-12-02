@@ -6,6 +6,8 @@ namespace ScriptableObjects
     public class Landscape : ScriptableObject
     {
         public Sprite image;
+        
+        public float trackWidth;
 
         public float trackDepth;
     }

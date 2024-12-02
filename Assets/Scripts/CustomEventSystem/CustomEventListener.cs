@@ -30,31 +30,6 @@ namespace CustomEventSystem
             customEvent.UnregisterListener(this);
         }
 
-        public CustomEventListener LinkThroughCode(CustomEvent customEventParameter,
-            UnityAction<Component, object> callBack)
-        {
-            Debug.Log("Initialising GameEventListener through code for " + customEventParameter.name);
-            if (customEventParameter == null)
-            {
-                Debug.LogError("GameEventParameter is null");
-                return this;
-            }
-
-            customEvent = customEventParameter;
-            customEvent.RegisterListener(this);
-            (response = new CustomResponse()).AddListener(callBack);
-            return this;
-        }
-        
-        public void UnlinkThroughCode(UnityAction<Component, object> callBack)
-        {
-            customEvent.UnregisterListener(this);
-            if (response != null)
-                response.RemoveListener(callBack);
-            else
-                Debug.LogError("Response is null when trying to remove a listener");
-        }
-        
         public void OnEventRaised(Component sender, object data)
         {
             if (response == null)
