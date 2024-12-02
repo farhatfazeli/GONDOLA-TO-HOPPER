@@ -1,0 +1,244 @@
+fileFormatVersion: 2
+guid: 9b22235dda658b148825f28c4f25bd5a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4485926157740162198
+    second: ParallaxBG_0008_Bushes_0
+  - first:
+      213: -6536186067333268966
+    second: ParallaxBG_0008_Bushes_1
+  - first:
+      213: -2830827525262808868
+    second: ParallaxBG_0008_Bushes_2
+  - first:
+      213: 726329034099707527
+    second: ParallaxBG_0008_Bushes_3
+  - first:
+      213: 5935819057668775522
+    second: ParallaxBG_0008_Bushes_4
+  - first:
+      213: -5400620345762621654
+    second: ParallaxBG_0008_Bushes_5
+  - first:
+      213: -3422996275498360633
+    second: ParallaxBG_0008_Bushes_6
+  - first:
+      213: 1605863169787307347
+    second: ParallaxBG_0008_Bushes_7
+  - first:
+      213: -3894828267057628976
+    second: ParallaxBG_0008_Bushes_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 150
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ParallaxBG_0008_Bushes_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2556
+        width: 761
+        height: 349
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1964a46789bd36f4bb74b894e35a9ae4
+      internalID: 1516083788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParallaxBG_0008_Bushes_1
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 2457
+        width: 538
+        height: 419
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1927a837018c6944eb17623327a32297
+      internalID: -1749340519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParallaxBG_0008_Bushes_2
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 2581
+        width: 1852
+        height: 324
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 134077db912f91c4da8f79f310c3d3df
+      internalID: 605265508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParallaxBG_0008_Bushes_3
+      rect:
+        serializedVersion: 2
+        x: 3744
+        y: 2764
+        width: 186
+        height: 132
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173bc29fc85e2fe4f827376f59931d5e
+      internalID: -814637089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e76f6fc6fdc87fd4bbdf8064a8b8ef7c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ParallaxBG_0008_Bushes_0: 1516083788
+      ParallaxBG_0008_Bushes_1: -1749340519
+      ParallaxBG_0008_Bushes_10: -1722508304
+      ParallaxBG_0008_Bushes_11: 1844593
+      ParallaxBG_0008_Bushes_2: 605265508
+      ParallaxBG_0008_Bushes_3: -814637089
+      ParallaxBG_0008_Bushes_4: -790642741
+      ParallaxBG_0008_Bushes_5: -314670342
+      ParallaxBG_0008_Bushes_6: 1820714538
+      ParallaxBG_0008_Bushes_7: -707436283
+      ParallaxBG_0008_Bushes_8: -1465165129
+      ParallaxBG_0008_Bushes_9: 1674648673
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
