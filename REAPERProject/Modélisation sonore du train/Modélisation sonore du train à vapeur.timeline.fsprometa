@@ -1,0 +1,593 @@
+{
+    "sourceproject": "D:\Documents\GONDOLA-TO-HOPPER\REAPERProject\Modélisation sonore du train/Modélisation sonore du train à vapeur.RPP",
+    "markers": [
+        {
+            "name": "DEBUT",
+            "position": 8.000000
+        },
+        {
+            "name": "4",
+            "position": 184.460796
+        },
+        {
+            "name": "FIN",
+            "position": 263.024368
+        }
+    ],
+    "audiotracks": [
+        {
+            "type": "master",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "***  INDICATIONS  ***",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Train à Vapeur  Effet Sonore  Free_v720P",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "SIFFLET de train",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": 224.776586,
+                    "end": 231.774368,
+                    "audio": "SIFFLET de train_SIFFLET de train.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Non Vib., Vib.",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Flatterzunge (Leg., Sust.)",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Flatterzunge (Legato, Sust., Port.)",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "PASSAGE A NIVEAU",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": 234.774368,
+                    "end": 239.274368,
+                    "audio": "PASSAGE A NIVEAU_PASSAGE à niveau.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Railroad Bell",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "MOTEUR (tenues)",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": 74.172796,
+                    "end": 85.201596,
+                    "audio": "MOTEUR (tenues)_MOTEUR.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "VIOLONS I",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "V. I.1, Tremolo",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "V. I.2, Tremolo",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "VIOLONS II",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "V. II.1, Tremolo",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "V. II.2, Tremolo",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "VIBRATION (trille)",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": 102.259196,
+                    "end": 116.803986,
+                    "audio": "VIBRATION (trille)_TRILLE.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Trilles (HT-WT, Sfz)",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Trilles (HT-WT, Sfz)",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "ROUES (impacts)",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": 8.000000,
+                    "end": 13.514408,
+                    "audio": "ROUES (impacts)_1.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 13.514408,
+                    "end": 19.028804,
+                    "audio": "ROUES (impacts)_2.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 19.028804,
+                    "end": 24.543200,
+                    "audio": "ROUES (impacts)_3.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 24.543200,
+                    "end": 30.057600,
+                    "audio": "ROUES (impacts)_4.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 30.057600,
+                    "end": 35.572000,
+                    "audio": "ROUES (impacts)_5.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 35.572000,
+                    "end": 41.086400,
+                    "audio": "ROUES (impacts)_6.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 41.086400,
+                    "end": 46.600796,
+                    "audio": "ROUES (impacts)_7.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 46.600796,
+                    "end": 52.115196,
+                    "audio": "ROUES (impacts)_8.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 52.115196,
+                    "end": 57.629596,
+                    "audio": "ROUES (impacts)_9.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 57.629596,
+                    "end": 63.143996,
+                    "audio": "ROUES (impacts)_10.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 63.143996,
+                    "end": 68.658396,
+                    "audio": "ROUES (impacts)_11.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 68.658396,
+                    "end": 74.172796,
+                    "audio": "ROUES (impacts)_12.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 74.172796,
+                    "end": 79.687196,
+                    "audio": "ROUES (impacts)_13.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 79.687196,
+                    "end": 85.201596,
+                    "audio": "ROUES (impacts)_14.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 85.201596,
+                    "end": 90.715996,
+                    "audio": "ROUES (impacts)_15.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 90.715996,
+                    "end": 96.230396,
+                    "audio": "ROUES (impacts)_16.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 96.230396,
+                    "end": 101.744796,
+                    "audio": "ROUES (impacts)_17.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 101.744796,
+                    "end": 107.259196,
+                    "audio": "ROUES (impacts)_18.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 107.259196,
+                    "end": 112.773596,
+                    "audio": "ROUES (impacts)_19.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 112.773596,
+                    "end": 118.287996,
+                    "audio": "ROUES (impacts)_20.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 118.287996,
+                    "end": 123.802396,
+                    "audio": "ROUES (impacts)_21.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 123.802396,
+                    "end": 129.316796,
+                    "audio": "ROUES (impacts)_22.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 129.316796,
+                    "end": 134.831196,
+                    "audio": "ROUES (impacts)_23.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 134.831196,
+                    "end": 140.345596,
+                    "audio": "ROUES (impacts)_24.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 140.345596,
+                    "end": 145.859996,
+                    "audio": "ROUES (impacts)_25.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 145.859996,
+                    "end": 151.374396,
+                    "audio": "ROUES (impacts)_26.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 151.374396,
+                    "end": 156.888796,
+                    "audio": "ROUES (impacts)_27.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 156.888796,
+                    "end": 162.403196,
+                    "audio": "ROUES (impacts)_28.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 162.403196,
+                    "end": 167.917596,
+                    "audio": "ROUES (impacts)_29.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 167.917596,
+                    "end": 173.431996,
+                    "audio": "ROUES (impacts)_30.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 173.431996,
+                    "end": 178.946396,
+                    "audio": "ROUES (impacts)_31.wav"
+                },
+                {
+                    "type": "single",
+                    "start": 178.946396,
+                    "end": 184.460796,
+                    "audio": "ROUES (impacts)_32.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "----- BOIS -----",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "CLARINETTES",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Clar. Basse, Staccatos",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Clar. Ctrbs, Staccatos",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "BASSONS",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Basson I, Staccatos",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Basson II, Staccatos",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Contrebasson (Staccato)",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "----- PERCUSSIONS -----",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Timbales (Single Hits)",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Grosse Caisse (36'')",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Caisse Claire (Dresdner Snare 13''), avec timbre",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Caisse Claire (Tenor Drum 16''), avec timbre",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "HARPES",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Harpe I [Orchestral Tools]",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Chromatic",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Sustain",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Glissandi",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Portato",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "----- CORDES -----",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "ALTOS",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "A. I.1 (Stacc. Unis.)",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "A. I.1 (Stacc. Solo)",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "A. I.2 (Stacc. Unis.)",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "A. I.2 (Stacc. Solo)",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "VIOLONCELLES",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Vlc. I (Spic.)",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Vlc. II (Spic.)",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "CONTREBASSES",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Staccatos",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Martele FFF",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Pizzicato",
+            "instruments": [
+
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DAWAsset" id="{d3eb2c80-81b9-4c1a-ac3d-14d061e42c4f}">
+		<property name="assetPath">
+			<value>Modélisation sonore du train à vapeur.RPP.link/ROUES (impacts)_14.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.5143958333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1d5b3e6f-9bd9-4a2a-95be-f6c8063e4e04}</destination>
+		</relationship>
+		<relationship name="project">
+			<destination>{2d71b3fa-9af1-4657-aa89-63f62cc65adb}</destination>
+		</relationship>
+	</object>
+</objects>
