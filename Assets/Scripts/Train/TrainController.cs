@@ -22,6 +22,15 @@ namespace Train
         {
             _trainEngine.Update(Time.deltaTime);
             _wheelController.RotateWheels(_trainEngine.CurrentSpeed);
+            // turn train with left right arrows
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                transform.Rotate(Vector3.up, -1f);
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                transform.Rotate(Vector3.up, 1f);
+            }
         }
 
         public void DispatchTrain()

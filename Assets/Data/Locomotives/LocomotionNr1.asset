@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f339655e056f3b34187f565ab4b1b77a, type: 3}
   m_Name: LocomotionNr1
   m_EditorClassIdentifier: 
-  maxSpeed: 19.84
+  maxSpeed: 6.7
   tractionCoefficient: 8500
   brakingCoefficient: -16000
   mass: 0

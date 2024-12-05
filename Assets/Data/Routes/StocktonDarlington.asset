@@ -15,7 +15,7 @@ MonoBehaviour:
   routeName: StocktonDarlington
   startStation: {fileID: 11400000, guid: 31b5cdbf272f4d54a99e1eaf1504f6ad, type: 2}
   endStation: {fileID: 11400000, guid: 549346d637fc7b6468b9748dc8f82dcc, type: 2}
-  distance: 0
+  distance: 500
   travelTime: 0
   landscapes:
   - {fileID: 11400000, guid: c3937fa9f2f057e468c4aec82848e275, type: 2}
