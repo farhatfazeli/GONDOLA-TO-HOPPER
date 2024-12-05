@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f339655e056f3b34187f565ab4b1b77a, type: 3}
-  m_Name: LocomotionNr1
+  m_Script: {fileID: 11500000, guid: a6de38eef08ec604ea743ae196ee637c, type: 3}
+  m_Name: Departure
   m_EditorClassIdentifier: 
-  maxSpeed: 19.84
-  tractionCoefficient: 8500
-  brakingCoefficient: -16000
-  mass: 0
+  listeners: []
+  linkedEvents: []
