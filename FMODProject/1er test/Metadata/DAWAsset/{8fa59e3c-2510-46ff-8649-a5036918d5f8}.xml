@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DAWAsset" id="{8fa59e3c-2510-46ff-8649-a5036918d5f8}">
+		<property name="assetPath">
+			<value>Modélisation sonore du train à vapeur.RPP.link/GtH, train à vapeur (essai amusant à 10BPM).wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>95.38666666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1d5b3e6f-9bd9-4a2a-95be-f6c8063e4e04}</destination>
+		</relationship>
+		<relationship name="project">
+			<destination>{2d71b3fa-9af1-4657-aa89-63f62cc65adb}</destination>
+		</relationship>
+	</object>
+</objects>

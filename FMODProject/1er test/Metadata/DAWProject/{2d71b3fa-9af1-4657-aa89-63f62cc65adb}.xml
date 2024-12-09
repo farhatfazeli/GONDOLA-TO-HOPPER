@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DAWProject" id="{2d71b3fa-9af1-4657-aa89-63f62cc65adb}">
+		<property name="assetPath">
+			<value>Modélisation sonore du train à vapeur.RPP.link/</value>
+		</property>
+		<property name="dawProjectPath">
+			<value>Modélisation sonore du train/Modélisation sonore du train à vapeur.RPP</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1d5b3e6f-9bd9-4a2a-95be-f6c8063e4e04}</destination>
+		</relationship>
+	</object>
+</objects>

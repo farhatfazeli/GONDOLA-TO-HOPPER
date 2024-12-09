@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DAWAsset" id="{e4e29262-55e6-46e6-86c3-0d87005c7d3a}">
+		<property name="assetPath">
+			<value>Modélisation sonore du train à vapeur.RPP.link/VIBRATION (trille)_TRILLE.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>14.544770833333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1d5b3e6f-9bd9-4a2a-95be-f6c8063e4e04}</destination>
+		</relationship>
+		<relationship name="project">
+			<destination>{2d71b3fa-9af1-4657-aa89-63f62cc65adb}</destination>
+		</relationship>
+	</object>
+</objects>
