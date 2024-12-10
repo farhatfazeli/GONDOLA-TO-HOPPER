@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace UI
+namespace UISystem
 {
     public class UIRouteSelector : MonoBehaviour
     {

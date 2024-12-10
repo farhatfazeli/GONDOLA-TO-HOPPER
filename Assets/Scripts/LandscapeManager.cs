@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using ScriptableObjects;
-using UI;
+using UISystem;
 using UnityEngine;
 
 public class LandscapeManager : MonoBehaviour

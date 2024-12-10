@@ -1,9 +1,8 @@
-using System;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace UISystem
 {
     public class UILandscapePanelHandler : MonoBehaviour
     {

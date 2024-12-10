@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6de38eef08ec604ea743ae196ee637c, type: 3}
-  m_Name: Dispatch
+  m_Name: CE_Arrival
   m_EditorClassIdentifier: 
   listeners: []
   linkedEvents: []

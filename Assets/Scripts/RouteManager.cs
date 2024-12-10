@@ -3,6 +3,7 @@ using System.Linq;
 using CustomEventSystem;
 using ScriptableObjects;
 using Train;
+using Train.View;
 using UnityEngine;
 
 public class RouteManager : MonoBehaviour
@@ -13,7 +14,7 @@ public class RouteManager : MonoBehaviour
 
     private LandscapeManager _landscapeManager;
 
-    private TrainController _trainController;
+    private TrainView _trainView;
 
     public CustomEvent departure;
     public CustomEvent arrival;
@@ -35,19 +36,19 @@ public class RouteManager : MonoBehaviour
 
     private void Awake()
     {
-        _trainController = FindFirstObjectByType<TrainController>();
+        _trainView = FindFirstObjectByType<TrainView>();
     }
 
     private void Update()
     {
-        if (_trainController.transform.position.x > 460)
+        if (_trainView.transform.position.x > 460)
         {
             if (_hasArrived) return;
             arrival.Raise();
             _hasArrived = true;
         }
 
-        if (_trainController.transform.position.x is > 50 and < 460)
+        if (_trainView.transform.position.x is > 50 and < 460)
         {
             if (_hasDeparted) return;
             departure.Raise();

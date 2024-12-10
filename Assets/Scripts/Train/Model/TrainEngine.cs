@@ -1,7 +1,7 @@
 using ScriptableObjects;
 using UnityEngine;
 
-namespace Train
+namespace Train.Model
 {
     public class TrainEngine
     {

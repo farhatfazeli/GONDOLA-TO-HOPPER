@@ -1,7 +1,8 @@
+using ScriptableObjects;
 using TMPro;
 using Train;
+using Train.View;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace TempScripts
 {
@@ -9,16 +10,14 @@ namespace TempScripts
     {
         public TextMeshProUGUI speedText;
 
-        private TrainController _trainController;
+        private TrainView _trainView;
 
-        public
-            // Start is called once before the first execution of Update after the MonoBehaviour is created
-            void Start()
+        public void Start()
         {
-            _trainController = FindFirstObjectByType<TrainController>();
+            _trainView = FindFirstObjectByType<TrainView>();
+            
         }
 
-        // Update is called once per frame
         private void Update()
         {
             DebugTrainEngineValues();
@@ -26,11 +25,12 @@ namespace TempScripts
 
         private void DebugTrainEngineValues()
         {
-            var (speed, acceleration, tractionForce, pulledMass) = _trainController.GetPhysicsValues();
+            var (speed, acceleration, tractionForce, pulledMass) = _trainView.GetPhysicsValues();
             speedText.text = "Speed: " + speed + " m/s" + "\n" +
                              "Acceleration: " + acceleration + " m/s²" + "\n" +
                              "Traction Force: " + tractionForce + " N" + "\n" +
                              "Pulled Mass: " + pulledMass + " kg";
         }
+
     }
 }

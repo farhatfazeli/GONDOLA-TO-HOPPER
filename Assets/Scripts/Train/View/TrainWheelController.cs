@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Train
+namespace Train.View
 {
     public class TrainWheelController : MonoBehaviour
     {

@@ -1,59 +1,60 @@
-using System;
 using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class CameraController : MonoBehaviour
+namespace CameraSystem
 {
-    private bool _freeCamera;
-    private CinemachineBrain _cinemachineBrain;
-    private int _currentCameraIndex;
-    
-    public List<CinemachineCamera> travelCameras;
-    public CinemachineCamera departureCamera;
-    public CinemachineCamera arrivalCamera;
-    
-    private void Awake()
+    public class CameraController : MonoBehaviour
     {
-        _cinemachineBrain = GetComponent<CinemachineBrain>();
-    }
-
-    public void ToggleCamera()
-    {
-        if (!_freeCamera) return;
-        if (travelCameras.Count == 0) return;
-        _currentCameraIndex = (_currentCameraIndex + 1) % travelCameras.Count;
-        ActivateCamera(_currentCameraIndex);
-    }
+        private bool _freeCamera;
+        private CinemachineBrain _cinemachineBrain;
+        private int _currentCameraIndex;
     
-    public void ActivateCamera(int index)
-    {
-        if (index < 0 || index >= travelCameras.Count)
+        public List<CinemachineCamera> travelCameras;
+        public CinemachineCamera departureCamera;
+        public CinemachineCamera arrivalCamera;
+    
+        private void Awake()
         {
-            Debug.LogError("Invalid camera index: " + index);
-            return;
-        }
-        foreach(CinemachineCamera cinemachineCamera in travelCameras)
-        {
-            cinemachineCamera.Priority = 0;
+            _cinemachineBrain = GetComponent<CinemachineBrain>();
         }
 
-        travelCameras[index].Priority = 1;
-    }
-
-    public void Departure()
-    {
-        _freeCamera = true;
-        departureCamera.Priority = 0;
-        ActivateCamera(0);
-    }
+        public void ToggleCamera()
+        {
+            if (!_freeCamera) return;
+            if (travelCameras.Count == 0) return;
+            _currentCameraIndex = (_currentCameraIndex + 1) % travelCameras.Count;
+            ActivateCamera(_currentCameraIndex);
+        }
     
-    public void Arrival()
-    {
-        travelCameras[_currentCameraIndex].Priority = 0;
-        _freeCamera = false;
-        arrivalCamera.Priority = 1;
+        public void ActivateCamera(int index)
+        {
+            if (index < 0 || index >= travelCameras.Count)
+            {
+                Debug.LogError("Invalid camera index: " + index);
+                return;
+            }
+            foreach(CinemachineCamera cinemachineCamera in travelCameras)
+            {
+                cinemachineCamera.Priority = 0;
+            }
+
+            travelCameras[index].Priority = 1;
+        }
+
+        public void Departure()
+        {
+            _freeCamera = true;
+            departureCamera.Priority = 0;
+            ActivateCamera(0);
+        }
+    
+        public void Arrival()
+        {
+            travelCameras[_currentCameraIndex].Priority = 0;
+            _freeCamera = false;
+            arrivalCamera.Priority = 1;
+        }
     }
 }
 // {
