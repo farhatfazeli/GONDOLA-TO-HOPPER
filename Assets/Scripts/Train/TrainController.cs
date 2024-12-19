@@ -1,20 +1,11 @@
+using Train.Model;
 using UnityEngine;
 
 namespace Train
 {
     public class TrainController : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+        private TrainModel _trainModel;
         public void DispatchTrain()
         {
             //_trainEngine.Start();
@@ -23,7 +14,12 @@ namespace Train
 
         public void ShowView()
         {
-            
+            Debug.Log("Train view shown");
+        }
+
+        public void DestroyView()
+        {
+            Debug.Log("Train view destroyed");
         }
     }
 }

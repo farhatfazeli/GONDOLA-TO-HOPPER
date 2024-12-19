@@ -12,8 +12,8 @@ namespace Train.Model
         public float CurrentAcceleration { get; private set; } = 0f;
         public float CurrentTractionForce { get; private set; } = 0f;
 
-        // Train transform
-        private readonly Transform _trainRoot; // Train root transform
+        // Train position
+        private float _position;
         
         // Train parameters
         private readonly float _maxSpeed;         // Maximum speed (m/s)
@@ -22,9 +22,8 @@ namespace Train.Model
         private readonly float _pulledMass; // Mass of the train
 
         // Constructor
-        public TrainEngine(Transform trainRoot, Locomotive locomotive, float pulledMass)
+        public TrainEngine(Locomotive locomotive, float pulledMass)
         {
-            _trainRoot = trainRoot;
             _maxSpeed = locomotive.maxSpeed;
             _tractionCoefficient = locomotive.tractionCoefficient;
             _brakingCoefficient = locomotive.brakingCoefficient;
@@ -67,7 +66,7 @@ namespace Train.Model
             CurrentAcceleration = CurrentTractionForce / _pulledMass;
             CurrentSpeed += CurrentAcceleration * deltaTime;
             CurrentSpeed = Mathf.Clamp(CurrentSpeed, 0, _maxSpeed);
-            _trainRoot.position += _trainRoot.right * (CurrentSpeed * deltaTime);
+            _position += CurrentSpeed * deltaTime;
         }
 
         // Get current speed
