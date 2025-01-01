@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b86f89403cad841956710dd138562c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstEventToTest: {fileID: 11400000, guid: ac8542711a3590540b1cd9723a085bee, type: 2}
+  firstEventToTest: {fileID: 11400000, guid: 8619fa58564f8b945833cf187f8a5edb, type: 2}
   secondEventToTest: {fileID: 11400000, guid: 8619fa58564f8b945833cf187f8a5edb, type: 2}
   thirdEventToTest: {fileID: 11400000, guid: 8619fa58564f8b945833cf187f8a5edb, type: 2}
 --- !u!1 &577419571

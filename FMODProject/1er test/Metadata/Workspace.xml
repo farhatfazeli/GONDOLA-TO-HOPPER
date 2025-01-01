@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Workspace" id="{91ff65a1-a219-49f3-a9b9-3d5459eab6bb}">
 		<property name="builtBanksOutputDirectory">
-			<value>../../../../../Documents/GitHub/GONDOLA-TO-HOPPER/Assets/StreamingAssets/FMOD</value>
+			<value>../../Assets/StreamingAssets/FMOD</value>
 		</property>
 		<relationship name="masterEventFolder">
 			<destination>{7352d5ee-7d28-46f9-82ee-bb03d9a811c5}</destination>

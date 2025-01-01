@@ -41,14 +41,14 @@ public class RouteManager : MonoBehaviour
 
     private void Update()
     {
-        if (_trainView.transform.position.x > 460)
+        if (_trainView.transform.position.x > 380)
         {
             if (_hasArrived) return;
             arrival.Raise();
             _hasArrived = true;
         }
 
-        if (_trainView.transform.position.x is > 50 and < 460)
+        if (_trainView.transform.position.x is > 40 and < 380)
         {
             if (_hasDeparted) return;
             departure.Raise();
