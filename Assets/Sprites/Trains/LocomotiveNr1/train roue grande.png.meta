@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: 65c91e162729dc641a563be152c2fada
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1498396666956868519
+    second: train roue grande_0
+  - first:
+      213: -8604876422691702685
+    second: train roue grande_1
+  - first:
+      213: -1587853983091343558
+    second: train roue grande_2
+  - first:
+      213: -7012309849752254605
+    second: train roue grande_3
+  - first:
+      213: -495362749803087162
+    second: train roue grande_4
+  - first:
+      213: -3477485805908875723
+    second: train roue grande_5
+  - first:
+      213: 5864236145868471032
+    second: train roue grande_6
+  - first:
+      213: -5885925696980122249
+    second: train roue grande_7
+  - first:
+      213: -8668527082083340983
+    second: train roue grande_8
+  - first:
+      213: 3707809092364354367
+    second: train roue grande_9
+  - first:
+      213: -1461466454631772305
+    second: train roue grande_10
+  - first:
+      213: 6591333868688341594
+    second: train roue grande_11
+  - first:
+      213: 8142168235031512413
+    second: train roue grande_12
+  - first:
+      213: -2685586366181265001
+    second: train roue grande_13
+  - first:
+      213: -8715396585172511202
+    second: train roue grande_14
+  - first:
+      213: 3996735069196401430
+    second: train roue grande_15
+  - first:
+      213: 7087542550496612847
+    second: train roue grande_16
+  - first:
+      213: 73090141931560983
+    second: train roue grande_17
+  - first:
+      213: 6392660890334637939
+    second: train roue grande_18
+  - first:
+      213: 3024427325063617854
+    second: train roue grande_19
+  - first:
+      213: -4459410390724566394
+    second: train roue grande_20
+  - first:
+      213: -1208876147818813080
+    second: train roue grande_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5029278, y: 0.52046245}
+  spritePixelsToUnits: 400
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: train roue grande_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1864
+        height: 1776
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7abe79a64df5bc410800000000000000
+      internalID: 1498396666956868519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_1
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1736
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368b351fb76559880800000000000000
+      internalID: -8604876422691702685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_2
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1538
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3fb6a6173fc6f9e0800000000000000
+      internalID: -1587853983091343558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_3
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1396
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3774b8e28554fae90800000000000000
+      internalID: -7012309849752254605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_4
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 1385
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cab60f143e1029f0800000000000000
+      internalID: -495362749803087162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_5
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 966
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 536a653851d7dbfc0800000000000000
+      internalID: -3477485805908875723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_6
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 954
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fafe7164b3f16150800000000000000
+      internalID: 5864236145868471032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_7
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 670
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 775082973cdf05ea0800000000000000
+      internalID: -5885925696980122249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_8
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 502
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94da192fb8433b780800000000000000
+      internalID: -8668527082083340983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_9
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 444
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f33475589b8c47330800000000000000
+      internalID: 3707809092364354367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_10
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 442
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6f0680b004d7bbe0800000000000000
+      internalID: -1461466454631772305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_11
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 416
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a7b2f2b3f197b50800000000000000
+      internalID: 6591333868688341594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 423
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d55c586eedacef070800000000000000
+      internalID: 8142168235031512413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_13
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 413
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7913226cd61eabad0800000000000000
+      internalID: -2685586366181265001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_14
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 412
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e16d3206bf0bc0780800000000000000
+      internalID: -8715396585172511202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_15
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 401
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b3cccae51477730800000000000000
+      internalID: 3996735069196401430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_16
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 285
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe111d4f5620c5260800000000000000
+      internalID: 7087542550496612847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_17
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 258
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 710e96ac81ba30100800000000000000
+      internalID: 73090141931560983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_18
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 178
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37fade1c53b47b850800000000000000
+      internalID: 6392660890334637939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_19
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 110
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3dd667c0ace8f920800000000000000
+      internalID: 3024427325063617854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_20
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 48
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6822d2960edfc12c0800000000000000
+      internalID: -4459410390724566394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train roue grande_21
+      rect:
+        serializedVersion: 2
+        x: 1737
+        y: 24
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86921d76c85393fe0800000000000000
+      internalID: -1208876147818813080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      train roue grande_0: 1498396666956868519
+      train roue grande_1: -8604876422691702685
+      train roue grande_10: -1461466454631772305
+      train roue grande_11: 6591333868688341594
+      train roue grande_12: 8142168235031512413
+      train roue grande_13: -2685586366181265001
+      train roue grande_14: -8715396585172511202
+      train roue grande_15: 3996735069196401430
+      train roue grande_16: 7087542550496612847
+      train roue grande_17: 73090141931560983
+      train roue grande_18: 6392660890334637939
+      train roue grande_19: 3024427325063617854
+      train roue grande_2: -1587853983091343558
+      train roue grande_20: -4459410390724566394
+      train roue grande_21: -1208876147818813080
+      train roue grande_3: -7012309849752254605
+      train roue grande_4: -495362749803087162
+      train roue grande_5: -3477485805908875723
+      train roue grande_6: 5864236145868471032
+      train roue grande_7: -5885925696980122249
+      train roue grande_8: -8668527082083340983
+      train roue grande_9: 3707809092364354367
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

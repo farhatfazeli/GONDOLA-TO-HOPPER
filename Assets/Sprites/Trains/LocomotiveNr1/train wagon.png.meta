@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: fbcb7247d57f40f4f81bee05cc8dcf53
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4348945663661833282
+    second: train wagon_0
+  - first:
+      213: -3378561605540072904
+    second: train wagon_1
+  - first:
+      213: 7076871580839644438
+    second: train wagon_2
+  - first:
+      213: 4388756469980199729
+    second: train wagon_3
+  - first:
+      213: -6140413591173050059
+    second: train wagon_4
+  - first:
+      213: 1310331796245245217
+    second: train wagon_5
+  - first:
+      213: 9012495560714609917
+    second: train wagon_6
+  - first:
+      213: -1527833047780074883
+    second: train wagon_7
+  - first:
+      213: 162180529465687938
+    second: train wagon_8
+  - first:
+      213: 8589368391257153695
+    second: train wagon_9
+  - first:
+      213: -1636552717154604351
+    second: train wagon_10
+  - first:
+      213: 2021700345391701711
+    second: train wagon_11
+  - first:
+      213: -2116891358697664604
+    second: train wagon_12
+  - first:
+      213: 695601236952180646
+    second: train wagon_13
+  - first:
+      213: 3169983756807100462
+    second: train wagon_14
+  - first:
+      213: 6242208034523398882
+    second: train wagon_15
+  - first:
+      213: 3253415481787847002
+    second: train wagon_16
+  - first:
+      213: -6809273205335640001
+    second: train wagon_17
+  - first:
+      213: 6304242874021423445
+    second: train wagon_18
+  - first:
+      213: -3637264596069402624
+    second: train wagon_19
+  - first:
+      213: -6361696532968137092
+    second: train wagon_20
+  - first:
+      213: -3264533413552681065
+    second: train wagon_21
+  - first:
+      213: 2126517889329373902
+    second: train wagon_22
+  - first:
+      213: 6281814976680517846
+    second: train wagon_23
+  - first:
+      213: 8039745275905261719
+    second: train wagon_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 8
+  spritePivot: {x: 1, y: 0}
+  spritePixelsToUnits: 400
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: train wagon_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 3121
+        height: 1775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24cf9061a0f8a5c30800000000000000
+      internalID: 4348945663661833282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_1
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1679
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 832b202ce10fc11d0800000000000000
+      internalID: -3378561605540072904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_2
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 1665
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d01093539163260800000000000000
+      internalID: 7076871580839644438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_3
+      rect:
+        serializedVersion: 2
+        x: 3112
+        y: 1038
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13bfddeb1cef7ec30800000000000000
+      internalID: 4388756469980199729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_4
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 810
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53156244f5ed8caa0800000000000000
+      internalID: -6140413591173050059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_5
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 777
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12de81583db3f2210800000000000000
+      internalID: 1310331796245245217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_6
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 771
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df4ed2456f0d21d70800000000000000
+      internalID: 9012495560714609917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_7
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 759
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7a57f610fb0ccae0800000000000000
+      internalID: -1527833047780074883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_8
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 679
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28f7940155e204200800000000000000
+      internalID: 162180529465687938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_9
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 685
+        width: 33
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f90e9dd1b01933770800000000000000
+      internalID: 8589368391257153695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_10
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 665
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1caaccd79fbc949e0800000000000000
+      internalID: -1636552717154604351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_11
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 662
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fce5b51b0c58e0c10800000000000000
+      internalID: 2021700345391701711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_12
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 661
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af4bb8668a4f92e0800000000000000
+      internalID: -2116891358697664604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_13
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 660
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a76bd9b3a547a900800000000000000
+      internalID: 695601236952180646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_14
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 662
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28de387e6b0efb20800000000000000
+      internalID: 3169983756807100462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_15
+      rect:
+        serializedVersion: 2
+        x: 2973
+        y: 402
+        width: 8
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e24bdf7227c0a650800000000000000
+      internalID: 6242208034523398882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_16
+      rect:
+        serializedVersion: 2
+        x: 2975
+        y: 391
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5198b2b424762d20800000000000000
+      internalID: 3253415481787847002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_17
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 362
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f383269c81a9081a0800000000000000
+      internalID: -6809273205335640001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_18
+      rect:
+        serializedVersion: 2
+        x: 2978
+        y: 342
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 559a5db1e7b2d7750800000000000000
+      internalID: 6304242874021423445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_19
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 314
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 008bd25fe17d58dc0800000000000000
+      internalID: -3637264596069402624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_20
+      rect:
+        serializedVersion: 2
+        x: 2979
+        y: 314
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7e999f75b6b6b7a0800000000000000
+      internalID: -6361696532968137092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_21
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 232
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79f8cc7182c02b2d0800000000000000
+      internalID: -3264533413552681065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_22
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 85
+        width: 30
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec2adf9e0c8e28d10800000000000000
+      internalID: 2126517889329373902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_23
+      rect:
+        serializedVersion: 2
+        x: 2375
+        y: 81
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d065c5507d7d2750800000000000000
+      internalID: 6281814976680517846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train wagon_24
+      rect:
+        serializedVersion: 2
+        x: 2666
+        y: 71
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79045f66bb9e29f60800000000000000
+      internalID: 8039745275905261719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      train wagon_0: 4348945663661833282
+      train wagon_1: -3378561605540072904
+      train wagon_10: -1636552717154604351
+      train wagon_11: 2021700345391701711
+      train wagon_12: -2116891358697664604
+      train wagon_13: 695601236952180646
+      train wagon_14: 3169983756807100462
+      train wagon_15: 6242208034523398882
+      train wagon_16: 3253415481787847002
+      train wagon_17: -6809273205335640001
+      train wagon_18: 6304242874021423445
+      train wagon_19: -3637264596069402624
+      train wagon_2: 7076871580839644438
+      train wagon_20: -6361696532968137092
+      train wagon_21: -3264533413552681065
+      train wagon_22: 2126517889329373902
+      train wagon_23: 6281814976680517846
+      train wagon_24: 8039745275905261719
+      train wagon_3: 4388756469980199729
+      train wagon_4: -6140413591173050059
+      train wagon_5: 1310331796245245217
+      train wagon_6: 9012495560714609917
+      train wagon_7: -1527833047780074883
+      train wagon_8: 162180529465687938
+      train wagon_9: 8589368391257153695
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

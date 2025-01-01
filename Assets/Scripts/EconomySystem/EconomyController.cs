@@ -12,13 +12,18 @@ namespace EconomySystem
             economy.Initialize();
         }
         
+        private void Update()
+        {
+            economy.PeriodicUpdate();
+        }
+        
         public void ProcessArrival(object data)
         {
             if (data is FreightData freightData)
             {
                 float amount = freightData.Amount;
                 Debug.Log($"Freight amount: {amount}");
-                economy.AddFreight(amount);
+                economy.DeliverFreight(amount);
             }
             else
             {

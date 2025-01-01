@@ -1,15 +1,45 @@
+using System.Collections.Generic;
+using ScriptableObjects;
 using Train.Model;
+using Train.View;
 using UnityEngine;
 
 namespace Train
 {
     public class TrainController : MonoBehaviour
     {
-        private TrainModel _trainModel;
+        private readonly List<TrainModel> _trainModels = new();
+
+        public TrainModel trainModel;
+
+        public Locomotive testLocomotive;
+
+        public float lolfloat;
+
+        private void Start()
+        {
+            CreateTrainModel(testLocomotive);
+        }
+
+        private void Update()
+        {
+            foreach (var model in _trainModels)
+                model.Update(Time.deltaTime);
+        }
+
+        private TrainModel CreateTrainModel(Locomotive locomotive)
+        {
+            trainModel = new TrainModel(locomotive);
+            _trainModels.Add(trainModel);
+            var trainView = FindFirstObjectByType<TrainView>();
+            trainView.trainModel = trainModel;
+            return trainModel;
+        }
+        
         public void DispatchTrain()
         {
-            //_trainEngine.Start();
-            Debug.Log("Train dispatched");
+            trainModel.StartEngine();
+            Debug.Log("Train dispfatched");
         }
 
         public void ShowView()

@@ -6,26 +6,52 @@ namespace Train.Model
 {
     public class TrainModel
     {
-        public Locomotive Locomotive { get; private set; }
-        public List<Wagon> Wagons { get; private set; }
+        private readonly Locomotive _locomotive;
+        private readonly List<Wagon> _wagons;
         
         private TrainEngine _trainEngine;
         
         public TrainModel(Locomotive locomotive)
         {
-            Locomotive = locomotive;
-            Wagons = new List<Wagon>();
+            _locomotive = locomotive;
+            _wagons = new List<Wagon>();
             _trainEngine = new TrainEngine(locomotive, GetTotalMass());
+        }
+        
+        public void Update(float deltaTime)
+        {
+            _trainEngine.Update(deltaTime);
+        }
+        
+        public void StartEngine()
+        {
+            _trainEngine.Start();
         }
         
         public void AddWagon(Wagon wagon)
         {
-            Wagons.Add(wagon);
+            _wagons.Add(wagon);
         }
 
+        public (float, float, float, float) TransmitTrainState()
+        {
+            return (_trainEngine.Speed, _trainEngine.Acceleration, _trainEngine.TractionForce, 80000);
+        }
+
+        public float TransmitCurrentSpeed()
+        {
+            return _trainEngine.Speed;
+        }
+
+        public float TransmitCurrentPosition()
+        {
+            return _trainEngine.Position;
+        }
+        
         private float GetTotalMass()
         {
-            return Locomotive.mass + Wagons.Sum(wagon => wagon.mass);
+            //return _locomotive.mass + _wagons.Sum(wagon => wagon.mass);
+            return 80000;
         }
     }
 }

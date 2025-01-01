@@ -8,12 +8,10 @@ namespace Train.Model
         public bool Running { get; private set; } = false;
 
         // Train state variables
-        public float CurrentSpeed { get; private set; } = 0f;
-        public float CurrentAcceleration { get; private set; } = 0f;
-        public float CurrentTractionForce { get; private set; } = 0f;
-
-        // Train position
-        private float _position;
+        public float Position { get; private set; } = 0f;
+        public float Speed { get; private set; } = 0f;
+        public float Acceleration { get; private set; } = 0f;
+        public float TractionForce { get; private set; } = 0f;
         
         // Train parameters
         private readonly float _maxSpeed;         // Maximum speed (m/s)
@@ -53,7 +51,7 @@ namespace Train.Model
             }
             else
             {
-                if (CurrentSpeed > 0)
+                if (Speed > 0)
                 {
                     HandlePhysics(deltaTime, _brakingCoefficient);
                 }
@@ -62,20 +60,13 @@ namespace Train.Model
 
         private void HandlePhysics(float deltaTime, float coefficient)
         {
-            CurrentTractionForce = FunctionLibrary.TractionCalculator(CurrentSpeed, _maxSpeed, coefficient);
-            CurrentAcceleration = CurrentTractionForce / _pulledMass;
-            CurrentSpeed += CurrentAcceleration * deltaTime;
-            CurrentSpeed = Mathf.Clamp(CurrentSpeed, 0, _maxSpeed);
-            _position += CurrentSpeed * deltaTime;
+            TractionForce = FunctionLibrary.TractionCalculator(Speed, _maxSpeed, coefficient);
+            Acceleration = TractionForce / _pulledMass;
+            Speed += Acceleration * deltaTime;
+            Speed = Mathf.Clamp(Speed, 0, _maxSpeed);
+            Position += Speed * deltaTime;
         }
-
-        // Get current speed
-        public float GetCurrentSpeed()
-        {
-            return CurrentSpeed;
-        }
-    
-    
+        
         private void SanityCheck()
         {
             if (_maxSpeed <= 0)

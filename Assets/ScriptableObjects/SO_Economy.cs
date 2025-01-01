@@ -8,12 +8,31 @@ namespace ScriptableObjects
     public class Economy : ScriptableObject
     {
         public float FreightHauled { get; private set; }
-        public float PassengersCarried { get; private set; }
+        public float FreightHauling { get; private set; }
+        public float FreightHaulRate { get; private set; }
+        public int PassengersCarried { get; private set; }
+        public int PassengersCarrying { get; private set; }
+        public int PassengerCarryRate { get; private set; }
         
-        public Action onEconomyChanged;
-        public void AddFreight(float amount)
+        public event Action OnEconomyChanged;
+        
+        public void PeriodicUpdate()
         {
+            FreightHauling += FreightHaulRate;
+            PassengersCarrying += PassengerCarryRate;
+            NotifyChange();
+        }
+        
+        public void DeliverFreight(float amount)
+        {
+            FreightHauling -= amount;
             FreightHauled += amount;
+            NotifyChange();
+        }
+        
+        public void DeliverPassengers()
+        {
+            PassengersCarried += PassengersCarrying;
             NotifyChange();
         }
 
@@ -21,12 +40,16 @@ namespace ScriptableObjects
         {
             FreightHauled = 0;
             PassengersCarried = 0;
+            FreightHauling = 0;
+            PassengersCarrying = 0;
+            FreightHaulRate = 0;
+            PassengerCarryRate = 0;
             NotifyChange();
         }
 
         private void NotifyChange()
         {
-            onEconomyChanged?.Invoke();
+            OnEconomyChanged?.Invoke();
         }
     }
 }
