@@ -16,7 +16,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/SO_Economy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RouteManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UISystem/UIResourcesPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal/Runtime/2D/Light2DManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Editor/TMP/TMP_PackageUtilities.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Editor/TMP/TMPro_FontAssetCreatorWindow.cs" root0="SKIP_HIGHLIGHTING" />
@@ -102,6 +101,7 @@
       <workItem from="1735129269107" duration="5137000" />
       <workItem from="1735571557050" duration="5727000" />
       <workItem from="1735763524644" duration="206000" />
+      <workItem from="1737387498302" duration="1425000" />
     </task>
     <servers />
   </component>
