@@ -275,7 +275,12 @@ MonoBehaviour:
   loadInfo: {fileID: 3947835909811283514}
   haulRate: {fileID: 484693797410066671}
   remainingTime: {fileID: 8498898246658162136}
-  loadProgress: {fileID: 375080929151591662}
+  loadProgressSlider: {fileID: 375080929151591662}
+  travelProgressSlider: {fileID: 2875817396404140060}
+  unloadProgressSlider: {fileID: 8978988601329649141}
+  loadButton: {fileID: 7488079680118793026}
+  travelButton: {fileID: 1304348372450490397}
+  unloadButton: {fileID: 5915944165053868006}
 --- !u!222 &5771692287005655741
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -570,7 +575,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8550153610769470264}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2836319248577058991}
+        m_TargetAssemblyTypeName: ScheduledTrainItemManager, Assembly-CSharp
+        m_MethodName: TravelTrain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2989927657044794888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,7 +1127,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2654320849811707127}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2836319248577058991}
+        m_TargetAssemblyTypeName: ScheduledTrainItemManager, Assembly-CSharp
+        m_MethodName: UnloadTrain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4695496168163123342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,7 +1338,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2836319248577058991}
         m_TargetAssemblyTypeName: ScheduledTrainItemManager, Assembly-CSharp
-        m_MethodName: UpdateLoadProgress
+        m_MethodName: LoadTrain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

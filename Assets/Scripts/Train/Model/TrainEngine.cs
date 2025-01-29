@@ -28,6 +28,15 @@ namespace Train.Model
             _pulledMass = pulledMass;
             SanityCheck();
         }
+        
+        public TrainEngine(float maxSpeed, float tractionCoefficient, float brakingCoefficient, float pulledMass)
+        {
+            _maxSpeed = maxSpeed;
+            _tractionCoefficient = tractionCoefficient;
+            _brakingCoefficient = brakingCoefficient;
+            _pulledMass = pulledMass;
+            SanityCheck();
+        }
 
 
         // Start accelerating the train

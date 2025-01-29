@@ -15,6 +15,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/ATempGameplayProto/Scripts/RouteDropdownManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ATempGameplayProto/Scripts/SO_Resources.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ATempGameplayProto/Scripts/SchedulerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/SO_Economy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RouteManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -106,6 +107,8 @@
       <workItem from="1735763524644" duration="206000" />
       <workItem from="1737387498302" duration="1425000" />
       <workItem from="1737974636309" duration="10068000" />
+      <workItem from="1738087825811" duration="652000" />
+      <workItem from="1738154201141" duration="8511000" />
     </task>
     <servers />
   </component>
