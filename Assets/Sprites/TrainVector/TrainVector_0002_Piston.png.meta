@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TrainVector_0002_Piston_0: 7972524654417297635
+      TrainVector_0002_Piston_1: -7144932531937612167
+      TrainVector_0002_Piston_2: -8466119015122076265
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
