@@ -11,6 +11,7 @@ namespace ScriptableObjects
         public Station endStation;
         public float distance;
         
+        public int resourceCost;
         public Progress buildProgress;
     
         public List<Landscape> landscapes;

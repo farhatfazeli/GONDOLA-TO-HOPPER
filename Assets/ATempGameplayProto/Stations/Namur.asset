@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Namur
   m_EditorClassIdentifier: 
   stationName: Namur
+  resourceCost: 1000
+  route: {fileID: 11400000, guid: f1e62f28f4e0e434a8a028803ffc3f8d, type: 2}

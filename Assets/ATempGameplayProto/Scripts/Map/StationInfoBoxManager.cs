@@ -9,18 +9,47 @@ public class StationInfoBoxManager : MonoBehaviour
     
     [Header("UI Elements")]
     public TextMeshProUGUI stationName;
-    public TextMeshProUGUI resourceCost;
-    public Button buildButton;
+    public TextMeshProUGUI stationResourceCost;
+    public TextMeshProUGUI routeResourceCost;
+    public TextMeshProUGUI distanceText;
+    public Button buildStationButton;
+    public Button buildRouteButton;
     
+    public Slider roadBuildProgressSlider;
+    
+    private Image _image;
     private void Start()
     {
         stationName.text = station.stationName;
-        resourceCost.text = $"Cost: {station.resourceCost:N0} tonne-kilometers";
-        buildButton.onClick.AddListener(BuildStation);
+        stationResourceCost.text = $"Station cost: {station.resourceCost:N0} tonne-passengers";
+        routeResourceCost.text = $"Route cost: {station.route.resourceCost:N0} tonne-kms";
+        distanceText.text = $"Distance: {station.route.distance:N0} km";
+        
+        buildStationButton.onClick.AddListener(BuildStation);
+        buildRouteButton.onClick.AddListener(BuildRoute);
+        
+        _image = GetComponent<Image>();
     }
-    
+
     private void BuildStation()
     {
-        // Build the station
+        FinishBuildStation();
+    }
+
+    private void FinishBuildStation()
+    {
+        stationResourceCost.gameObject.SetActive(false);
+        buildStationButton.gameObject.SetActive(false);
+        buildRouteButton.interactable = true;
+    }
+    
+    private void BuildRoute()
+    {
+        FinishBuildRoute();
+    }
+
+    private void FinishBuildRoute()
+    {
+        _image.color = new Color32(0xF6, 0xFF, 0xAA, 0xFF);
     }
 }

@@ -16,5 +16,5 @@ MonoBehaviour:
   startStation: {fileID: 11400000, guid: 49b8c5cbfbdb9114db7166aa0d70e808, type: 2}
   endStation: {fileID: 11400000, guid: 6d431a8b8791c51449f53500c5aa9d38, type: 2}
   distance: 55
-  travelTime: 0
+  resourceCost: 15000
   landscapes: []
