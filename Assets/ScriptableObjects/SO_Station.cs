@@ -6,5 +6,8 @@ namespace ScriptableObjects
     public class Station : ScriptableObject
     {
         public string stationName;
+        public int resourceCost;
+        
+        public Route route;
     }
 }

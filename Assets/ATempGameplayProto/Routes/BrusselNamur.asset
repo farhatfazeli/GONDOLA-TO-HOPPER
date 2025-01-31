@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 117fb7366c7c52d428be881ad99accac, type: 3}
-  m_Name: BrusselLuik
+  m_Name: BrusselNamur
   m_EditorClassIdentifier: 
-  routeName: Brussel - Luik
+  routeName: Brussel - Namur
   startStation: {fileID: 11400000, guid: 49b8c5cbfbdb9114db7166aa0d70e808, type: 2}
   endStation: {fileID: 11400000, guid: 6d431a8b8791c51449f53500c5aa9d38, type: 2}
-  distance: 89
+  distance: 55
   travelTime: 0
   landscapes: []
