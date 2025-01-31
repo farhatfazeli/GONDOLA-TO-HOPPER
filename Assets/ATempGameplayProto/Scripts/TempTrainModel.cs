@@ -10,13 +10,14 @@ public class TempTrainModel
         _trainEngine = new TrainEngine(_.maxSpeed, _.tractionCoefficient, _.brakingCoefficient, _.mass);
     }
 
-    public void DispatchTrain(Route route)
+    public void DispatchTrain()
     {
         _trainEngine.Start();
     }
     
-    public void Update(float deltaTime)
+    public float Update(float deltaTime)
     {
         _trainEngine.Update(deltaTime);
+        return _trainEngine.Position;
     }
 }

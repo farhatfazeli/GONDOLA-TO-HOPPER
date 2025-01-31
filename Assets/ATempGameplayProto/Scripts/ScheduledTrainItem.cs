@@ -43,7 +43,11 @@ public class ScheduledTrainItem
     public readonly Progress unloadProgress;
     public bool isComplete;
     
-    private TempTrainModel _tempTrainModel;
+    private readonly TempTrainModel _tempTrainModel;
+
+    private bool _loading;
+    private bool _traveling;
+    private bool _unloading;
     
     public ScheduledTrainItem(Route route, TempTrain tempTrain, LoadType loadType, float loadAmount)
     {
@@ -55,26 +59,81 @@ public class ScheduledTrainItem
         travelProgress = new Progress(route.distance);
         unloadProgress = new Progress(loadAmount);
         isComplete = false;
+        
+        _tempTrainModel = new TempTrainModel(tempTrain);
     }
     
     public void ProgressLoadProgress(float amount)
     {
+        if (!_loading && !loadProgress.IsComplete)
+        {
+            _loading = true;
+            Load();
+        }
+        
         loadProgress.UpdateProgressPercentage(amount);
-        _tempTrainModel = new TempTrainModel(tempTrain);
+        
+        if(loadProgress.IsComplete) _loading = false;
+    }
+    
+    private void Load()
+    {
+        loadProgress.UpdateProgress(SO_GameParameters.I.loadSpeedUpFactor * 10f * Time.deltaTime);
+        if(loadProgress.IsComplete) _loading = false;
     }
     
     public void ProgressTravelProgress(float amount)
     {
+        if (!_traveling && !travelProgress.IsComplete)
+        {
+            _traveling = true;
+            _tempTrainModel.DispatchTrain();
+            Travel();
+        }
+        
         travelProgress.UpdateProgressPercentage(amount);
-        _tempTrainModel.DispatchTrain(route);
+        
+        if(travelProgress.IsComplete) _traveling = false;
+    }
+
+    private void Travel()
+    {
+        travelProgress.UpdateProgress(SO_GameParameters.I.travelSpeedUpFactor * _tempTrainModel.Update(Time.deltaTime));
+        if (travelProgress.IsComplete) _traveling = false;
     }
     
     public void ProgressUnloadProgress(float amount)
     {
+        if (!_unloading && !unloadProgress.IsComplete)
+        {
+            _unloading = true;
+            Unload();
+        }
+        
         unloadProgress.UpdateProgressPercentage(amount);
+
+        if (!unloadProgress.IsComplete) return;
+        _unloading = false;
+        isComplete = true;
+        switch (loadType)
+        {
+            case LoadType.Passengers:
+                ResourceManager.PassengerKm += loadAmount;
+                break;
+            case LoadType.Cargo:
+                ResourceManager.TonneKm += loadAmount;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+    
+    private void Unload()
+    {
+        unloadProgress.UpdateProgress(SO_GameParameters.I.loadSpeedUpFactor * 10f * Time.deltaTime);
         
         if (!unloadProgress.IsComplete) return;
-        
+        _unloading = false;
         isComplete = true;
         switch (loadType)
         {
@@ -91,6 +150,8 @@ public class ScheduledTrainItem
 
     public void Update()
     {
-        _tempTrainModel.Update(Time.deltaTime);
+        if(_loading) Load();
+        if(_traveling) Travel();
+        if(_unloading) Unload();
     }
 }

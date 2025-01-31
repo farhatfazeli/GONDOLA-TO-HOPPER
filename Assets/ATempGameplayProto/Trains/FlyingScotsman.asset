@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainName: No 4465 Flying Scotsman
   maxSpeed: 12.7
-  tractionCoefficient: 12000
-  brakingCoefficient: -18000
-  mass: 50000
+  tractionCoefficient: 12
+  brakingCoefficient: -18
+  mass: 50

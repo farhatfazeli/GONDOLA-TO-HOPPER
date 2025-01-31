@@ -10,7 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea03f7c5a1386d843b59739e079471ca, type: 3}
-  m_Name: Resources
+  m_Name: GameParameters
   m_EditorClassIdentifier: 
-  passengerKm: 0
-  tonneKm: 0
+  passengerKm: 1353
+  tonneKm: 10001
+  loadSpeedUpFactor: 1
+  travelSpeedUpFactor: 1
+  loadClickProgressAmount: 0.1
+  travelClickProgressAmount: 0.1
+  unloadClickProgressAmount: 0.1

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainName: No 6011 Peppercorn
   maxSpeed: 9.2
-  tractionCoefficient: 10000
-  brakingCoefficient: -18000
+  tractionCoefficient: 10
+  brakingCoefficient: -18
   mass: 90000

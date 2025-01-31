@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    public SO_Resources resources;
+    public SO_GameParameters gameParameters;
     
     [Header("UI References")]
     public TextMeshProUGUI passengerKmAmountText;
@@ -43,8 +43,8 @@ public class ResourceManager : MonoBehaviour
     private void Start()
     {
         onResourceUpdated += UpdateResourceUI;
-        PassengerKm = resources.passengerKm;
-        TonneKm = resources.tonneKm;
+        PassengerKm = gameParameters.passengerKm;
+        TonneKm = gameParameters.tonneKm;
     }
 
     private void Update()
@@ -62,7 +62,7 @@ public class ResourceManager : MonoBehaviour
     private void OnDestroy()
     {
         onResourceUpdated -= UpdateResourceUI;
-        resources.passengerKm = PassengerKm;
-        resources.tonneKm = TonneKm;
+        gameParameters.passengerKm = PassengerKm;
+        gameParameters.tonneKm = TonneKm;
     }
 }
