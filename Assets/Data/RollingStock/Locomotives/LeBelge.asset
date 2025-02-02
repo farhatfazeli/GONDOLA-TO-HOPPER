@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f339655e056f3b34187f565ab4b1b77a, type: 3}
   m_Name: LeBelge
   m_EditorClassIdentifier: 
-  maxSpeed: 15
+  maxSpeed: 10
   tractionCoefficient: 12000
   brakingCoefficient: 18000
   mass: 10000

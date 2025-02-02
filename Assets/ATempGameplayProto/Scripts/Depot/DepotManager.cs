@@ -9,6 +9,9 @@ public class DepotManager : MonoBehaviour
 {
     public TMP_InputField trainNumberInput;
     public TMP_InputField trainNameInput;
+    
+    public Transform locomotiveTransform;
+    public Transform wagonTransform;
 
     public void BuildTrain()
     {
@@ -22,26 +25,35 @@ public class DepotManager : MonoBehaviour
     {
         TempTrain train = ScriptableObject.CreateInstance<TempTrain>();
         
-        float maxSpeed = 0;
+        bool hasLocomotive = false;
+        
+        float maxSpeed = float.MaxValue;
         float tractionCoefficient = 0;
-        float brakingCoefficien=  0;
+        float brakingCoefficient=  0;
         int mass = 0;
         
         foreach (KeyValuePair<RollingStock, int> selection in rollingStockSelection)
         {
             if(selection.Key is Locomotive locomotive)
             {
+                hasLocomotive = true;
                 maxSpeed = Mathf.Min(locomotive.maxSpeed, maxSpeed);
                 tractionCoefficient += locomotive.tractionCoefficient;
-                brakingCoefficien += locomotive.brakingCoefficient;
+                brakingCoefficient += locomotive.brakingCoefficient;
             }
             mass += selection.Key.Mass * selection.Value;
+        }
+        
+        if (!hasLocomotive)
+        {
+            Debug.LogError("Train must have at least one locomotive");
+            return null;
         }
 
         train.name = $"{trainNumberInput.text} {trainNameInput.text}";
         train.maxSpeed = maxSpeed;
         train.tractionCoefficient = tractionCoefficient;
-        train.brakingCoefficient = brakingCoefficien;
+        train.brakingCoefficient = brakingCoefficient;
         train.mass = mass;
         return train;
     }
@@ -49,7 +61,7 @@ public class DepotManager : MonoBehaviour
     private Dictionary<RollingStock, int> IdentifyPlayerSelection()
     {
         List<DepotItemManager> depotItems = new List<DepotItemManager>();
-        foreach (Transform child in transform)
+        foreach (Transform child in locomotiveTransform)
         {
             DepotItemManager depotItem = child.GetComponent<DepotItemManager>();
             if (depotItem != null)
@@ -57,6 +69,15 @@ public class DepotManager : MonoBehaviour
                 depotItems.Add(depotItem);
             }
         }
+        foreach (Transform child in wagonTransform)
+        {
+            DepotItemManager depotItem = child.GetComponent<DepotItemManager>();
+            if (depotItem != null)
+            {
+                depotItems.Add(depotItem);
+            }
+        }
+        
 
         Dictionary<RollingStock, int> rollingStockSelection = new Dictionary<RollingStock, int>();
         

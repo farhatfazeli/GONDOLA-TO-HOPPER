@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d69777b9f3ea4bb281a19684cd610520, type: 3}
-  m_Name: FreightWagon1
+  m_Script: {fileID: 11500000, guid: c8bdb9a2e6e11f04c8c818e72530a072, type: 3}
+  m_Name: 3333 Aaaaaa
   m_EditorClassIdentifier: 
-  cargoType: 1
-  mass: 6000
-  depotSprite: {fileID: -7695030020186157280, guid: a433acd6166803f4d828186354f840ef, type: 3}
-  availableAmount: 3
+  maxSpeed: 0
+  tractionCoefficient: 24000
+  brakingCoefficient: 36000
+  mass: 50000
