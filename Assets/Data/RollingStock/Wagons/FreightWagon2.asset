@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69777b9f3ea4bb281a19684cd610520, type: 3}
+  m_Name: FreightWagon2
+  m_EditorClassIdentifier: 
+  cargoType: 1
+  mass: 15000
+  depotSprite: {fileID: 8495048639182658578, guid: 96c932ef1c3dbe348a47e21e841af844, type: 3}
+  availableAmount: 5
