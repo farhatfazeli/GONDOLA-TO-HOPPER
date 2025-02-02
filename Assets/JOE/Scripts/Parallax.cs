@@ -5,6 +5,7 @@ public class Parallax : MonoBehaviour
     [SerializeField] GameObject cam;
     private float length, startPos;
     [SerializeField] float parallaxFactor;
+    [SerializeField] public bool isLooping;
     void Start()
     {
         startPos = transform.position.x;
@@ -21,8 +22,16 @@ public class Parallax : MonoBehaviour
 
         if (temp > startPos + (length / 2))
         {
+            isLooping = true;
             startPos += length;
+            Invoke(nameof(ResetLoopCheck), 0.1f);
         }
+
+    }
+
+    private void ResetLoopCheck()
+    {
+        isLooping = false;
     }
 }
 
