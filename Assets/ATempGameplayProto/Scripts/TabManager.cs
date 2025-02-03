@@ -15,7 +15,7 @@ public class TabManager : MonoBehaviour
     {
         plannerPanel.SetActive(false);
         mapPanel.SetActive(false);
-        depotPanel.SetActive(false);
+        depotPanel.SetActive(false);    
         researchPanel.SetActive(false);
         // Initialize by showing the Planner panel
         SwitchToPanel(plannerPanel);
@@ -24,6 +24,7 @@ public class TabManager : MonoBehaviour
     public void SwitchToPlanner()
     {
         SwitchToPanel(plannerPanel);
+        plannerPanel.GetComponentInChildren<SchedulerManager>().RefreshUI();
     }
 
     public void SwitchToMap()

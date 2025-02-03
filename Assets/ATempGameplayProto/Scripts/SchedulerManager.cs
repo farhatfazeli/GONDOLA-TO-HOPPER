@@ -15,6 +15,11 @@ public class SchedulerManager : MonoBehaviour
 
     private List<ScheduledTrainItemManager> _scheduledTrainItemManagers = new();
 
+    public void RefreshUI()
+    {
+        trainDropdown.RefreshUI();
+    }
+    
     public void ScheduleTrainItem()
     {
         var scheduledTrainItemManager = Instantiate(scheduledTrainItemPrefab, scheduledTrainList)

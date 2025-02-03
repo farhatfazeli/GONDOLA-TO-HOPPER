@@ -13,6 +13,13 @@ public class DepotManager : MonoBehaviour
     public Transform locomotiveTransform;
     public Transform wagonTransform;
 
+    private string _trainsFolderPath;
+
+    private void Start()
+    {
+        _trainsFolderPath = SO_GameParameters.I.trainsFolderPathFull;
+    }
+
     public void BuildTrain()
     {
         Dictionary<RollingStock, int> rollingStockSelection = IdentifyPlayerSelection();
@@ -111,7 +118,9 @@ public class DepotManager : MonoBehaviour
         newTrain.brakingCoefficient = train.brakingCoefficient;
         newTrain.mass = train.mass;
         
+        //string path = _trainsFolderPath + "/" + newTrain.name + ".asset";
         string path = "Assets/ATempGameplayProto/Trains/" + newTrain.name + ".asset";
+        path = "Assets/Resources/Data/RollingStock/Trains" + "/" + newTrain.name + ".asset";
         AssetDatabase.CreateAsset(newTrain, path);
     }
 }
