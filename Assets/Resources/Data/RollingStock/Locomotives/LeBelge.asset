@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 10
   tractionCoefficient: 12000
-  brakingCoefficient: 18000
+  brakingCoefficient: -18000
   mass: 10000
   depotSprite: {fileID: -8590286932747780483, guid: e1ed18a28a6a2594696888d4384aac5b, type: 3}
   availableAmount: 2

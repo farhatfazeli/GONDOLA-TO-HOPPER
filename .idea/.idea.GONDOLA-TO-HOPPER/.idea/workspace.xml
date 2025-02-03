@@ -14,18 +14,30 @@
     <option name="autoShow" value="false" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/ATempGameplayProto/Scripts/InfoBoxHover.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ATempGameplayProto/Scripts/Map/StationInfoBoxManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ATempGameplayProto/Scripts/Progress.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ATempGameplayProto/Scripts/RouteDropdownManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ATempGameplayProto/Scripts/SchedulerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/SO_Economy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RouteManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem/InputSystem/Plugins/UI/InputSystemUIInputModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal/Runtime/2D/Light2DManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Editor/TMP/TMP_PackageUtilities.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Editor/TMP/TMPro_FontAssetCreatorWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Editor/UGUI/UI/SpriteDrawUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/TMP/TMP_Dropdown.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/TMP/TMP_InputField.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/UGUI/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/UGUI/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/20a025bba6874f73adca28fec451f63846ae00/0b/e46fb273/Single.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/20a025bba6874f73adca28fec451f63846ae00/45/42b1bc1a/List`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/20a025bba6874f73adca28fec451f63846ae00/48/da63bcc8/Thread.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/20a025bba6874f73adca28fec451f63846ae00/7d/aeab01c9/ReadOnlySpan`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/20a025bba6874f73adca28fec451f63846ae00/d5/a6a8081b/String.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/20a025bba6874f73adca28fec451f63846ae00/e3/10e6f2a7/NumberFormatInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/20a025bba6874f73adca28fec451f63846ae00/e9/7bccc515/IntPtr.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d55ab038a5f4117a0dc489fc01609021dd400/37/f083b022/Debug.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d55ab038a5f4117a0dc489fc01609021dd400/4c/197431f8/Object.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d55ab038a5f4117a0dc489fc01609021dd400/a7/007afc45/Component.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d55ab038a5f4117a0dc489fc01609021dd400/e7/2ff9556d/Unmarshal.cs" root0="FORCE_HIGHLIGHTING" />
@@ -75,10 +87,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11108">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15644">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="11108" />
+      <option name="pid" value="15644" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -115,6 +127,7 @@
       <workItem from="1738334467189" duration="1509000" />
       <workItem from="1738408113480" duration="9261000" />
       <workItem from="1738491554594" duration="4055000" />
+      <workItem from="1738574485838" duration="6336000" />
     </task>
     <servers />
   </component>
@@ -127,5 +140,37 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/ATempGameplayProto/Scripts/SchedulerManager.cs</url>
+          <line>31</line>
+          <properties documentPath="C:\PD3\GONDOLA-TO-HOPPER\Assets\ATempGameplayProto\Scripts\SchedulerManager.cs" containingFunctionPresentation="Method 'MakeScheduledTrainItem'">
+            <startOffsets>
+              <option value="980" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1181" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/ATempGameplayProto/Scripts/ScheduledTrainItemManager.cs</url>
+          <line>34</line>
+          <properties documentPath="C:\PD3\GONDOLA-TO-HOPPER\Assets\ATempGameplayProto\Scripts\ScheduledTrainItemManager.cs" containingFunctionPresentation="Method 'Initialize'">
+            <startOffsets>
+              <option value="895" />
+            </startOffsets>
+            <endOffsets>
+              <option value="936" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

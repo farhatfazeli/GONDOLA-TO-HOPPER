@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StationInfoBoxManager : MonoBehaviour
+public class StationInfoBoxManager : MonoBehaviour, IInfoBoxHoverHandler
 {
     public Station station;
     
@@ -51,5 +51,15 @@ public class StationInfoBoxManager : MonoBehaviour
     private void FinishBuildRoute()
     {
         _image.color = new Color32(0xF6, 0xFF, 0xAA, 0xFF);
+    }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
     }
 }
