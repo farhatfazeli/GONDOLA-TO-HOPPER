@@ -9,17 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f339655e056f3b34187f565ab4b1b77a, type: 3}
-  m_Name: LeBelge
+  m_Script: {fileID: 11500000, guid: c8bdb9a2e6e11f04c8c818e72530a072, type: 3}
+  m_Name: 223 HannoverExpress
   m_EditorClassIdentifier: 
-  mass: 0
-  availableAmount: 0
-  research:
-    achievementState: 1
-    unlockCost: 0
-    previousResearch:
-    - {fileID: 11400000, guid: d011f2becac07bb48abfa64bed0154d2, type: 2}
-  depotSprite: {fileID: 0}
   maxSpeed: 10
   tractionCoefficient: 12000
   brakingCoefficient: -18000
+  mass: 16000
+  fileDeleted: 0

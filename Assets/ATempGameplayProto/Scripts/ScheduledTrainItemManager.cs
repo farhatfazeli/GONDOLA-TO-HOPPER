@@ -82,7 +82,7 @@ public class ScheduledTrainItemManager : MonoBehaviour
 
         if (_scheduledTrainItem.unloadProgress.IsComplete) unloadButton.interactable = false;
 
-        if (_scheduledTrainItem.isComplete) _image.color = new Color32(0xF6, 0xFF, 0xAA, 0xFF);
+        if (_scheduledTrainItem.isComplete) _image.color = SO_GameParameters.I.achievedColor;
     }
 
     private void Update()
@@ -104,7 +104,7 @@ public class ScheduledTrainItemManager : MonoBehaviour
             unloadButton.interactable = false;
         
         if (_scheduledTrainItem.isComplete)
-            _image.color = new Color32(0xF6, 0xFF, 0xAA, 0xFF);
+            _image.color = SO_GameParameters.I.achievedColor;
         
     }
 }

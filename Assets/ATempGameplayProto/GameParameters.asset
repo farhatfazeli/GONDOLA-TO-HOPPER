@@ -19,3 +19,8 @@ MonoBehaviour:
   loadClickProgressAmount: 0.1
   travelClickProgressAmount: 0.1
   unloadClickProgressAmount: 0.1
+  trainsFolderPathShort: Data/RollingStock/Trains
+  trainsFolderPathFull: Assets/Resources/Data/RollingStock/Trains
+  achievedColor:
+    serializedVersion: 2
+    rgba: 4289396726

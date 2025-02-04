@@ -50,7 +50,7 @@ public class StationInfoBoxManager : MonoBehaviour, IInfoBoxHoverHandler
 
     private void FinishBuildRoute()
     {
-        _image.color = new Color32(0xF6, 0xFF, 0xAA, 0xFF);
+        _image.color = SO_GameParameters.I.achievedColor;
     }
 
     public void Show()

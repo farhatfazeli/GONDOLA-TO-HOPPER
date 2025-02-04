@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using ScriptableObjects;
 using TMPro;
 using UnityEngine;
@@ -34,7 +35,7 @@ public class TrainDropdownManager : MonoBehaviour
     {
         _trains.Clear();
         TempTrain[] loadedTrains = Resources.LoadAll<TempTrain>(_trainsFolderPath);
-        _trains.AddRange(loadedTrains);
+        _trains.AddRange(loadedTrains.Where(train => !train.fileDeleted));
 
         if (_trains.Count == 0)
         {

@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f339655e056f3b34187f565ab4b1b77a, type: 3}
   m_Name: Crampton
   m_EditorClassIdentifier: 
+  Mass: 0
+  AvailableAmount: 0
+  research:
+    achievementState: 0
+    unlockCost: 0
+    previousResearch:
+    - {fileID: 11400000, guid: d5617e2ee53a8c448b924829489282ce, type: 2}
+  DepotSprite: {fileID: 0}
   maxSpeed: 15
   tractionCoefficient: 16000
   brakingCoefficient: -25000
-  mass: 12000
-  depotSprite: {fileID: 720365963335405917, guid: bb3428b2a66216a4389666f28860bf78, type: 3}
-  availableAmount: 2

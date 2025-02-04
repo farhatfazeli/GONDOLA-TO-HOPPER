@@ -1,3 +1,4 @@
+using System;
 using ScriptableObjects;
 using TMPro;
 using UnityEngine;
@@ -5,28 +6,62 @@ using UnityEngine.UI;
 
 public class ResearchInfoBoxManager : MonoBehaviour, IInfoBoxHoverHandler
 {
-    public RollingStock researchSubject;
-    
-    [Header("UI Elements")]
+    [Header("UI Elements")] 
+    public Image researchBackground;
     public TextMeshProUGUI researchName;
     public TextMeshProUGUI researchDescription;
+    public RectTransform researchUnlockSection;
     public TextMeshProUGUI researchCost;
     public Button researchButton;
     
+    private RollingStock _rollingStock;
+    
+    private void Awake()
+    {
+        _rollingStock = GetComponentInParent<ResearchItemManager>().rollingStock;
+    }
+
+    private void OnEnable()
+    {
+        _rollingStock.research.onResearchLocked += SetLockResearchUI;
+        _rollingStock.research.onResearchUnlocked += SetUnlockResearchUI;
+        _rollingStock.research.onResearchFinished += SetFinishResearchUI;
+    }
+
     private void Start()
     {
-        researchName.text = researchSubject.Name;
-        researchDescription.text = GetResearchDescription();
-        researchCost.text = $"Cost: {researchSubject.UnlockCost:N0} RP";
+        InitializeUI();
     }
-    
+
+    private void InitializeUI()
+    {
+        researchName.text = _rollingStock.Name;
+        researchDescription.text = GetResearchDescription();
+        researchCost.text = $"Cost: {_rollingStock.research.unlockCost:N0} RP";
+        
+        switch (_rollingStock.research.achievementState)
+        {
+            case AchievementState.Achieved:
+                SetFinishResearchUI();
+                break;
+            case AchievementState.Unavailable:
+                SetLockResearchUI();
+                break;
+            case AchievementState.Available:
+                SetUnlockResearchUI();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
     private string GetResearchDescription()
     {
         string cargoType = "";
         string wagonType = "Locomotive";
-        if (researchSubject.Type == RollingStockType.Wagon)
+        if (_rollingStock.Type == RollingStockType.Wagon)
         {
-            if((researchSubject as Wagon).cargoType == CargoType.Passengers)
+            if((_rollingStock as Wagon).cargoType == CargoType.Passengers)
             {
                 cargoType = "Passenger ";
             }
@@ -39,15 +74,33 @@ public class ResearchInfoBoxManager : MonoBehaviour, IInfoBoxHoverHandler
         return $"{cargoType}{wagonType}";
     }
 
-    private void Research()
+    public void Research()
     {
-        FinishResearch();
+        _rollingStock.research.FinishResearch();
     }
 
-    private void FinishResearch()
+    private void SetFinishResearchUI()
     {
-        researchCost.gameObject.SetActive(false);
-        researchButton.gameObject.SetActive(false);
+        researchBackground.color = SO_GameParameters.I.achievedColor;
+        
+        researchButton.interactable = false;
+        
+        researchButton.GetComponentInChildren<TextMeshProUGUI>().text = "Unlocked";
+    }
+    
+    private void SetUnlockResearchUI()
+    {
+        researchBackground.color = SO_GameParameters.I.availableColor;
+        
+        researchUnlockSection.gameObject.SetActive(true);
+        researchButton.interactable = true;
+    }
+    
+    private void SetLockResearchUI()
+    {
+        researchBackground.color = SO_GameParameters.I.unavailableColor;
+        
+        researchUnlockSection.gameObject.SetActive(false);
     }
 
     public void Show()
@@ -59,11 +112,12 @@ public class ResearchInfoBoxManager : MonoBehaviour, IInfoBoxHoverHandler
     {
         gameObject.SetActive(false);
     }
+
+    private void OnDisable()
+    {
+        _rollingStock.research.onResearchLocked -= SetLockResearchUI;
+        _rollingStock.research.onResearchUnlocked -= SetUnlockResearchUI;
+        _rollingStock.research.onResearchFinished -= SetFinishResearchUI;
+    }
 }
 
-public enum AchievementState
-{
-    Achieved,
-    Available,
-    Unavailable
-}

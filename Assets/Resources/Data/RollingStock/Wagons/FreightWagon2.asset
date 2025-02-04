@@ -16,3 +16,6 @@ MonoBehaviour:
   mass: 15000
   depotSprite: {fileID: 8495048639182658578, guid: 96c932ef1c3dbe348a47e21e841af844, type: 3}
   availableAmount: 5
+  achievementState: 2
+  unlockCost: 0
+  prerequisiteRollingStock: []

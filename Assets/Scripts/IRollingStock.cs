@@ -1,26 +1,43 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public interface IRollingStock
 {
-    string Name { get; }
-    RollingStockType Type { get; }
-    AchievementState AchievementState { get; set; }
-    int UnlockCost { get; }
-    int Mass { get; }
-    Sprite DepotSprite { get; }
-    int AvailableAmount { get; }
+    
 }
 
 public abstract class RollingStock : ScriptableObject, IRollingStock
 {
     public string Name => name;  // Unity allows you to use the asset name
     public abstract RollingStockType Type { get; }
-    public abstract AchievementState AchievementState { get; set; }
-    public abstract int UnlockCost { get; }
-    public abstract int Mass { get; }
-    public abstract Sprite DepotSprite { get; }
-    public abstract int AvailableAmount { get; set; }
+    
+    [Header ("Rolling stock parameters")]
+    public int mass;
+    public int availableAmount;
+    
+    
+    [Header ("Research parameters")]
+    public Research research;
+
+    [Header ("Sprite parameters")]
+    public Sprite depotSprite;
+
+    private void OnEnable()
+    {
+        research.Initialize();
+    }
+
+    public void Reset()
+    {
+        availableAmount = 0;
+        research.achievementState = AchievementState.Unavailable;
+
+        if (Name is "LocomotionNr1" or "FreightWagon1")
+        {
+            availableAmount = 1;
+        }
+    }
 }
 
 public enum RollingStockType

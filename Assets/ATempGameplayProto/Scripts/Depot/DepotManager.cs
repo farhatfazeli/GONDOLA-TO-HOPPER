@@ -48,7 +48,7 @@ public class DepotManager : MonoBehaviour
                 tractionCoefficient += locomotive.tractionCoefficient;
                 brakingCoefficient += locomotive.brakingCoefficient;
             }
-            mass += selection.Key.Mass * selection.Value;
+            mass += selection.Key.mass * selection.Value;
         }
         
         if (!hasLocomotive)
@@ -91,9 +91,9 @@ public class DepotManager : MonoBehaviour
         foreach(DepotItemManager depotItem in depotItems)
         {
             int selectedAmount = ParseSelectedAmount(depotItem.selectedAmount);
-            if (selectedAmount > depotItem.rollingStock.AvailableAmount)
+            if (selectedAmount > depotItem.rollingStock.availableAmount)
             {
-                selectedAmount = depotItem.rollingStock.AvailableAmount;
+                selectedAmount = depotItem.rollingStock.availableAmount;
             }
             if (selectedAmount > 0)
             {

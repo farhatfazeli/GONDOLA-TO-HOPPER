@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f339655e056f3b34187f565ab4b1b77a, type: 3}
   m_Name: LocomotionNr1
   m_EditorClassIdentifier: 
+  mass: 0
+  availableAmount: 0
+  research:
+    achievementState: 0
+    unlockCost: 0
+    previousResearch: []
+  depotSprite: {fileID: 0}
   maxSpeed: 6.7
   tractionCoefficient: 8500
   brakingCoefficient: -16000
-  mass: 0

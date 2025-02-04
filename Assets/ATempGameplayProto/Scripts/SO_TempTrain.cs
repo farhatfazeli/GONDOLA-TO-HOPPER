@@ -10,5 +10,7 @@ namespace ScriptableObjects
         public float tractionCoefficient;
         public float brakingCoefficient;
         public float mass;
+
+        public bool fileDeleted;
     }
 }

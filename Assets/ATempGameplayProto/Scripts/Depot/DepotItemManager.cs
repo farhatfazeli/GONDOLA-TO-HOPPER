@@ -17,13 +17,13 @@ public class DepotItemManager : MonoBehaviour
     private void Start()
     {
         itemName.text = rollingStock.Name;
-        itemImage.sprite = rollingStock.DepotSprite;
+        itemImage.sprite = rollingStock.depotSprite;
         UpdateUI();
     }
 
     private void UpdateUI()
     {
-        availableText.text = $"Available: {rollingStock.AvailableAmount}";
+        availableText.text = $"Available: {rollingStock.availableAmount}";
     }
     
 }
