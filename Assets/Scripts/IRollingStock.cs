@@ -14,29 +14,36 @@ public abstract class RollingStock : ScriptableObject, IRollingStock
     
     [Header ("Rolling stock parameters")]
     public int mass;
-    public int availableAmount;
-    
     
     [Header ("Research parameters")]
     public Research research;
+
+    [Header("Depot parameters")]
+    public Depot depot;
 
     [Header ("Sprite parameters")]
     public Sprite depotSprite;
 
     private void OnEnable()
     {
+        Initialize();
+    }
+    
+    private void Initialize()
+    {
         research.Initialize();
+        depot.Initialize(research);
     }
 
     public void Reset()
     {
-        availableAmount = 0;
         research.LockResearch();
-
-        if (Name is "LocomotionNr1" or "FreightWagon1")
-        {
-            availableAmount = 1;
-        }
+        depot.Reset();
+    }
+    
+    private void OnDisable()
+    {
+        research.onResearchFinished -= depot.ListInDepot;
     }
 }
 

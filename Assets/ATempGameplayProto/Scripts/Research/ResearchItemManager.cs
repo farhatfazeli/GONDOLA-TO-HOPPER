@@ -32,15 +32,15 @@ public class ResearchItemManager : MonoBehaviour
 
     private void CheckAchievementState()
     {
-        switch (rollingStock.research.AchievementState)
+        switch (rollingStock.research.ResearchState)
         {
-            case AchievementState.Achieved:
+            case ResearchState.Researched:
                 SetFinishResearchUI();
                 break;
-            case AchievementState.Unavailable:
+            case ResearchState.UnResearchable:
                 SetLockResearchUI();
                 break;
-            case AchievementState.Available:
+            case ResearchState.Researchable:
                 SetUnlockResearchUI();
                 break;
             default:

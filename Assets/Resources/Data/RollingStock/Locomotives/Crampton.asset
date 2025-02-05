@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: Crampton
   m_EditorClassIdentifier: 
   mass: 0
-  availableAmount: 0
   research:
+    researchState: 2
     unlockCost: 0
     previousResearch:
     - {fileID: 11400000, guid: d5617e2ee53a8c448b924829489282ce, type: 2}
+  depot:
+    availableAmount: 0
+    depotState: 0
+    purchaseCost: 1
   depotSprite: {fileID: 720365963335405917, guid: bb3428b2a66216a4389666f28860bf78, type: 3}
   maxSpeed: 15
   tractionCoefficient: 16000

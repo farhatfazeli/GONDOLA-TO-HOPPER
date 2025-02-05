@@ -17,7 +17,7 @@ public class ResourceManager : MonoBehaviour
         set
         {
             tonneKm = value;
-            onResourceUpdated?.Invoke(); // Trigger UI update if subscribed
+            onResourceUpdated?.Invoke();
         }
     }
     
@@ -28,12 +28,21 @@ public class ResourceManager : MonoBehaviour
         set
         {
             passengerKm = value;
-            onResourceUpdated?.Invoke(); // Trigger UI update if subscribed
+            onResourceUpdated?.Invoke();
         }
     }
     
     private static Action onResourceUpdated;
 
+    
+    public static bool SpendResources(float pKm, float tKm)
+    {
+        if (PassengerKm < pKm || tonneKm < tKm) return false;
+        PassengerKm -= pKm;
+        tonneKm -= tKm;
+        return true;
+    }
+    
     private void UpdateResourceUI()
     {
         passengerKmAmountText.text = PassengerKm.ToString("F0").PadLeft(9, '0');

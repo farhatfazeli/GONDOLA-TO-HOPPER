@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: PassengerWagon1
   m_EditorClassIdentifier: 
   mass: 10000
-  availableAmount: 1
   research:
-    achievementState: 1
+    researchState: 1
     unlockCost: 0
     previousResearch:
     - {fileID: 11400000, guid: d011f2becac07bb48abfa64bed0154d2, type: 2}
+  depot:
+    availableAmount: 0
+    depotState: 0
+    purchaseCost: 1
   depotSprite: {fileID: -3107203369821235118, guid: edb6a483e91138e4b88132697a6beec7, type: 3}
   cargoType: 0

@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: LocomotionNr1
   m_EditorClassIdentifier: 
   mass: 0
-  availableAmount: 0
   research:
-    achievementState: 0
+    researchState: 0
     unlockCost: 0
     previousResearch: []
+  depot:
+    availableAmount: 1
+    depotState: 2
+    purchaseCost: 1
   depotSprite: {fileID: 3394322766383775275, guid: 14876069b37c9bc4f99fab1a6cdf8ef8, type: 3}
   maxSpeed: 6.7
   tractionCoefficient: 8500

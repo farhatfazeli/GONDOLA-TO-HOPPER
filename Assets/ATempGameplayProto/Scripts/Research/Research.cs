@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class Research
 {
-    [SerializeField] private AchievementState achievementState;
-    public AchievementState AchievementState
+    [SerializeField] private ResearchState researchState;
+    public ResearchState ResearchState
     {
-        get => achievementState;
-        private set => achievementState = value;
+        get => researchState;
+        private set => researchState = value;
     }
 
     public int unlockCost;
@@ -42,7 +42,7 @@ public class Research
 
     private void CheckPreviousResearch()
     {
-        if (previousResearch.TrueForAll(r => r.research.AchievementState == AchievementState.Achieved))
+        if (previousResearch.TrueForAll(r => r.research.ResearchState == ResearchState.Researched))
         {
             UnlockResearch();
         }
@@ -54,26 +54,26 @@ public class Research
 
     public void FinishResearch()
     {
-        AchievementState = AchievementState.Achieved;
+        ResearchState = ResearchState.Researched;
         onResearchFinished?.Invoke();
     }
 
     public void UnlockResearch()
     {
-        AchievementState = AchievementState.Available;
+        ResearchState = ResearchState.Researchable;
         onResearchUnlocked?.Invoke();
     }
     
     public void LockResearch()
     {
-        AchievementState = AchievementState.Unavailable;
+        ResearchState = ResearchState.UnResearchable;
         onResearchLocked?.Invoke();
     }
 }
 
-public enum AchievementState
+public enum ResearchState
 {
-    Achieved,
-    Available,
-    Unavailable
+    Researched,
+    Researchable,
+    UnResearchable
 }

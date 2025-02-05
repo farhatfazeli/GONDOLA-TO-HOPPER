@@ -91,9 +91,9 @@ public class DepotManager : MonoBehaviour
         foreach(DepotItemManager depotItem in depotItems)
         {
             int selectedAmount = ParseSelectedAmount(depotItem.selectedAmount);
-            if (selectedAmount > depotItem.rollingStock.availableAmount)
+            if (selectedAmount > depotItem.rollingStock.depot.AvailableAmount)
             {
-                selectedAmount = depotItem.rollingStock.availableAmount;
+                selectedAmount = depotItem.rollingStock.depot.AvailableAmount;
             }
             if (selectedAmount > 0)
             {

@@ -39,15 +39,15 @@ public class ResearchInfoBoxManager : MonoBehaviour, IInfoBoxHoverHandler
         researchDescription.text = GetResearchDescription();
         researchCost.text = $"Cost: {_rollingStock.research.unlockCost:N0} RP";
         
-        switch (_rollingStock.research.AchievementState)
+        switch (_rollingStock.research.ResearchState)
         {
-            case AchievementState.Achieved:
+            case ResearchState.Researched:
                 SetFinishResearchUI();
                 break;
-            case AchievementState.Unavailable:
+            case ResearchState.UnResearchable:
                 SetLockResearchUI();
                 break;
-            case AchievementState.Available:
+            case ResearchState.Researchable:
                 SetUnlockResearchUI();
                 break;
             default:

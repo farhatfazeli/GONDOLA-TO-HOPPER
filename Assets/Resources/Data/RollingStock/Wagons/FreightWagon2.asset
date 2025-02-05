@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: FreightWagon2
   m_EditorClassIdentifier: 
   mass: 15000
-  availableAmount: 5
   research:
-    achievementState: 2
+    researchState: 2
     unlockCost: 0
     previousResearch:
     - {fileID: 11400000, guid: e2d26bd8ff136fa4b90d96e321c78f55, type: 2}
     - {fileID: 11400000, guid: 2664f0ba073d80449ac5310bc2905376, type: 2}
+  depot:
+    availableAmount: 0
+    depotState: 0
+    purchaseCost: 1
   depotSprite: {fileID: 8495048639182658578, guid: 96c932ef1c3dbe348a47e21e841af844, type: 3}
   cargoType: 1
