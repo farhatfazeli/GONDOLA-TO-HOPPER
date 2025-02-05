@@ -5,7 +5,13 @@ using UnityEngine;
 [System.Serializable]
 public class Research
 {
-    public AchievementState achievementState;
+    [SerializeField] private AchievementState achievementState;
+    public AchievementState AchievementState
+    {
+        get => achievementState;
+        private set => achievementState = value;
+    }
+
     public int unlockCost;
     public List<RollingStock> previousResearch;
     
@@ -36,7 +42,7 @@ public class Research
 
     private void CheckPreviousResearch()
     {
-        if (previousResearch.TrueForAll(r => r.research.achievementState == AchievementState.Achieved))
+        if (previousResearch.TrueForAll(r => r.research.AchievementState == AchievementState.Achieved))
         {
             UnlockResearch();
         }
@@ -48,19 +54,19 @@ public class Research
 
     public void FinishResearch()
     {
-        achievementState = AchievementState.Achieved;
+        AchievementState = AchievementState.Achieved;
         onResearchFinished?.Invoke();
     }
 
     public void UnlockResearch()
     {
-        achievementState = AchievementState.Available;
+        AchievementState = AchievementState.Available;
         onResearchUnlocked?.Invoke();
     }
     
     public void LockResearch()
     {
-        achievementState = AchievementState.Unavailable;
+        AchievementState = AchievementState.Unavailable;
         onResearchLocked?.Invoke();
     }
 }

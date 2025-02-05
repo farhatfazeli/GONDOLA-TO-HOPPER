@@ -10,20 +10,93 @@ public class DepotItemManager : MonoBehaviour
     
     [Header("UI Elements")]
     public TextMeshProUGUI itemName;
-    public Image itemImage;
     public TextMeshProUGUI availableText;
+    public Image itemImage;
     public TMP_InputField selectedAmount;
+    public RectTransform interactPanel;
+    public Button purchaseButton;
+    public RectTransform greyOutPanel;
+
+    private void OnEnable()
+    {
+        rollingStock.research.onResearchFinished += SetUsable;
+    }
 
     private void Start()
     {
+        InitializeUI();
+    }
+
+    private void InitializeUI()
+    {
         itemName.text = rollingStock.Name;
         itemImage.sprite = rollingStock.depotSprite;
+        CheckAchievementState();
+        CheckAvailability();
         UpdateUI();
+    }
+    
+    private void CheckAchievementState()
+    {
+        switch (rollingStock.research.AchievementState)
+        {
+            case AchievementState.Achieved:
+                SetBuyable();
+                break;
+            case AchievementState.Unavailable:
+                SetUnavailable();
+                break;
+            case AchievementState.Available:
+                SetUnavailable();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    private void CheckAvailability()
+    {
+        switch (rollingStock.availableAmount)
+        {
+            case 0:
+                SetUnavailable();
+                break;
+            default:
+                SetUsable();
+                break;
+        }
+    }
+
+    private void SetUnavailable()
+    {
+        interactPanel.gameObject.SetActive(false);
+        purchaseButton.interactable = false;
+        greyOutPanel.gameObject.SetActive(true);
+    }
+    
+    private void SetBuyable()
+    {
+        interactPanel.gameObject.SetActive(false);
+        purchaseButton.interactable = true;
+        greyOutPanel.gameObject.SetActive(true);
+    }
+
+    private void SetUsable()
+    {
+        interactPanel.gameObject.SetActive(true);
+        purchaseButton.interactable = true;
+        greyOutPanel.gameObject.SetActive(false);
     }
 
     private void UpdateUI()
     {
         availableText.text = $"Available: {rollingStock.availableAmount}";
+    }
+
+    public void Purchase()
+    {
+        rollingStock.availableAmount++;
+        UpdateUI();
     }
     
 }

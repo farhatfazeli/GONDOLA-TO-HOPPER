@@ -31,7 +31,7 @@ public abstract class RollingStock : ScriptableObject, IRollingStock
     public void Reset()
     {
         availableAmount = 0;
-        research.achievementState = AchievementState.Unavailable;
+        research.LockResearch();
 
         if (Name is "LocomotionNr1" or "FreightWagon1")
         {

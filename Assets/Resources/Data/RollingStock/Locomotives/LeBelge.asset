@@ -15,11 +15,10 @@ MonoBehaviour:
   mass: 0
   availableAmount: 0
   research:
-    achievementState: 1
     unlockCost: 0
     previousResearch:
     - {fileID: 11400000, guid: d011f2becac07bb48abfa64bed0154d2, type: 2}
-  depotSprite: {fileID: 0}
+  depotSprite: {fileID: -8590286932747780483, guid: e1ed18a28a6a2594696888d4384aac5b, type: 3}
   maxSpeed: 10
   tractionCoefficient: 12000
   brakingCoefficient: -18000

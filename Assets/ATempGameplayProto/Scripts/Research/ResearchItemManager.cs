@@ -27,7 +27,12 @@ public class ResearchItemManager : MonoBehaviour
     {
         researchSnippetName.text = rollingStock.Name;
 
-        switch (rollingStock.research.achievementState)
+        CheckAchievementState();
+    }
+
+    private void CheckAchievementState()
+    {
+        switch (rollingStock.research.AchievementState)
         {
             case AchievementState.Achieved:
                 SetFinishResearchUI();

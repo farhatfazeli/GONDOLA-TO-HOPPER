@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69777b9f3ea4bb281a19684cd610520, type: 3}
   m_Name: FreightWagon1
   m_EditorClassIdentifier: 
-  cargoType: 1
   mass: 6000
-  depotSprite: {fileID: -7695030020186157280, guid: a433acd6166803f4d828186354f840ef, type: 3}
   availableAmount: 3
-  achievementState: 2
-  unlockCost: 0
-  prerequisiteRollingStock: []
+  research:
+    achievementState: 1
+    unlockCost: 0
+    previousResearch:
+    - {fileID: 11400000, guid: d011f2becac07bb48abfa64bed0154d2, type: 2}
+  depotSprite: {fileID: -7695030020186157280, guid: a433acd6166803f4d828186354f840ef, type: 3}
+  cargoType: 1
