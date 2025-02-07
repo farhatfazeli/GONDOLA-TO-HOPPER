@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public class ResourceManager : MonoBehaviour
+public class ResourceManager : MonoBehaviour, ISaveable
 {
     public SO_GameParameters gameParameters;
     
@@ -52,8 +52,6 @@ public class ResourceManager : MonoBehaviour
     private void Start()
     {
         onResourceUpdated += UpdateResourceUI;
-        PassengerKm = gameParameters.passengerKm;
-        TonneKm = gameParameters.tonneKm;
     }
 
     private void Update()
@@ -71,7 +69,17 @@ public class ResourceManager : MonoBehaviour
     private void OnDestroy()
     {
         onResourceUpdated -= UpdateResourceUI;
-        gameParameters.passengerKm = PassengerKm;
-        gameParameters.tonneKm = TonneKm;
+    }
+
+    public void PopulateSaveData(SaveData sd)
+    {
+        sd.passengerKm = PassengerKm;
+        sd.tonneKm = TonneKm;
+    }
+
+    public void LoadFromSaveData(SaveData sd)
+    {
+        PassengerKm = sd.passengerKm;
+        TonneKm = sd.tonneKm;
     }
 }

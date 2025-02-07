@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8bdb9a2e6e11f04c8c818e72530a072, type: 3}
-  m_Name: 1337 Lucasartts
+  m_Name: 02 Mastodon
   m_EditorClassIdentifier: 
-  maxSpeed: 10
-  tractionCoefficient: 12000
-  brakingCoefficient: -18000
-  mass: 20000
+  maxSpeed: 6.7
+  tractionCoefficient: 20500
+  brakingCoefficient: -34000
+  mass: 54000
   fileDeleted: 0

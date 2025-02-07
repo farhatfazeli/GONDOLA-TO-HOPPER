@@ -107,7 +107,7 @@ public class DepotManager : MonoBehaviour
     private int ParseSelectedAmount(TMP_InputField selectedAmount)
     {
         return (int)(float.TryParse(selectedAmount.text, out float result) ? result : 0f);
-    }   
+    }
 
     private void CreateAsset(TempTrain train)
     {
@@ -117,7 +117,7 @@ public class DepotManager : MonoBehaviour
         newTrain.tractionCoefficient = train.tractionCoefficient;
         newTrain.brakingCoefficient = train.brakingCoefficient;
         newTrain.mass = train.mass;
-        
+
         //string path = _trainsFolderPath + "/" + newTrain.name + ".asset";
         string path = "Assets/ATempGameplayProto/Trains/" + newTrain.name + ".asset";
         path = "Assets/Resources/Data/RollingStock/Trains" + "/" + newTrain.name + ".asset";
