@@ -1,12 +1,10 @@
 using System;
-using UnityEngine;
 
+[Serializable]
 public class SaveData
 {
     public float passengerKm;
     public float tonneKm;
-    
-
 }
 
 public interface ISaveable

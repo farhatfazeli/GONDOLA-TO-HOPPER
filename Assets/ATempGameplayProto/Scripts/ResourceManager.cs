@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour, ISaveable
 {
-    public SO_GameParameters gameParameters;
-    
     [Header("UI References")]
     public TextMeshProUGUI passengerKmAmountText;
     public TextMeshProUGUI tonneKmAmountText;
@@ -52,6 +50,7 @@ public class ResourceManager : MonoBehaviour, ISaveable
     private void Start()
     {
         onResourceUpdated += UpdateResourceUI;
+        UpdateResourceUI();
     }
 
     private void Update()

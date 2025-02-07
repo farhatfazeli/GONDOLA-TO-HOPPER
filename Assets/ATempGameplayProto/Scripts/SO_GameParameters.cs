@@ -24,7 +24,8 @@ public class SO_GameParameters : ScriptableObject
     public Color32 unavailableColor = new Color32(0x7F, 0x7F, 0x7F, 0xFF);
     
     [Header("Save settings")]
-    public string saveFileName = "save.json";
+    public string saveFileName = "save";
+    public string fileExtension = "json";
     
     public static SO_GameParameters I { get; private set; }
     

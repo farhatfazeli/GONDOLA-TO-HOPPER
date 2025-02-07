@@ -12,15 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea03f7c5a1386d843b59739e079471ca, type: 3}
   m_Name: GameParameters
   m_EditorClassIdentifier: 
-  passengerKm: 1353
-  tonneKm: 10001
   loadSpeedUpFactor: 1
   travelSpeedUpFactor: 1
   loadClickProgressAmount: 0.1
   travelClickProgressAmount: 0.1
   unloadClickProgressAmount: 0.1
+  locomotivesFolderPathShort: Data/RollingStock/Locomotives
+  wagonsFolderPathShort: Data/RollingStock/Wagons
   trainsFolderPathShort: Data/RollingStock/Trains
   trainsFolderPathFull: Assets/Resources/Data/RollingStock/Trains
   achievedColor:
     serializedVersion: 2
     rgba: 4289396726
+  availableColor:
+    serializedVersion: 2
+    rgba: 4294377470
+  unavailableColor:
+    serializedVersion: 2
+    rgba: 4286545791
+  saveFileName: save
+  fileExtension: json
