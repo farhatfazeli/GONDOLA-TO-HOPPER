@@ -38,17 +38,29 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: LandscapeBack
+  - name: Sky
     uniqueID: 1124733413
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Train
+  - name: Background
     uniqueID: 2599805681
     locked: 0
-  - name: LandscapeFront
+  - name: Midground
     uniqueID: 1660733279
+    locked: 0
+  - name: Train
+    uniqueID: 3842140535
+    locked: 0
+  - name: ForeGround
+    uniqueID: 2669451889
+    locked: 0
+  - name: Foliage
+    uniqueID: 3365401319
+    locked: 0
+  - name: Particles
+    uniqueID: 1455230029
     locked: 0
   m_RenderingLayers:
   - Default

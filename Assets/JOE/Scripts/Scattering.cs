@@ -1,7 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.Cinemachine;
-using UnityEditor;
 using UnityEngine;
 
 public class Scattering : MonoBehaviour
@@ -14,55 +11,60 @@ public class Scattering : MonoBehaviour
     }
 
     [SerializeField] ScatterObject[] objectsToScatter;
-    [SerializeField] Transform[] layers;
-    [SerializeField] float overlapOffset, offsetX, offsetY;
-    private List<Vector2> usedPositions = new List<Vector2>();  //to-do
+    [SerializeField] float offsetX, offsetY;
     private List<GameObject> scatteredObjects = new List<GameObject>();
-    private Bounds[] bounds;
 
     [SerializeField] Camera cam;
-    private float camHeight, camWidth, leftBound, rightBound;
+    private float screenRight;
 
-    [SerializeField] Parallax[] parallaxSystem;
+    private float lastSpawnPosX;
+
+    [SerializeField] float spawnPaddingFactor = 1.5f;
+
+    [SerializeField] float minScaleFactor = 0.5f;
+    [SerializeField] float maxScaleFactor = 1.5f;
+
     private void Awake()
     {
-        camHeight = cam.orthographicSize * 2f;
-        camWidth = camHeight * cam.aspect;
-        leftBound = cam.transform.position.x - (camWidth/ 2);
-        rightBound = cam.transform.position.x + (camWidth/ 2);
-
-        bounds = new Bounds[layers.Length];
-        parallaxSystem = new Parallax[layers.Length];
-
-        for (int i = 0; i < layers.Length; i++)
-        {
-            bounds[i] = layers[i].GetComponent<SpriteRenderer>().bounds;
-            parallaxSystem[i] = layers[i].GetComponent<Parallax>();
-        }
-
+        UpdateScreenLimits();
+        Parallax.OnLooped += HandleParallaxLoop;
     }
+
+    private void OnDestroy()
+    {
+        Parallax.OnLooped -= HandleParallaxLoop;
+    }
+
     private void Update()
     {
-       // SpawnAssets();
-        removeFoliage();
-
+        UpdateScreenLimits();
+        RemoveOffscreenFoliage();
     }
 
-    public void SpawnAssets()
+    private void HandleParallaxLoop(Parallax parallaxLayer)
     {
-        foreach (var scatterObj in objectsToScatter)
+        if (parallaxLayer.id == 0)
         {
-            if (parallaxSystem[parallaxSystem.Length - 1].isLooping == true)
-            {
-                for (int i = 0; i < layers.Length; i++)
-                {
-                    ScatterOnLayer(scatterObj.prefabs, scatterObj.amount, bounds[i], layers[i]);
-                }
-            }
-
+            SpawnAssetsOnLayer();
         }
     }
-    private void ScatterOnLayer(GameObject[] prefabs, int amount, Bounds bounds, Transform layer)
+
+    private void SpawnAssetsOnLayer()
+    {
+        Bounds bounds = GetComponent<SpriteRenderer>().bounds;
+
+        if (lastSpawnPosX == 0)
+        {
+            lastSpawnPosX = screenRight;
+        }
+
+        foreach (var scatterObj in objectsToScatter)
+        {
+            ScatterObjects(scatterObj.prefabs, scatterObj.amount, bounds);
+        }
+    }
+
+    private void ScatterObjects(GameObject[] prefabs, int amount, Bounds bounds)
     {
         if (prefabs.Length == 0) return;
 
@@ -72,46 +74,44 @@ public class Scattering : MonoBehaviour
             float prefabHeight = prefab.GetComponent<SpriteRenderer>().bounds.size.y;
             float prefabWidth = prefab.GetComponent<SpriteRenderer>().bounds.size.x;
 
-            float randomY = Random.Range(bounds.min.y + offsetY, bounds.max.y - offsetY);  
-            float randomX = Random.Range(bounds.min.x + offsetX, bounds.max.x - offsetX);  
+            float spawnX = lastSpawnPosX + prefabWidth * spawnPaddingFactor;
 
-            Vector2 spawnPos = new Vector2(randomX + prefabWidth, randomY + prefabHeight / 2);
+            float spawnY = Random.Range(bounds.min.y + offsetY, bounds.max.y - offsetY);
+            spawnY = Mathf.Clamp(spawnY, bounds.min.y, bounds.max.y);
 
-            if (usedPositions.Contains(spawnPos))
-            {
-                i--; 
-                continue;
-            }
-
-            usedPositions.Add(spawnPos);
-
-            Vector2 scatterPos = new Vector2(spawnPos.x + layer.GetComponent<SpriteRenderer>().size.x, spawnPos.y);
-            GameObject spawnedObject = Instantiate(prefab, scatterPos, Quaternion.identity);
-            
+            Vector2 spawnPos = new Vector2(spawnX, spawnY);
+            GameObject spawnedObject = Instantiate(prefab, spawnPos, Quaternion.identity);
             scatteredObjects.Add(spawnedObject);
 
+            float randomScaleFactor = Random.Range(minScaleFactor, maxScaleFactor);
+            spawnedObject.transform.localScale *= randomScaleFactor;
+
             SpriteRenderer objRenderer = spawnedObject.GetComponent<SpriteRenderer>();
-            objRenderer.sortingOrder = layer.GetComponent<SpriteRenderer>().sortingOrder + 1;
+            objRenderer.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder + 1;
+
+            lastSpawnPosX = spawnX + prefabWidth * spawnPaddingFactor;
         }
     }
 
-    private void removeFoliage()
+    private void UpdateScreenLimits()
     {
-        //write logic to remove foliage that passed
-        for (int i = 0; i < scatteredObjects.Count; i++)
-        {
-            GameObject scObj = scatteredObjects[i];
-            float spriteWidth = scObj.GetComponent<SpriteRenderer>().bounds.size.x;
-            float xPos = scObj.transform.position.x;
+        Vector3 rightEdge = cam.ViewportToWorldPoint(new Vector3(1, 0.5f, 0));
+        screenRight = rightEdge.x;
+    }
 
-            if ((xPos + spriteWidth / 2) < leftBound)
+    private void RemoveOffscreenFoliage()
+    {
+        for (int i = scatteredObjects.Count - 1; i >= 0; i--)
+        {
+            GameObject obj = scatteredObjects[i];
+            float objX = obj.transform.position.x;
+            float spriteWidth = obj.GetComponent<SpriteRenderer>().bounds.size.x;
+
+            if (objX + spriteWidth < cam.ViewportToWorldPoint(Vector3.zero).x)
             {
                 scatteredObjects.RemoveAt(i);
-                Destroy(scObj); 
-
-                i--;  
+                Destroy(obj);
             }
         }
     }
-
 }
