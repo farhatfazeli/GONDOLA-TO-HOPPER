@@ -89,7 +89,7 @@ public class Scattering : MonoBehaviour
             SpriteRenderer objRenderer = spawnedObject.GetComponent<SpriteRenderer>();
             objRenderer.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder + 1;
 
-            lastSpawnPosX = spawnX + prefabWidth * spawnPaddingFactor;
+            lastSpawnPosX = spawnX + prefabWidth;
         }
     }
 
