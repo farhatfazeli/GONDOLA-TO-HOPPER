@@ -13,10 +13,9 @@ public class TrainDropdownManager : MonoBehaviour
     public TextMeshProUGUI tractionPowerText;
     public TextMeshProUGUI maxSpeedText;
     
-    public TempTrain selectedTrain;
+    public TrainObject selectedTrainObject;
 
-    private string _trainsFolderPath;
-    private readonly List<TempTrain> _trains = new List<TempTrain>();
+    private readonly List<TrainObject> _trains = new List<TrainObject>();
 
     private void Start()
     {
@@ -25,7 +24,6 @@ public class TrainDropdownManager : MonoBehaviour
 
     public void RefreshUI()
     {
-        _trainsFolderPath = SO_GameParameters.I.trainsFolderPathShort;
         LoadTrains();
         PopulateDropdown();
         SelectInitialTrain();
@@ -34,13 +32,7 @@ public class TrainDropdownManager : MonoBehaviour
     private void LoadTrains()
     {
         _trains.Clear();
-        TempTrain[] loadedTrains = Resources.LoadAll<TempTrain>(_trainsFolderPath);
-        _trains.AddRange(loadedTrains.Where(train => !train.fileDeleted));
-
-        if (_trains.Count == 0)
-        {
-            Debug.LogWarning("No train ScriptableObjects found in Resources/" + _trainsFolderPath);
-        }
+        _trains.AddRange(TrainManager.Instance.trains);
     }
     
     private void PopulateDropdown()
@@ -61,7 +53,7 @@ public class TrainDropdownManager : MonoBehaviour
     {
         if (_trains.Count > 0)
         {
-            selectedTrain = _trains[0];
+            selectedTrainObject = _trains[0];
             trainDropdown.value = 0;
             UpdateInfos();
         }
@@ -71,15 +63,15 @@ public class TrainDropdownManager : MonoBehaviour
     {
         if (index < 0 || index >= _trains.Count) return;
 
-        selectedTrain = _trains[index];
+        selectedTrainObject = _trains[index];
         UpdateInfos();
     }
 
     private void UpdateInfos()
     {
-        if (selectedTrain == null) return;
+        if (selectedTrainObject == null) return;
 
-        tractionPowerText.text = $"<i>Traction power: {selectedTrain.tractionCoefficient / 1000:F1} kN</i>";
-        maxSpeedText.text = $"<i>Max speed: {selectedTrain.maxSpeed:F1} km/h</i>";
+        tractionPowerText.text = $"<i>Traction power: {selectedTrainObject.tractionCoefficient / 1000:F1} kN</i>";
+        maxSpeedText.text = $"<i>Max speed: {selectedTrainObject.maxSpeed:F1} km/h</i>";
     }
 }

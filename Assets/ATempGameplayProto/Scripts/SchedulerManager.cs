@@ -29,7 +29,7 @@ public class SchedulerManager : MonoBehaviour
 
     private ScheduledTrainItem MakeScheduledTrainItem()
     {
-        ScheduledTrainItem scheduledTrainItem = new(routeDropdown.selectedRoute, trainDropdown.selectedTrain,
+        ScheduledTrainItem scheduledTrainItem = new(routeDropdown.selectedRoute, trainDropdown.selectedTrainObject,
             loadTypeDropdown.value == 0 ? LoadType.Passengers : LoadType.Cargo, ParseLoudAmount());
 
         return scheduledTrainItem;

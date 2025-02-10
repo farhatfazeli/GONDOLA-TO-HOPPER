@@ -5,7 +5,7 @@ using UnityEngine;
 public class TempTrainModel
 {
     private readonly TrainEngine _trainEngine;
-    public TempTrainModel(TempTrain _)
+    public TempTrainModel(TrainObject _)
     {
         _trainEngine = new TrainEngine(_.maxSpeed, _.tractionCoefficient, _.brakingCoefficient, _.mass);
     }

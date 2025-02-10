@@ -35,7 +35,7 @@ public class ScheduledTrainItemManager : MonoBehaviour
         _scheduledTrainItem = scheduledTrainItem;
 
         routeName.text = _scheduledTrainItem.route.routeName;
-        trainName.text = _scheduledTrainItem.tempTrain.Name;
+        trainName.text = _scheduledTrainItem.train.name;
         loadInfo.text = $"Hauling {_scheduledTrainItem.loadAmount} of {_scheduledTrainItem.loadType}";
     }
 

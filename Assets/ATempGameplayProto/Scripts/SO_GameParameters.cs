@@ -15,8 +15,6 @@ public class SO_GameParameters : ScriptableObject
     [Header("Folders")]
     public string locomotivesFolderPathShort = "Data/RollingStock/Locomotives"; // Relative to 'Resources'
     public string wagonsFolderPathShort = "Data/RollingStock/Wagons"; // Relative to 'Resources'
-    public string trainsFolderPathShort = "Data/RollingStock/Trains"; // Relative to 'Resources'
-    public string trainsFolderPathFull = "Assets/Resources/Data/RollingStock/Trains"; // Full path
 
     [Header("UI settings")] 
     public Color32 achievedColor = new Color32(0xF6, 0xFF, 0xAA, 0xFF);

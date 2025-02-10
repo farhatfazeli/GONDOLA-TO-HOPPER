@@ -12,14 +12,7 @@ public class DepotManager : MonoBehaviour
     
     public Transform locomotiveTransform;
     public Transform wagonTransform;
-
-    private string _trainsFolderPath;
-
-    private void Start()
-    {
-        _trainsFolderPath = SO_GameParameters.I.trainsFolderPathFull;
-    }
-
+    
     public void BuildTrain()
     {
         Dictionary<RollingStock, int> rollingStockSelection = IdentifyPlayerSelection();

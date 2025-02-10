@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SaveManager : PersistentSingleton<SaveManager>
 {
-    private SaveData _saveData;
+    [SerializeField]private SaveData _saveData;
     
     private List<ISaveable> _saveables;
     
@@ -23,9 +23,10 @@ public class SaveManager : PersistentSingleton<SaveManager>
         SaveGame();
     }
 
-    private void SaveGame()
+    public void SaveGame()
     {
         _saveData = new SaveData();
+        Debug.Log("Saving game");
         foreach (ISaveable saveable in _saveables)
         {
             saveable.PopulateSaveData(_saveData);
@@ -33,7 +34,7 @@ public class SaveManager : PersistentSingleton<SaveManager>
         _dataService.Save(_saveData);
     }
 
-    private void LoadGame()
+    public void LoadGame()
     {
         _saveData = _dataService.Load(SO_GameParameters.I.saveFileName);
         foreach (ISaveable saveable in _saveables)

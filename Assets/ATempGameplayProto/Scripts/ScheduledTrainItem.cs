@@ -12,7 +12,7 @@ public enum LoadType
 public class ScheduledTrainItem
 {
     public readonly Route route;
-    public readonly TempTrain tempTrain;
+    public readonly TrainObject train;
     public readonly LoadType loadType;
     public readonly float loadAmount;
     public readonly Progress loadProgress;
@@ -26,10 +26,10 @@ public class ScheduledTrainItem
     private bool _traveling;
     private bool _unloading;
     
-    public ScheduledTrainItem(Route route, TempTrain tempTrain, LoadType loadType, float loadAmount)
+    public ScheduledTrainItem(Route route, TrainObject train, LoadType loadType, float loadAmount)
     {
         this.route = route;
-        this.tempTrain = tempTrain;
+        this.train = train;
         this.loadType = loadType;
         this.loadAmount = loadAmount;
         loadProgress = new Progress(loadAmount);
@@ -37,7 +37,7 @@ public class ScheduledTrainItem
         unloadProgress = new Progress(loadAmount);
         isComplete = false;
         
-        _tempTrainModel = new TempTrainModel(tempTrain);
+        _tempTrainModel = new TempTrainModel(train);
     }
     
     public void ProgressLoadProgress(float amount)

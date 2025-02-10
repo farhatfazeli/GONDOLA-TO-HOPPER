@@ -22,11 +22,7 @@ public class ResetGameManager : MonoBehaviour
             wagon.Reset();
         }
         
-        TempTrain[] loadedTrains = Resources.LoadAll<TempTrain>(SO_GameParameters.I.trainsFolderPathShort);
-        foreach (var train in loadedTrains)
-        {
-            train.fileDeleted = true;
-        }
+        TrainManager.Instance.Reset();
         
     }
 }
