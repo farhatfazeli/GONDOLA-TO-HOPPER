@@ -2,7 +2,7 @@ using System;
 using ScriptableObjects;
 using UnityEngine;
 
-namespace Train.View
+namespace Trains.View
 {
     public class TrainWheelHandler : MonoBehaviour
     {

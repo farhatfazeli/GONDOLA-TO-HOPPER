@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Train.View
+namespace Trains.View
 {
     public class TrainRodHandler : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 using ScriptableObjects;
 using TMPro;
-using Train;
-using Train.View;
+using Trains;
+using Trains.View;
 using UnityEngine;
 
 namespace TempScripts

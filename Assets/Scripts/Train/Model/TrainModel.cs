@@ -2,7 +2,7 @@
 using System.Linq;
 using ScriptableObjects;
 
-namespace Train.Model
+namespace Trains.Model
 {
     public class TrainModel
     {

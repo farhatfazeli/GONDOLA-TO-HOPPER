@@ -23,14 +23,14 @@ public class DepotManager : MonoBehaviour
     public void BuildTrain()
     {
         Dictionary<RollingStock, int> rollingStockSelection = IdentifyPlayerSelection();
-        TempTrain train = CreateTrain(rollingStockSelection);
-        CreateAsset(train);
+        TrainObject train = CreateTrain(rollingStockSelection);
+        TrainManager.Instance.trains.Add(train);
         //ReduceRollingStock();
     }
 
-    private TempTrain CreateTrain(Dictionary<RollingStock, int> rollingStockSelection)
+    private TrainObject CreateTrain(Dictionary<RollingStock, int> rollingStockSelection)
     {
-        TempTrain train = ScriptableObject.CreateInstance<TempTrain>();
+        TrainObject train = new();
         
         bool hasLocomotive = false;
         
@@ -107,20 +107,5 @@ public class DepotManager : MonoBehaviour
     private int ParseSelectedAmount(TMP_InputField selectedAmount)
     {
         return (int)(float.TryParse(selectedAmount.text, out float result) ? result : 0f);
-    }
-
-    private void CreateAsset(TempTrain train)
-    {
-        TempTrain newTrain = ScriptableObject.CreateInstance<TempTrain>();
-        newTrain.name = train.name;
-        newTrain.maxSpeed = train.maxSpeed;
-        newTrain.tractionCoefficient = train.tractionCoefficient;
-        newTrain.brakingCoefficient = train.brakingCoefficient;
-        newTrain.mass = train.mass;
-
-        //string path = _trainsFolderPath + "/" + newTrain.name + ".asset";
-        string path = "Assets/ATempGameplayProto/Trains/" + newTrain.name + ".asset";
-        path = "Assets/Resources/Data/RollingStock/Trains" + "/" + newTrain.name + ".asset";
-        AssetDatabase.CreateAsset(newTrain, path);
     }
 }

@@ -1,5 +1,5 @@
 using ScriptableObjects;
-using Train.Model;
+using Trains.Model;
 using UnityEngine;
 
 public class TempTrainModel

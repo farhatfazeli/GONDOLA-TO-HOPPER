@@ -1,8 +1,8 @@
 using ScriptableObjects;
-using Train.Model;
+using Trains.Model;
 using UnityEngine;
 
-namespace Train.View
+namespace Trains.View
 {
     public class TrainView : MonoBehaviour
     {

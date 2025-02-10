@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using ScriptableObjects;
-using Train.Model;
-using Train.View;
+using Trains.Model;
+using Trains.View;
 using UnityEngine;
 
-namespace Train
+namespace Trains
 {
     public class TrainController : MonoBehaviour
     {
