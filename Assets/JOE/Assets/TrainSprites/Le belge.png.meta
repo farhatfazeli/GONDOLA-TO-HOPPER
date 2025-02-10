@@ -1,0 +1,287 @@
+fileFormatVersion: 2
+guid: 9a3df68ca4d01e64ab84e83951b549dc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4490474448890498197
+    second: Le belge_0
+  - first:
+      213: 4629107072938418374
+    second: Le belge_1
+  - first:
+      213: 2219002703548209764
+    second: Le belge_2
+  - first:
+      213: 6955117975734209732
+    second: Le belge_3
+  - first:
+      213: 4354499770057530248
+    second: Le belge_4
+  - first:
+      213: 801301046193780414
+    second: Le belge_5
+  - first:
+      213: 7751461467135507433
+    second: Le belge_6
+  - first:
+      213: 6497577926269592144
+    second: Le belge_7
+  - first:
+      213: 6917601545017996082
+    second: Le belge_8
+  - first:
+      213: 6588318404113711786
+    second: Le belge_9
+  - first:
+      213: -170779611578425447
+    second: Le belge_10
+  - first:
+      213: -5505100230909159109
+    second: Le belge_11
+  - first:
+      213: -6211925159797344853
+    second: Le belge_12
+  - first:
+      213: 2083714794495197627
+    second: Le belge_13
+  - first:
+      213: 2865911908637469973
+    second: Le belge_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Le belge_0
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1820
+        width: 4357
+        height: 1232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c061f38be515e30800000000000000
+      internalID: 4490474448890498197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Le belge_3
+      rect:
+        serializedVersion: 2
+        x: 4792
+        y: 1842
+        width: 2967
+        height: 2925
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc429af2fa858060800000000000000
+      internalID: 6955117975734209732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Le belge_5
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 275
+        width: 2599
+        height: 1255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb677885e0bce1b00800000000000000
+      internalID: 801301046193780414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Le belge_7
+      rect:
+        serializedVersion: 2
+        x: 3379
+        y: 476
+        width: 1048
+        height: 1092
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 052e7b3c2b80c2a50800000000000000
+      internalID: 6497577926269592144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Le belge_8
+      rect:
+        serializedVersion: 2
+        x: 4601
+        y: 715
+        width: 785
+        height: 774
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 233bd7444f1400060800000000000000
+      internalID: 6917601545017996082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a4d4054f552e7574398cc176e67c8c17
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Le belge_0: 4490474448890498197
+      Le belge_1: 4629107072938418374
+      Le belge_10: -170779611578425447
+      Le belge_11: -5505100230909159109
+      Le belge_12: -6211925159797344853
+      Le belge_13: 2083714794495197627
+      Le belge_14: 2865911908637469973
+      Le belge_2: 2219002703548209764
+      Le belge_3: 6955117975734209732
+      Le belge_4: 4354499770057530248
+      Le belge_5: 801301046193780414
+      Le belge_6: 7751461467135507433
+      Le belge_7: 6497577926269592144
+      Le belge_8: 6917601545017996082
+      Le belge_9: 6588318404113711786
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
