@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9174192651232615516
+--- !u!1 &8121165252660365529
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7766208251236056720}
-  - component: {fileID: 1673387154075464839}
+  - component: {fileID: 6311498315775985454}
+  - component: {fileID: 1859442316694947023}
   m_Layer: 0
-  m_Name: bush
+  m_Name: grass02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &7766208251236056720
+--- !u!4 &6311498315775985454
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9174192651232615516}
+  m_GameObject: {fileID: 8121165252660365529}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.39, y: -5.13, z: 0}
-  m_LocalScale: {x: 0.21576981, y: 0.21576981, z: 0.21576981}
+  m_LocalPosition: {x: -27.97, y: -4.45, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1673387154075464839
+--- !u!212 &1859442316694947023
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9174192651232615516}
+  m_GameObject: {fileID: 8121165252660365529}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: -929565977
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6206776131102902084, guid: a9ba2e004ad00b8479fd31d70669c515, type: 3}
+  m_Sprite: {fileID: 243550144, guid: a9ba2e004ad00b8479fd31d70669c515, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.5418415, y: 7.6600003}
+  m_Size: {x: 7.981394, y: 14.650001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

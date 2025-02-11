@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: fc389bba6b1e73b4f8b68876a6ea9abe
+guid: 57928b88f2ef4a245a65a476fc79a30c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9063135980634000035
-    second: Final_frontPlains_0
-  - first:
-      213: 8994483714502799183
-    second: Final_frontPlains_1
-  - first:
-      213: 3113698573011681683
-    second: Final_frontPlains_2
-  - first:
-      213: -9170726169876059120
-    second: Final_frontPlains_3
-  - first:
-      213: -4186737069827386753
-    second: Final_frontPlains_4
+      213: -7057227551280618171
+    second: Final_ForestLine_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Final_frontPlains_0
+      name: Final_ForestLine_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 2560
-        height: 753
+        height: 113
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,96 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d55bf3b18d5493280800000000000000
-      internalID: -9063135980634000035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Final_frontPlains_1
-      rect:
-        serializedVersion: 2
-        x: 771
-        y: 734
-        width: 34
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f4fa9f49843d2dc70800000000000000
-      internalID: 8994483714502799183
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Final_frontPlains_2
-      rect:
-        serializedVersion: 2
-        x: 1557
-        y: 731
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3918006ea54163b20800000000000000
-      internalID: 3113698573011681683
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Final_frontPlains_3
-      rect:
-        serializedVersion: 2
-        x: 1576
-        y: 732
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 01ca82813290bb080800000000000000
-      internalID: -9170726169876059120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Final_frontPlains_4
-      rect:
-        serializedVersion: 2
-        x: 1672
-        y: 734
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f729af831d8b5e5c0800000000000000
-      internalID: -4186737069827386753
+      spriteID: 545a1d2dee0bf0e90800000000000000
+      internalID: -7057227551280618171
       vertices: []
       indices: 
       edges: []
@@ -235,11 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Final_frontPlains_0: -9063135980634000035
-      Final_frontPlains_1: 8994483714502799183
-      Final_frontPlains_2: 3113698573011681683
-      Final_frontPlains_3: -9170726169876059120
-      Final_frontPlains_4: -4186737069827386753
+      Final_ForestLine_0: -7057227551280618171
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
