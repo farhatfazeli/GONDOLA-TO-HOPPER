@@ -5,6 +5,7 @@ public class TabManager : MonoBehaviour
 {
     [Header("UI Panels")]
     public GameObject plannerPanel;
+    public GameObject trainspottingPanel;
     public GameObject mapPanel;
     public GameObject depotPanel;
     public GameObject researchPanel;
@@ -14,6 +15,7 @@ public class TabManager : MonoBehaviour
     private void Start()
     {
         plannerPanel.SetActive(false);
+        trainspottingPanel.SetActive(false);
         mapPanel.SetActive(false);
         depotPanel.SetActive(false);    
         researchPanel.SetActive(false);
@@ -27,6 +29,11 @@ public class TabManager : MonoBehaviour
         plannerPanel.GetComponentInChildren<SchedulerManager>().RefreshUI();
     }
 
+    public void SwitchToTrainspotting()
+    {
+        SwitchToPanel(trainspottingPanel);
+    }
+    
     public void SwitchToMap()
     {
         SwitchToPanel(mapPanel);
