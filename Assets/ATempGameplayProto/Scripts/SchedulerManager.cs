@@ -27,12 +27,12 @@ public class SchedulerManager : MonoBehaviour
         scheduledTrainItemManager.Initialize(MakeScheduledTrainItem());
     }
 
-    private ScheduledTrainItem MakeScheduledTrainItem()
+    private Service MakeScheduledTrainItem()
     {
-        ScheduledTrainItem scheduledTrainItem = new(routeDropdown.selectedRoute, trainDropdown.selectedTrainObject,
+        Service service = new(routeDropdown.selectedRoute, trainDropdown.selectedTrainObject,
             loadTypeDropdown.value == 0 ? LoadType.Passengers : LoadType.Cargo, ParseLoadAmount());
 
-        return scheduledTrainItem;
+        return service;
     }
 
     private float ParseLoadAmount()

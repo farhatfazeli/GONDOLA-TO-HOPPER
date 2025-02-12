@@ -9,7 +9,7 @@ public enum LoadType
 }
 
 
-public class ScheduledTrainItem
+public class Service
 {
     public readonly Route route;
     public readonly TrainObject train;
@@ -26,7 +26,7 @@ public class ScheduledTrainItem
     private bool _traveling;
     private bool _unloading;
     
-    public ScheduledTrainItem(Route route, TrainObject train, LoadType loadType, float loadAmount)
+    public Service(Route route, TrainObject train, LoadType loadType, float loadAmount)
     {
         this.route = route;
         this.train = train;

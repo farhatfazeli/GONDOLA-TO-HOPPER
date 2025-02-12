@@ -4,6 +4,8 @@ using System.Globalization;
 using System.Linq;
 using ScriptableObjects;
 using TMPro;
+using Train;
+using Trains;
 using UnityEngine;
 
 public class TrainDropdownManager : MonoBehaviour
@@ -32,7 +34,7 @@ public class TrainDropdownManager : MonoBehaviour
     private void LoadTrains()
     {
         _trains.Clear();
-        _trains.AddRange(TrainManager.Instance.trains);
+        _trains.AddRange(TrainController.Instance.trains);
     }
     
     private void PopulateDropdown()

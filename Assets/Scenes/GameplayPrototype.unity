@@ -1831,7 +1831,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 301470291}
-  - component: {fileID: 301470290}
+  - component: {fileID: 301470292}
   m_Layer: 0
   m_Name: TrainManager
   m_TagString: Untagged
@@ -1839,19 +1839,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &301470290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301470289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 618531e0ca624aa48baac3b1c0c382f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UnparentOnAwake: 1
 --- !u!4 &301470291
 Transform:
   m_ObjectHideFlags: 0
@@ -1867,6 +1854,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &301470292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301470289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aecc29dbef7a22942a40549ee7f6d430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnparentOnAwake: 1
 --- !u!1 &314178985
 GameObject:
   m_ObjectHideFlags: 0

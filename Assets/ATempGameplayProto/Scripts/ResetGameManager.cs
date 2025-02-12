@@ -1,4 +1,5 @@
 using ScriptableObjects;
+using Train;
 using UnityEngine;
 
 public class ResetGameManager : MonoBehaviour
@@ -22,7 +23,7 @@ public class ResetGameManager : MonoBehaviour
             wagon.Reset();
         }
         
-        TrainManager.Instance.Reset();
+        TrainController.Instance.Reset();
         
     }
 }

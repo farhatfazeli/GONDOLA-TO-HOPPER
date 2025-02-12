@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using ScriptableObjects;
 using TMPro;
+using Train;
 using UnityEditor;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ public class DepotManager : MonoBehaviour
     {
         Dictionary<RollingStock, int> rollingStockSelection = IdentifyPlayerSelection();
         TrainObject train = CreateTrain(rollingStockSelection);
-        TrainManager.Instance.trains.Add(train);
+        TrainController.Instance.trains.Add(train);
         //ReduceRollingStock();
     }
 
