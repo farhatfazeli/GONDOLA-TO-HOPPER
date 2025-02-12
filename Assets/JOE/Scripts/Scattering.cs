@@ -80,9 +80,9 @@ public class Scattering : MonoBehaviour
             float prefabHeight = prefab.GetComponent<SpriteRenderer>().bounds.size.y;
 
             float spawnX = lastSpawnPosX + prefabWidth * spawnPaddingFactor;
-            float spawnY = Random.Range(bounds.min.y + offsetY, bounds.max.y - offsetY);
+            float spawnY = Random.Range(bounds.min.y + offsetY+(prefabHeight/2), bounds.max.y - offsetY-(prefabHeight/2));
 
-            Vector2 spawnPos = new Vector2(spawnX, spawnY + (prefabHeight/2));
+            Vector2 spawnPos = new Vector2(spawnX, spawnY);
             GameObject spawnedObject = Instantiate(prefab, spawnPos, Quaternion.identity);
 
             SpriteRenderer objRenderer = spawnedObject.GetComponent<SpriteRenderer>();
