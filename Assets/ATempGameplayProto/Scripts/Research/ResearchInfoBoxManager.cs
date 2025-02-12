@@ -61,7 +61,7 @@ public class ResearchInfoBoxManager : MonoBehaviour, IInfoBoxHoverHandler
         string wagonType = "Locomotive";
         if (_rollingStock.Type == RollingStockType.Wagon)
         {
-            if((_rollingStock as Wagon).cargoType == CargoType.Passengers)
+            if((_rollingStock as Wagon).loadType == LoadType.Passengers)
             {
                 cargoType = "Passenger ";
             }

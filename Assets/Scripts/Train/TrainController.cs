@@ -1,95 +1,67 @@
+using System;
 using System.Collections.Generic;
+using Persistence;
 using ScriptableObjects;
-using Trains.Model;
-using Trains.View;
-using UnityEngine;
+using Train.Infrastructure;
+using Train.Model;
 
 namespace Train
 {
     public class TrainController : PersistentSingleton<TrainController>, ISaveable
     {
-        public List<TrainObject> trains = new List<TrainObject>();
+        private readonly TrainServiceManager _trainServiceManager = new TrainServiceManager();
+        private readonly TrainConsistRepository _trainRepository = new TrainConsistRepository();
+        private TrainSaveManager _trainSaveManager;
 
-        public void Reset()
+        public event Action OnTrainListUpdated
         {
-            foreach (var train in trains)
-            {
-                train.Reset();
-            }
-            trains.Clear();
+            add => _trainRepository.OnTrainListUpdated += value;
+            remove => _trainRepository.OnTrainListUpdated -= value;
         }
+        
+        public bool DispatchTrain(TrainConsistModel trainConsist, Route route, LoadType loadType, int capacity)
+        {
+            if(_trainServiceManager.StartService(route, trainConsist, loadType, capacity))
+            {
+                _trainRepository.DispatchTrain(trainConsist);
+                return true;
+            }
+            return false;
+        }
+        
+        public bool RecallTrain(TrainConsistModel trainConsist)
+        {
+            if (_trainServiceManager.FinishService(trainConsist))
+            {
+                _trainRepository.RecallTrain(trainConsist);
+                return true;
+            }
+            return false;
+        }
+        
+        public void AddTrainConsist(TrainConsistModel trainConsist) => _trainRepository.AddTrain(trainConsist);
 
-        public void PopulateSaveData(SaveData sd)
-        {
-            foreach (var train in trains)
-            {
-                SaveData.TrainData td = new SaveData.TrainData
-                {
-                    uuid = train.uuid,
-                    name = train.name,
-                    maxSpeed = train.maxSpeed,
-                    tractionCoefficient = train.tractionCoefficient,
-                    brakingCoefficient = train.brakingCoefficient,
-                    mass = train.mass
-                };
-                sd.trainData.Add(td);
-            }
-        }
+        public void RemoveTrainConsist(TrainConsistModel trainConsist) => _trainRepository.RemoveTrain(trainConsist);
+        
+        public List<TrainConsistModel> GetAllTrainConsists() => _trainRepository.GetAllTrains();
+        public List<TrainConsistModel> GetAllTrainConsists(ServiceStatus serviceStatus) => _trainRepository.GetAllTrains(serviceStatus);
+        
+
+        public void PopulateSaveData(SaveData sd) => TrainSaveManager.PopulateSaveData(_trainRepository.GetAllTrains(), sd);
 
         public void LoadFromSaveData(SaveData sd)
         {
-            trains.Clear();
-
-            foreach (var trainData in sd.trainData)
-            {
-                TrainObject train = new TrainObject(trainData.uuid, trainData.name,trainData.maxSpeed, trainData.tractionCoefficient, trainData.brakingCoefficient, trainData.mass);
-                trains.Add(train);
-            }
+            _trainRepository.Clear();
+            _trainRepository.AddTrains(TrainSaveManager.LoadFromSaveData(sd));
         }
-        // private readonly List<TrainModel> _trainModels = new();
-        //
-        // public TrainModel trainModel;
-        //
-        // public Locomotive testLocomotive;
-        //
-        // public float lolfloat;
-        //
-        // private void Start()
-        // {
-        //     CreateTrainModel(testLocomotive);
-        // }
-        //
-        // private void Update()
-        // {
-        //     foreach (var model in _trainModels)
-        //         model.Update(Time.deltaTime);
-        // }
-        //
-        // private TrainModel CreateTrainModel(Locomotive locomotive)
-        // {
-        //     trainModel = new TrainModel(locomotive);
-        //     _trainModels.Add(trainModel);
-        //     var trainView = FindFirstObjectByType<TrainView>();
-        //     trainView.trainModel = trainModel;
-        //     return trainModel;
-        // }
-        //
-        // public void DispatchTrain()
-        // {
-        //     trainModel.StartEngine();
-        //     Debug.Log("Train dispfatched");
-        // }
-        //
-        // public void ShowView()
-        // {
-        //     Debug.Log("Train view shown");
-        // }
-        //
-        // public void DestroyView()
-        // {
-        //     Debug.Log("Train view destroyed");
-        // }
         
-        
+        public void Reset()
+        {
+            foreach (var train in _trainRepository.GetAllTrains())
+            {
+                train.Reset();
+            }
+            _trainRepository.Clear();
+        }
     }
 }

@@ -9,10 +9,10 @@ namespace ScriptableObjects
         public override RollingStockType Type => RollingStockType.Wagon;
         
         [Header ("Wagon parameters")]
-        public CargoType cargoType;
+        public LoadType loadType;
     }
     
-    public enum CargoType
+    public enum LoadType
     {
         Passengers,
         Freight

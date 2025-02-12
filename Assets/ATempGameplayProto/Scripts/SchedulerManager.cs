@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using ScriptableObjects;
 using TMPro;
+using Train.Model;
 using UnityEngine;
 
 public class SchedulerManager : MonoBehaviour
@@ -27,12 +29,12 @@ public class SchedulerManager : MonoBehaviour
         scheduledTrainItemManager.Initialize(MakeScheduledTrainItem());
     }
 
-    private Service MakeScheduledTrainItem()
+    private ServiceModel MakeScheduledTrainItem()
     {
-        Service service = new(routeDropdown.selectedRoute, trainDropdown.selectedTrainObject,
-            loadTypeDropdown.value == 0 ? LoadType.Passengers : LoadType.Cargo, ParseLoadAmount());
+        ServiceModel serviceModel = new(routeDropdown.selectedRoute, trainDropdown.selectedTrainConsistModel,
+            loadTypeDropdown.value == 0 ? LoadType.Passengers : LoadType.Freight, ParseLoadAmount());
 
-        return service;
+        return serviceModel;
     }
 
     private float ParseLoadAmount()

@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ScriptableObjects;
 using TMPro;
 using Train;
+using Train.Infrastructure;
+using Train.Model;
 using UnityEditor;
 using UnityEngine;
 
@@ -16,90 +19,52 @@ public class DepotManager : MonoBehaviour
     
     public void BuildTrain()
     {
-        Dictionary<RollingStock, int> rollingStockSelection = IdentifyPlayerSelection();
-        TrainObject train = CreateTrain(rollingStockSelection);
-        TrainController.Instance.trains.Add(train);
+        List<RollingStock> rollingStockSelection = IdentifyPlayerSelection();
+        string trainName = $"{trainNumberInput.text} {trainNameInput.text}";
+        
+        TrainConsistModel trainConsist = TrainConsistFactory.CreateTrainConsist(trainName, rollingStockSelection);
+        
+        TrainController.Instance.AddTrainConsist(trainConsist);
         //ReduceRollingStock();
     }
 
-    private TrainObject CreateTrain(Dictionary<RollingStock, int> rollingStockSelection)
+    private List<RollingStock> IdentifyPlayerSelection()
     {
-        TrainObject train = new();
-        
-        bool hasLocomotive = false;
-        
-        float maxSpeed = float.MaxValue;
-        float tractionCoefficient = 0;
-        float brakingCoefficient=  0;
-        int mass = 0;
-        
-        foreach (KeyValuePair<RollingStock, int> selection in rollingStockSelection)
-        {
-            if(selection.Key is Locomotive locomotive)
-            {
-                hasLocomotive = true;
-                maxSpeed = Mathf.Min(locomotive.maxSpeed, maxSpeed);
-                tractionCoefficient += locomotive.tractionCoefficient;
-                brakingCoefficient += locomotive.brakingCoefficient;
-            }
-            mass += selection.Key.mass * selection.Value;
-        }
-        
-        if (!hasLocomotive)
-        {
-            Debug.LogError("Train must have at least one locomotive");
-            return null;
-        }
+        List<DepotItemManager> depotItems = GetDepotItems();
+        List<RollingStock> rollingStockSelection = new List<RollingStock>();
 
-        train.name = $"{trainNumberInput.text} {trainNameInput.text}";
-        train.maxSpeed = maxSpeed;
-        train.tractionCoefficient = tractionCoefficient;
-        train.brakingCoefficient = brakingCoefficient;
-        train.mass = mass;
-        return train;
-    }
-
-    private Dictionary<RollingStock, int> IdentifyPlayerSelection()
-    {
-        List<DepotItemManager> depotItems = new List<DepotItemManager>();
-        foreach (Transform child in locomotiveTransform)
-        {
-            DepotItemManager depotItem = child.GetComponent<DepotItemManager>();
-            if (depotItem != null)
-            {
-                depotItems.Add(depotItem);
-            }
-        }
-        foreach (Transform child in wagonTransform)
-        {
-            DepotItemManager depotItem = child.GetComponent<DepotItemManager>();
-            if (depotItem != null)
-            {
-                depotItems.Add(depotItem);
-            }
-        }
-        
-
-        Dictionary<RollingStock, int> rollingStockSelection = new Dictionary<RollingStock, int>();
-        
         foreach(DepotItemManager depotItem in depotItems)
         {
             int selectedAmount = ParseSelectedAmount(depotItem.selectedAmount);
-            if (selectedAmount > depotItem.rollingStock.depot.AvailableAmount)
-            {
-                selectedAmount = depotItem.rollingStock.depot.AvailableAmount;
-            }
+            selectedAmount = Mathf.Min(selectedAmount, depotItem.rollingStock.depot.AvailableAmount);
+
             if (selectedAmount > 0)
             {
-                rollingStockSelection.Add(depotItem.rollingStock, selectedAmount);
+                rollingStockSelection.AddRange(Enumerable.Repeat(depotItem.rollingStock, selectedAmount));
             }
         }
         
         return rollingStockSelection;
     }
     
+    private List<DepotItemManager> GetDepotItems()
+    {
+        List<DepotItemManager> depotItems = new List<DepotItemManager>();
+        depotItems.AddRange(GetDepotItemsFromTransform(locomotiveTransform));
+        depotItems.AddRange(GetDepotItemsFromTransform(wagonTransform));
+        return depotItems;
+    }
+    
+    private List<DepotItemManager> GetDepotItemsFromTransform(Transform parentTransform)
+    {
+        return parentTransform.Cast<Transform>()
+            .Select(child => child.GetComponent<DepotItemManager>())
+            .Where(depotItem => depotItem != null)
+            .ToList();
+    }
+    
     private int ParseSelectedAmount(TMP_InputField selectedAmount)
     {
-        return (int)(float.TryParse(selectedAmount.text, out float result) ? result : 0f);
+        return int.TryParse(selectedAmount.text, out int result) ? result : 0;
     }
 }

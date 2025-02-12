@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Train.Model;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
 using Slider = UnityEngine.UI.Slider;
@@ -21,7 +22,7 @@ public class ScheduledTrainItemManager : MonoBehaviour
     public Button travelButton;
     public Button unloadButton;
 
-    private Service _service;
+    private ServiceModel _serviceModel;
 
     private Image _image;
     
@@ -30,29 +31,29 @@ public class ScheduledTrainItemManager : MonoBehaviour
         _image = GetComponent<Image>();
     }
     
-    public void Initialize(Service service)
+    public void Initialize(ServiceModel serviceModel)
     {
-        _service = service;
+        _serviceModel = serviceModel;
 
-        routeName.text = _service.route.routeName;
-        trainName.text = _service.train.name;
-        loadInfo.text = $"Hauling {_service.loadAmount} of {_service.loadType}";
+        routeName.text = _serviceModel.route.routeName;
+        trainName.text = _serviceModel.train.name;
+        loadInfo.text = $"Hauling {_serviceModel.loadAmount} of {_serviceModel.loadType}";
     }
 
     private void UpdateProgressSliders()
     {
-        loadProgressSlider.value = _service.loadProgress.Value;
-        travelProgressSlider.value = _service.travelProgress.Value;
-        unloadProgressSlider.value = _service.unloadProgress.Value;
+        loadProgressSlider.value = _serviceModel.loadProgress.Value;
+        travelProgressSlider.value = _serviceModel.travelProgress.Value;
+        unloadProgressSlider.value = _serviceModel.unloadProgress.Value;
     }
 
     public void LoadTrain()
     {
-        if (_service.isComplete) return;
-        _service.ProgressLoadProgress(SO_GameParameters.I.loadClickProgressAmount);
+        if (_serviceModel.isComplete) return;
+        _serviceModel.ProgressLoadProgress(SO_GameParameters.I.loadClickProgressAmount);
         UpdateProgressSliders();
 
-        if (_service.loadProgress.IsComplete)
+        if (_serviceModel.loadProgress.IsComplete)
         {
             loadButton.interactable = false;
             travelButton.interactable = true;
@@ -61,12 +62,12 @@ public class ScheduledTrainItemManager : MonoBehaviour
 
     public void TravelTrain()
     {
-        if (_service.isComplete) return;
-        if (_service.loadProgress.Value < 1) return;
-        _service.ProgressTravelProgress(SO_GameParameters.I.travelClickProgressAmount);
+        if (_serviceModel.isComplete) return;
+        if (_serviceModel.loadProgress.Value < 1) return;
+        _serviceModel.ProgressTravelProgress(SO_GameParameters.I.travelClickProgressAmount);
         UpdateProgressSliders();
 
-        if (_service.travelProgress.IsComplete)
+        if (_serviceModel.travelProgress.IsComplete)
         {
             travelButton.interactable = false;
             unloadButton.interactable = true;
@@ -75,35 +76,35 @@ public class ScheduledTrainItemManager : MonoBehaviour
 
     public void UnloadTrain()
     {
-        if (_service.isComplete) return;
-        if (_service.travelProgress.Value < 1) return;
-        _service.ProgressUnloadProgress(SO_GameParameters.I.unloadClickProgressAmount);
+        if (_serviceModel.isComplete) return;
+        if (_serviceModel.travelProgress.Value < 1) return;
+        _serviceModel.ProgressUnloadProgress(SO_GameParameters.I.unloadClickProgressAmount);
         UpdateProgressSliders();
 
-        if (_service.unloadProgress.IsComplete) unloadButton.interactable = false;
+        if (_serviceModel.unloadProgress.IsComplete) unloadButton.interactable = false;
 
-        if (_service.isComplete) _image.color = SO_GameParameters.I.achievedColor;
+        if (_serviceModel.isComplete) _image.color = SO_GameParameters.I.achievedColor;
     }
 
     private void Update()
     {
-        _service.Update();
+        _serviceModel.Update();
         UpdateProgressSliders();
-        if (_service.loadProgress.IsComplete)
+        if (_serviceModel.loadProgress.IsComplete)
         {
             loadButton.interactable = false;
             travelButton.interactable = true;
         }
-        if (_service.travelProgress.IsComplete)
+        if (_serviceModel.travelProgress.IsComplete)
         {
             travelButton.interactable = false;
             unloadButton.interactable = true;
         }
 
-        if (_service.unloadProgress.IsComplete)
+        if (_serviceModel.unloadProgress.IsComplete)
             unloadButton.interactable = false;
         
-        if (_service.isComplete)
+        if (_serviceModel.isComplete)
             _image.color = SO_GameParameters.I.achievedColor;
         
     }

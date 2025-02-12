@@ -1,23 +1,33 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using ScriptableObjects;
 using TMPro;
 using Train;
-using Trains;
+using Train.Model;
 using UnityEngine;
 
 public class TrainDropdownManager : MonoBehaviour
 {
-    [Header("UI Elements")]
+    [Header("UI Elements")] 
     public TMP_Dropdown trainDropdown;
     public TextMeshProUGUI tractionPowerText;
     public TextMeshProUGUI maxSpeedText;
-    
-    public TrainObject selectedTrainObject;
 
-    private readonly List<TrainObject> _trains = new List<TrainObject>();
+    private TrainController _trainController;
+    
+    private void Awake()
+    {
+        _trainController = TrainController.Instance;
+    }
+
+    private void OnEnable()
+    {
+        _trainController.OnTrainListUpdated += RefreshUI;
+    }
+    
+    private void OnDisable()
+    {
+        _trainController.OnTrainListUpdated -= RefreshUI;
+    }
 
     private void Start()
     {
@@ -26,54 +36,44 @@ public class TrainDropdownManager : MonoBehaviour
 
     public void RefreshUI()
     {
-        LoadTrains();
         PopulateDropdown();
         SelectInitialTrain();
-    }
-    
-    private void LoadTrains()
-    {
-        _trains.Clear();
-        _trains.AddRange(TrainController.Instance.trains);
     }
     
     private void PopulateDropdown()
     {
         trainDropdown.ClearOptions();
 
-        List<string> trainNames = new List<string>();
-        foreach (var train in _trains)
-        {
-            trainNames.Add(train.name);
-        }
+        List<TrainConsistModel> trains = _trainController.GetAllTrainConsists();
+        var trainNames = trains.ConvertAll(train => train.name);
 
         trainDropdown.AddOptions(trainNames);
+        trainDropdown.onValueChanged.RemoveAllListeners();
         trainDropdown.onValueChanged.AddListener(OnTrainSelected);
     }
-    
+
     private void SelectInitialTrain()
     {
-        if (_trains.Count > 0)
+        List<TrainConsistModel> trains = _trainController.GetAllTrainConsists();
+
+        if (trains.Count > 0)
         {
-            selectedTrainObject = _trains[0];
+            OnTrainSelected(0); // Automatically selects the first train
             trainDropdown.value = 0;
-            UpdateInfos();
         }
     }
 
     public void OnTrainSelected(int index)
     {
-        if (index < 0 || index >= _trains.Count) return;
+        List<TrainConsistModel> trains = _trainController.GetAllTrainConsists();
+        if (index < 0 || index >= trains.Count) return;
 
-        selectedTrainObject = _trains[index];
-        UpdateInfos();
+        UpdateInfos(trains[index]);
     }
 
-    private void UpdateInfos()
+    private void UpdateInfos(TrainConsistModel train)
     {
-        if (selectedTrainObject == null) return;
-
-        tractionPowerText.text = $"<i>Traction power: {selectedTrainObject.tractionCoefficient / 1000:F1} kN</i>";
-        maxSpeedText.text = $"<i>Max speed: {selectedTrainObject.maxSpeed:F1} km/h</i>";
+        tractionPowerText.text = $"<i>Traction power: {train.TractionCoefficient / 1000:F1} kN</i>";
+        maxSpeedText.text = $"<i>Max speed: {train.MaxSpeed:F1} km/h</i>";
     }
 }

@@ -1,13 +1,14 @@
 using ScriptableObjects;
+using Train.Model;
 using Trains.Model;
 using UnityEngine;
 
 public class TempTrainModel
 {
     private readonly TrainEngine _trainEngine;
-    public TempTrainModel(TrainObject _)
+    public TempTrainModel(TrainConsistModel _)
     {
-        _trainEngine = new TrainEngine(_.maxSpeed, _.tractionCoefficient, _.brakingCoefficient, _.mass);
+        _trainEngine = new TrainEngine(_.maxSpeed, _.tractionCoefficient, _.brakingCoefficient, _.totalMass);
     }
 
     public void DispatchTrain()
