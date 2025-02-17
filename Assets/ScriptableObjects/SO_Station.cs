@@ -8,8 +8,11 @@ namespace ScriptableObjects
         public string stationName;
         
         public int resourceCost;
-        public Progress buildProgress;
+        public ProgressTracker buildProgressTracker;
         
         public Route route;
+
+        public float passengerLoadRate;
+        public float freightLoadRate;
     }
 }

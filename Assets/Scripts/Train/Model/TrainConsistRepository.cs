@@ -54,16 +54,6 @@ namespace Train.Model
             return allTrains;
         }
         
-        public List<TrainConsistModel> GetAllTrains(ServiceStatus serviceStatus)
-        {
-            return serviceStatus switch
-            {
-                ServiceStatus.WaitingInDepot => new List<TrainConsistModel>(_standbyTrains),
-                ServiceStatus.InActiveService => new List<TrainConsistModel>(_dispatchedTrains),
-                _ => throw new ArgumentOutOfRangeException(nameof(serviceStatus), serviceStatus, null)
-            };
-        }
-        
         public void Clear()
         {
             _standbyTrains.Clear();

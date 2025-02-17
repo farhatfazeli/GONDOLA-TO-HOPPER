@@ -4,128 +4,108 @@ using UnityEngine;
 
 namespace Train.Model
 {
+    public enum ServiceStatus
+    {
+        WaitingInDepot,
+        Loading,
+        Travelling,
+        Unloading
+    }
+
     public class ServiceModel
     {
-        public readonly Route route;
-        public readonly TrainConsistModel train;
-        public readonly LoadType loadType;
-        public readonly float loadAmount;
-        public readonly Progress loadProgress;
-        public readonly Progress travelProgress;
-        public readonly Progress unloadProgress;
-        public bool isComplete;
-    
-        private readonly TempTrainModel _tempTrainModel;
-
-        private bool _loading;
-        private bool _traveling;
-        private bool _unloading;
-    
-        public ServiceModel(Route route, TrainConsistModel train, LoadType loadType, float loadAmount)
+        public ServiceStatus ServiceStatus
         {
-            this.route = route;
-            this.train = train;
-            this.loadType = loadType;
-            this.loadAmount = loadAmount;
-            loadProgress = new Progress(loadAmount);
-            travelProgress = new Progress(route.distance);
-            unloadProgress = new Progress(loadAmount);
-            isComplete = false;
-        
-            _tempTrainModel = new TempTrainModel(train);
-        }
-    
-        public void ProgressLoadProgress(float amount)
-        {
-            if (!_loading && !loadProgress.IsComplete)
+            get => _serviceStatus;
+            private set
             {
-                _loading = true;
-                Load();
+                _serviceStatus = value;
+                OnServiceStatusChanged?.Invoke(ServiceStatus);
             }
-        
-            loadProgress.UpdateProgressPercentage(amount);
-        
-            if(loadProgress.IsComplete) _loading = false;
-        }
-    
-        private void Load()
-        {
-            loadProgress.UpdateProgress(SO_GameParameters.I.loadSpeedUpFactor * 10f * Time.deltaTime);
-            if(loadProgress.IsComplete) _loading = false;
-        }
-    
-        public void ProgressTravelProgress(float amount)
-        {
-            if (!_traveling && !travelProgress.IsComplete)
-            {
-                _traveling = true;
-                _tempTrainModel.DispatchTrain();
-                Travel();
-            }
-        
-            travelProgress.UpdateProgressPercentage(amount);
-        
-            if(travelProgress.IsComplete) _traveling = false;
         }
 
-        private void Travel()
-        {
-            travelProgress.UpdateProgress(SO_GameParameters.I.travelSpeedUpFactor * _tempTrainModel.Update(Time.deltaTime));
-            if (travelProgress.IsComplete) _traveling = false;
-        }
-    
-        public void ProgressUnloadProgress(float amount)
-        {
-            if (!_unloading && !unloadProgress.IsComplete)
-            {
-                _unloading = true;
-                Unload();
-            }
-        
-            unloadProgress.UpdateProgressPercentage(amount);
+        public readonly StationMaster departureStationMaster;
+        public readonly StationMaster arrivalStationMaster;
+        public readonly TrainDriver trainDriver;
 
-            if (!unloadProgress.IsComplete) return;
-            _unloading = false;
-            isComplete = true;
-            switch (loadType)
-            {
-                case LoadType.Passengers:
-                    ResourceManager.PassengerKm += loadAmount;
-                    break;
-                case LoadType.Freight:
-                    ResourceManager.TonneKm += loadAmount;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
-    
-        private void Unload()
+        /// <summary>
+        /// Indicates that the service is complete when the train has finished unloading and returned to depot.
+        /// </summary>
+        public bool IsComplete => ServiceStatus == ServiceStatus.WaitingInDepot;
+
+        public event Action<ServiceStatus> OnServiceStatusChanged;
+
+        private ServiceStatus _serviceStatus;
+
+        public ServiceModel(Route route, TrainConsistModel train)
         {
-            unloadProgress.UpdateProgress(SO_GameParameters.I.loadSpeedUpFactor * 10f * Time.deltaTime);
-        
-            if (!unloadProgress.IsComplete) return;
-            _unloading = false;
-            isComplete = true;
-            switch (loadType)
+            departureStationMaster =
+                new StationMaster(route.departureStation, StationMasterType.DepartingStationMaster, train);
+            arrivalStationMaster =
+                new StationMaster(route.arrivalStation, StationMasterType.ArrivingStationMaster, train);
+            trainDriver = new TrainDriver(train.engine, route);
+        }
+
+        /// <summary>
+        /// Begins the loading phase at the departure station.
+        /// </summary>
+        public void StartLoading()
+        {
+            if (ServiceStatus != ServiceStatus.WaitingInDepot) return;
+            ServiceStatus = ServiceStatus.Loading;
+            departureStationMaster.StartProcess();
+        }
+
+        /// <summary>
+        /// Transitions to the travel phase once loading is complete.
+        /// </summary>
+        private void StartTravelling()
+        {
+            if (ServiceStatus != ServiceStatus.Loading) return;
+            if (!departureStationMaster.IsProcessFinished) return;
+            ServiceStatus = ServiceStatus.Travelling;
+            trainDriver.StartDriving();
+        }
+
+        /// <summary>
+        /// Begins the unloading phase at the arrival station once travel is complete.
+        /// </summary>
+        public void StartUnloading()
+        {
+            if (ServiceStatus != ServiceStatus.Travelling) return;
+            if (!trainDriver.IsTravelComplete) return;
+            ServiceStatus = ServiceStatus.Unloading;
+            arrivalStationMaster.StartProcess();
+        }
+
+        public void CompleteService()
+        {
+            if (ServiceStatus != ServiceStatus.Unloading) return;
+            if (!arrivalStationMaster.IsProcessFinished) return;
+            ServiceStatus = ServiceStatus.WaitingInDepot;
+        }
+
+        /// <summary>
+        /// Call this method every frame to update the service.
+        /// </summary>
+        public void Update(float deltaTime)
+        {
+            switch (ServiceStatus)
             {
-                case LoadType.Passengers:
-                    ResourceManager.PassengerKm += loadAmount;
+                case ServiceStatus.Loading:
+                    departureStationMaster.Update(deltaTime);
                     break;
-                case LoadType.Freight:
-                    ResourceManager.TonneKm += loadAmount;
+                case ServiceStatus.Travelling:
+                    trainDriver.Update(deltaTime);
+                    break;
+                case ServiceStatus.Unloading:
+                    arrivalStationMaster.Update(deltaTime);
+                    break;
+                case ServiceStatus.WaitingInDepot:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
-
-        public void Update()
-        {
-            if(_loading) Load();
-            if(_traveling) Travel();
-            if(_unloading) Unload();
-        }
-    
     }
 }

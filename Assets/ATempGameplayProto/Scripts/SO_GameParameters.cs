@@ -3,7 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SO_GameParameters", menuName = "Scriptable Objects/SO_GameParameters")]
 public class SO_GameParameters : ScriptableObject
 {
-    [Header("Speed up parameters")] 
+    [Header("Speed up parameters")]
+    public float gameSpeedUpFactor = 1f;
     public float loadSpeedUpFactor = 1f;
     public float travelSpeedUpFactor = 1f;
 

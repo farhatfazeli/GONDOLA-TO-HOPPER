@@ -7,12 +7,12 @@ namespace ScriptableObjects
     public class Route : ScriptableObject
     {
         public string routeName;
-        public Station startStation;
-        public Station endStation;
+        public Station departureStation;
+        public Station arrivalStation;
         public float distance;
         
         public int resourceCost;
-        public Progress buildProgress;
+        public ProgressTracker buildProgressTracker;
     
         public List<Landscape> landscapes;
     }

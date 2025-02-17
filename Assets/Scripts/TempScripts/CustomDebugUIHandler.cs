@@ -25,11 +25,11 @@ namespace TempScripts
 
         private void DebugTrainEngineValues()
         {
-            var (speed, acceleration, tractionForce, pulledMass) = _trainView.GetPhysicsValues();
-            speedText.text = "Speed: " + speed + " m/s" + "\n" +
-                             "Acceleration: " + acceleration + " m/s²" + "\n" +
-                             "Traction Force: " + tractionForce + " N" + "\n" +
-                             "Pulled Mass: " + pulledMass + " kg";
+            // var (speed, acceleration, tractionForce, pulledMass) = _trainView.GetPhysicsValues();
+            // speedText.text = "Speed: " + speed + " m/s" + "\n" +
+            //                  "Acceleration: " + acceleration + " m/s²" + "\n" +
+            //                  "Traction Force: " + tractionForce + " N" + "\n" +
+            //                  "Pulled Mass: " + pulledMass + " kg";
         }
 
     }
