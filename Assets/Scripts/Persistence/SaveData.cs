@@ -10,9 +10,6 @@ namespace Persistence
         public float tonneKm;
     
         public List<TrainConsistSaveData> trainConsistSD = new List<TrainConsistSaveData>();
-    
-    
-
     }
 
     [Serializable]

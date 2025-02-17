@@ -21,7 +21,7 @@ public class StationInfoBoxManager : MonoBehaviour, IInfoBoxHoverHandler
     private void Start()
     {
         stationName.text = station.stationName;
-        stationResourceCost.text = $"Station cost: {station.resourceCost:N0} tonne-passengers";
+        stationResourceCost.text = $"Station cost: {station.buildCost:N0} tonne-passengers";
         routeResourceCost.text = $"Route cost: {station.route.resourceCost:N0} tonne-kms";
         distanceText.text = $"Distance: {station.route.distance:N0} km";
         

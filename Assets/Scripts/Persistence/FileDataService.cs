@@ -21,6 +21,7 @@ public class FileDataService : IDataService
         _serializer = serializer;
         _fileName = SO_GameParameters.I.saveFileName;
         _dataPath = Application.persistentDataPath;
+        Debug.Log(_dataPath);
         _fileExtension = SO_GameParameters.I.fileExtension;
     }
     

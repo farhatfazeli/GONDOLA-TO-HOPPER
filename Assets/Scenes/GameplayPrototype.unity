@@ -1077,9 +1077,9 @@ RectTransform:
   - {fileID: 1688527661}
   m_Father: {fileID: 1333857321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 470.40002, y: -51.785553}
   m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &184862554
@@ -3122,12 +3122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1749ad39838d948a9ca50a1b326896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  routeDropdown: {fileID: 985197613}
-  trainDropdown: {fileID: 803895821}
-  loadTypeDropdown: {fileID: 1635892210}
-  loadAmountInput: {fileID: 2044538876}
-  scheduledTrainList: {fileID: 1125860047}
-  scheduledTrainItemPrefab: {fileID: 1858652649218005032, guid: 2283e9eadb5184b4b969bde17f6f3c9b, type: 3}
 --- !u!1 &475400656
 GameObject:
   m_ObjectHideFlags: 0
@@ -4744,9 +4738,9 @@ RectTransform:
   - {fileID: 1667694994}
   m_Father: {fileID: 1333857321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1724.8, y: -51.785553}
   m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &707962008
@@ -5772,9 +5766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf7ba09975bf4042b2bfd9586bc7c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainDropdown: {fileID: 803895818}
-  tractionPowerText: {fileID: 805580779}
-  maxSpeedText: {fileID: 827246771}
 --- !u!1 &805580777
 GameObject:
   m_ObjectHideFlags: 0
@@ -6189,9 +6180,9 @@ RectTransform:
   - {fileID: 537178051}
   m_Father: {fileID: 1333857321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1411.2001, y: -51.785553}
   m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &854855408
@@ -7280,7 +7271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1054642683
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8367,7 +8358,7 @@ RectTransform:
   m_Father: {fileID: 431417472}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8882,7 +8873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1333857321
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8958,11 +8949,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53a0f79923f2a246a3acf255790be2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plannerPanel: {fileID: 1901798322}
-  trainspottingPanel: {fileID: 415257303}
-  mapPanel: {fileID: 1054642682}
-  depotPanel: {fileID: 2104427734}
-  researchPanel: {fileID: 2142424501}
 --- !u!114 &1333857325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11407,9 +11393,9 @@ RectTransform:
   - {fileID: 1901343701}
   m_Father: {fileID: 1333857321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 784, y: -51.785553}
   m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1665519728
@@ -12114,7 +12100,7 @@ RectTransform:
   m_Father: {fileID: 1432433767}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12326,9 +12312,9 @@ RectTransform:
   - {fileID: 1166491490}
   m_Father: {fileID: 1333857321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 156.8, y: -51.785553}
   m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1850131831
@@ -13453,9 +13439,9 @@ RectTransform:
   - {fileID: 2052818913}
   m_Father: {fileID: 1333857321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1097.6001, y: -51.785553}
   m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1949034542
@@ -14613,10 +14599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd69ee5e90400e4b96e8300477308f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainNumberInput: {fileID: 1858662985}
-  trainNameInput: {fileID: 1158127498}
-  locomotiveTransform: {fileID: 1061446466}
-  wagonTransform: {fileID: 652858897}
 --- !u!1 &2139495038
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ScriptableObjects
@@ -7,12 +8,11 @@ namespace ScriptableObjects
     {
         public string stationName;
         
-        public int resourceCost;
-        public ProgressTracker buildProgressTracker;
+        public int buildCost;
         
-        public Route route;
+        public List<Route> availableRoutes;
 
-        public float passengerLoadRate;
-        public float freightLoadRate;
+        public float basePassengerLoadRate;
+        public float baseFreightLoadRate;
     }
 }

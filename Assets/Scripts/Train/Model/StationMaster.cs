@@ -27,8 +27,8 @@ namespace Train.Model
         public StationMaster(Station station, StationMasterType type, TrainConsistModel train)
         {
             SetLoadMode(type, train);
-            _passengerProgress = new ProgressTracker(train.PassengerLoad, station.passengerLoadRate);
-            _freightProgress = new ProgressTracker(train.FreightLoad, station.freightLoadRate);
+            _passengerProgress = new ProgressTracker(train.PassengerLoad, station.basePassengerLoadRate);
+            _freightProgress = new ProgressTracker(train.FreightLoad, station.baseFreightLoadRate);
         }
 
         public void StartProcess()
