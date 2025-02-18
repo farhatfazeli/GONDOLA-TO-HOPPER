@@ -10,6 +10,28 @@ namespace Persistence
         public float tonneKm;
     
         public List<TrainConsistSaveData> trainConsistSD = new List<TrainConsistSaveData>();
+        
+        public List<StationSaveData> stationSD = new List<StationSaveData>();
+        
+        public List<RollingStockSaveData> rollingStockSD = new List<RollingStockSaveData>();
+    }
+    
+    [Serializable]
+    public struct StationSaveData
+    {
+        public string uuid;
+        public string name;
+        public bool isBuilt;
+        public float passengerLoadRate;
+        public float freightLoadRate;
+    }
+    
+    [Serializable]
+    public struct RollingStockSaveData
+    {
+        public string uuid;
+        public int availableAmount;
+        public int fleetAmount;
     }
 
     [Serializable]
@@ -17,7 +39,7 @@ namespace Persistence
     {
         public int uuid;
         public string name;
-        public List<RollingStock> rollingStock;
+        public List<SO_RollingStock> rollingStock;
     }
 
     public interface ISaveable

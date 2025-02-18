@@ -1,5 +1,6 @@
 using System;
 using ScriptableObjects;
+using Train.Model.Station;
 using UnityEngine;
 
 namespace Train.Model
@@ -40,9 +41,9 @@ namespace Train.Model
         public ServiceModel(Route route, TrainConsistModel train)
         {
             departureStationMaster =
-                new StationMaster(route.departureStation, StationMasterType.DepartingStationMaster, train);
+                new StationMaster(route.departureSoStation, StationMasterType.DepartingStationMaster, train);
             arrivalStationMaster =
-                new StationMaster(route.arrivalStation, StationMasterType.ArrivingStationMaster, train);
+                new StationMaster(route.arrivalSoStation, StationMasterType.ArrivingStationMaster, train);
             trainDriver = new TrainDriver(train.engine, route);
         }
 

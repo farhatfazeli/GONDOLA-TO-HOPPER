@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f339655e056f3b34187f565ab4b1b77a, type: 3}
   m_Name: LocomotionNr1
   m_EditorClassIdentifier: 
+  uuid: 9cb9419f-9272-4644-9855-c915fd57446f
   mass: 0
   research:
     researchState: 0
     unlockCost: 0
     previousResearch: []
-  depot:
-    availableAmount: 1
-    depotState: 2
-    purchaseCost: 1
-  depotSprite: {fileID: 3394322766383775275, guid: 14876069b37c9bc4f99fab1a6cdf8ef8, type: 3}
+  startingAmount: 0
+  purchaseCost: 0
+  yardSprite: {fileID: 3394322766383775275, guid: 14876069b37c9bc4f99fab1a6cdf8ef8, type: 3}
+  researchSprite: {fileID: 0}
   maxSpeed: 6.7
   tractionCoefficient: 8500
   brakingCoefficient: -16000

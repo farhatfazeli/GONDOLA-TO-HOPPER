@@ -1,6 +1,7 @@
 using System;
 using ScriptableObjects;
 using TMPro;
+using Train.Model.RollingStock;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,18 +15,18 @@ public class ResearchInfoBoxManager : MonoBehaviour, IInfoBoxHoverHandler
     public TextMeshProUGUI researchCost;
     public Button researchButton;
     
-    private RollingStock _rollingStock;
+    private SO_RollingStock _soRollingStock;
     
     private void Awake()
     {
-        _rollingStock = GetComponentInParent<ResearchItemManager>().rollingStock;
+        _soRollingStock = GetComponentInParent<ResearchItemManager>().soRollingStock;
     }
 
     private void OnEnable()
     {
-        _rollingStock.research.onResearchLocked += SetLockResearchUI;
-        _rollingStock.research.onResearchUnlocked += SetUnlockResearchUI;
-        _rollingStock.research.onResearchFinished += SetFinishResearchUI;
+        _soRollingStock.research.onResearchLocked += SetLockResearchUI;
+        _soRollingStock.research.onResearchUnlocked += SetUnlockResearchUI;
+        _soRollingStock.research.onResearchFinished += SetFinishResearchUI;
     }
 
     private void Start()
@@ -35,11 +36,11 @@ public class ResearchInfoBoxManager : MonoBehaviour, IInfoBoxHoverHandler
 
     private void InitializeUI()
     {
-        researchName.text = _rollingStock.Name;
+        researchName.text = _soRollingStock.Name;
         researchDescription.text = GetResearchDescription();
-        researchCost.text = $"Cost: {_rollingStock.research.unlockCost:N0} RP";
+        researchCost.text = $"Cost: {_soRollingStock.research.unlockCost:N0} RP";
         
-        switch (_rollingStock.research.ResearchState)
+        switch (_soRollingStock.research.ResearchState)
         {
             case ResearchState.Researched:
                 SetFinishResearchUI();
@@ -59,9 +60,9 @@ public class ResearchInfoBoxManager : MonoBehaviour, IInfoBoxHoverHandler
     {
         string cargoType = "";
         string wagonType = "Locomotive";
-        if (_rollingStock.Type == RollingStockType.Wagon)
+        if (_soRollingStock.Type == RollingStockType.Wagon)
         {
-            if((_rollingStock as Wagon).loadType == LoadType.Passengers)
+            if((_soRollingStock as SO_Wagon).loadType == LoadType.Passengers)
             {
                 cargoType = "Passenger ";
             }
@@ -76,7 +77,7 @@ public class ResearchInfoBoxManager : MonoBehaviour, IInfoBoxHoverHandler
 
     public void Research()
     {
-        _rollingStock.research.FinishResearch();
+        _soRollingStock.research.FinishResearch();
     }
 
     private void SetFinishResearchUI()
@@ -115,9 +116,9 @@ public class ResearchInfoBoxManager : MonoBehaviour, IInfoBoxHoverHandler
 
     private void OnDisable()
     {
-        _rollingStock.research.onResearchLocked -= SetLockResearchUI;
-        _rollingStock.research.onResearchUnlocked -= SetUnlockResearchUI;
-        _rollingStock.research.onResearchFinished -= SetFinishResearchUI;
+        _soRollingStock.research.onResearchLocked -= SetLockResearchUI;
+        _soRollingStock.research.onResearchUnlocked -= SetUnlockResearchUI;
+        _soRollingStock.research.onResearchFinished -= SetFinishResearchUI;
     }
 }
 

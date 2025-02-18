@@ -1,21 +1,33 @@
 using System.Collections.Generic;
 using System.Linq;
 using Persistence;
+using Train;
 using UnityEngine;
 
 public class SaveManager : PersistentSingleton<SaveManager>
 {
-    [SerializeField]private SaveData _saveData;
+    [SerializeField]private SaveData saveData;
     
     private List<ISaveable> _saveables;
     
     private IDataService _dataService;
+    
+    public bool IsLoadPhaseOver { get; private set; }
 
-    protected override void Awake()
+    protected void Start()
     {
         base.Awake();
         _dataService = new FileDataService(new JsonSerializer());
         _saveables = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<ISaveable>().ToList();
+        StartCoroutine(WaitAndLoad());
+    }
+
+    private System.Collections.IEnumerator WaitAndLoad()
+    {
+        // Wait until RailwayDirector is initialized.
+        while (!RailwayDirector.I.IsInitialized)
+            yield return null;
+            
         LoadGame();
     }
 
@@ -26,20 +38,27 @@ public class SaveManager : PersistentSingleton<SaveManager>
 
     public void SaveGame()
     {
-        _saveData = new SaveData();
+        saveData = new SaveData();
         foreach (ISaveable saveable in _saveables)
         {
-            saveable.PopulateSaveData(_saveData);
+            saveable.PopulateSaveData(saveData);
         }
-        _dataService.Save(_saveData);
+        _dataService.Save(saveData);
     }
 
     public void LoadGame()
     {
-        _saveData = _dataService.Load(SO_GameParameters.I.saveFileName);
+        saveData = _dataService.Load(SO_GameParameters.I.saveFileName);
+        if (saveData == null)
+        {
+            IsLoadPhaseOver = true;
+            return;
+        }
         foreach (ISaveable saveable in _saveables)
         {
-            saveable.LoadFromSaveData(_saveData);
+            saveable.LoadFromSaveData(saveData);
         }
+        
+        IsLoadPhaseOver = true;
     }
 }

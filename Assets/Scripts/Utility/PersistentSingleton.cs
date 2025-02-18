@@ -9,7 +9,7 @@ public class PersistentSingleton<T> : MonoBehaviour where T : Component {
 
     protected static T instance;
 
-    public static T Instance {
+    public static T I {
         get {
             if (instance == null) {
                 instance = FindFirstObjectByType<T>();

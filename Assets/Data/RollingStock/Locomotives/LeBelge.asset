@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f339655e056f3b34187f565ab4b1b77a, type: 3}
   m_Name: LeBelge
   m_EditorClassIdentifier: 
+  uuid: 3cea25e2-3ee0-40b1-a239-07bf81a0c324
   mass: 0
   research:
     researchState: 1
     unlockCost: 0
     previousResearch:
     - {fileID: 11400000, guid: d011f2becac07bb48abfa64bed0154d2, type: 2}
-  depot:
-    availableAmount: 0
-    depotState: 0
-    purchaseCost: 1
-  depotSprite: {fileID: -8590286932747780483, guid: e1ed18a28a6a2594696888d4384aac5b, type: 3}
+  startingAmount: 0
+  purchaseCost: 0
+  yardSprite: {fileID: -8590286932747780483, guid: e1ed18a28a6a2594696888d4384aac5b, type: 3}
+  researchSprite: {fileID: 0}
   maxSpeed: 10
   tractionCoefficient: 12000
   brakingCoefficient: -18000

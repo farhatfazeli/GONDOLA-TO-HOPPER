@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0df60bd7a5fd4c419b4815c53313bd1, type: 3}
   m_Name: Parijs
   m_EditorClassIdentifier: 
-  stationName: 
+  uuid: 41bf73a8-ab85-4a30-a5d1-49a3274b66e7
+  stationName: Parijs
+  buildCost: 0
+  basePassengerLoadRate: 0
+  baseFreightLoadRate: 0

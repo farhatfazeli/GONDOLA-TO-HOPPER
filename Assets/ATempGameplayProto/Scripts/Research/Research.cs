@@ -13,7 +13,7 @@ public class Research
     }
 
     public int unlockCost;
-    public List<RollingStock> previousResearch;
+    public List<SO_RollingStock> previousResearch;
     
     public Action onResearchLocked;
     public Action onResearchUnlocked;

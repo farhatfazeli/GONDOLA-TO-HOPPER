@@ -1,16 +1,18 @@
 ﻿using System.Collections.Generic;
 using Persistence;
 using Train.Model;
+using Train.Repositories;
 
 namespace Train.Infrastructure
 {
     public abstract class TrainSaveManager
     {
-        public static void PopulateSaveData(List<TrainConsistModel> trains, SaveData sd)
+        public static void PopulateSaveData(SaveData sd)
         {
+            List<TrainConsistModel> trains = TrainConsistRepository.I.GetAllTrains();
             foreach (var train in trains)
             {
-                TrainConsistSaveData trainConsistSaveData = new TrainConsistSaveData()
+                var trainConsistSaveData = new TrainConsistSaveData
                 {
                     uuid = train.uuid,
                     name = train.name,
@@ -20,17 +22,19 @@ namespace Train.Infrastructure
             }
         }
 
-        public static List<TrainConsistModel> LoadFromSaveData(SaveData sd)
+        public static void LoadFromSaveData(SaveData sd)
         {
-            List<TrainConsistModel> loadedTrains = new List<TrainConsistModel>();
+            var loadedTrains = new List<TrainConsistModel>();
 
             foreach (var trainConsistSaveData in sd.trainConsistSD)
             {
-                TrainConsistModel train = new TrainConsistModel(trainConsistSaveData.uuid, trainConsistSaveData.name, trainConsistSaveData.rollingStock);
+                var train = new TrainConsistModel(trainConsistSaveData.uuid, trainConsistSaveData.name,
+                    trainConsistSaveData.rollingStock);
                 loadedTrains.Add(train);
             }
-
-            return loadedTrains;
+            
+            TrainConsistRepository.I.Clear();
+            TrainConsistRepository.I.AddTrains(loadedTrains);
         }
     }
 }

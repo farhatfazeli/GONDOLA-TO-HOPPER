@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ResearchItemManager : MonoBehaviour
 {
-    public RollingStock rollingStock;
+    public SO_RollingStock soRollingStock;
     
     [Header("UI Elements")]
     public Image researchSnippetBackground;
@@ -13,9 +13,9 @@ public class ResearchItemManager : MonoBehaviour
     
     private void OnEnable()
     {
-        rollingStock.research.onResearchLocked += SetLockResearchUI;
-        rollingStock.research.onResearchUnlocked += SetUnlockResearchUI;
-        rollingStock.research.onResearchFinished += SetFinishResearchUI;
+        soRollingStock.research.onResearchLocked += SetLockResearchUI;
+        soRollingStock.research.onResearchUnlocked += SetUnlockResearchUI;
+        soRollingStock.research.onResearchFinished += SetFinishResearchUI;
     }
 
     private void Start()
@@ -25,14 +25,14 @@ public class ResearchItemManager : MonoBehaviour
 
     private void InitializeUI()
     {
-        researchSnippetName.text = rollingStock.Name;
+        researchSnippetName.text = soRollingStock.Name;
 
         CheckAchievementState();
     }
 
     private void CheckAchievementState()
     {
-        switch (rollingStock.research.ResearchState)
+        switch (soRollingStock.research.ResearchState)
         {
             case ResearchState.Researched:
                 SetFinishResearchUI();
@@ -65,8 +65,8 @@ public class ResearchItemManager : MonoBehaviour
     
     private void OnDisable()
     {
-        rollingStock.research.onResearchLocked -= SetLockResearchUI;
-        rollingStock.research.onResearchUnlocked -= SetUnlockResearchUI;
-        rollingStock.research.onResearchFinished -= SetFinishResearchUI;
+        soRollingStock.research.onResearchLocked -= SetLockResearchUI;
+        soRollingStock.research.onResearchUnlocked -= SetUnlockResearchUI;
+        soRollingStock.research.onResearchFinished -= SetFinishResearchUI;
     }
 }

@@ -7,8 +7,8 @@ namespace ScriptableObjects
     public class Route : ScriptableObject
     {
         public string routeName;
-        public Station departureStation;
-        public Station arrivalStation;
+        public SO_Station departureSoStation;
+        public SO_Station arrivalSoStation;
         public float distance;
         
         public int resourceCost;

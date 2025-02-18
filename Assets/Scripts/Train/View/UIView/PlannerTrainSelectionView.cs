@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using Train.Model;
+using Train.Repositories;
 using UnityEngine;
 
 namespace Train.View.UIView

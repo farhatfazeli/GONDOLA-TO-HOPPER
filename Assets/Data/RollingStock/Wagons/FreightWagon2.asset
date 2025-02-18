@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69777b9f3ea4bb281a19684cd610520, type: 3}
   m_Name: FreightWagon2
   m_EditorClassIdentifier: 
+  uuid: de4f8df4-3fef-44ef-b75e-982905657836
   mass: 15000
   research:
     researchState: 2
@@ -19,9 +20,8 @@ MonoBehaviour:
     previousResearch:
     - {fileID: 11400000, guid: e2d26bd8ff136fa4b90d96e321c78f55, type: 2}
     - {fileID: 11400000, guid: 2664f0ba073d80449ac5310bc2905376, type: 2}
-  depot:
-    availableAmount: 0
-    depotState: 0
-    purchaseCost: 1
-  depotSprite: {fileID: 8495048639182658578, guid: 96c932ef1c3dbe348a47e21e841af844, type: 3}
-  cargoType: 1
+  startingAmount: 0
+  purchaseCost: 0
+  yardSprite: {fileID: 8495048639182658578, guid: 96c932ef1c3dbe348a47e21e841af844, type: 3}
+  researchSprite: {fileID: 0}
+  loadType: 0
