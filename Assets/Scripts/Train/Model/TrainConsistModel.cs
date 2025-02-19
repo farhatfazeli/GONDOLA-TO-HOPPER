@@ -11,11 +11,11 @@ namespace Train.Model
     {
         public readonly int uuid;
         public readonly string name;
-        private List<SO_RollingStock> _rollingStock;
+        private List<RollingStockModel> _rollingStock;
         
         public TrainEngine engine;
 
-        public List<SO_RollingStock> RollingStock
+        public List<RollingStockModel> RollingStock
         {
             get => _rollingStock;
             set
@@ -29,12 +29,12 @@ namespace Train.Model
         public Load FreightLoad { get; private set; }
         private float TotalCurrentLoad => PassengerLoad.Current + FreightLoad.Current; // Always up-to-date
         
-        public TrainConsistModel(string name, List<SO_RollingStock> rollingStock) : this(Guid.NewGuid().GetHashCode(),
+        public TrainConsistModel(string name, List<RollingStockModel> rollingStock) : this(Guid.NewGuid().GetHashCode(),
             name, rollingStock)
         {
         }
 
-        public TrainConsistModel(int uuid, string name, List<SO_RollingStock> rollingStock)
+        public TrainConsistModel(int uuid, string name, List<RollingStockModel> rollingStock)
         {
             this.uuid = uuid;
             this.name = name;
@@ -44,10 +44,10 @@ namespace Train.Model
 
         private void RecalculateConsist()
         {
-            float maxPassengerLoad = _rollingStock.OfType<SO_Wagon>()
+            float maxPassengerLoad = _rollingStock.OfType<WagonModel>()
                 .Where(w => w.loadType == LoadType.Passengers)
                 .Sum(w => w.mass);
-            float maxFreightLoad = _rollingStock.OfType<SO_Wagon>()
+            float maxFreightLoad = _rollingStock.OfType<WagonModel>()
                 .Where(w => w.loadType == LoadType.Freight)
                 .Sum(w => w.mass);
             
@@ -59,12 +59,12 @@ namespace Train.Model
         
         private TrainEngine CreateTrainEngine()
         {
-            float maxSpeed = _rollingStock.OfType<SO_Locomotive>().Any()
-                ? _rollingStock.OfType<SO_Locomotive>().Min(loco => loco.maxSpeed)
+            float maxSpeed = _rollingStock.OfType<LocomotiveModel>().Any()
+                ? _rollingStock.OfType<LocomotiveModel>().Min(loco => loco.maxSpeed)
                 : 0; // If no locomotives, speed is 0.
 
-            float tractionCoefficient = _rollingStock.OfType<SO_Locomotive>().Sum(loco => loco.tractionCoefficient);
-            float brakingCoefficient = _rollingStock.OfType<SO_Locomotive>().Sum(loco => loco.brakingCoefficient);
+            float tractionCoefficient = _rollingStock.OfType<LocomotiveModel>().Sum(loco => loco.tractionCoefficient);
+            float brakingCoefficient = _rollingStock.OfType<LocomotiveModel>().Sum(loco => loco.brakingCoefficient);
             
             return new TrainEngine(maxSpeed, tractionCoefficient, brakingCoefficient, TotalCurrentLoad);
         }

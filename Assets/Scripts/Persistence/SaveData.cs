@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Train.Model.RollingStock;
 
 namespace Persistence
 {
@@ -39,7 +40,7 @@ namespace Persistence
     {
         public int uuid;
         public string name;
-        public List<SO_RollingStock> rollingStock;
+        public List<RollingStockModel> rollingStock;
     }
 
     public interface ISaveable
