@@ -1,4 +1,5 @@
-﻿using Train.Infrastructure;
+﻿using System.Collections.Generic;
+using Train.Infrastructure;
 using Train.Model.RollingStock;
 
 namespace Train.Model.Yard
@@ -7,9 +8,11 @@ namespace Train.Model.Yard
     {
         private TrainConsistModelFactory _trainConsistModelFactory = new TrainConsistModelFactory();
         
-        public void SelectRollingStock(RollingStockModel rollingStockModel)
+        public List<RollingStockModel> TrainConsistSelection => _trainConsistModelFactory.GetTrainConsistSelection();
+        
+        public void AddRollingStock(RollingStockModel rollingStockModel)
         {
-            throw new System.NotImplementedException();
+            _trainConsistModelFactory.AddRollinStock(rollingStockModel);
         }
     }
 }

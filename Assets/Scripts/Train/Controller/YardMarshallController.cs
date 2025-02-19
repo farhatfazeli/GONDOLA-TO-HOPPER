@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Train.Model.RollingStock;
 using Train.Model.Yard;
 using Train.Repositories;
@@ -11,7 +12,9 @@ namespace Train.Controller
     {
         [SerializeField] private YardMarshallItemListView yardMarshallItemListView;
 
-        private YardMarshallModel _yardMarshallModel = new YardMarshallModel();
+        public readonly YardMarshallModel yardMarshallModel = new();
+        
+        public event Action OnTrainConsistChanged;
         private void Start()
         {
             StartCoroutine(WaitAndDo());
@@ -34,7 +37,13 @@ namespace Train.Controller
         
         public void SelectRollingStock(RollingStockModel rollingStockModel)
         {
-            _yardMarshallModel.SelectRollingStock(rollingStockModel);
+            yardMarshallModel.AddRollingStock(rollingStockModel);
+            OnTrainConsistChanged?.Invoke();
+        }
+
+        public void ResetTrainConsist()
+        {
+            
         }
 
         public void ShowYardPanel()
