@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69777b9f3ea4bb281a19684cd610520, type: 3}
-  m_Name: FreightWagon1
+  m_Name: LiverpoolManchesterPassengerCattleCarriage
   m_EditorClassIdentifier: 
-  uuid: 4f3156af-2915-4297-b3e8-b5074870ccf6
-  mass: 6000
+  uuid: 3eceaa23-0412-4501-a028-91e1745874e2
+  mass: 10000
   research:
     researchState: 1
     unlockCost: 0
@@ -21,6 +21,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d011f2becac07bb48abfa64bed0154d2, type: 2}
   startingAmount: 0
   purchaseCost: 0
-  yardSprite: {fileID: -7695030020186157280, guid: a433acd6166803f4d828186354f840ef, type: 3}
+  yardSprite: {fileID: -3107203369821235118, guid: edb6a483e91138e4b88132697a6beec7, type: 3}
   researchSprite: {fileID: 0}
+  worldViewGo: {fileID: 3005554531702369042, guid: 7cfdcb7dc848dd441847a330b34dab70, type: 3}
   loadType: 0

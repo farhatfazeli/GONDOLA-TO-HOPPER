@@ -1,4 +1,5 @@
 using System;
+using Train.View.WorldView;
 using UnityEngine;
 
 public abstract class SO_RollingStock : ScriptableObject, IRollingStock
@@ -17,8 +18,9 @@ public abstract class SO_RollingStock : ScriptableObject, IRollingStock
 
     [Header("Sprite parameters")] 
     public Sprite yardSprite;
-
     public Sprite researchSprite;
+    public RollingStockView viewGo;
+    
 
     private void OnValidate()
     {

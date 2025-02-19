@@ -22,8 +22,12 @@ namespace Train
         {
             List<StationModel> stations = await StationLoader.LoadAllStationModelsAsync(SO_GameParameters.I.addressableLabelStations);
             StationRepository.I.AddStations(stations);
+            
             List<RollingStockModel> rollingStock = await RollingStockLoader.LoadAllRollingStockModelsAsync(SO_GameParameters.I.addressableLabelRollingStock);
             RollingStockRepository.I.AddRollingStock(rollingStock);
+            
+            
+            
             IsInitialized = true;
         }
 

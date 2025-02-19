@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using ScriptableObjects;
 using Train.Model;
+using Train.Model.RollingStock;
 
 namespace Train.Infrastructure
 {
-    public class TrainConsistFactory
+    public class TrainConsistModelFactory
     {
-        public static TrainConsistModel CreateTrainConsist(string trainName, List<SO_RollingStock> rollingStockSelection)
+        public List<RollingStockModel>
+        
+        public TrainConsistModel CreateTrainConsist(string trainName, List<SO_RollingStock> rollingStockSelection)
         {
             if (rollingStockSelection == null || rollingStockSelection.Count == 0)
                 throw new ArgumentException("Rolling stock selection cannot be empty");

@@ -15,12 +15,6 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 6589f22f5dc489e4e8ae0d614b6bb56f
   m_SerializeEntries:
-  - m_GUID: 213c51e007b4b0a46a62e2c14752d80d
-    m_Address: Assets/Data/RollingStock/Wagons/PassengerWagon1.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - RollingStock
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2664f0ba073d80449ac5310bc2905376
     m_Address: Assets/Data/RollingStock/Locomotives/Crampton.asset
     m_ReadOnly: 0
@@ -39,17 +33,17 @@ MonoBehaviour:
     m_SerializedLabels:
     - Stations
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 524b6ccdedcb66046af4545fac5f0698
+    m_Address: Assets/Data/RollingStock/Wagons/LiverpoolManchesterPassengerCarriage.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RollingStock
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 549346d637fc7b6468b9748dc8f82dcc
     m_Address: Assets/Data/Stations/Darlington.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5fadfc2d2d4819d4aa9cba5e02b24853
-    m_Address: Assets/Data/RollingStock/Wagons/FreightWagon2.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d431a8b8791c51449f53500c5aa9d38
     m_Address: Assets/Data/Stations/Namur.asset
@@ -62,6 +56,24 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9048346324d9e9c439ff869d5ed78750
+    m_Address: Assets/Data/RollingStock/Locomotives/StephensonsRocket.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RollingStock
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1ef94ebdf6f7c343aafe1520c8abe3c
+    m_Address: Assets/Data/RollingStock/Wagons/ChaldronCoalHopper.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RollingStock
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ade0dca7506b828428deed990024f148
+    m_Address: Assets/Data/RollingStock/Wagons/LiverpoolManchesterPassengerCattleCarriage.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b571f23a61e6c1b45b7b8d067d313b23
     m_Address: Assets/Data/Stations/Antwerpen.asset
@@ -86,12 +98,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e2d26bd8ff136fa4b90d96e321c78f55
-    m_Address: Assets/Data/RollingStock/Wagons/FreightWagon1.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: afc325228aa3bf34dbf8ccbf1db36726, type: 2}

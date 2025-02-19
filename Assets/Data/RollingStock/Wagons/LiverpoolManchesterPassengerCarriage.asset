@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69777b9f3ea4bb281a19684cd610520, type: 3}
-  m_Name: FreightWagon2
+  m_Name: LiverpoolManchesterPassengerCarriage
   m_EditorClassIdentifier: 
-  uuid: de4f8df4-3fef-44ef-b75e-982905657836
-  mass: 15000
+  uuid: 2c177d30-106b-48a7-b96b-4ac47c6e2952
+  mass: 10000
   research:
-    researchState: 2
+    researchState: 1
     unlockCost: 0
     previousResearch:
-    - {fileID: 11400000, guid: e2d26bd8ff136fa4b90d96e321c78f55, type: 2}
-    - {fileID: 11400000, guid: 2664f0ba073d80449ac5310bc2905376, type: 2}
+    - {fileID: 11400000, guid: d011f2becac07bb48abfa64bed0154d2, type: 2}
   startingAmount: 0
   purchaseCost: 0
-  yardSprite: {fileID: 8495048639182658578, guid: 96c932ef1c3dbe348a47e21e841af844, type: 3}
+  yardSprite: {fileID: -3107203369821235118, guid: edb6a483e91138e4b88132697a6beec7, type: 3}
   researchSprite: {fileID: 0}
+  worldViewGo: {fileID: 3005554531702369042, guid: 7cfdcb7dc848dd441847a330b34dab70, type: 3}
   loadType: 0

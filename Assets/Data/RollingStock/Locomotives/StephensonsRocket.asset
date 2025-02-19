@@ -10,20 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f339655e056f3b34187f565ab4b1b77a, type: 3}
-  m_Name: Crampton
+  m_Name: StephensonsRocket
   m_EditorClassIdentifier: 
-  uuid: e870bc5c-f925-41e8-9f95-84923831897d
+  uuid: 1a2cf7e9-7719-4ebf-ac0c-3c5e929a5d67
   mass: 0
   research:
-    researchState: 2
+    researchState: 0
     unlockCost: 0
-    previousResearch:
-    - {fileID: 11400000, guid: d5617e2ee53a8c448b924829489282ce, type: 2}
+    previousResearch: []
   startingAmount: 0
   purchaseCost: 0
-  yardSprite: {fileID: 720365963335405917, guid: bb3428b2a66216a4389666f28860bf78, type: 3}
+  yardSprite: {fileID: 8557526818884727487, guid: 6018f443bd6ce284b9b4b5af41f96c4a, type: 3}
   researchSprite: {fileID: 0}
-  worldViewGo: {fileID: 641222772853359347, guid: 5e39798fa3e1e7148b8f2515649fc28c, type: 3}
-  maxSpeed: 15
-  tractionCoefficient: 16000
-  brakingCoefficient: -25000
+  worldViewGo: {fileID: 1046341792449153412, guid: 38ad5f3c2106004488a66b79dc9b6967, type: 3}
+  maxSpeed: 6.7
+  tractionCoefficient: 8500
+  brakingCoefficient: -16000

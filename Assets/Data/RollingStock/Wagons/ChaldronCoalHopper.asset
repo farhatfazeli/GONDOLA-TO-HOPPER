@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69777b9f3ea4bb281a19684cd610520, type: 3}
-  m_Name: PassengerWagon1
+  m_Name: ChaldronCoalHopper
   m_EditorClassIdentifier: 
-  uuid: 72a61f32-aff6-400d-ae46-c0586a9a32de
+  uuid: f7e5ae5e-6a79-41fd-a55b-c801bdfabcfd
   mass: 10000
   research:
     researchState: 1
@@ -23,4 +23,5 @@ MonoBehaviour:
   purchaseCost: 0
   yardSprite: {fileID: -3107203369821235118, guid: edb6a483e91138e4b88132697a6beec7, type: 3}
   researchSprite: {fileID: 0}
+  worldViewGo: {fileID: 4272274491542055570, guid: c1ff02c5a378c7147997fc7c3e3f721e, type: 3}
   loadType: 0

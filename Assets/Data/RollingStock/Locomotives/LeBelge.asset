@@ -23,6 +23,7 @@ MonoBehaviour:
   purchaseCost: 0
   yardSprite: {fileID: -8590286932747780483, guid: e1ed18a28a6a2594696888d4384aac5b, type: 3}
   researchSprite: {fileID: 0}
+  worldViewGo: {fileID: 6269363646077436838, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
   maxSpeed: 10
   tractionCoefficient: 12000
   brakingCoefficient: -18000
