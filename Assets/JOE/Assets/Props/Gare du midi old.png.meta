@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b3536ccde90ee3942874bef99936b245
+guid: 1cea3e59ffdd2594da114caedfc1055d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5637361434325295649
-    second: Single-Plant-Leaf-PNG-File_0
+      213: 2775625607736145138
+    second: Gare du midi old_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Single-Plant-Leaf-PNG-File_0
+      name: Gare du midi old_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 53
-        width: 477
-        height: 241
+        x: 285
+        y: 263
+        width: 2821
+        height: 1680
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fdddd8cb4a114c1b0800000000000000
-      internalID: -5637361434325295649
+      spriteID: 2f4379ac8c0058620800000000000000
+      internalID: 2775625607736145138
       vertices: []
       indices: 
       edges: []
