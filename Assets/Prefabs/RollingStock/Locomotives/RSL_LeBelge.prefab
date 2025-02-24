@@ -734,7 +734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7353959809026927504, guid: 231b3d0e6147e8d40b42bba399b6d91e, type: 3}
       propertyPath: m_Name
-      value: PFB_RSL_LeBelge
+      value: RSL_LeBelge
       objectReference: {fileID: 0}
     - target: {fileID: 7582627054109050393, guid: 231b3d0e6147e8d40b42bba399b6d91e, type: 3}
       propertyPath: m_IsActive

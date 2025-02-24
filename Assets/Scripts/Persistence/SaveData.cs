@@ -9,6 +9,9 @@ namespace Persistence
     {
         public float passengerKm;
         public float tonneKm;
+
+        public long savedGameTime;
+        public long savedRealTime;
     
         public List<TrainConsistSaveData> trainConsistSD = new List<TrainConsistSaveData>();
         

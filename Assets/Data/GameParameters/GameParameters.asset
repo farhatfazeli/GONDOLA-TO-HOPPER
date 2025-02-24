@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea03f7c5a1386d843b59739e079471ca, type: 3}
   m_Name: GameParameters
   m_EditorClassIdentifier: 
+  gameSpeedUpFactor: 60
   loadSpeedUpFactor: 1
   travelSpeedUpFactor: 1
   loadClickProgressAmount: 0.1
@@ -19,8 +20,8 @@ MonoBehaviour:
   unloadClickProgressAmount: 0.1
   locomotivesFolderPathShort: Data/RollingStock/Locomotives
   wagonsFolderPathShort: Data/RollingStock/Wagons
-  trainsFolderPathShort: Data/RollingStock/Trains
-  trainsFolderPathFull: Assets/Resources/Data/RollingStock/Trains
+  addressableLabelStations: Stations
+  addressableLabelRollingStock: RollingStock
   achievedColor:
     serializedVersion: 2
     rgba: 4289396726

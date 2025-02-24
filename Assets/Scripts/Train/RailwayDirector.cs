@@ -14,8 +14,6 @@ namespace Train
 {
     public class RailwayDirector : PersistentSingleton<RailwayDirector>, ISaveable
     {
-        private readonly ServiceManager _serviceManager = new ServiceManager();
-        
         public bool IsInitialized { get; private set; }
         
         private async void Start()
@@ -40,23 +38,26 @@ namespace Train
         /// Update all active services. Call this once per frame.
         /// </summary>
         /// <param name="deltaTime">Time elapsed since the last update.</param>
-        public void UpdateServices(float deltaTime)
+        private static void UpdateServices(float deltaTime)
         {
-            _serviceManager.UpdateServices(deltaTime);
+            ServiceManager.I.UpdateServices(deltaTime);
+            TimeManager.I.UpdateTime(deltaTime);
         }
 
         public void PopulateSaveData(SaveData sd)
         {
-            TrainSaveManager.PopulateSaveData(sd);
+            TrainSaveHelper.PopulateSaveData(sd);
             StationSaveHelper.PopulateSaveData(sd);
             RollingStockSaveHelper.PopulateSaveData(sd);
+            TimeSaveHelper.PopulateSaveData(sd);
         }
 
         public void LoadFromSaveData(SaveData sd)
         {
-            TrainSaveManager.LoadFromSaveData(sd);
+            TrainSaveHelper.LoadFromSaveData(sd);
             StationSaveHelper.LoadFromSaveData(sd);
             RollingStockSaveHelper.LoadFromSaveData(sd);
+            TimeSaveHelper.LoadFromSaveData(sd);
         }
         
         public void Reset()

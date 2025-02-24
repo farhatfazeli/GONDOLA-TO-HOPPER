@@ -5,7 +5,7 @@ using Train.Repositories;
 
 namespace Train.Infrastructure
 {
-    public abstract class TrainSaveManager
+    public abstract class TrainSaveHelper
     {
         public static void PopulateSaveData(SaveData sd)
         {

@@ -50,5 +50,11 @@ namespace Train.Infrastructure
                 service.Update(deltaTime);
             }
         }
+        
+        private static ServiceManager instance;
+        public static ServiceManager I => instance ??= new ServiceManager();
+        private ServiceManager()
+        {
+        }
     }
 }

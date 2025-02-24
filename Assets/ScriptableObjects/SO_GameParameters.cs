@@ -4,7 +4,7 @@ using UnityEngine;
 public class SO_GameParameters : ScriptableObject
 {
     [Header("Speed up parameters")]
-    public float gameSpeedUpFactor = 1f;
+    public int gameSpeedUpFactor = 1;
     public float loadSpeedUpFactor = 1f;
     public float travelSpeedUpFactor = 1f;
 
