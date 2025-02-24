@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "SO_GameParameters", menuName = "Scriptable Objects/SO_GameParameters")]
 public class SO_GameParameters : ScriptableObject
@@ -29,6 +30,9 @@ public class SO_GameParameters : ScriptableObject
     [Header("Save settings")]
     public string saveFileName = "save";
     public string fileExtension = "json";
+
+    [Header("Scenes")]
+    public string yardScene;
     
     public static SO_GameParameters I { get; private set; }
     

@@ -28,8 +28,9 @@ namespace Train.Infrastructure
         private void PerformFirstLocomotiveCheck()
         {
             if (_trainConsistSelection.First() is LocomotiveModel)
-                _hasLocomotive = true;
-            throw new InvalidOperationException("Train must have at least one locomotive");
+                _hasLocomotive = true; 
+            else
+                throw new InvalidOperationException("Train must have at least one locomotive");
         }
 
         public TrainConsistModel CreateTrainConsist(string trainName, List<RollingStockModel> rollingStockSelection)

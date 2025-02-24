@@ -33,3 +33,4 @@ MonoBehaviour:
     rgba: 4286545791
   saveFileName: save
   fileExtension: json
+  yardScene: SCENE_Yard

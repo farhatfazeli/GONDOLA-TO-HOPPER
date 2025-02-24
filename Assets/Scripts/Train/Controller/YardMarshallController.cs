@@ -5,13 +5,15 @@ using Train.Model.Yard;
 using Train.Repositories;
 using Train.View.YardView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Train.Controller
 {
     public class YardMarshallController : MonoBehaviour
     {
         [SerializeField] private YardMarshallItemListView yardMarshallItemListView;
-
+        [SerializeField] private RectTransform yardView;
+        
         public readonly YardMarshallModel yardMarshallModel = new();
         
         public event Action OnTrainConsistChanged;
@@ -19,7 +21,23 @@ namespace Train.Controller
         {
             StartCoroutine(WaitAndDo());
         }
-        
+
+        private void OnEnable()
+        {
+            LoadYardScene();
+
+        }
+
+        private static void LoadYardScene()
+        {
+            SceneManager.LoadSceneAsync(SO_GameParameters.I.yardScene, LoadSceneMode.Additive);
+        }
+
+        private void OnDisable()
+        {
+            
+        }
+
         private System.Collections.IEnumerator WaitAndDo()
         {
             // Wait until RailwayDirector is initialized.
