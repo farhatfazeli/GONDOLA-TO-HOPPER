@@ -65,6 +65,14 @@ public class TrainDropdownManager : MonoBehaviour
         }
     }
     
+    public TrainConsistModel GetSelectedTrain()
+    {
+        List<TrainConsistModel> trains = TrainConsistRepository.I.GetAllTrainConsists();
+        if (trainDropdown.value < 0 || trainDropdown.value >= trains.Count) return null;
+    
+        return trains[trainDropdown.value];
+    }
+    
     public void OnTrainSelected(int index)
     {
         List<TrainConsistModel> trains = TrainConsistRepository.I.GetAllTrainConsists();

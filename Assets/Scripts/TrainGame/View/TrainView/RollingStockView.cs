@@ -10,20 +10,19 @@ namespace TrainGame.View.TrainView
         
         private RollingStockModel _rollingStockModel;
         
-        public void Initialize(RollingStockModel rollingStockModel)
+        public RollingStockView Initialize(RollingStockModel rollingStockModel)
         {
             _rollingStockModel = rollingStockModel;
+            return this;
         }
 
-        public void AlignRollingStock(Transform targetRollingStock)
+        public RollingStockView AlignRollingStock(Transform targetCoupler)
         {
-            Transform targetCoupler = targetRollingStock.GetComponent<RollingStockView>().rearCoupler;
-
             float targetX = targetCoupler.position.x;
         
-            float deltaX = targetX - frontCoupler.position.x;
-        
-            transform.position += new Vector3(deltaX, 0, 0);
+            transform.position += new Vector3(targetX - frontCoupler.position.x, 0, 0);
+            
+            return this;    
         }
     }
 }

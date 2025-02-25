@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using CustomEventSystem;
 using ScriptableObjects;
-using TrainGame;
 using TrainGame.View.LandscapeView;
 using UnityEngine;
 
