@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using CustomEventSystem;
 using ScriptableObjects;
-using Trains;
-using Trains.View;
+using TrainGame;
+using TrainGame.View.LandscapeView;
 using UnityEngine;
 
 public class RouteManager : MonoBehaviour

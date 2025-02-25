@@ -1,12 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using ScriptableObjects;
-using TMPro;
-using Train;
-using Train.Infrastructure;
-using Train.Model;
-using UnityEditor;
+
+
 using UnityEngine;
 
 public class DepotManager : MonoBehaviour

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TrainGame.Model;
 using UnityEngine;
 
 namespace ScriptableObjects

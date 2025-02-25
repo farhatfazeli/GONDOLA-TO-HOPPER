@@ -1,6 +1,6 @@
 using System;
 using TMPro;
-using Train.Model;
+using TrainGame.Model;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
 using Slider = UnityEngine.UI.Slider;

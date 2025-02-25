@@ -1,64 +1,67 @@
 using System;
-using Train.View.WorldView;
+using ATempGameplayProto.Scripts.Research;
 using UnityEngine;
 
-public abstract class SO_RollingStock : ScriptableObject, IRollingStock
+namespace ScriptableObjects
 {
-    public string uuid;
-    public string Name => name; // Unity allows you to use the asset name
-    public abstract RollingStockType Type { get; }
+    public abstract class SO_RollingStock : ScriptableObject, IRollingStock
+    {
+        public string uuid;
+        public string Name => name; // Unity allows you to use the asset name
+        public abstract RollingStockType Type { get; }
 
-    [Header("Rolling stock parameters")] public int mass;
+        [Header("Rolling stock parameters")] public int mass;
 
-    [Header("Research parameters")] public Research research;
+        [Header("Research parameters")] public Research research;
 
-    [Header("Yard parameters")] 
-    public int startingAmount;
-    public int purchaseCost;
+        [Header("Yard parameters")] 
+        public int startingAmount;
+        public int purchaseCost;
 
-    [Header("Sprite parameters")] 
-    public Sprite yardSprite;
-    public Sprite researchSprite;
-    public GameObject viewGo;
+        [Header("Sprite parameters")] 
+        public Sprite yardSprite;
+        public Sprite researchSprite;
+        public GameObject viewGo;
     
 
-    private void OnValidate()
-    {
-        if (string.IsNullOrEmpty(uuid))
+        private void OnValidate()
         {
-            uuid = Guid.NewGuid().ToString();
+            if (string.IsNullOrEmpty(uuid))
+            {
+                uuid = Guid.NewGuid().ToString();
+            }
         }
+        //
+        // private void OnEnable()
+        // {
+        //     Initialize();
+        // }
+        //
+        // private void Initialize()
+        // {
+        //     research.Initialize();
+        //     depot.Initialize(research);
+        // }
+        //
+        // public void Reset()
+        // {
+        //     research.LockResearch();
+        //     depot.Reset();
+        // }
+        //
+        // private void OnDisable()
+        // {
+        //     research.onResearchFinished -= depot.ListInDepot;
+        // }
     }
-    //
-    // private void OnEnable()
-    // {
-    //     Initialize();
-    // }
-    //
-    // private void Initialize()
-    // {
-    //     research.Initialize();
-    //     depot.Initialize(research);
-    // }
-    //
-    // public void Reset()
-    // {
-    //     research.LockResearch();
-    //     depot.Reset();
-    // }
-    //
-    // private void OnDisable()
-    // {
-    //     research.onResearchFinished -= depot.ListInDepot;
-    // }
-}
 
-public enum RollingStockType
-{
-    Locomotive,
-    Wagon
-}
+    public enum RollingStockType
+    {
+        Locomotive,
+        Wagon
+    }
 
-public interface IRollingStock
-{
+    public interface IRollingStock
+    {
+    }
 }

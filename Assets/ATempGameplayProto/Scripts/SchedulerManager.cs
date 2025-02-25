@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using ScriptableObjects;
 using TMPro;
-using Train.Model;
+using TrainGame.Model;
 using UnityEngine;
 
 public class SchedulerManager : MonoBehaviour

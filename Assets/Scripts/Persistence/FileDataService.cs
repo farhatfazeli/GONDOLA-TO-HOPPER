@@ -1,54 +1,57 @@
 using System.IO;
-using Persistence;
+using ScriptableObjects;
 using UnityEngine;
 
-public interface IDataService
+namespace Persistence
 {
-    public void Save(SaveData sd, bool overwrite = true);
-    public SaveData Load(string name);
-}
-
-public class FileDataService : IDataService
-{
-    private readonly ISerializer _serializer;
-
-    private readonly string _fileName;
-    private readonly string _dataPath;
-    private readonly string _fileExtension;
-    
-    public FileDataService(ISerializer serializer)
+    public interface IDataService
     {
-        _serializer = serializer;
-        _fileName = SO_GameParameters.I.saveFileName;
-        _dataPath = Application.persistentDataPath;
-        Debug.Log(_dataPath);
-        _fileExtension = SO_GameParameters.I.fileExtension;
+        public void Save(SaveData sd, bool overwrite = true);
+        public SaveData Load(string name);
     }
-    
-    private string GetFullFilePath(string fileName)
+
+    public class FileDataService : IDataService
     {
-        return Path.Combine(_dataPath, $"{fileName}.{_fileExtension}");
-    }
+        private readonly ISerializer _serializer;
+
+        private readonly string _fileName;
+        private readonly string _dataPath;
+        private readonly string _fileExtension;
     
-    public void Save(SaveData sd, bool overwrite = true)
-    {
-        string fileLocation = GetFullFilePath(_fileName);
-        if (!overwrite && File.Exists(fileLocation))
+        public FileDataService(ISerializer serializer)
         {
-            throw new IOException($"File {fileLocation} already exists and overwrite is set to false");
+            _serializer = serializer;
+            _fileName = SO_GameParameters.I.saveFileName;
+            _dataPath = Application.persistentDataPath;
+            Debug.Log(_dataPath);
+            _fileExtension = SO_GameParameters.I.fileExtension;
         }
-        File.WriteAllText(fileLocation, _serializer.Serialize(sd));
-    }
-
-    public SaveData Load(string name)
-    {
-        string fileLocation = GetFullFilePath(name);
-        
-        if (!File.Exists(fileLocation))
+    
+        private string GetFullFilePath(string fileName)
         {
-            throw new FileNotFoundException($"File {fileLocation} not found");
+            return Path.Combine(_dataPath, $"{fileName}.{_fileExtension}");
         }
+    
+        public void Save(SaveData sd, bool overwrite = true)
+        {
+            string fileLocation = GetFullFilePath(_fileName);
+            if (!overwrite && File.Exists(fileLocation))
+            {
+                throw new IOException($"File {fileLocation} already exists and overwrite is set to false");
+            }
+            File.WriteAllText(fileLocation, _serializer.Serialize(sd));
+        }
+
+        public SaveData Load(string name)
+        {
+            string fileLocation = GetFullFilePath(name);
         
-        return _serializer.Deserialize<SaveData>(File.ReadAllText(fileLocation));
+            if (!File.Exists(fileLocation))
+            {
+                throw new FileNotFoundException($"File {fileLocation} not found");
+            }
+        
+            return _serializer.Deserialize<SaveData>(File.ReadAllText(fileLocation));
+        }
     }
 }

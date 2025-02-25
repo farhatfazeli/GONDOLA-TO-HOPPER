@@ -1,23 +1,27 @@
-using UnityEngine;
+using Persistence;
 using UnityEditor;
+using UnityEngine;
 
-[CustomEditor(typeof(SaveManager))]
-public class SaveManagerEditor : Editor
+namespace Editor
 {
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(SaveManager))]
+    public class SaveManagerEditor : UnityEditor.Editor
     {
-        DrawDefaultInspector();
-
-        SaveManager saveManager = (SaveManager)target;
-
-        if (GUILayout.Button("Save Game"))
+        public override void OnInspectorGUI()
         {
-            saveManager.SaveGame();
-        }
+            DrawDefaultInspector();
+
+            SaveManager saveManager = (SaveManager)target;
+
+            if (GUILayout.Button("Save Game"))
+            {
+                saveManager.SaveGame();
+            }
         
-        if (GUILayout.Button("Load Game"))
-        {
-            saveManager.LoadGame();
+            if (GUILayout.Button("Load Game"))
+            {
+                saveManager.LoadGame();
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-using Train.Model.RollingStock;
+using TrainGame.Model.RollingStock;
 using UnityEngine;
 
 namespace ScriptableObjects

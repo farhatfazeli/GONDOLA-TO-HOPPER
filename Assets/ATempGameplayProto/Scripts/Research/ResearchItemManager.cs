@@ -1,4 +1,6 @@
 using System;
+using ATempGameplayProto.Scripts.Research;
+using ScriptableObjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
