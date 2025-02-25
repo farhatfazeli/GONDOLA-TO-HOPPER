@@ -19,7 +19,7 @@ public abstract class SO_RollingStock : ScriptableObject, IRollingStock
     [Header("Sprite parameters")] 
     public Sprite yardSprite;
     public Sprite researchSprite;
-    public RollingStockView viewGo;
+    public GameObject viewGo;
     
 
     private void OnValidate()

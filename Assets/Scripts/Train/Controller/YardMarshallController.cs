@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using Train.Model.RollingStock;
 using Train.Model.Yard;
 using Train.Repositories;
@@ -11,12 +12,20 @@ namespace Train.Controller
 {
     public class YardMarshallController : MonoBehaviour
     {
+        [Header("Yard Marshall list")]
         [SerializeField] private YardMarshallItemListView yardMarshallItemListView;
-        [SerializeField] private RectTransform yardView;
+
+        [Header("Train consist details")]
+        [SerializeField]private TMP_InputField trainNumberInput;
+        [SerializeField]private TMP_InputField trainNameInput;
         
-        public readonly YardMarshallModel yardMarshallModel = new();
+        private readonly YardMarshallModel _yardMarshallModel = new();
         
-        public event Action OnTrainConsistChanged;
+        public event Action<List<RollingStockModel>> OnTrainConsistChanged
+        {
+            add => _yardMarshallModel.OnTrainConsistChanged += value;
+            remove => _yardMarshallModel.OnTrainConsistChanged -= value;
+        }
         private void Start()
         {
             StartCoroutine(WaitAndDo());
@@ -25,13 +34,14 @@ namespace Train.Controller
         private void OnEnable()
         {
             LoadYardScene();
-
         }
 
-        private static void LoadYardScene()
+        private void LoadYardScene()
         {
             SceneManager.LoadSceneAsync(SO_GameParameters.I.yardScene, LoadSceneMode.Additive);
         }
+
+
 
         private void OnDisable()
         {
@@ -40,12 +50,21 @@ namespace Train.Controller
 
         private System.Collections.IEnumerator WaitAndDo()
         {
-            // Wait until RailwayDirector is initialized.
-            while (!RailwayDirector.I.IsInitialized || !SaveManager.I.IsLoadPhaseOver)
+            do
+            {
                 yield return null;
+            } while (!RailwayDirector.I.IsInitialized || !SaveManager.I.IsLoadPhaseOver);
             
-            var rollingStock = RollingStockRepository.I.GetAllRollingStock();
-            yardMarshallItemListView.Populate(rollingStock);
+            yardMarshallItemListView.Populate();
+            
+            OnYardSceneLoaded();
+        }
+        
+        private void OnYardSceneLoaded()
+        {
+            YardView yardView = FindFirstObjectByType<YardView>();
+            YardMarshallView yardMarshallView = FindFirstObjectByType<YardMarshallView>();
+            yardView.Initialize(this, yardMarshallView);
         }
         
         public void PurchaseRollingStock(RollingStockModel rollingStockModel)
@@ -55,13 +74,23 @@ namespace Train.Controller
         
         public void SelectRollingStock(RollingStockModel rollingStockModel)
         {
-            yardMarshallModel.AddRollingStock(rollingStockModel);
-            OnTrainConsistChanged?.Invoke();
+            _yardMarshallModel.AddRollingStock(rollingStockModel);
+        }
+
+        public void CreateTrainConsist()
+        {
+            string trainName = $"{trainNumberInput.text} {trainNameInput.text}";
+            _yardMarshallModel.CreateTrainConsist(trainName);
+        }
+        
+        public void Undo()
+        {
+            _yardMarshallModel.RemoveLastRollingStock();
         }
 
         public void ResetTrainConsist()
         {
-            
+            _yardMarshallModel.Reset();
         }
 
         public void ShowYardPanel()

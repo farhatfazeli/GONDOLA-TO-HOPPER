@@ -1,40 +1,43 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Train.Model.RollingStock;
+using UnityEngine;
 
 namespace Train.Repositories
 {
     public class RollingStockRepository
     {
-        private readonly List<RollingStockModel> _rollingStock 
-            = new List<RollingStockModel>();
-
-        /// <summary>
-        /// Adds one or more rolling stock models to the list.
-        /// </summary>
-        public void AddRollingStock(IEnumerable<RollingStockModel> rollingStock)
+        private Dictionary<RollingStockModel, SO_RollingStock> _rollingStockModelSoLookup;
+        
+        public void Initialize(List<RollingStockModel> rollingStockModels, List<SO_RollingStock> rollingStockSos)
         {
-            _rollingStock.AddRange(rollingStock);
-        }
-
-        /// <summary>
-        /// Returns all rolling stock currently in the repository.
-        /// </summary>
-        public List<RollingStockModel> GetAllRollingStock()
-        {
-            // Return the actual list reference OR
-            // return a new list if you want to avoid external modifications:
-            return _rollingStock.ToList(); 
-        }
-
-        /// <summary>
-        /// Clears all rolling stock.
-        /// </summary>
-        public void Clear()
-        {
-            _rollingStock.Clear();
+            _rollingStockModelSoLookup = new Dictionary<RollingStockModel, SO_RollingStock>();
+            for (int i = 0; i < rollingStockModels.Count; i++)
+            {
+                _rollingStockModelSoLookup.Add(rollingStockModels[i], rollingStockSos[i]);
+            }
         }
         
+        public SO_RollingStock GetRollingStockSo(RollingStockModel rollingStockModel)
+        {
+            return _rollingStockModelSoLookup[rollingStockModel];
+        }
+        
+        public GameObject GetRollingStockViewPrefab(RollingStockModel rollingStockModel)
+        {
+            return _rollingStockModelSoLookup[rollingStockModel].viewGo;
+        }
+
+        public IEnumerable<RollingStockModel> GetRollingStockModels()
+        {
+            return _rollingStockModelSoLookup.Keys;
+        }
+        
+        public RollingStockModel GetRollingStockByUuid(string uuid)
+        {
+            return _rollingStockModelSoLookup.Keys.FirstOrDefault(x => x.uuid == uuid);
+        }
+
         private static RollingStockRepository instance;
         public static RollingStockRepository I => instance ??= new RollingStockRepository();
         private RollingStockRepository()

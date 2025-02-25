@@ -54,7 +54,8 @@ MonoBehaviour:
   - m_GUID: 86b31559c545e224a856d399036bd33e
     m_Address: Assets/Data/GameParameters/GameParameters.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - default
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9048346324d9e9c439ff869d5ed78750
     m_Address: Assets/Data/RollingStock/Locomotives/StephensonsRocket.asset

@@ -20,13 +20,13 @@ namespace Train.Model
         /// <summary>
         /// Constructs a new Load instance with a specified maximum capacity.
         /// </summary>
-        /// <param name="endDistance">The maximum load capacity. Must be greater than zero.</param>
-        public Load(float endDistance)
+        /// <param name="maxLoad">The maximum load capacity. Must be greater than or equal to zero.</param>
+        public Load(float maxLoad)
         {
-            if (endDistance <= 0)
-                throw new ArgumentException("Max load must be greater than zero.", nameof(endDistance));
+            if (maxLoad < 0)
+                throw new ArgumentException("Max load must be greater than or equal to zero.", nameof(maxLoad));
 
-            Max = endDistance;
+            Max = maxLoad;
             Current = 0f;
             _loadMode = LoadMode.NotSet;
         }

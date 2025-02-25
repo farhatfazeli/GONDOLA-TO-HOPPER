@@ -43,7 +43,7 @@ namespace Persistence
     {
         public int uuid;
         public string name;
-        public List<RollingStockModel> rollingStock;
+        public List<string> rollingStockUuids;
     }
 
     public interface ISaveable

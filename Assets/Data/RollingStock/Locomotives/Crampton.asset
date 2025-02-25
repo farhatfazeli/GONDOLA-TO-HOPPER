@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Crampton
   m_EditorClassIdentifier: 
   uuid: e870bc5c-f925-41e8-9f95-84923831897d
-  mass: 0
+  mass: 1000
   research:
     researchState: 2
     unlockCost: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   purchaseCost: 0
   yardSprite: {fileID: 720365963335405917, guid: bb3428b2a66216a4389666f28860bf78, type: 3}
   researchSprite: {fileID: 0}
-  worldViewGo: {fileID: 641222772853359347, guid: 5e39798fa3e1e7148b8f2515649fc28c, type: 3}
+  viewGo: {fileID: 7821382478175976797, guid: 5e39798fa3e1e7148b8f2515649fc28c, type: 3}
   maxSpeed: 15
   tractionCoefficient: 16000
   brakingCoefficient: -25000

@@ -23,5 +23,5 @@ MonoBehaviour:
   purchaseCost: 0
   yardSprite: {fileID: -3107203369821235118, guid: edb6a483e91138e4b88132697a6beec7, type: 3}
   researchSprite: {fileID: 0}
-  worldViewGo: {fileID: 3005554531702369042, guid: 7cfdcb7dc848dd441847a330b34dab70, type: 3}
+  viewGo: {fileID: 5609491404953425084, guid: b59612a990c1938438b41e71e69e3259, type: 3}
   loadType: 0

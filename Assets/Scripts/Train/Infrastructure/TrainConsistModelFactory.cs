@@ -16,8 +16,15 @@ namespace Train.Infrastructure
         public void AddRollinStock(RollingStockModel rollingStockModel)
         {
             if(!_hasLocomotive)
-                PerformFirstLocomotiveCheck();
+                PerformFirstLocomotiveCheck(rollingStockModel);
             _trainConsistSelection.Add(rollingStockModel);
+        }
+        
+        public void RemoveRollingStock(int index)
+        {
+            if (_trainConsistSelection.Count == 0)
+                throw new InvalidOperationException("Train consist is empty");
+            _trainConsistSelection.RemoveAt(index);
         }
         
         public List<RollingStockModel> GetTrainConsistSelection()
@@ -25,9 +32,9 @@ namespace Train.Infrastructure
             return _trainConsistSelection.ToList();
         }
 
-        private void PerformFirstLocomotiveCheck()
+        private void PerformFirstLocomotiveCheck(RollingStockModel rollingStockModel)
         {
-            if (_trainConsistSelection.First() is LocomotiveModel)
+            if (rollingStockModel is LocomotiveModel)
                 _hasLocomotive = true; 
             else
                 throw new InvalidOperationException("Train must have at least one locomotive");

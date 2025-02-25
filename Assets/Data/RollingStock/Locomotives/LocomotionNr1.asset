@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LocomotionNr1
   m_EditorClassIdentifier: 
   uuid: 9cb9419f-9272-4644-9855-c915fd57446f
-  mass: 0
+  mass: 1000
   research:
     researchState: 0
     unlockCost: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   purchaseCost: 0
   yardSprite: {fileID: 3394322766383775275, guid: 14876069b37c9bc4f99fab1a6cdf8ef8, type: 3}
   researchSprite: {fileID: 0}
-  worldViewGo: {fileID: 3881763357577550317, guid: 15ebfe10262b0a84ab970e7c4c79581e, type: 3}
+  viewGo: {fileID: 5887328891864737347, guid: 15ebfe10262b0a84ab970e7c4c79581e, type: 3}
   maxSpeed: 6.7
   tractionCoefficient: 8500
   brakingCoefficient: -16000

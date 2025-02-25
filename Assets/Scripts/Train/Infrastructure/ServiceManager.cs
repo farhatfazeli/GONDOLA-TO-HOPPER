@@ -15,7 +15,7 @@ namespace Train.Infrastructure
         /// </summary>
         public bool CreateService(Route route, TrainConsistModel trainConsist)
         {
-            if (TrainConsistRepository.I.IsTrainInService(trainConsist))
+            if (TrainConsistRepository.I.IsTrainConsistInService(trainConsist))
             {
                 Console.WriteLine($"Train {trainConsist.name} is already in service!");
                 return false;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LeBelge
   m_EditorClassIdentifier: 
   uuid: 3cea25e2-3ee0-40b1-a239-07bf81a0c324
-  mass: 0
+  mass: 1000
   research:
     researchState: 1
     unlockCost: 0
@@ -22,8 +22,8 @@ MonoBehaviour:
   startingAmount: 0
   purchaseCost: 0
   yardSprite: {fileID: -8590286932747780483, guid: e1ed18a28a6a2594696888d4384aac5b, type: 3}
-  researchSprite: {fileID: 0}
-  worldViewGo: {fileID: 6269363646077436838, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
+  researchSprite: {fileID: 21300000, guid: f0b0b73e3bfbeb144b50d4666c1e6c51, type: 3}
+  viewGo: {fileID: 3705464545893284872, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
   maxSpeed: 10
   tractionCoefficient: 12000
   brakingCoefficient: -18000

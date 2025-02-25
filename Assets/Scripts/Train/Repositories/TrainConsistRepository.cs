@@ -7,26 +7,26 @@ namespace Train.Repositories
 {
     public class TrainConsistRepository
     {
-        private readonly List<TrainConsistModel> _standbyTrains = new List<TrainConsistModel>();
+        private readonly List<TrainConsistModel> _standbyTrainsConsists = new List<TrainConsistModel>();
         private readonly Dictionary<TrainConsistModel, ServiceModel> _trainsInService = new();
         
         public event Action OnTrainListUpdated;
         
         public void AddTrain(TrainConsistModel train)
         {
-            _standbyTrains.Add(train);
+            _standbyTrainsConsists.Add(train);
             OnTrainListUpdated?.Invoke();
         }
         
         public void AddTrains(IEnumerable<TrainConsistModel> trains)
         {
-            _standbyTrains.AddRange(trains);
+            _standbyTrainsConsists.AddRange(trains);
             OnTrainListUpdated?.Invoke();
         }
         
         public void PutTrainInService(TrainConsistModel train, ServiceModel service)
         {
-            if (_standbyTrains.Remove(train))
+            if (_standbyTrainsConsists.Remove(train))
             {
                 _trainsInService.Add(train, service);
                 OnTrainListUpdated?.Invoke();
@@ -41,7 +41,7 @@ namespace Train.Repositories
         {
             if (_trainsInService.Remove(train))
             {
-                _standbyTrains.Add(train);
+                _standbyTrainsConsists.Add(train);
                 OnTrainListUpdated?.Invoke();
             }
             else
@@ -58,30 +58,30 @@ namespace Train.Repositories
 
         public void RemoveTrain(TrainConsistModel train)
         {
-            _standbyTrains.Remove(train);
+            _standbyTrainsConsists.Remove(train);
             OnTrainListUpdated?.Invoke();
         }
 
-        public List<TrainConsistModel> GetAllTrains()
+        public List<TrainConsistModel> GetAllTrainConsists()
         {
-            List<TrainConsistModel> allTrains = GetStandbyTrains();
-            allTrains.AddRange(GetTrainsInService());
-            return allTrains;
+            List<TrainConsistModel> allTrainConsists = GetStandbyTrainConsists();
+            allTrainConsists.AddRange(GetTrainConsistsInService());
+            return allTrainConsists;
         }
         
-        public List<TrainConsistModel> GetStandbyTrains()
+        public List<TrainConsistModel> GetStandbyTrainConsists()
         {
-            return new List<TrainConsistModel>(_standbyTrains);
+            return new List<TrainConsistModel>(_standbyTrainsConsists);
         }
         
-        public List<TrainConsistModel> GetTrainsInService()
+        public List<TrainConsistModel> GetTrainConsistsInService()
         {
             return new List<TrainConsistModel>(_trainsInService.Keys);
         }
         
-        public bool IsTrainInService(TrainConsistModel train)
+        public bool IsTrainConsistInService(TrainConsistModel trainConsistModel)
         {
-            return _trainsInService.ContainsKey(train);
+            return _trainsInService.ContainsKey(trainConsistModel);
         }
         
         public List<ServiceModel> GetActiveServices()
@@ -91,7 +91,7 @@ namespace Train.Repositories
         
         public void Clear()
         {
-            _standbyTrains.Clear();
+            _standbyTrainsConsists.Clear();
             _trainsInService.Clear();
             OnTrainListUpdated?.Invoke();
         }

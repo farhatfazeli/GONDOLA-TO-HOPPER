@@ -9,8 +9,8 @@ namespace Train.Infrastructure.RollingStock
     public class RollingStockSaveHelper
     {
         public static void PopulateSaveData(SaveData sd)
-        {
-            List<RollingStockModel> rollingStockModels = RollingStockRepository.I.GetAllRollingStock();
+        { 
+            IEnumerable<RollingStockModel> rollingStockModels = RollingStockRepository.I.GetRollingStockModels();
             foreach (var rollingStockModel in rollingStockModels)
             {
                 var rollingStockSaveData = new RollingStockSaveData
@@ -25,14 +25,14 @@ namespace Train.Infrastructure.RollingStock
         
         public static void LoadFromSaveData(SaveData sd)
         {
-            if(RollingStockRepository.I.GetAllRollingStock().Count == 0)
+            if(RollingStockRepository.I.GetRollingStockModels().ToList().Count == 0)
             {
                 throw new System.Exception("RollingStockRepository not populated with rolling stock.");
             }
             
             Dictionary<string, RollingStockSaveData> saveLookup = sd.rollingStockSD.ToDictionary(r => r.uuid);
             
-            foreach (RollingStockModel rollingStockModel in RollingStockRepository.I.GetAllRollingStock())
+            foreach (RollingStockModel rollingStockModel in RollingStockRepository.I.GetRollingStockModels())
             {
                 if (saveLookup.TryGetValue(rollingStockModel.uuid, out RollingStockSaveData saved))
                 {

@@ -1,11 +1,19 @@
+using Train.Model.RollingStock;
 using UnityEngine;
 
 namespace Train.View.WorldView
 {
     public class RollingStockView : MonoBehaviour
     {
-        [SerializeField] private Transform frontCoupler;
-        [SerializeField] private Transform rearCoupler;
+        public Transform frontCoupler;
+        public Transform rearCoupler;
+        
+        private RollingStockModel _rollingStockModel;
+        
+        public void Initialize(RollingStockModel rollingStockModel)
+        {
+            _rollingStockModel = rollingStockModel;
+        }
 
         public void AlignRollingStock(Transform targetRollingStock)
         {

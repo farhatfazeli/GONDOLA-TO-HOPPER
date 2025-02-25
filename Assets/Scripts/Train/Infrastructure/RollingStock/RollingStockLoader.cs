@@ -3,13 +3,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using ScriptableObjects;
 using Train.Model.RollingStock;
+using Train.Repositories;
 using Utility;
 
 namespace Train.Infrastructure.RollingStock
 {
     public static class RollingStockLoader
     {
-        public static async Task<List<RollingStockModel>> LoadAllRollingStockModelsAsync(string label)
+        public static async Task LoadAllRollingStockModelsAsync(string label)
         {
             List<SO_RollingStock> rollingStockAssets = await AddressableLoader<SO_RollingStock>.LoadAllAsync(label);
             
@@ -30,7 +31,7 @@ namespace Train.Infrastructure.RollingStock
                 }
             }
             
-            return rollingStockModels;
+            RollingStockRepository.I.Initialize(rollingStockModels, rollingStockAssets);
         }
     }
 }

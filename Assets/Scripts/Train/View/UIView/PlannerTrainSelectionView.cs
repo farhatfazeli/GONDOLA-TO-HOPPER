@@ -16,7 +16,7 @@ namespace Train.View.UIView
         
         private void RefreshUI()
         {
-            List<TrainConsistModel> trains = _trainConsistRepository.GetStandbyTrains();
+            List<TrainConsistModel> trains = _trainConsistRepository.GetStandbyTrainConsists();
             List<string> options = trains.ConvertAll(train => train.name);
             trainDropdown.ClearOptions();
             trainDropdown.AddOptions(options);

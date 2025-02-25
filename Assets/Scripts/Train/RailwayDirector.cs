@@ -21,10 +21,7 @@ namespace Train
             List<StationModel> stations = await StationLoader.LoadAllStationModelsAsync(SO_GameParameters.I.addressableLabelStations);
             StationRepository.I.AddStations(stations);
             
-            List<RollingStockModel> rollingStock = await RollingStockLoader.LoadAllRollingStockModelsAsync(SO_GameParameters.I.addressableLabelRollingStock);
-            RollingStockRepository.I.AddRollingStock(rollingStock);
-            
-            
+            await RollingStockLoader.LoadAllRollingStockModelsAsync(SO_GameParameters.I.addressableLabelRollingStock);
             
             IsInitialized = true;
         }
@@ -46,7 +43,7 @@ namespace Train
 
         public void PopulateSaveData(SaveData sd)
         {
-            TrainSaveHelper.PopulateSaveData(sd);
+            TrainConsistSaveHelper.PopulateSaveData(sd);
             StationSaveHelper.PopulateSaveData(sd);
             RollingStockSaveHelper.PopulateSaveData(sd);
             TimeSaveHelper.PopulateSaveData(sd);
@@ -54,7 +51,7 @@ namespace Train
 
         public void LoadFromSaveData(SaveData sd)
         {
-            TrainSaveHelper.LoadFromSaveData(sd);
+            TrainConsistSaveHelper.LoadFromSaveData(sd);
             StationSaveHelper.LoadFromSaveData(sd);
             RollingStockSaveHelper.LoadFromSaveData(sd);
             TimeSaveHelper.LoadFromSaveData(sd);
@@ -62,7 +59,7 @@ namespace Train
         
         public void Reset()
         {
-            foreach (var train in TrainConsistRepository.I.GetAllTrains())
+            foreach (var train in TrainConsistRepository.I.GetAllTrainConsists())
             {
                 train.Reset();
             }

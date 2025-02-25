@@ -130,13 +130,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: LiverpoolManchesterPassengerCarriage
       objectReference: {fileID: 0}
+    - target: {fileID: 5609491404953425084, guid: b59612a990c1938438b41e71e69e3259, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6113740828739511176, guid: b59612a990c1938438b41e71e69e3259, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.1
+      value: -2.17
       objectReference: {fileID: 0}
     - target: {fileID: 6113740828739511176, guid: b59612a990c1938438b41e71e69e3259, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.63
+      value: -4.59
       objectReference: {fileID: 0}
     - target: {fileID: 6113740828739511176, guid: b59612a990c1938438b41e71e69e3259, type: 3}
       propertyPath: m_LocalPosition.z
@@ -175,6 +179,84 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b59612a990c1938438b41e71e69e3259, type: 3}
+--- !u!1 &370775888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 370775890}
+  - component: {fileID: 370775891}
+  m_Layer: 0
+  m_Name: YardMarshallView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &370775890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370775888}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &370775891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370775888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58563a4c171f4c3a8ea63707e9def496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yardAnchorTransform: {fileID: 1554291719}
+  entranceTransform: {fileID: 872982307}
+  driveSpeed: 5
+--- !u!1 &872982306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872982307}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &872982307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872982306}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -31.53, y: -5.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1071609871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -185,11 +267,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5055196074553041416, guid: c1ff02c5a378c7147997fc7c3e3f721e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.62
+      value: 5.31
       objectReference: {fileID: 0}
     - target: {fileID: 5055196074553041416, guid: c1ff02c5a378c7147997fc7c3e3f721e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.53
+      value: -4.69
       objectReference: {fileID: 0}
     - target: {fileID: 5055196074553041416, guid: c1ff02c5a378c7147997fc7c3e3f721e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -227,6 +309,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_RSW_ChaldronCoalHopper
       objectReference: {fileID: 0}
+    - target: {fileID: 6856482329568204092, guid: c1ff02c5a378c7147997fc7c3e3f721e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -244,13 +330,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_RSL_StephensonsRocket
       objectReference: {fileID: 0}
+    - target: {fileID: 7703529256749872682, guid: 38ad5f3c2106004488a66b79dc9b6967, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8352166686042784030, guid: 38ad5f3c2106004488a66b79dc9b6967, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.55
+      value: 4.38
       objectReference: {fileID: 0}
     - target: {fileID: 8352166686042784030, guid: 38ad5f3c2106004488a66b79dc9b6967, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -7.2200003
       objectReference: {fileID: 0}
     - target: {fileID: 8352166686042784030, guid: 38ad5f3c2106004488a66b79dc9b6967, type: 3}
       propertyPath: m_LocalPosition.z
@@ -370,7 +460,7 @@ Transform:
   m_GameObject: {fileID: 1176744800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.85, y: 7.54, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.27, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -386,11 +476,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3057029410936638268, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 15.93
       objectReference: {fileID: 0}
     - target: {fileID: 3057029410936638268, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -7.2200003
       objectReference: {fileID: 0}
     - target: {fileID: 3057029410936638268, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -428,6 +518,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_RSL_LeBelge
       objectReference: {fileID: 0}
+    - target: {fileID: 3705464545893284872, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -446,7 +540,7 @@ GameObject:
   - component: {fileID: 1516920823}
   - component: {fileID: 1516920826}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: YardCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -487,21 +581,21 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
+    x: -0.2
+    y: 0.4
     width: 1
-    height: 1
+    height: 0.6
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10.66
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: ff809c8d3347ef4489857653fb8589c9, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -520,7 +614,7 @@ Transform:
   m_GameObject: {fileID: 1516920822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21, y: 6, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -570,6 +664,37 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1554291718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1554291719}
+  m_Layer: 0
+  m_Name: FirstCarAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1554291719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554291718}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.21, y: -5.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1789033228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -580,11 +705,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5238612419033747831, guid: 15ebfe10262b0a84ab970e7c4c79581e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.13
+      value: -4.199999
       objectReference: {fileID: 0}
     - target: {fileID: 5238612419033747831, guid: 15ebfe10262b0a84ab970e7c4c79581e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -7.2200003
       objectReference: {fileID: 0}
     - target: {fileID: 5238612419033747831, guid: 15ebfe10262b0a84ab970e7c4c79581e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -622,6 +747,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_RSL_LocomotionNo1
       objectReference: {fileID: 0}
+    - target: {fileID: 5887328891864737347, guid: 15ebfe10262b0a84ab970e7c4c79581e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -638,7 +767,7 @@ GameObject:
   - component: {fileID: 1819737757}
   - component: {fileID: 1819737758}
   m_Layer: 0
-  m_Name: YardWorldView
+  m_Name: YardView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -671,7 +800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ff07dc9add45f3ab4e210982ebfe69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yardMarshallController: {fileID: 0}
 --- !u!1001 &2035425147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -684,13 +812,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: LiverpoolManchesterCattleCarriage
       objectReference: {fileID: 0}
+    - target: {fileID: 5609491404953425084, guid: 7cfdcb7dc848dd441847a330b34dab70, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6113740828739511176, guid: 7cfdcb7dc848dd441847a330b34dab70, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.56
+      value: 2.37
       objectReference: {fileID: 0}
     - target: {fileID: 6113740828739511176, guid: 7cfdcb7dc848dd441847a330b34dab70, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.63
+      value: -4.59
       objectReference: {fileID: 0}
     - target: {fileID: 6113740828739511176, guid: 7cfdcb7dc848dd441847a330b34dab70, type: 3}
       propertyPath: m_LocalPosition.z
@@ -741,13 +873,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_RSL_Crampton
       objectReference: {fileID: 0}
+    - target: {fileID: 7821382478175976797, guid: 5e39798fa3e1e7148b8f2515649fc28c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8470028169677474409, guid: 5e39798fa3e1e7148b8f2515649fc28c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.38
+      value: -10.449999
       objectReference: {fileID: 0}
     - target: {fileID: 8470028169677474409, guid: 5e39798fa3e1e7148b8f2515649fc28c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -7.2200003
       objectReference: {fileID: 0}
     - target: {fileID: 8470028169677474409, guid: 5e39798fa3e1e7148b8f2515649fc28c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -793,6 +929,7 @@ SceneRoots:
   - {fileID: 1516920825}
   - {fileID: 1176744802}
   - {fileID: 1819737757}
+  - {fileID: 370775890}
   - {fileID: 1071609871}
   - {fileID: 1316168017}
   - {fileID: 1130681510}
@@ -800,3 +937,5 @@ SceneRoots:
   - {fileID: 2059382543}
   - {fileID: 2035425147}
   - {fileID: 14332401}
+  - {fileID: 1554291719}
+  - {fileID: 872982307}

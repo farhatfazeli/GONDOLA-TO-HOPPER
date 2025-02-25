@@ -51,6 +51,9 @@ namespace Train.Model
                 .Where(w => w.loadType == LoadType.Freight)
                 .Sum(w => w.mass);
             
+            if(maxPassengerLoad + maxFreightLoad == 0)
+                throw new InvalidOperationException("Train must have at least one wagon");
+            
             PassengerLoad = new Load(maxPassengerLoad);
             FreightLoad = new Load(maxFreightLoad);
 
