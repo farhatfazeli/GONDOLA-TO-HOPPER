@@ -12,7 +12,7 @@ namespace TrainGame.Infrastructure
         /// <summary>
         /// Starts a new service for a given train using the provided route
         /// </summary>
-        public bool CreateService(Route route, TrainConsistModel trainConsist)
+        public bool CreateService(SO_Route soRoute, TrainConsistModel trainConsist)
         {
             if (TrainConsistRepository.I.IsTrainConsistInService(trainConsist))
             {
@@ -20,7 +20,7 @@ namespace TrainGame.Infrastructure
                 return false;
             }
 
-            ServiceModel serviceModel = new ServiceModel(route, trainConsist);
+            ServiceModel serviceModel = new ServiceModel(soRoute, trainConsist);
             
             TrainConsistRepository.I.PutTrainInService(trainConsist, serviceModel);
 

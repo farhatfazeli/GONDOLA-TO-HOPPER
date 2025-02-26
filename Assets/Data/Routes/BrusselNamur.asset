@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BrusselNamur
   m_EditorClassIdentifier: 
   routeName: Brussel - Namur
-  startStation: {fileID: 11400000, guid: 49b8c5cbfbdb9114db7166aa0d70e808, type: 2}
-  endStation: {fileID: 11400000, guid: 6d431a8b8791c51449f53500c5aa9d38, type: 2}
+  departureSoStation: {fileID: 11400000, guid: 49b8c5cbfbdb9114db7166aa0d70e808, type: 2}
+  arrivalSoStation: {fileID: 11400000, guid: 6d431a8b8791c51449f53500c5aa9d38, type: 2}
   distance: 55
   resourceCost: 15000
   landscapes: []

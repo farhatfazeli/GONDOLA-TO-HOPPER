@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TrainGame.Model
 {
-    public class Journey : IProgressTarget
+    public class JourneyModel : IProgressTarget
     {
         public float Current {
             get => _currentDistance;
@@ -25,7 +25,7 @@ namespace TrainGame.Model
         private float _currentDistance;
 
         private float _endDistance;
-        public Journey(float endDistance, float brakingDistance)
+        public JourneyModel(float endDistance, float brakingDistance)
         {
             if (endDistance <= 0)
                 throw new ArgumentException("End distance must be greater than zero.", nameof(endDistance));

@@ -37,13 +37,13 @@ namespace TrainGame.Model
 
         private ServiceStatus _serviceStatus;
 
-        public ServiceModel(Route route, TrainConsistModel train)
+        public ServiceModel(SO_Route soRoute, TrainConsistModel train)
         {
             departureStationMaster =
-                new StationMaster(route.departureSoStation, StationMasterType.DepartingStationMaster, train);
+                new StationMaster(soRoute.departureSoStation, StationMasterType.DepartingStationMaster, train);
             arrivalStationMaster =
-                new StationMaster(route.arrivalSoStation, StationMasterType.ArrivingStationMaster, train);
-            trainDriver = new TrainDriver(train.engine, route);
+                new StationMaster(soRoute.arrivalSoStation, StationMasterType.ArrivingStationMaster, train);
+            trainDriver = new TrainDriver(train.engine, soRoute);
         }
 
         /// <summary>

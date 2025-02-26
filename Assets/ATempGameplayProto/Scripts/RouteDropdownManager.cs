@@ -7,27 +7,27 @@ using UnityEngine.PlayerLoop;
 
 public class RouteDropdownManager : MonoBehaviour
 {
-    public List<Route> routes;
+    public List<SO_Route> routes;
 
-    public Route selectedRoute;
+    public SO_Route selectedSoRoute;
     
     [Header("Infos")]
     public TextMeshProUGUI distanceText;
     
     public void OnRouteSelected(int index)
     {
-        selectedRoute = routes[index];
+        selectedSoRoute = routes[index];
         UpdateInfos();
     }
 
     private void UpdateInfos()
     {
-        distanceText.text = $"<i>Distance: {selectedRoute.distance:F1} km</i>";
+        distanceText.text = $"<i>Distance: {selectedSoRoute.distance:F1} km</i>";
     }
 
     private void Start()
     {
-        selectedRoute = routes[0];
+        selectedSoRoute = routes[0];
         UpdateInfos();
     }
 }

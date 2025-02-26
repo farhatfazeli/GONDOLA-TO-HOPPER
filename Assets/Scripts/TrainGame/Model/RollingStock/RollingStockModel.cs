@@ -1,12 +1,13 @@
 ﻿using System;
 using ScriptableObjects;
+using TrainGame.Repositories;
 
 namespace TrainGame.Model.RollingStock
 {
-    public abstract class RollingStockModel
+    public abstract class RollingStockModel : IIdentifiable
     {
-        public string uuid;
-        public string name;
+        public string uuid { get; protected set; }
+        public string name { get; protected set;}
         public abstract RollingStockType Type { get; }
 
         public int mass;

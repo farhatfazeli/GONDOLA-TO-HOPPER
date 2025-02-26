@@ -53,7 +53,7 @@ namespace TrainGame.Infrastructure
             var rollingStockModels = new List<RollingStockModel>();
             foreach (var uuid in rollingStockUuids)
             {
-                var rollingStockModel = RollingStockRepository.I.GetRollingStockByUuid(uuid);
+                var rollingStockModel = RollingStockRepository.I.GetByUuid(uuid);
                 rollingStockModels.Add(rollingStockModel);
             }
             return rollingStockModels;

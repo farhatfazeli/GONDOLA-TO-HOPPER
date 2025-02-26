@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 6589f22f5dc489e4e8ae0d614b6bb56f
   m_currentHash:
     serializedVersion: 2
-    Hash: af5ef56aaaca6277d5a238495bdb5149
+    Hash: b50db012dcb96d7184124ce304330483
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -98,9 +98,10 @@ MonoBehaviour:
     m_ProfileVersion: 1
   m_LabelTable:
     m_LabelNames:
-    - default
     - Stations
     - RollingStock
+    - Routes
+    - Others
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: fe717ce9accfbe7439fc0747764a27d2, type: 2}

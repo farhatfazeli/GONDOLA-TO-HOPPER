@@ -10,7 +10,7 @@ namespace TrainGame.Infrastructure.RollingStock
     {
         public static void PopulateSaveData(SaveData sd)
         { 
-            IEnumerable<RollingStockModel> rollingStockModels = RollingStockRepository.I.GetRollingStockModels();
+            IEnumerable<RollingStockModel> rollingStockModels = RollingStockRepository.I.GetModels();
             foreach (var rollingStockModel in rollingStockModels)
             {
                 var rollingStockSaveData = new RollingStockSaveData
@@ -25,14 +25,14 @@ namespace TrainGame.Infrastructure.RollingStock
         
         public static void LoadFromSaveData(SaveData sd)
         {
-            if(RollingStockRepository.I.GetRollingStockModels().ToList().Count == 0)
+            if(RollingStockRepository.I.GetModels().ToList().Count == 0)
             {
                 throw new System.Exception("RollingStockRepository not populated with rolling stock.");
             }
             
             Dictionary<string, RollingStockSaveData> saveLookup = sd.rollingStockSD.ToDictionary(r => r.uuid);
             
-            foreach (RollingStockModel rollingStockModel in RollingStockRepository.I.GetRollingStockModels())
+            foreach (RollingStockModel rollingStockModel in RollingStockRepository.I.GetModels())
             {
                 if (saveLookup.TryGetValue(rollingStockModel.uuid, out RollingStockSaveData saved))
                 {
