@@ -34,6 +34,7 @@ namespace ScriptableObjects
 
         [Header("Scenes")]
         public string yardScene;
+        public string landscapeScene;
 
         [Header("Yard settings")] 
         public int driveSpeed = 50;

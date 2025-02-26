@@ -13,6 +13,9 @@ namespace TrainGame.Controller
 {
     public class YardMarshallController : MonoBehaviour
     {
+        [Header("Yard panel")]
+        [SerializeField] private RectTransform yardPanel;
+        
         [Header("Yard Marshall list")]
         [SerializeField] private YardMarshallItemListView yardMarshallItemListView;
 
@@ -27,26 +30,29 @@ namespace TrainGame.Controller
             add => _yardMarshallModel.OnTrainConsistChanged += value;
             remove => _yardMarshallModel.OnTrainConsistChanged -= value;
         }
-        private void Start()
+        
+        public void OnActivate()
         {
+            yardPanel.gameObject.SetActive(true);
+            LoadYardScene();
             StartCoroutine(WaitAndDo());
         }
-
-        private void OnEnable()
+        
+        public void OnDeactivate()
         {
-            LoadYardScene();
+            yardPanel.gameObject.SetActive(false);
+            UnloadYardScene();
         }
 
         private void LoadYardScene()
         {
-            SceneManager.LoadSceneAsync(SO_GameParameters.I.yardScene, LoadSceneMode.Additive);
+            AsyncOperation asyncOp = SceneManager.LoadSceneAsync(SO_GameParameters.I.yardScene, LoadSceneMode.Additive);
+            if (asyncOp != null) asyncOp.completed += operation => OnYardSceneLoaded();
         }
-
-
-
-        private void OnDisable()
+        
+        private void UnloadYardScene()
         {
-            
+            SceneManager.UnloadSceneAsync(SO_GameParameters.I.yardScene, UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
         }
 
         private System.Collections.IEnumerator WaitAndDo()
@@ -58,7 +64,6 @@ namespace TrainGame.Controller
             
             yardMarshallItemListView.Populate();
             
-            OnYardSceneLoaded();
         }
         
         private void OnYardSceneLoaded()
