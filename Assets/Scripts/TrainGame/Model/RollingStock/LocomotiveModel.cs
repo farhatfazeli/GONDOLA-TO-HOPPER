@@ -6,9 +6,9 @@ namespace TrainGame.Model.RollingStock
     {
         public override RollingStockType Type => RollingStockType.Locomotive;
 
-        public float maxSpeed;
-        public float tractionCoefficient;
-        public float brakingCoefficient;
+        public readonly float maxSpeed;
+        public readonly float tractionCoefficient;
+        public readonly float brakingCoefficient;
 
         public LocomotiveModel(SO_Locomotive locomotive) : this(locomotive.uuid, locomotive.Name, locomotive.mass,
             locomotive.startingAmount, locomotive.startingAmount, locomotive.purchaseCost, locomotive.maxSpeed,
@@ -16,7 +16,7 @@ namespace TrainGame.Model.RollingStock
         {
         }
 
-        public LocomotiveModel(string uuid, string name, int mass, int availableAmount, int fleetAmount,
+        private LocomotiveModel(string uuid, string name, int mass, int availableAmount, int fleetAmount,
             int purchaseCost, float maxSpeed, float tractionCoefficient, float brakingCoefficient)
         {
             this.uuid = uuid;

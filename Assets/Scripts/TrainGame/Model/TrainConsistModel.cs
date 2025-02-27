@@ -23,9 +23,13 @@ namespace TrainGame.Model
             }
         }
 
-        public Load PassengerLoad { get; private set; }
-        public Load FreightLoad { get; private set; }
-        private float TotalCurrentLoad => PassengerLoad.Current + FreightLoad.Current; // Always up-to-date
+        public float passengerLoad;
+        public float freightLoad;
+
+        public float maxPassengerLoad;
+        public float maxFreightLoad;
+        
+        private float TotalCurrentLoad => passengerLoad + freightLoad; // Always up-to-date
         
         public TrainConsistModel(string name, List<RollingStockModel> rollingStock) : this(Guid.NewGuid().GetHashCode(),
             name, rollingStock)
@@ -42,18 +46,15 @@ namespace TrainGame.Model
 
         private void RecalculateConsist()
         {
-            float maxPassengerLoad = _rollingStock.OfType<WagonModel>()
+            maxPassengerLoad = _rollingStock.OfType<WagonModel>()
                 .Where(w => w.loadType == LoadType.Passengers)
                 .Sum(w => w.mass);
-            float maxFreightLoad = _rollingStock.OfType<WagonModel>()
+            maxFreightLoad = _rollingStock.OfType<WagonModel>()
                 .Where(w => w.loadType == LoadType.Freight)
                 .Sum(w => w.mass);
             
             if(maxPassengerLoad + maxFreightLoad == 0)
                 throw new InvalidOperationException("Train must have at least one wagon");
-            
-            PassengerLoad = new Load(maxPassengerLoad);
-            FreightLoad = new Load(maxFreightLoad);
 
             engine = CreateTrainEngine();
         }

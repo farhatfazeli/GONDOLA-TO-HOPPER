@@ -1,27 +1,28 @@
-﻿using ScriptableObjects;
+﻿using System.Collections.Generic;
+using ScriptableObjects;
+using TrainGame.Repositories;
 
 namespace TrainGame.Model.Station
 {
-    public class StationModel
+    public class StationModel : IIdentifiable
     {
-        public string uuid;
-        public string name;
-        public bool isBuilt;
+        public string uuid { get; }
+        public string name { get; }
+
         public float passengerLoadRate;
         public float freightLoadRate;
 
-        public StationModel(SO_Station station) : this(station.uuid, station.name, false,
-            station.basePassengerLoadRate, station.baseFreightLoadRate)
-        {
-        }
+        public StationBuilder stationBuilder;
+        public List<StationMaster> stationMaster;
 
-        public StationModel(string uuid, string name, bool isBuilt, float passengerLoadRate, float freightLoadRate)
+
+        public StationModel(SO_Station station)
         {
-            this.uuid = uuid;
-            this.name = name;
-            this.isBuilt = isBuilt;
-            this.passengerLoadRate = passengerLoadRate;
-            this.freightLoadRate = freightLoadRate;
+            uuid = station.uuid;
+            name = station.name;
+
+            stationBuilder = new StationBuilder(station);
+            stationMaster = new List<StationMaster>();
         }
     }
 }

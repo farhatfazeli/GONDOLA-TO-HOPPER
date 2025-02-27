@@ -19,7 +19,7 @@ namespace TrainGame.Model.RollingStock
             set
             {
                 _availableAmount = value;
-                onModelChanged?.Invoke();
+                OnModelChanged?.Invoke();
             }
         }
         
@@ -30,11 +30,11 @@ namespace TrainGame.Model.RollingStock
             set
             {
                 _fleetAmount = value;
-                onModelChanged?.Invoke();
+                OnModelChanged?.Invoke();
             }
         }
         
-        public event Action onModelChanged;
+        public event Action OnModelChanged;
 
         public int purchaseCost;
     }

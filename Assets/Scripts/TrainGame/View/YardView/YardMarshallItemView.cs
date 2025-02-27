@@ -27,7 +27,7 @@ namespace TrainGame.View.YardView
             _rollingStockModel = ro;
             soRollingStock = so;
             itemImage.sprite = soRollingStock.yardSprite;
-            _rollingStockModel.onModelChanged += UpdateView;
+            _rollingStockModel.OnModelChanged += UpdateView;
             UpdateView();
         }
         

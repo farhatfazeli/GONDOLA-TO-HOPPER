@@ -17,7 +17,7 @@ namespace TrainGame.Infrastructure.Station
                 {
                     uuid = station.uuid,
                     name = station.name,
-                    isBuilt = station.isBuilt,
+                    isBuilt = station.stationBuilder.IsBuilt,
                     passengerLoadRate = station.passengerLoadRate,
                     freightLoadRate = station.freightLoadRate
                 };
@@ -38,7 +38,7 @@ namespace TrainGame.Infrastructure.Station
             {
                 if (saveLookup.TryGetValue(station.uuid, out StationSaveData saved))
                 {
-                    station.isBuilt = saved.isBuilt;
+                    station.IsBuilt = saved.isBuilt;
                     station.passengerLoadRate = saved.passengerLoadRate;
                     station.freightLoadRate = saved.freightLoadRate;
                 }

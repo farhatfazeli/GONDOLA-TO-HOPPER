@@ -1,4 +1,5 @@
 using System;
+using TrainGame.Model.RollingStock;
 using UnityEngine;
 
 namespace ScriptableObjects
@@ -8,12 +9,18 @@ namespace ScriptableObjects
     {
         public string uuid;
         
-        public string stationName;
-        
-        public int buildCost;
+        [Header("Build settings")] 
+        public bool isBuiltAtStart;
+        public LoadType buildResourceType;
+        public int buildResourceCost;
+        public int maxBuildPoints;
+        public int baseBuildAutoRate;
+        public int baseBuildManualRate;
 
-        public float basePassengerLoadRate;
-        public float baseFreightLoadRate;
+        [Header("Load settings")]
+        public float baseAutoLoadRate;
+        public float baseManualLoadRate;
+        
         
         // OnValidate is called in the editor whenever the asset is modified.
         private void OnValidate()

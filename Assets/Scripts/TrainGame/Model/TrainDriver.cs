@@ -5,7 +5,7 @@ namespace TrainGame.Model
 {
     public class TrainDriver
     {
-        private readonly JourneyModel _journeyModel;
+        private readonly JourneyProgress _journeyProgress;
         private readonly ProgressTracker _travelProgress;
         
         public bool IsTravelComplete => _travelProgress.IsFinished;
@@ -19,9 +19,9 @@ namespace TrainGame.Model
         public TrainDriver(TrainEngine engine, SO_Route soRoute)
         {
             _engine = engine;
-            _journeyModel = new JourneyModel(soRoute.distance, _engine.CalculateBrakingDistance());
-            _journeyModel.OnBrakingDistanceReached += StartBraking;
-            _travelProgress = new ProgressTracker(_journeyModel, engine.Speed);
+            _journeyProgress = new JourneyProgress(soRoute.distance, _engine.CalculateBrakingDistance());
+            _journeyProgress.OnBrakingDistanceReached += StartBraking;
+            _travelProgress = new ProgressTracker(_journeyProgress, engine.Speed);
         }
         
         public void StartDriving()

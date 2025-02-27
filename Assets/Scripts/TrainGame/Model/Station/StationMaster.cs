@@ -11,88 +11,64 @@ namespace TrainGame.Model.Station
 
     public class StationMaster
     {
-        private readonly ProgressTracker _passengerProgress;
-        private readonly ProgressTracker _freightProgress;
-
-        public bool IsProcessFinished => _passengerProgress.IsFinished && _freightProgress.IsFinished;
-
+        private readonly ProgressTracker _passengerProgressTracker;
+        private readonly ProgressTracker _freightProgressTracker;
+        public bool IsProcessFinished => _passengerProgressTracker.IsFinished && _freightProgressTracker.IsFinished;
         public event Action OnProcessComplete;
-
-
-        private readonly StationMasterType _type;
-
-        private bool _isProcessStarted;
-
-
-        public StationMaster(SO_Station soStation, StationMasterType type, TrainConsistModel train)
-        {
-            SetLoadMode(type, train);
-            _passengerProgress = new ProgressTracker(train.PassengerLoad, soStation.basePassengerLoadRate);
-            _freightProgress = new ProgressTracker(train.FreightLoad, soStation.baseFreightLoadRate);
-        }
-
-        public void StartProcess()
-        {
-            if(IsProcessFinished) return;
-            _isProcessStarted = true;
-        }
-
-        public void Update(float deltaTime)
-        {
-            if (!_isProcessStarted || IsProcessFinished) return;
-
-            ProcessPassengers(deltaTime);
-            ProcessFreight(deltaTime);
-            
-            FinishProcess();
-        }
-
-        private void ProcessPassengers(float deltaTime)
-        {
-            if (_passengerProgress.IsFinished) return;
-            _passengerProgress.Advance(deltaTime);
-        }
         
-        private void ProcessFreight(float deltaTime)
-        {
-            if (_freightProgress.IsFinished) return;
-            _freightProgress.Advance(deltaTime);
-        }
-
-        private void FinishProcess()
-        {
-            if (!_passengerProgress.IsFinished || !_freightProgress.IsFinished)
-                return;
-            OnProcessComplete?.Invoke();
-        }
+        private readonly float _baseManualLoadRate;
+        private TrainConsistModel _train;
         
-        public void Pause()
+        public StationMaster(SO_Station soStation, StationMasterType stationMasterType, TrainConsistModel train)
         {
-            _passengerProgress.Pause();
-            _freightProgress.Pause();
-        }
-        
-        public void Resume()
-        {
-            _passengerProgress.Resume();
-            _freightProgress.Resume();
-        }
+            _baseManualLoadRate = soStation.baseManualLoadRate;
 
-        private void SetLoadMode(StationMasterType stationMasterType, TrainConsistModel train)
-        {
             switch (stationMasterType)
             {
                 case StationMasterType.DepartingStationMaster:
-                    train.PassengerLoad.ChangeLoadMode(LoadMode.Loading);
-                    train.FreightLoad.ChangeLoadMode(LoadMode.Loading);
+                    _passengerProgressTracker = new ProgressTracker(new LoadProgress(train.maxPassengerLoad, LoadMode.Loading), soStation.baseAutoLoadRate);
+                    _freightProgressTracker = new ProgressTracker(new LoadProgress(train.maxFreightLoad, LoadMode.Loading), soStation.baseAutoLoadRate);
                     break;
                 case StationMasterType.ArrivingStationMaster:
-                    train.PassengerLoad.ChangeLoadMode(LoadMode.Unloading);
-                    train.FreightLoad.ChangeLoadMode(LoadMode.Unloading);
+                    _passengerProgressTracker = new ProgressTracker(new LoadProgress(train.maxPassengerLoad, LoadMode.Unloading), soStation.baseAutoLoadRate);
+                    _freightProgressTracker = new ProgressTracker(new LoadProgress(train.maxFreightLoad, LoadMode.Unloading), soStation.baseAutoLoadRate);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(stationMasterType), stationMasterType, null);
             }
+        }
+        
+        public void StartProcess()
+        {
+            if(IsProcessFinished) return;
+            _passengerProgressTracker.Start();
+            _freightProgressTracker.Start();
+        }
+
+        public void ManualProcess()
+        {
+            if(IsProcessFinished) return;
+            _passengerProgressTracker.AdvanceBy(_baseManualLoadRate);
+            _freightProgressTracker.AdvanceBy(_baseManualLoadRate);
+        }
+        
+        public void Update(float deltaTime)
+        {
+            if(IsProcessFinished) return;
+            _passengerProgressTracker.Advance(deltaTime);
+            _freightProgressTracker.Advance(deltaTime);
+        }
+        
+        public void Pause()
+        {
+            _passengerProgressTracker.Pause();
+            _freightProgressTracker.Pause();
+        }
+        
+        public void Resume()
+        {
+            _passengerProgressTracker.Resume();
+            _freightProgressTracker.Resume();
         }
     }
 }

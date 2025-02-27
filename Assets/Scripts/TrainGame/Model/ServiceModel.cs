@@ -39,10 +39,10 @@ namespace TrainGame.Model
 
         public ServiceModel(SO_Route soRoute, TrainConsistModel train)
         {
-            departureStationMaster =
-                new StationMaster(soRoute.departureSoStation, StationMasterType.DepartingStationMaster, train);
-            arrivalStationMaster =
-                new StationMaster(soRoute.arrivalSoStation, StationMasterType.ArrivingStationMaster, train);
+            // departureStationMaster =
+            //     new StationMaster(soRoute.departureSoStation, StationMasterType.DepartingStationMaster, train);
+            // arrivalStationMaster =
+            //     new StationMaster(soRoute.arrivalSoStation, StationMasterType.ArrivingStationMaster, train);
             trainDriver = new TrainDriver(train.engine, soRoute);
         }
 

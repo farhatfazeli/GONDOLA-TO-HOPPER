@@ -33,6 +33,17 @@ namespace TrainGame.Model
         private bool _isStarted;
         private bool _isPaused;
 
+        public void Start()
+        {
+            _isStarted = true;
+        }
+        
+        public void Finish()
+        {
+            _progressTarget.UpdateProgress(TargetProgress);
+            OnProgressComplete?.Invoke();
+        }
+
         /// <summary>
         /// Constructs a ProgressTracker that uses an IProgressable instance.
         /// </summary>
@@ -47,7 +58,7 @@ namespace TrainGame.Model
         /// </summary>
         public void Advance(float deltaTime)
         {
-            if (_isPaused) return;
+            if (_isPaused || !_isStarted) return;
             AdvanceBy(_progressRate * SO_GameParameters.I.gameSpeedUpFactor * deltaTime);
         }
 

@@ -7,28 +7,28 @@ namespace TrainGame.Model
     {
         Loading,
         Unloading,
-        NotSet
     }
     
-    public class Load : IProgressTarget
+    public class LoadProgress : IProgressTarget
     {
         public float Current { get; private set; }
         public float Max { get; }
 
-        private LoadMode _loadMode;
-        
+        private readonly LoadMode _loadMode;
+
         /// <summary>
         /// Constructs a new Load instance with a specified maximum capacity.
         /// </summary>
         /// <param name="maxLoad">The maximum load capacity. Must be greater than or equal to zero.</param>
-        public Load(float maxLoad)
+        /// <param name="loadMode">If the mode is loading or unloading. </param>
+        public LoadProgress(float maxLoad, LoadMode loadMode)
         {
             if (maxLoad < 0)
                 throw new ArgumentException("Max load must be greater than or equal to zero.", nameof(maxLoad));
 
             Max = maxLoad;
             Current = 0f;
-            _loadMode = LoadMode.NotSet;
+            _loadMode = loadMode;
         }
         
         public void UpdateProgress(float amount)
@@ -49,8 +49,6 @@ namespace TrainGame.Model
                 case LoadMode.Unloading:
                     Set(Current - amount);
                     break;
-                case LoadMode.NotSet:
-                    throw new InvalidOperationException("Load mode must be set before loading or unloading.");
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -62,11 +60,6 @@ namespace TrainGame.Model
         private void Set(float load)
         {
             Current = Mathf.Clamp(load, 0f, Max);
-        }
-        
-        public void ChangeLoadMode(LoadMode mode)
-        {
-            _loadMode = mode;
         }
     }
 }
