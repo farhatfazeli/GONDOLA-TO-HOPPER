@@ -12,8 +12,8 @@ namespace TrainGame.Model.Station
         public float passengerLoadRate;
         public float freightLoadRate;
 
-        public StationBuilder stationBuilder;
-        public List<StationMaster> stationMaster;
+        public readonly StationBuilder stationBuilder;
+        public readonly List<StationMaster> stationMaster;
 
 
         public StationModel(SO_Station station)

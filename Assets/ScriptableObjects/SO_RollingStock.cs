@@ -1,13 +1,14 @@
 using System;
 using ATempGameplayProto.Scripts.Research;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace ScriptableObjects
 {
     public abstract class SO_RollingStock : ScriptableObject, IRollingStock
     {
         public string uuid;
-        public string Name => name; // Unity allows you to use the asset name
+        
         public abstract RollingStockType Type { get; }
 
         [Header("Rolling stock parameters")] public int mass;
@@ -31,28 +32,6 @@ namespace ScriptableObjects
                 uuid = Guid.NewGuid().ToString();
             }
         }
-        //
-        // private void OnEnable()
-        // {
-        //     Initialize();
-        // }
-        //
-        // private void Initialize()
-        // {
-        //     research.Initialize();
-        //     depot.Initialize(research);
-        // }
-        //
-        // public void Reset()
-        // {
-        //     research.LockResearch();
-        //     depot.Reset();
-        // }
-        //
-        // private void OnDisable()
-        // {
-        //     research.onResearchFinished -= depot.ListInDepot;
-        // }
     }
 
     public enum RollingStockType

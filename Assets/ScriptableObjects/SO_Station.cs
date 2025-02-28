@@ -1,5 +1,6 @@
 using System;
 using TrainGame.Model.RollingStock;
+using TrainGame.Repositories;
 using UnityEngine;
 
 namespace ScriptableObjects
@@ -18,9 +19,8 @@ namespace ScriptableObjects
         public int baseBuildManualRate;
 
         [Header("Load settings")]
-        public float baseAutoLoadRate;
-        public float baseManualLoadRate;
-        
+        public float baseLoadAutoRate;
+        public float baseLoadManualRate;
         
         // OnValidate is called in the editor whenever the asset is modified.
         private void OnValidate()

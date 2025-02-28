@@ -22,6 +22,7 @@ namespace ScriptableObjects
         [Header("Addressable settings")]
         public string addressableLabelStations = "Stations";
         public string addressableLabelRollingStock = "RollingStock";
+        public string addressableLabelRoutes = "Routes";
     
         [Header("UI settings")] 
         public Color32 achievedColor = new Color32(0xF6, 0xFF, 0xAA, 0xFF);
@@ -38,7 +39,7 @@ namespace ScriptableObjects
 
         [Header("Yard settings")] 
         public int driveSpeed = 50;
-    
+        
         public static SO_GameParameters I { get; private set; }
     
         private void OnEnable()

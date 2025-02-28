@@ -38,7 +38,7 @@ namespace ATempGameplayProto.Scripts.Research
 
         private void InitializeUI()
         {
-            researchName.text = _soRollingStock.Name;
+            researchName.text = _soRollingStock.name;
             researchDescription.text = GetResearchDescription();
             researchCost.text = $"Cost: {_soRollingStock.research.unlockCost:N0} RP";
         

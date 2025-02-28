@@ -10,7 +10,7 @@ namespace TrainGame.Model.RollingStock
         public readonly float tractionCoefficient;
         public readonly float brakingCoefficient;
 
-        public LocomotiveModel(SO_Locomotive locomotive) : this(locomotive.uuid, locomotive.Name, locomotive.mass,
+        public LocomotiveModel(SO_Locomotive locomotive) : this(locomotive.uuid, locomotive.name, locomotive.mass,
             locomotive.startingAmount, locomotive.startingAmount, locomotive.purchaseCost, locomotive.maxSpeed,
             locomotive.tractionCoefficient, locomotive.brakingCoefficient)
         {

@@ -7,7 +7,7 @@ using Utility;
 
 namespace TrainGame.Infrastructure.RollingStock
 {
-    public static class RollingStockLoader
+    public abstract class RollingStockLoader
     {
         public static async Task LoadAllRollingStockModelsAsync(string label)
         {

@@ -26,8 +26,8 @@ namespace TrainGame.Model
     
     
         private readonly IProgressTarget _progressTarget;
-        private float TargetProgress => _progressTarget.Max;
         private float CurrentProgress => _progressTarget.Current;
+        private float TargetProgress => _progressTarget.Max;
 
         private readonly float _progressRate;
         private bool _isStarted;
@@ -75,6 +75,12 @@ namespace TrainGame.Model
         public void AdvancePercentage(float progress)
         {
             AdvanceBy(progress * TargetProgress);
+        }
+        
+        public void SetProgress(float progress)
+        {
+            _progressTarget.UpdateProgress(progress * TargetProgress);
+            if (IsFinished) OnProgressComplete?.Invoke();
         }
     
         public void Pause() => _isPaused = true;

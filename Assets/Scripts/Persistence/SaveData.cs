@@ -17,6 +17,8 @@ namespace Persistence
         
         public List<StationSaveData> stationSD = new List<StationSaveData>();
         
+        public List<RouteSaveData> routeSD = new List<RouteSaveData>();
+        
         public List<RollingStockSaveData> rollingStockSD = new List<RollingStockSaveData>();
     }
     
@@ -24,10 +26,18 @@ namespace Persistence
     public struct StationSaveData
     {
         public string uuid;
-        public string name;
         public bool isBuilt;
+        public float buildProgress;
         public float passengerLoadRate;
         public float freightLoadRate;
+    }
+    
+    [Serializable]
+    public struct RouteSaveData
+    {
+        public string uuid;
+        public bool isBuilt;
+        public float buildProgress;
     }
     
     [Serializable]

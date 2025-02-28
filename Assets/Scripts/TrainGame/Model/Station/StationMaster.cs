@@ -21,17 +21,17 @@ namespace TrainGame.Model.Station
         
         public StationMaster(SO_Station soStation, StationMasterType stationMasterType, TrainConsistModel train)
         {
-            _baseManualLoadRate = soStation.baseManualLoadRate;
+            _baseManualLoadRate = soStation.baseLoadManualRate;
 
             switch (stationMasterType)
             {
                 case StationMasterType.DepartingStationMaster:
-                    _passengerProgressTracker = new ProgressTracker(new LoadProgress(train.maxPassengerLoad, LoadMode.Loading), soStation.baseAutoLoadRate);
-                    _freightProgressTracker = new ProgressTracker(new LoadProgress(train.maxFreightLoad, LoadMode.Loading), soStation.baseAutoLoadRate);
+                    _passengerProgressTracker = new ProgressTracker(new LoadProgress(train.maxPassengerLoad, LoadMode.Loading), soStation.baseLoadAutoRate);
+                    _freightProgressTracker = new ProgressTracker(new LoadProgress(train.maxFreightLoad, LoadMode.Loading), soStation.baseLoadAutoRate);
                     break;
                 case StationMasterType.ArrivingStationMaster:
-                    _passengerProgressTracker = new ProgressTracker(new LoadProgress(train.maxPassengerLoad, LoadMode.Unloading), soStation.baseAutoLoadRate);
-                    _freightProgressTracker = new ProgressTracker(new LoadProgress(train.maxFreightLoad, LoadMode.Unloading), soStation.baseAutoLoadRate);
+                    _passengerProgressTracker = new ProgressTracker(new LoadProgress(train.maxPassengerLoad, LoadMode.Unloading), soStation.baseLoadAutoRate);
+                    _freightProgressTracker = new ProgressTracker(new LoadProgress(train.maxFreightLoad, LoadMode.Unloading), soStation.baseLoadAutoRate);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(stationMasterType), stationMasterType, null);

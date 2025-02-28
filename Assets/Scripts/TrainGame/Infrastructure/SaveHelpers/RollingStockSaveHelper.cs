@@ -6,7 +6,7 @@ using TrainGame.Repositories;
 
 namespace TrainGame.Infrastructure.RollingStock
 {
-    public class RollingStockSaveHelper
+    public abstract class RollingStockSaveHelper
     {
         public static void PopulateSaveData(SaveData sd)
         { 

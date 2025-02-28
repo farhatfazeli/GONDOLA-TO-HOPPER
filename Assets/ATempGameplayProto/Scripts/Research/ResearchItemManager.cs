@@ -27,7 +27,7 @@ public class ResearchItemManager : MonoBehaviour
 
     private void InitializeUI()
     {
-        researchSnippetName.text = soRollingStock.Name;
+        researchSnippetName.text = soRollingStock.name;
 
         CheckAchievementState();
     }

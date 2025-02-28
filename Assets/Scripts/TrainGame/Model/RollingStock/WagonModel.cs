@@ -8,7 +8,7 @@ namespace TrainGame.Model.RollingStock
 
         public LoadType loadType;
         
-        public WagonModel(SO_Wagon wagon) : this(wagon.uuid, wagon.Name, wagon.mass, wagon.startingAmount,
+        public WagonModel(SO_Wagon wagon) : this(wagon.uuid, wagon.name, wagon.mass, wagon.startingAmount,
             wagon.startingAmount, wagon.purchaseCost, wagon.loadType)
         {
         }

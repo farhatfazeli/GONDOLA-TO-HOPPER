@@ -10,16 +10,16 @@ namespace TrainGame.Infrastructure.Station
     {
         public static void PopulateSaveData(SaveData sd)
         {
-            List<StationModel> stations = StationRepository.I.GetAllStations();
-            foreach (var station in stations)
+            IEnumerable<StationModel> stationModels = StationRepository.I.GetModels();
+            foreach (var stationModel in stationModels)
             {
                 var stationSaveData = new StationSaveData
                 {
-                    uuid = station.uuid,
-                    name = station.name,
-                    isBuilt = station.stationBuilder.IsBuilt,
-                    passengerLoadRate = station.passengerLoadRate,
-                    freightLoadRate = station.freightLoadRate
+                    uuid = stationModel.uuid,
+                    isBuilt = stationModel.stationBuilder.IsBuilt,
+                    buildProgress = stationModel.stationBuilder.BuildProgress,
+                    passengerLoadRate = stationModel.passengerLoadRate,
+                    freightLoadRate = stationModel.freightLoadRate
                 };
                 sd.stationSD.Add(stationSaveData);
             }
@@ -27,18 +27,25 @@ namespace TrainGame.Infrastructure.Station
 
         public static void LoadFromSaveData(SaveData sd)
         {
-            if (StationRepository.I.GetAllStations().Count == 0)
+            if (StationRepository.I.GetModels().ToList().Count == 0)
             {
                 throw new System.Exception("StationRepository not populated with stations.");
             }
             
             Dictionary<string, StationSaveData> saveLookup = sd.stationSD.ToDictionary(s => s.uuid);
 
-            foreach (StationModel station in StationRepository.I.GetAllStations())
+            foreach (StationModel station in StationRepository.I.GetModels())
             {
                 if (saveLookup.TryGetValue(station.uuid, out StationSaveData saved))
                 {
-                    station.IsBuilt = saved.isBuilt;
+                    if(saved.isBuilt)
+                    {
+                        station.stationBuilder.SetBuilt();
+                    }
+                    else
+                    {
+                        station.stationBuilder.SetBuildProgress(saved.buildProgress);
+                    }
                     station.passengerLoadRate = saved.passengerLoadRate;
                     station.freightLoadRate = saved.freightLoadRate;
                 }

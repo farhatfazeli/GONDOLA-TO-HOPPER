@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using TrainGame.Model;
+using TrainGame.Model.RollingStock;
 using UnityEngine;
 
 namespace ScriptableObjects
@@ -9,15 +11,25 @@ namespace ScriptableObjects
     {
         public string uuid;
         
-        public string routeName;
-        
-        public SO_Station departureSoStation;
-        public SO_Station arrivalSoStation;
+        [Header ("Route settings")]
+        public SO_Station departureStation;
+        public SO_Station arrivalStation;
         public float distance;
         
-        public int resourceCost;
-        public ProgressTracker buildProgressTracker;
-    
-        public List<Landscape> landscapes;
+        [Header("Build settings")]
+        public bool isBuiltAtStart;
+        public LoadType buildResourceType;
+        public int buildResourceCost;
+        public int maxBuildPoints;
+        public int baseBuildAutoRate;
+        public int baseBuildManualRate;
+        
+        private void OnValidate()
+        {
+            if (string.IsNullOrEmpty(uuid))
+            {
+                uuid = Guid.NewGuid().ToString();
+            }
+        }
     }
 }
