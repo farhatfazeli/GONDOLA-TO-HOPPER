@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Journal Icone_0: 8054751835474977777
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
