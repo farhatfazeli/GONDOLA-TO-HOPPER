@@ -7,8 +7,8 @@ namespace TrainGame.Controller
     public class UIPanelController : MonoBehaviour
     {
         [Header("Controllers")]
-        [SerializeField] private LandscapeController landscapeController;
         [SerializeField] private YardMarshallController yardMarshallController;
+        [SerializeField] private LandscapeController landscapeController;
         
         [SerializeField] private TabHandler landscapeTab;
         [SerializeField] private TabHandler yardTab;
@@ -19,18 +19,33 @@ namespace TrainGame.Controller
             yardTab.OnTabClick();
         }
 
-        public void OnOpenLandscapePanel()
+        public void GoToMainView()
+        {
+            
+        }
+        
+        public void GoToYardView()
+        {
+            landscapeController.OnDeactivate();
+            yardMarshallController.OnActivate();
+            landscapeTab.Deactivate();
+        }
+        
+        public void GoToLandscapeView()
         {
             yardMarshallController.OnDeactivate();
             landscapeController.OnActivate();
             yardTab.Deactivate();
         }
-        
-        public void OnOpenYardPanel()
+
+        public void GoToPlannerView()
         {
-            landscapeController.OnDeactivate();
-            yardMarshallController.OnActivate();
-            landscapeTab.Deactivate();
+            
+        }
+
+        public void CleanView()
+        {
+            
         }
     }
 }

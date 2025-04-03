@@ -16,17 +16,17 @@ namespace TrainGame
     public class RailwayDirector : PersistentSingleton<RailwayDirector>, ISaveable
     {
         public bool IsInitialized { get; private set; }
-        
+
         private async void Start()
         {
             Task rollingStockLoadingTask = RollingStockLoader.LoadAllRollingStockModelsAsync(SO_GameParameters.I.addressableLabelRollingStock);
-            
+
             Task routeLoadingTask = RouteLoader.LoadAllRouteModelsAsync(SO_GameParameters.I.addressableLabelRoutes);
-            
+
             Task stationLoadingTask = StationLoader.LoadAllStationModelsAsync(SO_GameParameters.I.addressableLabelStations);
-            
+
             await Task.WhenAll(rollingStockLoadingTask, routeLoadingTask, stationLoadingTask);
-            
+
             IsInitialized = true;
         }
 
@@ -62,13 +62,14 @@ namespace TrainGame
             TimeSaveHelper.LoadFromSaveData(sd);
             TrainConsistSaveHelper.LoadFromSaveData(sd);
         }
-        
+
         public void Reset()
         {
             foreach (var train in TrainConsistRepository.I.GetAllTrainConsists())
             {
                 train.Reset();
             }
+
             TrainConsistRepository.I.Clear();
         }
     }
