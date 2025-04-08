@@ -1,15 +1,16 @@
 using TrainGame.View.TrainView;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ShowTrain : MonoBehaviour
 {
-    public TrainDropdownManager trainDropdownManager;
+    [FormerlySerializedAs("trainDropdownManager")] public TrainDropdownHandler trainDropdownHandler;
     public Transform spawnTransform;
     
     public void OnButtonClick()
     {
         TrainConsistViewFactory trainConsistViewFactory = gameObject.AddComponent<TrainConsistViewFactory>();
-        trainConsistViewFactory.CreateTrainConsistView(trainDropdownManager.GetSelectedTrain(), spawnTransform);
+        trainConsistViewFactory.CreateTrainConsistView(trainDropdownHandler.GetSelectedTrain(), spawnTransform);
         Destroy(trainConsistViewFactory);
     }
 }

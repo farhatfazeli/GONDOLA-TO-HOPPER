@@ -20,6 +20,8 @@ namespace TrainGame
         {
             _previousState = _currentState;
             
+            panelController.CleanView();
+            
             switch (newState)
             {
                 case UIState.MainView:
@@ -33,6 +35,12 @@ namespace TrainGame
                     break;
                 case UIState.PlannerView:
                     panelController.GoToPlannerView();
+                    break;
+                case UIState.MapView:
+                    panelController.GoToMapView();
+                    break;
+                case UIState.JournalView:
+                    panelController.GoToJournalView();
                     break;
                 case UIState.None:
                 default:
@@ -57,6 +65,16 @@ namespace TrainGame
             GoToState(UIState.PlannerView);
         }
 
+        public void OnMapButtonClicked()
+        {
+            GoToState(UIState.MapView);
+        }
+
+        public void OnJournalButtonClicked()
+        {
+            GoToState(UIState.JournalView);
+        }
+
         public void OnCloseWindowButtonClicked()
         {
             GoToState(_previousState);
@@ -69,6 +87,8 @@ namespace TrainGame
         MainView,
         YardView,
         LandscapeView,
-        PlannerView
+        PlannerView,
+        MapView,
+        JournalView
     }
 }

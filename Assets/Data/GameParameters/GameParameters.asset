@@ -22,6 +22,7 @@ MonoBehaviour:
   wagonsFolderPathShort: Data/RollingStock/Wagons
   addressableLabelStations: Stations
   addressableLabelRollingStock: RollingStock
+  addressableLabelRoutes: Routes
   achievedColor:
     serializedVersion: 2
     rgba: 4289396726
@@ -35,4 +36,5 @@ MonoBehaviour:
   fileExtension: json
   yardScene: SCENE_Yard
   landscapeScene: SCENE_R2_BrusselsNamur
+  mapScene: SCENE_Map
   driveSpeed: 50

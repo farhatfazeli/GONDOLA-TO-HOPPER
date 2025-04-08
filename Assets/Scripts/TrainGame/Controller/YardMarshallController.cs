@@ -52,7 +52,10 @@ namespace TrainGame.Controller
         
         private void UnloadYardScene()
         {
-            SceneManager.UnloadSceneAsync(SO_GameParameters.I.yardScene, UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
+            Scene yardScene  = SceneManager.GetSceneByName(SO_GameParameters.I.yardScene);
+            
+            if (yardScene.isLoaded)
+                SceneManager.UnloadSceneAsync(yardScene, UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
         }
 
         private System.Collections.IEnumerator WaitAndDo()

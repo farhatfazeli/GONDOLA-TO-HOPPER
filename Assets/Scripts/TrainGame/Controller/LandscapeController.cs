@@ -31,7 +31,10 @@ namespace TrainGame.Controller
         
         private void UnloadLandscapeScene()
         {
-            SceneManager.UnloadSceneAsync(SO_GameParameters.I.landscapeScene, UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
+            Scene landscapeScene = SceneManager.GetSceneByName(SO_GameParameters.I.landscapeScene);
+            
+            if (landscapeScene.isLoaded)
+                SceneManager.UnloadSceneAsync(landscapeScene, UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
         }
         
         

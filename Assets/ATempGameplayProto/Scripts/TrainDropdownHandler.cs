@@ -7,7 +7,7 @@ using TrainGame.Model;
 using TrainGame.Repositories;
 using UnityEngine;
 
-public class TrainDropdownManager : MonoBehaviour
+public class TrainDropdownHandler : MonoBehaviour
 {
     [Header("UI Elements")] 
     public TMP_Dropdown trainDropdown;
@@ -39,19 +39,20 @@ public class TrainDropdownManager : MonoBehaviour
     public void RefreshUI()
     {
         PopulateDropdown();
-        SelectInitialTrain();
     }
     
     private void PopulateDropdown()
     {
         trainDropdown.ClearOptions();
     
-        List<TrainConsistModel> trains = TrainConsistRepository.I.GetAllTrainConsists();
+        var trains = TrainConsistRepository.I.GetAllTrainConsists();
         var trainNames = trains.ConvertAll(train => train.name);
     
         trainDropdown.AddOptions(trainNames);
         trainDropdown.onValueChanged.RemoveAllListeners();
         trainDropdown.onValueChanged.AddListener(OnTrainSelected);
+        
+        SelectInitialTrain();
     }
     
     private void SelectInitialTrain()
