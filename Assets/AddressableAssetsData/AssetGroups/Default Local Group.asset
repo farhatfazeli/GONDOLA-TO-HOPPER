@@ -16,121 +16,121 @@ MonoBehaviour:
   m_GUID: 6589f22f5dc489e4e8ae0d614b6bb56f
   m_SerializeEntries:
   - m_GUID: 2664f0ba073d80449ac5310bc2905376
-    m_Address: Assets/Data/RollingStock/Locomotives/Crampton.asset
+    m_Address: Crampton
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 31b5cdbf272f4d54a99e1eaf1504f6ad
-    m_Address: Assets/Data/Stations/Stockton.asset
+    m_Address: Stockton
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3a839b43c00ff3440b07133b936c29a9
-    m_Address: Assets/Data/Routes/BrusselParijs.asset
+    m_Address: BrusselParijs
     m_ReadOnly: 0
     m_SerializedLabels:
     - Routes
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3ace9ad828d66fb4a8ab7736c5b21a96
-    m_Address: Assets/Prefabs/System/System.prefab
+    m_Address: System
     m_ReadOnly: 0
     m_SerializedLabels:
     - Others
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 49b8c5cbfbdb9114db7166aa0d70e808
-    m_Address: Assets/Data/Stations/Brussel.asset
+    m_Address: Brussel
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4b0a1c15ea43dbe4bbc650bbada9795f
-    m_Address: Assets/Data/Routes/Empty.asset
+    m_Address: Empty
     m_ReadOnly: 0
     m_SerializedLabels:
     - Routes
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 524b6ccdedcb66046af4545fac5f0698
-    m_Address: Assets/Data/RollingStock/Wagons/LiverpoolManchesterPassengerCarriage.asset
+    m_Address: LiverpoolManchesterPassengerCarriage
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 549346d637fc7b6468b9748dc8f82dcc
-    m_Address: Assets/Data/Stations/Darlington.asset
+    m_Address: Darlington
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d431a8b8791c51449f53500c5aa9d38
-    m_Address: Assets/Data/Stations/Namur.asset
+    m_Address: Namur
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 86b31559c545e224a856d399036bd33e
-    m_Address: Assets/Data/GameParameters/GameParameters.asset
+    m_Address: GameParameters
     m_ReadOnly: 0
     m_SerializedLabels:
     - Others
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9048346324d9e9c439ff869d5ed78750
-    m_Address: Assets/Data/RollingStock/Locomotives/StephensonsRocket.asset
+    m_Address: StephensonsRocket
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a1ef94ebdf6f7c343aafe1520c8abe3c
-    m_Address: Assets/Data/RollingStock/Wagons/ChaldronCoalHopper.asset
+    m_Address: ChaldronCoalHopper
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ade0dca7506b828428deed990024f148
-    m_Address: Assets/Data/RollingStock/Wagons/LiverpoolManchesterPassengerCattleCarriage.asset
+    m_Address: LiverpoolManchesterPassengerCattleCarriage
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b571f23a61e6c1b45b7b8d067d313b23
-    m_Address: Assets/Data/Stations/Antwerpen.asset
+    m_Address: Antwerpen
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ccca910c9b233a44a94033db9768ce6e
-    m_Address: Assets/Data/Routes/StocktonDarlington.asset
+    m_Address: StocktonDarlington
     m_ReadOnly: 0
     m_SerializedLabels:
     - Routes
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cf70af8bd25226446a3d89ab6343c175
-    m_Address: Assets/Data/Routes/BrusselAntwerpen.asset
+    m_Address: BrusselAntwerpen
     m_ReadOnly: 0
     m_SerializedLabels:
     - Routes
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d011f2becac07bb48abfa64bed0154d2
-    m_Address: Assets/Data/RollingStock/Locomotives/LocomotionNr1.asset
+    m_Address: LocomotionNr1
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d5617e2ee53a8c448b924829489282ce
-    m_Address: Assets/Data/RollingStock/Locomotives/LeBelge.asset
+    m_Address: LeBelge
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e1975760ad86aa940aed010a067c473b
-    m_Address: Assets/Data/Stations/Parijs.asset
+    m_Address: Parijs
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f1e62f28f4e0e434a8a028803ffc3f8d
-    m_Address: Assets/Data/Routes/BrusselNamur.asset
+    m_Address: BrusselNamur
     m_ReadOnly: 0
     m_SerializedLabels:
     - Routes
