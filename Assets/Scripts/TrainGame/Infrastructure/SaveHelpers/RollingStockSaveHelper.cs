@@ -3,13 +3,14 @@ using System.Linq;
 using Persistence;
 using TrainGame.Model.RollingStock;
 using TrainGame.Repositories;
+using UnityEngine;
 
 namespace TrainGame.Infrastructure.RollingStock
 {
     public abstract class RollingStockSaveHelper
     {
         public static void PopulateSaveData(SaveData sd)
-        { 
+        {
             IEnumerable<RollingStockModel> rollingStockModels = RollingStockRepository.I.GetModels();
             foreach (var rollingStockModel in rollingStockModels)
             {

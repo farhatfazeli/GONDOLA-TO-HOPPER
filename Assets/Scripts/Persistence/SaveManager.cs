@@ -21,7 +21,6 @@ namespace Persistence
         {
             base.Awake();
             _dataService = new FileDataService(new JsonSerializer());
-            _saveables = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<ISaveable>().ToList();
             StartCoroutine(WaitAndLoad());
         }
 
@@ -30,6 +29,8 @@ namespace Persistence
             // Wait until RailwayDirector is initialized.
             while (!RailwayDirector.I.IsInitialized)
                 yield return null;
+            
+            _saveables = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<ISaveable>().ToList();
             
             LoadGame();
         }
@@ -41,9 +42,11 @@ namespace Persistence
 
         public void SaveGame()
         {
+            Debug.Log("SaveManager: saving game");
             saveData = new SaveData();
             foreach (ISaveable saveable in _saveables)
             {
+                Debug.Log("In foreach loop: "  + saveable.GetType().Name);
                 saveable.PopulateSaveData(saveData);
             }
             _dataService.Save(saveData);

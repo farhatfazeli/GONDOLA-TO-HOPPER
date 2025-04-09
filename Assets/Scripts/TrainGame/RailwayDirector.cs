@@ -20,6 +20,8 @@ namespace TrainGame
 
         private async void Start()
         {
+            Debug.Log("Railway Director Started");
+            
             Task rollingStockLoadingTask = RollingStockLoader.LoadAllRollingStockModelsAsync(SO_GameParameters.I.addressableLabelRollingStock);
 
             Task routeLoadingTask = RouteLoader.LoadAllRouteModelsAsync(SO_GameParameters.I.addressableLabelRoutes);
@@ -48,6 +50,7 @@ namespace TrainGame
 
         public void PopulateSaveData(SaveData sd)
         {
+            Debug.Log("RailwayDirector: saving game");
             RollingStockSaveHelper.PopulateSaveData(sd);
             RouteSaveHelper.PopulateSaveData(sd);
             StationSaveHelper.PopulateSaveData(sd);
