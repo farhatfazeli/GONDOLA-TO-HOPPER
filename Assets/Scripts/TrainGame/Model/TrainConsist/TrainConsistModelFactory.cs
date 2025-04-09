@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using TrainGame.Model;
 using TrainGame.Model.RollingStock;
 
-namespace TrainGame.Infrastructure
+namespace TrainGame.Model.TrainConsist
 {
     public class TrainConsistModelFactory
     {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Utility;
 
 namespace TrainGame.Repositories
@@ -28,6 +29,20 @@ namespace TrainGame.Repositories
                 throw new InvalidOperationException("Repository not initialized. Call Initialize() first.");
 
             return _lookup[model];
+        }
+
+        public virtual TModel GetModel(TSo so)
+        {
+            if (_lookup == null)
+                throw new InvalidOperationException("Repository not initialized. Call Initialize() first.");
+
+            foreach (var pair in _lookup)
+            {
+                if (EqualityComparer<TSo>.Default.Equals(pair.Value, so))
+                    return pair.Key;
+            }
+
+            throw new KeyNotFoundException("No model found for the given ScriptableObject.");
         }
 
         public virtual IEnumerable<TModel> GetModels()

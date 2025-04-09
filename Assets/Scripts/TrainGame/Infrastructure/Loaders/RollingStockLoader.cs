@@ -5,7 +5,7 @@ using TrainGame.Model.RollingStock;
 using TrainGame.Repositories;
 using Utility;
 
-namespace TrainGame.Infrastructure.RollingStock
+namespace TrainGame.Infrastructure.Loaders
 {
     public abstract class RollingStockLoader
     {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TrainGame.Infrastructure;
 using TrainGame.Model.RollingStock;
+using TrainGame.Model.TrainConsist;
 using TrainGame.Repositories;
 
 namespace TrainGame.Model.Yard

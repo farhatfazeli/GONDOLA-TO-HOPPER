@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117fb7366c7c52d428be881ad99accac, type: 3}
   m_Name: BrusselAntwerpen
   m_EditorClassIdentifier: 
-  routeName: Brussel - Antwerpen
-  startStation: {fileID: 11400000, guid: 49b8c5cbfbdb9114db7166aa0d70e808, type: 2}
-  endStation: {fileID: 11400000, guid: b571f23a61e6c1b45b7b8d067d313b23, type: 2}
-  distance: 42
-  travelTime: 0
-  landscapes: []
+  uuid: 8cadf393-f452-4ffd-8fdd-215697d3e71e
+  departureStation: {fileID: 11400000, guid: 49b8c5cbfbdb9114db7166aa0d70e808, type: 2}
+  arrivalStation: {fileID: 11400000, guid: b571f23a61e6c1b45b7b8d067d313b23, type: 2}
+  distance: 10
+  isBuiltAtStart: 0
+  buildResourceType: 0
+  buildResourceCost: 0
+  maxBuildPoints: 0
+  baseBuildAutoRate: 0
+  baseBuildManualRate: 0
+  sceneAsset: {fileID: 102900000, guid: 684e7480460dd3645a5cd2ee98680c73, type: 3}

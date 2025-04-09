@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using TrainGame.Model;
 using TrainGame.Model.RollingStock;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace ScriptableObjects
 {
@@ -23,6 +25,9 @@ namespace ScriptableObjects
         public int maxBuildPoints;
         public int baseBuildAutoRate;
         public int baseBuildManualRate;
+
+        [Header("Scene settings")]
+        public SceneAsset sceneAsset;
         
         private void OnValidate()
         {
