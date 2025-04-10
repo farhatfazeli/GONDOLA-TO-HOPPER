@@ -7,16 +7,16 @@ using Utility;
 
 namespace TrainGame.Repositories
 {
-    public class RollingStockDictionaryRepository : DictionaryRepository<RollingStockModel, SO_RollingStock>
+    public class RollingStockRepository : DictionaryRepository<RollingStockModel, SO_RollingStock>
     {
         public GameObject GetViewPrefab(RollingStockModel rollingStockModel)
         {
             return GetSo(rollingStockModel).viewGo;
         }
         
-        private static RollingStockDictionaryRepository instance;
-        public static RollingStockDictionaryRepository I => instance ??= new RollingStockDictionaryRepository();
-        private RollingStockDictionaryRepository()
+        private static RollingStockRepository instance;
+        public static RollingStockRepository I => instance ??= new RollingStockRepository();
+        private RollingStockRepository()
         {
         }
     }

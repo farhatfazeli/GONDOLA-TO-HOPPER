@@ -10,7 +10,7 @@ namespace TrainGame.Infrastructure.Station
     {
         public static void PopulateSaveData(SaveData sd)
         {
-            IEnumerable<StationModel> stationModels = StationDictionaryRepository.I.GetModels();
+            IEnumerable<StationModel> stationModels = StationRepository.I.GetModels();
             foreach (var stationModel in stationModels)
             {
                 var stationSaveData = new StationSaveData
@@ -27,14 +27,14 @@ namespace TrainGame.Infrastructure.Station
 
         public static void LoadFromSaveData(SaveData sd)
         {
-            if (StationDictionaryRepository.I.GetModels().ToList().Count == 0)
+            if (StationRepository.I.GetModels().ToList().Count == 0)
             {
                 throw new System.Exception("StationRepository not populated with stations.");
             }
             
             Dictionary<string, StationSaveData> saveLookup = sd.stationSD.ToDictionary(s => s.uuid);
 
-            foreach (StationModel station in StationDictionaryRepository.I.GetModels())
+            foreach (StationModel station in StationRepository.I.GetModels())
             {
                 if (saveLookup.TryGetValue(station.uuid, out StationSaveData saved))
                 {

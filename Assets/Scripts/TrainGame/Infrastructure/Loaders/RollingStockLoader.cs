@@ -30,7 +30,7 @@ namespace TrainGame.Infrastructure.Loaders
                 }
             }
             
-            RollingStockDictionaryRepository.I.Initialize(rollingStockModels, rollingStockAssets);
+            RollingStockRepository.I.Initialize(rollingStockModels, rollingStockAssets);
         }
     }
 }

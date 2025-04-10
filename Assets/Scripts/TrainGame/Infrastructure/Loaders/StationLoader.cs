@@ -22,7 +22,7 @@ namespace TrainGame.Infrastructure.Station
                 stationModels.Add(new StationModel(station));
             }
 
-            StationDictionaryRepository.I.Initialize(stationModels, stationAssets);
+            StationRepository.I.Initialize(stationModels, stationAssets);
         }
     }
 }
