@@ -5,7 +5,7 @@ using TrainGame.Repositories;
 
 namespace TrainGame.Model.Route
 {
-    public class RouteModel : IIdentifiable
+    public class RouteModel : IIdentifiable, IModelObservable
     {
         public string uuid { get; }
         public string name { get; }
@@ -22,5 +22,7 @@ namespace TrainGame.Model.Route
             
             routeBuilder = new RouteBuilder(route);
         }
+
+        public event Action OnModelChanged;
     }
 }

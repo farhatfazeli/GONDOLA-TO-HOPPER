@@ -82,7 +82,7 @@ namespace Editor
                 if (!t)
                     throw new System.Exception("Null rolling stock in list");
                 
-                RollingStockModel model = RollingStockRepository.I.GetModel(t);
+                RollingStockModel model = RollingStockDictionaryRepository.I.GetModel(t);
 
                 factory.AddRollinStock(model);
                 modelList.Add(model);

@@ -12,12 +12,8 @@ namespace Utility
     {
         public static async Task RunStartupSequence()
         {
-            Debug.Log("Starting Game Setup...");
-
             await LoadGameParameters();
             await LoadAndPersistSystemPrefab();
-
-            Debug.Log("Game Setup Complete");
         }
 
         private static async Task LoadGameParameters()

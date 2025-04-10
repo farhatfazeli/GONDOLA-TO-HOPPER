@@ -6,9 +6,11 @@ using Utility;
 
 namespace TrainGame.Repositories
 {
-    public class Repository<TModel, TSo> where TModel : IIdentifiable
+    public class DictionaryRepository<TModel, TSo> where TModel : IIdentifiable, IModelObservable
     {
         private Dictionary<TModel, TSo> _lookup;
+
+        public event Action OnRepositoryUpdated;
 
         public virtual void Initialize(List<TModel> models, List<TSo> sos)
         {
@@ -20,6 +22,7 @@ namespace TrainGame.Repositories
             for (int i = 0; i < models.Count; i++)
             {
                 _lookup.Add(models[i], sos[i]);
+                models[i].OnModelChanged += OnRepositoryUpdated;
             }
         }
 
@@ -65,5 +68,10 @@ namespace TrainGame.Repositories
     {
         string uuid { get; }
         string name { get; }
+    }
+
+    public interface IModelObservable
+    {
+        event Action OnModelChanged;
     }
 }

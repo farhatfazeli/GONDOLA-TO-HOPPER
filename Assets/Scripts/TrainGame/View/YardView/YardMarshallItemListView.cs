@@ -26,13 +26,13 @@ namespace TrainGame.View.YardView
             }
 
             // Create a UI entry for each RollingStockModel
-            foreach (var rollingStockModel in RollingStockRepository.I.GetModels())
+            foreach (var rollingStockModel in RollingStockDictionaryRepository.I.GetModels())
             {
                 var itemGo = Instantiate(rollingStockItemPrefab, contentContainer);
                 rollingStockItems.Add(itemGo);
                 // Suppose the prefab has a script that sets UI text/images
                 var itemUI = itemGo.GetComponent<YardMarshallItemView>();
-                itemUI.Initialize(yardMarshallController, rollingStockModel, RollingStockRepository.I.GetSo(rollingStockModel));
+                itemUI.Initialize(yardMarshallController, rollingStockModel, RollingStockDictionaryRepository.I.GetSo(rollingStockModel));
             }
         }
     }

@@ -31,7 +31,7 @@ namespace TrainGame.View.TrainView
         
         private void InstantiateRollingStock(TrainConsistView trainConsistView, RollingStockModel rollingStockModel)
         {
-            GameObject rollingStockPrefab = RollingStockRepository.I.GetViewPrefab(rollingStockModel);
+            GameObject rollingStockPrefab = RollingStockDictionaryRepository.I.GetViewPrefab(rollingStockModel);
             
             GameObject rollingStockGo = Instantiate(rollingStockPrefab, Vector3.zero, Quaternion.identity, trainConsistView.transform);
             rollingStockGo.name = rollingStockModel.name;

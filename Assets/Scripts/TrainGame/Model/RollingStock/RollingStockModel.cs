@@ -4,7 +4,7 @@ using TrainGame.Repositories;
 
 namespace TrainGame.Model.RollingStock
 {
-    public abstract class RollingStockModel : IIdentifiable
+    public abstract class RollingStockModel : IIdentifiable, IModelObservable
     {
         public string uuid { get; protected set; }
         public string name { get; protected set;}

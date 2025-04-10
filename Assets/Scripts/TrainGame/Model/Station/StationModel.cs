@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ScriptableObjects;
 using TrainGame.Repositories;
 
 namespace TrainGame.Model.Station
 {
-    public class StationModel : IIdentifiable
+    public class StationModel : IIdentifiable, IModelObservable
     {
         public string uuid { get; }
         public string name { get; }
@@ -24,5 +25,7 @@ namespace TrainGame.Model.Station
             stationBuilder = new StationBuilder(station);
             stationMaster = new List<StationMaster>();
         }
+
+        public event Action OnModelChanged;
     }
 }

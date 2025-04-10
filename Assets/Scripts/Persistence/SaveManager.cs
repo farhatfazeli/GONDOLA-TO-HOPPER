@@ -42,11 +42,9 @@ namespace Persistence
 
         public void SaveGame()
         {
-            Debug.Log("SaveManager: saving game");
             saveData = new SaveData();
             foreach (ISaveable saveable in _saveables)
             {
-                Debug.Log("In foreach loop: "  + saveable.GetType().Name);
                 saveable.PopulateSaveData(saveData);
             }
             _dataService.Save(saveData);
