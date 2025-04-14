@@ -17,6 +17,7 @@ namespace TrainGame
 
         private async void Start()
         {
+            //loading all data elements that are linked to a scriptable object
             Task rollingStockLoadingTask = RollingStockLoader.LoadAllRollingStockModelsAsync(SO_GameParameters.I.addressableLabelRollingStock);
 
             Task routeLoadingTask = RouteLoader.LoadAllRouteModelsAsync(SO_GameParameters.I.addressableLabelRoutes);
@@ -24,8 +25,8 @@ namespace TrainGame
             Task stationLoadingTask = StationLoader.LoadAllStationModelsAsync(SO_GameParameters.I.addressableLabelStations);
 
             await Task.WhenAll(rollingStockLoadingTask, routeLoadingTask, stationLoadingTask);
-
             IsInitialized = true;
+
         }
 
         private void Update()
@@ -63,12 +64,7 @@ namespace TrainGame
 
         public void Reset()
         {
-            foreach (var train in TrainConsistRepository.I.GetAllTrainConsists())
-            {
-                train.Reset();
-            }
 
-            TrainConsistRepository.I.Clear();
         }
     }
 }

@@ -29,7 +29,6 @@ namespace Core.Persistence
             // Wait until RailwayDirector is initialized.
             while (!RailwayDirector.I.IsInitialized)
                 yield return null;
-            
             _saveables = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<ISaveable>().ToList();
             
             LoadGame();
