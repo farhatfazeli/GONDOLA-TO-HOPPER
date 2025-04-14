@@ -6,14 +6,14 @@ namespace TempScripts
 {
     public class ShowTrain : MonoBehaviour
     {
-        [FormerlySerializedAs("trainDropdownManager")] public TrainDropdownHandler trainDropdownHandler;
-        public Transform spawnTransform;
-    
-        public void OnButtonClick()
-        {
-            TrainConsistViewFactory trainConsistViewFactory = gameObject.AddComponent<TrainConsistViewFactory>();
-            trainConsistViewFactory.CreateTrainConsistView(trainDropdownHandler.GetSelectedTrain(), spawnTransform);
-            Destroy(trainConsistViewFactory);
-        }
+        // [FormerlySerializedAs("trainDropdownManager")] public TrainDropdownHandler trainDropdownHandler;
+        // public Transform spawnTransform;
+        //
+        // public void OnButtonClick()
+        // {
+        //     TrainConsistViewFactory trainConsistViewFactory = gameObject.AddComponent<TrainConsistViewFactory>();
+        //     trainConsistViewFactory.CreateTrainConsistView(trainDropdownHandler.GetSelectedTrain(), spawnTransform);
+        //     Destroy(trainConsistViewFactory);
+        // }
     }
 }

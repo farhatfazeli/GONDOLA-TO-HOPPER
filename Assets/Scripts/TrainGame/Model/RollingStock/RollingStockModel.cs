@@ -8,6 +8,9 @@ namespace TrainGame.Model.RollingStock
     {
         public string uuid { get; protected set; }
         public string name { get; protected set;}
+        
+        public event Action OnModelChanged;
+
         public abstract RollingStockType Type { get; }
 
         public int mass;
@@ -34,8 +37,6 @@ namespace TrainGame.Model.RollingStock
             }
         }
         
-        public event Action OnModelChanged;
-
         public int purchaseCost;
     }
 }

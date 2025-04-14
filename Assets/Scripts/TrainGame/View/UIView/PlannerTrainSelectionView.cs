@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using TrainGame.Controller;
+using TrainGame.Model.Service;
 using TrainGame.Model.TrainConsist;
 using UnityEngine;
 
@@ -9,13 +12,15 @@ namespace TrainGame.View.UIView
     {
         [Header("UI Elements")] 
         public TMP_Dropdown trainDropdown;
-
-        private TrainConsistRepository _trainConsistRepository;
+        
+        public SchedulerController schedulerController;
+        
+        private ServiceManager _serviceManager;
         
         private void RefreshUI()
         {
-            List<TrainConsistModel> trains = _trainConsistRepository.GetStandbyTrainConsists();
-            List<string> options = trains.ConvertAll(train => train.name);
+            HashSet<TrainConsistModel> trains = _serviceManager.GetTrainConsistsOnStandby();
+            List<string> options = trains.Select(x => x.name).ToList();
             trainDropdown.ClearOptions();
             trainDropdown.AddOptions(options);
         }
@@ -23,12 +28,12 @@ namespace TrainGame.View.UIView
         private void Awake()
         {
             trainDropdown = GetComponent<TMP_Dropdown>();
-            _trainConsistRepository = TrainConsistRepository.I;
+            _serviceManager = ServiceManager.I;
         }
         
         private void OnEnable()
         {
-            _trainConsistRepository.OnTrainListUpdated += RefreshUI;
+            _serviceManager.OnServiceListUpdated += RefreshUI;
         }
 
         private void Start()
@@ -39,7 +44,7 @@ namespace TrainGame.View.UIView
 
         private void OnDisable()
         {
-            _trainConsistRepository.OnTrainListUpdated -= RefreshUI;
+            _serviceManager.OnServiceListUpdated -= RefreshUI;
         }
     }
 }

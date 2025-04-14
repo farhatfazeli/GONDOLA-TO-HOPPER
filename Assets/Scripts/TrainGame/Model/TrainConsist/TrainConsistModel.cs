@@ -1,14 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.Utility;
 using TrainGame.Model.RollingStock;
+using TrainGame.Model.Service;
 
 namespace TrainGame.Model.TrainConsist
 {
-    public class TrainConsistModel
+    public class TrainConsistModel :  IIdentifiable, IModelObservable
     {
-        public readonly int uuid;
-        public readonly string name;
+        public string uuid { get; private set; }
+        public string name { get; private set; }
+        
+        public event Action OnModelChanged;
+        
+        public bool IsInService => ServiceManager.I.QueryService.IsTrainConsistInService(this);
+
         private List<RollingStockModel> _rollingStock;
         
         public TrainEngine engine;
@@ -31,12 +38,12 @@ namespace TrainGame.Model.TrainConsist
         
         private float TotalCurrentLoad => passengerLoad + freightLoad; // Always up-to-date
         
-        public TrainConsistModel(string name, List<RollingStockModel> rollingStock) : this(Guid.NewGuid().GetHashCode(),
+        public TrainConsistModel(string name, List<RollingStockModel> rollingStock) : this(Guid.NewGuid().ToString(),
             name, rollingStock)
         {
         }
 
-        public TrainConsistModel(int uuid, string name, List<RollingStockModel> rollingStock)
+        public TrainConsistModel(string uuid, string name, List<RollingStockModel> rollingStock)
         {
             this.uuid = uuid;
             this.name = name;

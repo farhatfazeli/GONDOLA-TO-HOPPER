@@ -9,7 +9,7 @@ namespace TrainGame.Infrastructure.SaveHelpers
     {
         public static void PopulateSaveData(SaveData sd)
         {
-            List<TrainConsistModel> trainConsists = TrainConsistRepository.I.GetAllTrainConsists();
+            IEnumerable<TrainConsistModel> trainConsists = TrainConsistRepository.I.List;
             foreach (var trainConsistModel in trainConsists)
             {
                 var trainConsistSaveData = new TrainConsistSaveData
@@ -44,7 +44,7 @@ namespace TrainGame.Infrastructure.SaveHelpers
             }
             
             TrainConsistRepository.I.Clear();
-            TrainConsistRepository.I.AddTrains(loadedTrains);
+            TrainConsistRepository.I.AddRange(loadedTrains);
         }
         
         private static List<RollingStockModel> GetRollingStockModels(List<string> rollingStockUuids)

@@ -1,4 +1,5 @@
 using System;
+using Core.Utility;
 using TrainGame.Model.Route;
 using TrainGame.Model.Station;
 using TrainGame.Model.TrainConsist;
@@ -13,8 +14,12 @@ namespace TrainGame.Model.Service
         Unloading
     }
 
-    public class ServiceModel
+    public class ServiceModel : IIdentifiable, IModelObservable
     {
+        public string uuid { get; }
+        public string name { get; }
+        public event Action OnModelChanged;
+        
         public ServiceStatus ServiceStatus
         {
             get => _serviceStatus;
@@ -24,6 +29,9 @@ namespace TrainGame.Model.Service
                 OnServiceStatusChanged?.Invoke(ServiceStatus);
             }
         }
+
+        public readonly RouteModel RouteModel;
+        public readonly TrainConsistModel TrainConsist;
 
         public readonly StationMaster departureStationMaster;
         public readonly StationMaster arrivalStationMaster;
@@ -38,13 +46,17 @@ namespace TrainGame.Model.Service
 
         private ServiceStatus _serviceStatus;
 
-        public ServiceModel(RouteModel routeModel, TrainConsistModel train)
+        public ServiceModel(string name, RouteModel routeModel, TrainConsistModel trainConsist) : this(Guid.NewGuid().ToString(), name, routeModel, trainConsist)
         {
-            // departureStationMaster =
-            //     new StationMaster(soRoute.departureSoStation, StationMasterType.DepartingStationMaster, train);
-            // arrivalStationMaster =
-            //     new StationMaster(soRoute.arrivalSoStation, StationMasterType.ArrivingStationMaster, train);
-            trainDriver = new TrainDriver(train.engine, routeModel);
+        }
+
+        public ServiceModel(string uuid, string name, RouteModel routeModel, TrainConsistModel trainConsist)
+        {
+            this.uuid = uuid;
+            this.name = name;
+            RouteModel = routeModel;
+            TrainConsist = trainConsist;
+            trainDriver = new TrainDriver(trainConsist.engine, routeModel);
         }
 
         /// <summary>

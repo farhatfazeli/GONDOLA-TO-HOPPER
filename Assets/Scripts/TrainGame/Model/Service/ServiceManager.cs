@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using TrainGame.Model.Route;
 using TrainGame.Model.TrainConsist;
 
@@ -6,24 +9,33 @@ namespace TrainGame.Model.Service
 {
     public class ServiceManager
     {
-        public event Action OnServiceListUpdated;
-
+        private readonly ServiceRepository _repository;
+        
+        public readonly ServiceQueryService QueryService;
+        
+        public event Action OnServiceListUpdated
+        {
+            add => _repository.ListUpdated += value;
+            remove => _repository.ListUpdated -= value;
+        }
+        
         /// <summary>
         /// Starts a new service for a given train using the provided route
         /// </summary>
         public bool CreateService(RouteModel routeModel, TrainConsistModel trainConsist)
         {
-            if (TrainConsistRepository.I.IsTrainConsistInService(trainConsist))
-            {
-                Console.WriteLine($"Train {trainConsist.name} is already in service!");
-                return false;
-            }
-
-            ServiceModel serviceModel = new ServiceModel(routeModel, trainConsist);
+            if(routeModel == null || trainConsist == null) 
+                throw new ArgumentNullException(nameof(routeModel) +  "." + nameof(trainConsist));
             
-            TrainConsistRepository.I.PutTrainInService(trainConsist, serviceModel);
+            if (QueryService.IsTrainConsistInService(trainConsist))
+                throw new InvalidOperationException("The trainConsist is already in service.");
 
-            OnServiceListUpdated?.Invoke();
+            string serviceName = GetServiceName(routeModel, trainConsist);
+            
+            ServiceModel serviceModel = new ServiceModel(serviceName, routeModel, trainConsist);
+            
+            _repository.Add(serviceModel);
+
             return true;
         }
 
@@ -48,11 +60,18 @@ namespace TrainGame.Model.Service
                 service.Update(deltaTime);
             }
         }
+
+        private static string GetServiceName(RouteModel routeModel, TrainConsistModel trainConsist)
+        {
+            return $"{trainConsist.name} on {routeModel.name}";
+        }
         
         private static ServiceManager instance;
         public static ServiceManager I => instance ??= new ServiceManager();
         private ServiceManager()
         {
+            _repository = new ServiceRepository();
+            QueryService = new ServiceQueryService(_repository);
         }
     }
 }

@@ -50,7 +50,7 @@ namespace Core.Persistence
     [Serializable]
     public struct TrainConsistSaveData
     {
-        public int uuid;
+        public string uuid;
         public string name;
         public List<string> rollingStockUuids;
     }

@@ -1,7 +1,8 @@
 ﻿using ScriptableObjects;
+using TrainGame.Model.Builders;
 using TrainGame.Model.Progress;
 
-namespace TrainGame.Model.Builders
+namespace TrainGame.Model.Station
 {
     public class StationBuilder : BuilderBase
     {
