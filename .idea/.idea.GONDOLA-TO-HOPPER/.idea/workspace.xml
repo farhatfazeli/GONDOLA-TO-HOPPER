@@ -186,6 +186,7 @@
       <workItem from="1744209263739" duration="4362000" />
       <workItem from="1744219930796" duration="6206000" />
       <workItem from="1744285032966" duration="7224000" />
+      <workItem from="1744373252510" duration="2580000" />
     </task>
     <servers />
   </component>
@@ -223,10 +224,10 @@
           <line>33</line>
           <properties documentPath="C:\REPOSITORIES\GONDOLA-TO-HOPPER\Assets\Scripts\TrainGame\Infrastructure\SaveHelpers\RollingStockSaveHelper.cs" containingFunctionPresentation="Method 'LoadFromSaveData'">
             <startOffsets>
-              <option value="1216" />
+              <option value="1196" />
             </startOffsets>
             <endOffsets>
-              <option value="1314" />
+              <option value="1294" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />

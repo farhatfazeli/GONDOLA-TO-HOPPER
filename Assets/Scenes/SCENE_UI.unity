@@ -987,7 +987,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Brussel - Antwerpen
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2828,7 +2828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0}
   m_SizeDelta: {x: 0, y: 100.08667}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &483652959
@@ -3996,7 +3996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &639213302
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4815,7 +4815,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 327.68033, y: -109.48078}
+  m_AnchoredPosition: {x: 327.68033, y: -109.46343}
   m_SizeDelta: {x: 655.36066, y: 145.14465}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &799050612
@@ -4920,12 +4920,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: No 4468 Mallard
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: No 4465 Flying Scotsman
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: No 6011 Peppercorn
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
@@ -5623,7 +5617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 327.68033, y: -328.44232}
+  m_AnchoredPosition: {x: 327.68033, y: -328.39026}
   m_SizeDelta: {x: 655.36066, y: 145.14462}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &868069123
@@ -6107,23 +6101,14 @@ MonoBehaviour:
   m_Value: 0
   m_MultiSelect: 0
   m_Options:
-    m_Options:
-    - m_Text: Brussel - Antwerpen
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Brussel - Luik
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Brussel - Parijs
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
+    m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 985197613}
-        m_TargetAssemblyTypeName: RouteDropdownManager, Assembly-CSharp
-        m_MethodName: OnRouteSelected
-        m_Mode: 0
+        m_TargetAssemblyTypeName: TrainGame.View.UIView.RouteDropdownHandler, Assembly-CSharp
+        m_MethodName: UpdateDescription
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6183,12 +6168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96461fc08c1dcfa42aa3775f35564e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  routes:
-  - {fileID: 11400000, guid: cf70af8bd25226446a3d89ab6343c175, type: 2}
-  - {fileID: 11400000, guid: f1e62f28f4e0e434a8a028803ffc3f8d, type: 2}
-  - {fileID: 11400000, guid: 3a839b43c00ff3440b07133b936c29a9, type: 2}
-  selectedSoRoute: {fileID: 0}
-  distanceText: {fileID: 669822437}
+  routeDropdown: {fileID: 985197610}
+  routeDistance: {fileID: 669822437}
 --- !u!1 &994904587
 GameObject:
   m_ObjectHideFlags: 0
@@ -10585,7 +10566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 327.68033, y: -722.822}
+  m_AnchoredPosition: {x: 327.68033, y: -722.70056}
   m_SizeDelta: {x: 655.36066, y: 58.05786}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1921020477
@@ -11378,7 +11359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 327.68033, y: -854.6968}
+  m_AnchoredPosition: {x: 327.68033, y: -854.54065}
   m_SizeDelta: {x: 348.89996, y: 58.05786}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2032080494
@@ -11700,7 +11681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 327.68033, y: -547.4039}
+  m_AnchoredPosition: {x: 327.68033, y: -547.31714}
   m_SizeDelta: {x: 655.36066, y: 145.14462}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2091327235

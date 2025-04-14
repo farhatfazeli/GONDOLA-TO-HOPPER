@@ -1,5 +1,6 @@
 using System;
 using ScriptableObjects;
+using TrainGame.Model.Route;
 using TrainGame.Model.Station;
 
 namespace TrainGame.Model
@@ -37,13 +38,13 @@ namespace TrainGame.Model
 
         private ServiceStatus _serviceStatus;
 
-        public ServiceModel(SO_Route soRoute, TrainConsistModel train)
+        public ServiceModel(RouteModel routeModel, TrainConsistModel train)
         {
             // departureStationMaster =
             //     new StationMaster(soRoute.departureSoStation, StationMasterType.DepartingStationMaster, train);
             // arrivalStationMaster =
             //     new StationMaster(soRoute.arrivalSoStation, StationMasterType.ArrivingStationMaster, train);
-            trainDriver = new TrainDriver(train.engine, soRoute);
+            trainDriver = new TrainDriver(train.engine, routeModel);
         }
 
         /// <summary>

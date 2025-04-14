@@ -1,6 +1,7 @@
 ﻿using System;
 using ScriptableObjects;
 using TrainGame.Model;
+using TrainGame.Model.Route;
 using TrainGame.Repositories;
 
 namespace TrainGame.Infrastructure
@@ -12,7 +13,7 @@ namespace TrainGame.Infrastructure
         /// <summary>
         /// Starts a new service for a given train using the provided route
         /// </summary>
-        public bool CreateService(SO_Route soRoute, TrainConsistModel trainConsist)
+        public bool CreateService(RouteModel routeModel, TrainConsistModel trainConsist)
         {
             if (TrainConsistRepository.I.IsTrainConsistInService(trainConsist))
             {
@@ -20,7 +21,7 @@ namespace TrainGame.Infrastructure
                 return false;
             }
 
-            ServiceModel serviceModel = new ServiceModel(soRoute, trainConsist);
+            ServiceModel serviceModel = new ServiceModel(routeModel, trainConsist);
             
             TrainConsistRepository.I.PutTrainInService(trainConsist, serviceModel);
 
