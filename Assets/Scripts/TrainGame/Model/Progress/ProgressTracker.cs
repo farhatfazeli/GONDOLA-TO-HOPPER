@@ -2,7 +2,7 @@ using System;
 using ScriptableObjects;
 using UnityEngine;
 
-namespace TrainGame.Model
+namespace TrainGame.Model.Progress
 {
     public interface IProgressTarget
     {

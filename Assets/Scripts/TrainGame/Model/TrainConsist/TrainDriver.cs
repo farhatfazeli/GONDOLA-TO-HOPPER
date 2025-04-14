@@ -1,8 +1,8 @@
 ﻿using System;
-using ScriptableObjects;
+using TrainGame.Model.Progress;
 using TrainGame.Model.Route;
 
-namespace TrainGame.Model
+namespace TrainGame.Model.TrainConsist
 {
     public class TrainDriver
     {

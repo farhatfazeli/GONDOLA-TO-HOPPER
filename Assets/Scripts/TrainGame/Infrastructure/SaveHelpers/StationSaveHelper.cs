@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Persistence;
+using Core.Persistence;
 using TrainGame.Model.Station;
-using TrainGame.Repositories;
 
-namespace TrainGame.Infrastructure.Station
+namespace TrainGame.Infrastructure.SaveHelpers
 {
     public abstract class StationSaveHelper
     {

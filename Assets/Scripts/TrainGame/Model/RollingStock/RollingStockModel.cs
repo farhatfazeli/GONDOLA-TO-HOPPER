@@ -1,6 +1,6 @@
 ﻿using System;
+using Core.Utility;
 using ScriptableObjects;
-using TrainGame.Repositories;
 
 namespace TrainGame.Model.RollingStock
 {

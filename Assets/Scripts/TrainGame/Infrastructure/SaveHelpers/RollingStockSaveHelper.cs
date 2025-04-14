@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Persistence;
+using Core.Persistence;
 using TrainGame.Model.RollingStock;
-using TrainGame.Repositories;
-using UnityEngine;
 
-namespace TrainGame.Infrastructure.RollingStock
+namespace TrainGame.Infrastructure.SaveHelpers
 {
     public abstract class RollingStockSaveHelper
     {

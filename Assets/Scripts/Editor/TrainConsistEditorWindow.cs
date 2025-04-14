@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using ScriptableObjects;
-using TrainGame.Infrastructure;
 using TrainGame.Model.RollingStock;
 using TrainGame.Model.TrainConsist;
-using TrainGame.Repositories;
 using UnityEditor;
 using UnityEngine;
 

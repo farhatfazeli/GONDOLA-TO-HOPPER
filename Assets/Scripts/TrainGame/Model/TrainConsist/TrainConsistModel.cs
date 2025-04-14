@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TrainGame.Model.RollingStock;
 
-namespace TrainGame.Model
+namespace TrainGame.Model.TrainConsist
 {
     public class TrainConsistModel
     {

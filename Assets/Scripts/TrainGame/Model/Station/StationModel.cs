@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Core.Utility;
 using ScriptableObjects;
-using TrainGame.Repositories;
+using TrainGame.Model.Builders;
 
 namespace TrainGame.Model.Station
 {

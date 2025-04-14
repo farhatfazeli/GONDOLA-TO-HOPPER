@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Core.Utility;
 using ScriptableObjects;
 using TrainGame.Model.RollingStock;
-using TrainGame.Repositories;
-using Utility;
 
 namespace TrainGame.Infrastructure.Loaders
 {

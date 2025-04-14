@@ -1,6 +1,7 @@
 ﻿using ScriptableObjects;
+using TrainGame.Model.Progress;
 
-namespace TrainGame.Model.Route
+namespace TrainGame.Model.Builders
 {
     public class RouteBuilder : BuilderBase
     {

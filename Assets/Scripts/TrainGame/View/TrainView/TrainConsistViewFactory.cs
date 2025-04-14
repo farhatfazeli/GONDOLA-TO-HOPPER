@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TrainGame.Model;
 using TrainGame.Model.RollingStock;
-using TrainGame.Repositories;
+using TrainGame.Model.TrainConsist;
 using UnityEngine;
 
 namespace TrainGame.View.TrainView

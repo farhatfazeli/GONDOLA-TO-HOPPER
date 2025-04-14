@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ScriptableObjects;
 using TrainGame.Controller;
-using TrainGame.Repositories;
+using TrainGame.Model.RollingStock;
 using UnityEngine;
 
 namespace TrainGame.View.YardView

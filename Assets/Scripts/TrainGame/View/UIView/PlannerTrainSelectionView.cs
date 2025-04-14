@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using TMPro;
-using TrainGame.Model;
-using TrainGame.Repositories;
+using TrainGame.Model.TrainConsist;
 using UnityEngine;
 
 namespace TrainGame.View.UIView

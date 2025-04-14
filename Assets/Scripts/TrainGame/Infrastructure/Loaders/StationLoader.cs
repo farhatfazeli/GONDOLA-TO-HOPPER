@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using Core.Utility;
 using ScriptableObjects;
-using TrainGame.Model.RollingStock;
 using TrainGame.Model.Station;
-using TrainGame.Repositories;
-using Utility;
 
-namespace TrainGame.Infrastructure.Station
+namespace TrainGame.Infrastructure.Loaders
 {
     public abstract class StationLoader
     {

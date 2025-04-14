@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Persistence;
+using Core.Persistence;
 using TMPro;
 using TrainGame;
 using TrainGame.Model;
-using TrainGame.Repositories;
+using TrainGame.Model.TrainConsist;
 using UnityEngine;
 
 public class TrainDropdownHandler : MonoBehaviour

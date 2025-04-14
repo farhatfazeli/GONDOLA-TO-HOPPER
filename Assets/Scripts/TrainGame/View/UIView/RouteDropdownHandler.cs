@@ -1,19 +1,15 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using Persistence;
+using Core.Persistence;
 using TMPro;
 using TrainGame.Model.Route;
-using TrainGame.Repositories;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace TrainGame.View.UIView
 {
     public class RouteDropdownHandler : MonoBehaviour
     {
-        [Header("UI Elements")]
-        public TMP_Dropdown routeDropdown;
+        [Header("UI Elements")] public TMP_Dropdown routeDropdown;
         public TextMeshProUGUI routeDistance;
 
         private void Start()
@@ -35,7 +31,7 @@ namespace TrainGame.View.UIView
         {
             PopulateDropdown();
             RouteRepository.I.OnRepositoryUpdated += PopulateDropdown;
-            
+
             SelectInitialRoute();
             UpdateDescription();
         }
@@ -49,7 +45,7 @@ namespace TrainGame.View.UIView
         {
             if (routeDropdown.options.Count < 0)
                 return null;
-            
+
             string routeName = routeDropdown.options[routeDropdown.value].text;
             return RouteRepository.I.GetRouteModelByName(routeName);
         }
@@ -61,20 +57,20 @@ namespace TrainGame.View.UIView
 
         public void UpdateDescription()
         {
-            routeDistance.text = $"<i>Distance: {GetSelectedRoute().distance/1000:F1} km</i>";
+            routeDistance.text = $"<i>Distance: {GetSelectedRoute().distance / 1000:F1} km</i>";
         }
-        
+
         private void PopulateDropdown()
         {
             routeDropdown.ClearOptions();
-            
+
             AddNewRoutes(RouteRepository.I.GetBuiltRoutes());
         }
 
         private void AddNewRoutes(List<RouteModel> ros)
         {
-            routeDropdown.AddOptions(ros.Select(x=>x.name).ToList());
-            
+            routeDropdown.AddOptions(ros.Select(x => x.name).ToList());
+
             routeDropdown.RefreshShownValue();
         }
 

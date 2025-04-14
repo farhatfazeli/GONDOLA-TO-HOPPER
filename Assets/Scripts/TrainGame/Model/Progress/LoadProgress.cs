@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TrainGame.Model
+namespace TrainGame.Model.Progress
 {
     public enum LoadMode
     {

@@ -1,7 +1,8 @@
 ﻿using System;
+using TrainGame.Model.Progress;
 using TrainGame.Model.RollingStock;
 
-namespace TrainGame.Model
+namespace TrainGame.Model.Builders
 {
     public abstract class BuilderBase
     {

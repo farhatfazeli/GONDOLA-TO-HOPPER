@@ -1,8 +1,8 @@
 ﻿using System;
-using Persistence;
+using Core.Persistence;
 using ScriptableObjects;
 
-namespace TrainGame.Infrastructure
+namespace TrainGame.Infrastructure.SaveHelpers
 {
     public abstract class TimeSaveHelper
     {

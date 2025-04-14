@@ -1,5 +1,7 @@
 ﻿using System;
 using ScriptableObjects;
+using TrainGame.Model.Progress;
+using TrainGame.Model.TrainConsist;
 
 namespace TrainGame.Model.Station
 {

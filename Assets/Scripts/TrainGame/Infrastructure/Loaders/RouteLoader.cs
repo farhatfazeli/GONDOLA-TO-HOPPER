@@ -1,13 +1,10 @@
-﻿
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Core.Utility;
 using ScriptableObjects;
 using TrainGame.Model.Route;
-using TrainGame.Repositories;
-using Utility;
 
-namespace TrainGame.Infrastructure.Route
+namespace TrainGame.Infrastructure.Loaders
 {
     public abstract class RouteLoader
     {

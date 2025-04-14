@@ -1,4 +1,4 @@
-using CustomEventSystem;
+using Core.CustomEventSystem;
 using UnityEngine;
 
 namespace TempScripts

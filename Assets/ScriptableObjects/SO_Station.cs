@@ -1,6 +1,5 @@
 using System;
 using TrainGame.Model.RollingStock;
-using TrainGame.Repositories;
 using UnityEngine;
 
 namespace ScriptableObjects

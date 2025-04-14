@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
-using Persistence;
-using TrainGame.Model;
+using Core.Persistence;
 using TrainGame.Model.RollingStock;
-using TrainGame.Repositories;
+using TrainGame.Model.TrainConsist;
 
-namespace TrainGame.Infrastructure
+namespace TrainGame.Infrastructure.SaveHelpers
 {
     public abstract class TrainConsistSaveHelper
     {

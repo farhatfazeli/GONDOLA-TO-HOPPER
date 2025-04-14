@@ -1,6 +1,7 @@
+using Core.Utility;
 using UnityEngine;
 
-namespace TrainGame.Model
+namespace TrainGame.Model.TrainConsist
 {
     public class TrainEngine
     {
