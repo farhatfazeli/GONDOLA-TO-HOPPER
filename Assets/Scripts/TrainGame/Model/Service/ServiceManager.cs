@@ -39,22 +39,22 @@ namespace TrainGame.Model.Service
             return true;
         }
 
-        public bool FinishService(ServiceModel service)
-        {
-            if (!service.IsComplete)
-            {
-                throw new InvalidOperationException("Service is not complete!");
-            }
-            
-            TrainConsistRepository.I.RemoveTrainFromService(service);
-
-            OnServiceListUpdated?.Invoke();
-            return true;
-        }
-        
+        // public bool FinishService(ServiceModel service)
+        // {
+        //     if (!service.IsComplete)
+        //     {
+        //         throw new InvalidOperationException("Service is not complete!");
+        //     }
+        //     
+        //     TrainConsistRepository.I.RemoveTrainFromService(service);
+        //
+        //     OnServiceListUpdated?.Invoke();
+        //     return true;
+        // }
+        //
         public void UpdateServices(float deltaTime)
         {
-            foreach (ServiceModel service in TrainConsistRepository.I.GetActiveServices())
+            foreach (ServiceModel service in _repository.List.ToList())
             {
                 if (service.IsComplete) return;
                 service.Update(deltaTime);

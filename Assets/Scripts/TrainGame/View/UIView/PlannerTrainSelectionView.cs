@@ -15,11 +15,9 @@ namespace TrainGame.View.UIView
         
         public SchedulerController schedulerController;
         
-        private ServiceManager _serviceManager;
-        
         private void RefreshUI()
         {
-            HashSet<TrainConsistModel> trains = _serviceManager.GetTrainConsistsOnStandby();
+            HashSet<TrainConsistModel> trains = ServiceManager.I.QueryService.GetTrainConsistsOnStandby();
             List<string> options = trains.Select(x => x.name).ToList();
             trainDropdown.ClearOptions();
             trainDropdown.AddOptions(options);
@@ -28,12 +26,11 @@ namespace TrainGame.View.UIView
         private void Awake()
         {
             trainDropdown = GetComponent<TMP_Dropdown>();
-            _serviceManager = ServiceManager.I;
         }
         
         private void OnEnable()
         {
-            _serviceManager.OnServiceListUpdated += RefreshUI;
+            ServiceManager.I.OnServiceListUpdated += RefreshUI;
         }
 
         private void Start()
@@ -44,7 +41,7 @@ namespace TrainGame.View.UIView
 
         private void OnDisable()
         {
-            _serviceManager.OnServiceListUpdated -= RefreshUI;
+            ServiceManager.I.OnServiceListUpdated -= RefreshUI;
         }
     }
 }

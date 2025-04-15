@@ -19,7 +19,7 @@ namespace TrainGame.Infrastructure.Loaders
                 routeModels.Add(new RouteModel(route));
             }
 
-            RouteRepository.I.Initialize(routeModels, routeAssets);
+            RouteManager.I.InitializeDictionary(routeModels, routeAssets);
         }
     }
 }

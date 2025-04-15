@@ -30,7 +30,7 @@ namespace TrainGame.View.UIView
         private void Initialize()
         {
             PopulateDropdown();
-            RouteRepository.I.OnRepositoryUpdated += PopulateDropdown;
+            RouteManager.I.OnRouteDictionaryUpdated += PopulateDropdown;
 
             SelectInitialRoute();
             UpdateDescription();
@@ -38,7 +38,7 @@ namespace TrainGame.View.UIView
 
         private void OnDisable()
         {
-            RouteRepository.I.OnRepositoryUpdated -= PopulateDropdown;
+            RouteManager.I.OnRouteDictionaryUpdated -= PopulateDropdown;
         }
 
         public RouteModel GetSelectedRoute()
@@ -47,7 +47,7 @@ namespace TrainGame.View.UIView
                 return null;
 
             string routeName = routeDropdown.options[routeDropdown.value].text;
-            return RouteRepository.I.GetRouteModelByName(routeName);
+            return RouteManager.I.QueryService.GetRouteModelByName(routeName);
         }
 
         private void SelectInitialRoute()
@@ -64,7 +64,7 @@ namespace TrainGame.View.UIView
         {
             routeDropdown.ClearOptions();
 
-            AddNewRoutes(RouteRepository.I.GetBuiltRoutes());
+            AddNewRoutes(RouteManager.I.QueryService.GetBuiltRoutes());
         }
 
         private void AddNewRoutes(List<RouteModel> ros)

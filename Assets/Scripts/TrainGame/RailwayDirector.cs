@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Core.Persistence;
 using Core.Utility;
@@ -5,7 +6,10 @@ using ScriptableObjects;
 using TrainGame.Infrastructure;
 using TrainGame.Infrastructure.Loaders;
 using TrainGame.Infrastructure.SaveHelpers;
+using TrainGame.Model.RollingStock;
+using TrainGame.Model.Route;
 using TrainGame.Model.Service;
+using TrainGame.Model.Station;
 using TrainGame.Model.TrainConsist;
 using UnityEngine;
 
@@ -17,16 +21,32 @@ namespace TrainGame
 
         private async void Start()
         {
-            //loading all data elements that are linked to a scriptable object
-            Task rollingStockLoadingTask = RollingStockLoader.LoadAllRollingStockModelsAsync(SO_GameParameters.I.addressableLabelRollingStock);
+            try
+            {
+                //loading all data elements that are linked to a scriptable object
+                Task rollingStockLoadingTask = RollingStockLoader.LoadAllRollingStockModelsAsync(SO_GameParameters.I.addressableLabelRollingStock);
+                Task routeLoadingTask = RouteLoader.LoadAllRouteModelsAsync(SO_GameParameters.I.addressableLabelRoutes);
+                Task stationLoadingTask = StationLoader.LoadAllStationModelsAsync(SO_GameParameters.I.addressableLabelStations);
 
-            Task routeLoadingTask = RouteLoader.LoadAllRouteModelsAsync(SO_GameParameters.I.addressableLabelRoutes);
+                Task createManagers = CreateManagers();
 
-            Task stationLoadingTask = StationLoader.LoadAllStationModelsAsync(SO_GameParameters.I.addressableLabelStations);
+                await Task.WhenAll(rollingStockLoadingTask, routeLoadingTask, stationLoadingTask, createManagers);
+                IsInitialized = true;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Initialization failed: {ex}");
+            }
+        }
 
-            await Task.WhenAll(rollingStockLoadingTask, routeLoadingTask, stationLoadingTask);
-            IsInitialized = true;
-
+        private static Task CreateManagers()
+        {
+            _ = RollingStockManager.I;
+            _ = RouteManager.I;
+            _ = ServiceManager.I;
+            _ = StationManager.I;
+            _ = TrainConsistManager.I;
+            return Task.CompletedTask;
         }
 
         private void Update()

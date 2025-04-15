@@ -83,7 +83,7 @@ namespace TrainGame.View.YardView
                     continue;
 
                 // Spawn a new view from the repository
-                var prefab = RollingStockRepository.I.GetViewPrefab(model);
+                var prefab = RollingStockManager.I.QueryService.GetViewPrefab(model);
                 var instance = Instantiate(prefab, entranceTransform.position, Quaternion.identity, transform);
 
                 var rollingStockView = instance.GetComponent<RollingStockView>();

@@ -114,13 +114,15 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14596">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="14596" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -188,7 +190,8 @@
       <workItem from="1744219930796" duration="6206000" />
       <workItem from="1744285032966" duration="7224000" />
       <workItem from="1744373252510" duration="2580000" />
-      <workItem from="1744628917926" duration="19087000" />
+      <workItem from="1744628917926" duration="19103000" />
+      <workItem from="1744702485286" duration="8521000" />
     </task>
     <servers />
   </component>

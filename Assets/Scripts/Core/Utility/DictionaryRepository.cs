@@ -1,17 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using TrainGame.Model;
 
 namespace Core.Utility
 {
     public class DictionaryRepository<TModel, TSo> where TModel : IIdentifiable, IModelObservable
     {
-        private Dictionary<TModel, TSo> _lookup;
+        protected Dictionary<TModel, TSo> _lookup;
 
-        public event Action OnRepositoryUpdated;
+        protected event Action OnDictionaryUpdated;
+        
+        public event Action DictionaryUpdated
+        {
+            add => OnDictionaryUpdated += value;
+            remove => OnDictionaryUpdated -= value;
+        }
 
         public virtual void Initialize(List<TModel> models, List<TSo> sos)
         {
+            if (models == null || sos == null)
+                throw new ArgumentNullException();
+            
             if (models.Count != sos.Count)
                 throw new ArgumentException("The number of models and scriptable objects must match.");
 
@@ -20,7 +30,7 @@ namespace Core.Utility
             for (int i = 0; i < models.Count; i++)
             {
                 _lookup.Add(models[i], sos[i]);
-                models[i].OnModelChanged += OnRepositoryUpdated;
+                models[i].OnModelChanged += OnDictionaryUpdated;
             }
         }
 
@@ -62,14 +72,5 @@ namespace Core.Utility
         }
     }
     
-    public interface IIdentifiable
-    {
-        string uuid { get; }
-        string name { get; }
-    }
 
-    public interface IModelObservable
-    {
-        event Action OnModelChanged;
-    }
 }

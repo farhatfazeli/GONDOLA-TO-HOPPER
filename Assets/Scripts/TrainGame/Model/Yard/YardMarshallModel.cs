@@ -20,9 +20,8 @@ namespace TrainGame.Model.Yard
                 throw new InvalidOperationException("Train consist is empty");
             if (string.IsNullOrEmpty(trainName))
                 throw new ArgumentException("Train name cannot be empty");
-            TrainConsistModel trainConsistModel = _trainConsistModelFactory.CreateTrainConsist(trainName, TrainConsistSelection);
-            TrainConsistRepository.I.Add(trainConsistModel);
-            TrainConsistManager.I.
+
+            TrainConsistManager.I.CreateTrainConsist(trainName, TrainConsistSelection);
         }
         
         public void AddRollingStock(RollingStockModel rollingStockModel)

@@ -9,6 +9,7 @@ namespace TrainGame.Model.TrainConsist
     {
         private readonly TrainConsistRepository _repository;
 
+        public readonly TrainConsistQueryService QueryService;
         public IReadOnlyCollection<TrainConsistModel> AllTrainConsists => _repository.List;
         
         public event Action OnTrainConsistListUpdated
@@ -27,6 +28,18 @@ namespace TrainGame.Model.TrainConsist
             
             TrainConsistModelFactory trainConsistModelFactory = new TrainConsistModelFactory();
             TrainConsistModel trainConsistModel = trainConsistModelFactory.CreateTrainConsist(trainName, rollingStockModels);
+                
+            return true;
+        }
+
+        public void LoadTrainConsists(List<TrainConsistModel> trainConsistModels)
+        {
+            _repository.AddRange(trainConsistModels);
+        }
+
+        public void Clear()
+        {
+            _repository.Clear();
         }
         
         private static TrainConsistManager instance;
@@ -34,6 +47,7 @@ namespace TrainGame.Model.TrainConsist
         private TrainConsistManager()
         {
             _repository = new TrainConsistRepository();
+            QueryService = new TrainConsistQueryService(_repository);
         }
     }
 }

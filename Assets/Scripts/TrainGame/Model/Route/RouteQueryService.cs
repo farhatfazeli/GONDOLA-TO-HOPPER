@@ -1,0 +1,40 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using ScriptableObjects;
+
+namespace TrainGame.Model.Route
+{
+    public class RouteQueryService
+    {
+        private readonly RouteRepository _repository;
+        public RouteQueryService(RouteRepository repository)
+        {
+            _repository = repository;
+        }
+        
+        public List<RouteModel> GetBuiltRoutes()
+        {
+            return _repository.GetModels().Where(x => x.routeBuilder.IsBuilt).ToList();
+        }
+
+        public RouteModel GetRouteModelByName(string name)
+        {
+            return _repository.GetModels().FirstOrDefault(x => x.name == name);
+        }
+        
+        public SO_Route GetSo(RouteModel model)
+        {
+            return _repository.GetSo(model);
+        }
+
+        public RouteModel GetModel(SO_Route so)
+        {
+            return _repository.GetModel(so);
+        }
+        
+        public HashSet<RouteModel> GetModels()
+        {
+            return _repository.GetModels().ToHashSet();
+        }
+    }
+}

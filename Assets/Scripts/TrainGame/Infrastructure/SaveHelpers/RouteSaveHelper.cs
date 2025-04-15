@@ -9,7 +9,7 @@ namespace TrainGame.Infrastructure.SaveHelpers
     {
         public static void PopulateSaveData(SaveData sd)
         {
-            IEnumerable<RouteModel> routeModels = RouteRepository.I.GetModels();
+            IEnumerable<RouteModel> routeModels = RouteManager.I.QueryService.GetModels();
             foreach (var routeModel in routeModels)
             {
                 var routeSaveData = new RouteSaveData
@@ -24,14 +24,14 @@ namespace TrainGame.Infrastructure.SaveHelpers
         
         public static void LoadFromSaveData(SaveData sd)
         {
-            if (RouteRepository.I.GetModels().ToList().Count == 0)
+            if (RouteManager.I.QueryService.GetModels().Count == 0)
             {
                 throw new System.Exception("RouteRepository not populated with routes.");
             }
             
             Dictionary<string, RouteSaveData> saveLookup = sd.routeSD.ToDictionary(s => s.uuid);
 
-            foreach (RouteModel route in RouteRepository.I.GetModels())
+            foreach (RouteModel route in RouteManager.I.QueryService.GetModels())
             {
                 if (saveLookup.TryGetValue(route.uuid, out RouteSaveData saved))
                 {

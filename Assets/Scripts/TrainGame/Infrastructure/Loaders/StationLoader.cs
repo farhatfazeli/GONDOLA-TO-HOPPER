@@ -19,7 +19,7 @@ namespace TrainGame.Infrastructure.Loaders
                 stationModels.Add(new StationModel(station));
             }
 
-            StationRepository.I.Initialize(stationModels, stationAssets);
+            StationManager.I.InitializeDictionary(stationModels, stationAssets);
         }
     }
 }
