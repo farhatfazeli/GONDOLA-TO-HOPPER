@@ -5,7 +5,7 @@ using TMPro;
 using TrainGame.Model.Route;
 using UnityEngine;
 
-namespace TrainGame.View.UIView
+namespace TrainGame.View.SchedulerView
 {
     public class RouteDropdownHandler : MonoBehaviour
     {
