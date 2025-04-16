@@ -35,78 +35,78 @@ namespace TrainGame.View.ServiceLedgerView
         public void Initialize(ServiceModel serviceModel)
         {
             _serviceModel = serviceModel;
-
-            routeName.text = _serviceModel.RouteModel.name;
-            trainName.text = _serviceModel.TrainConsist.name;
-            loadInfo.text = $"Hauling {_serviceModel.TrainConsist.passengerLoad} of {LoadType.Passengers}";
+        
+            routeName.text = _serviceModel.serviceInfo.RouteModel.name;
+            trainName.text = _serviceModel.serviceInfo.TrainConsist.name;
+            loadInfo.text = $"Hauling {_serviceModel.serviceInfo.TrainConsist.passengerLoad} of {LoadType.Passengers}";
         }
         
         private void UpdateProgressSliders()
         {
-            loadProgressSlider.value = _serviceModel.DepartureStationMasterModel._passengerProgressTracker.Progress;
+            loadProgressSlider.value = _serviceModel.departureStationMasterModel._passengerProgressTracker.Progress;
             travelProgressSlider.value = _serviceModel.trainDriver._travelProgress.Progress;
-            unloadProgressSlider.value = _serviceModel.ArrivalStationMasterModel._passengerProgressTracker.Progress;
+            unloadProgressSlider.value = _serviceModel.arrivalStationMasterModel._passengerProgressTracker.Progress;
         }
         
-        public void LoadTrain()
-        {
-            if (_serviceModel.IsComplete) return;
-            _serviceModel.DepartureStationMasterModel._passengerProgressTracker.AdvanceBy(SO_GameParameters.I.loadClickProgressAmount);
-            UpdateProgressSliders();
-        
-            if (_serviceModel.DepartureStationMasterModel._passengerProgressTracker.IsFinished)
-            {
-                loadButton.interactable = false;
-                travelButton.interactable = true;
-            }
-        }
-        
-        public void TravelTrain()
-        {
-            // if (_serviceModel.IsComplete) return;
-            // if (_serviceModel.loadProgressTracker.Progress < 1) return;
-            // _serviceModel.ProgressTravelProgress(SO_GameParameters.I.travelClickProgressAmount);
-            // UpdateProgressSliders();
-            //
-            // if (_serviceModel.travelProgressTracker.IsFinished)
-            // {
-            //     travelButton.interactable = false;
-            //     unloadButton.interactable = true;
-            // }
-        }
-        
-        public void UnloadTrain()
-        {
-            // if (_serviceModel.IsComplete) return;
-            // if (_serviceModel.travelProgressTracker.Progress < 1) return;
-            // _serviceModel.ProgressUnloadProgress(SO_GameParameters.I.unloadClickProgressAmount);
-            // UpdateProgressSliders();
-            //
-            // if (_serviceModel.unloadProgressTracker.IsFinished) unloadButton.interactable = false;
-            //
-            // if (_serviceModel.IsComplete) _image.color = SO_GameParameters.I.achievedColor;
-        }
+        // public void LoadTrain()
+        // {
+        //     if (_serviceModel.) return;
+        //     _serviceModel.DepartureStationMasterModel._passengerProgressTracker.AdvanceBy(SO_GameParameters.I.loadClickProgressAmount);
+        //     UpdateProgressSliders();
+        //
+        //     if (_serviceModel.DepartureStationMasterModel._passengerProgressTracker.IsFinished)
+        //     {
+        //         loadButton.interactable = false;
+        //         travelButton.interactable = true;
+        //     }
+        // }
+        //
+        // public void TravelTrain()
+        // {
+        //     // if (_serviceModel.IsComplete) return;
+        //     // if (_serviceModel.loadProgressTracker.Progress < 1) return;
+        //     // _serviceModel.ProgressTravelProgress(SO_GameParameters.I.travelClickProgressAmount);
+        //     // UpdateProgressSliders();
+        //     //
+        //     // if (_serviceModel.travelProgressTracker.IsFinished)
+        //     // {
+        //     //     travelButton.interactable = false;
+        //     //     unloadButton.interactable = true;
+        //     // }
+        // }
+        //
+        // public void UnloadTrain()
+        // {
+        //     // if (_serviceModel.IsComplete) return;
+        //     // if (_serviceModel.travelProgressTracker.Progress < 1) return;
+        //     // _serviceModel.ProgressUnloadProgress(SO_GameParameters.I.unloadClickProgressAmount);
+        //     // UpdateProgressSliders();
+        //     //
+        //     // if (_serviceModel.unloadProgressTracker.IsFinished) unloadButton.interactable = false;
+        //     //
+        //     // if (_serviceModel.IsComplete) _image.color = SO_GameParameters.I.achievedColor;
+        // }
         
         private void Update()
         {
             UpdateProgressSliders();
-            if (_serviceModel.DepartureStationMasterModel._passengerProgressTracker.IsFinished)
-            {
-                loadButton.interactable = false;
-                travelButton.interactable = true;
-            }
-            if (_serviceModel.trainDriver._travelProgress.IsFinished)
-            {
-                travelButton.interactable = false;
-                unloadButton.interactable = true;
-            }
-        
-            if (_serviceModel.ArrivalStationMasterModel._passengerProgressTracker.IsFinished)
-                unloadButton.interactable = false;
-            
-            if (_serviceModel.IsComplete)
-                _image.color = SO_GameParameters.I.achievedColor;
-            
+            // if (_serviceModel.DepartureStationMasterModel._passengerProgressTracker.IsFinished)
+            // {
+            //     loadButton.interactable = false;
+            //     travelButton.interactable = true;
+            // }
+            // if (_serviceModel.trainDriver._travelProgress.IsFinished)
+            // {
+            //     travelButton.interactable = false;
+            //     unloadButton.interactable = true;
+            // }
+            //
+            // if (_serviceModel.ArrivalStationMasterModel._passengerProgressTracker.IsFinished)
+            //     unloadButton.interactable = false;
+            //
+            // if (_serviceModel.IsComplete)
+            //     _image.color = SO_GameParameters.I.achievedColor;
+            //                     
         }
     }
 }

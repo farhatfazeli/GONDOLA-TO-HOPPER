@@ -73,7 +73,7 @@ namespace TrainGame.View.SchedulerView
         {
             trainDropdown.ClearOptions();
             
-            AddNewTrains(ServiceManager.I.QueryService.GetTrainConsistsOnStandby());
+            AddNewTrains(TrainConsistManager.I.QueryService.GetTrainConsistsOnStandby());
             
             
         }

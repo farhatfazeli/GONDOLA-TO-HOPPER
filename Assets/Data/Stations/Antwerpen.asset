@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0df60bd7a5fd4c419b4815c53313bd1, type: 3}
   m_Name: Antwerpen
   m_EditorClassIdentifier: 
-  stationName: Antwerpen
+  uuid: 0fc0048a-1fae-4949-bb13-7abcd2bb84c8
+  isBuiltAtStart: 0
+  buildResourceType: 0
+  buildResourceCost: 0
+  maxBuildPoints: 0
+  baseBuildAutoRate: 0
+  baseBuildManualRate: 0
+  baseLoadAutoRate: 1000
+  baseLoadManualRate: 0

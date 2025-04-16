@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0df60bd7a5fd4c419b4815c53313bd1, type: 3}
   m_Name: Namur
   m_EditorClassIdentifier: 
-  stationName: Namur
-  resourceCost: 1000
-  route: {fileID: 11400000, guid: f1e62f28f4e0e434a8a028803ffc3f8d, type: 2}
+  uuid: e68f4612-e2d5-416e-95ea-4c970bbe0999
+  isBuiltAtStart: 0
+  buildResourceType: 0
+  buildResourceCost: 0
+  maxBuildPoints: 0
+  baseBuildAutoRate: 0
+  baseBuildManualRate: 0
+  baseLoadAutoRate: 1000
+  baseLoadManualRate: 0

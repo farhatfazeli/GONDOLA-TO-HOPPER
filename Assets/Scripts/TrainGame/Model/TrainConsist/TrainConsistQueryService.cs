@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using TrainGame.Model.Route;
+using TrainGame.Model.Service;
 
 namespace TrainGame.Model.TrainConsist
 {
@@ -17,6 +18,11 @@ namespace TrainGame.Model.TrainConsist
             return _repository.List;
         }
 
+        public HashSet<TrainConsistModel> GetTrainConsistsOnStandby()
+        {
+            return TrainConsistManager.I.AllTrainConsists.Except(ServiceManager.I.QueryService.GetTrainConsistsInService()).ToHashSet();
+        }
+        
         public TrainConsistModel GetTrainConsistByName(string trainName)
         {
             return _repository.List.FirstOrDefault(x => x.name == trainName);

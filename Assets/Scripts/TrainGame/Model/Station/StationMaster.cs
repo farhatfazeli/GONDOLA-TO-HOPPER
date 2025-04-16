@@ -1,6 +1,7 @@
 ﻿using System;
 using ScriptableObjects;
 using TrainGame.Model.Progress;
+using TrainGame.Model.Service;
 using TrainGame.Model.TrainConsist;
 
 namespace TrainGame.Model.Station
@@ -13,33 +14,44 @@ namespace TrainGame.Model.Station
 
     public class StationMasterModel
     {
-        public readonly ProgressTracker _passengerProgressTracker;
-        public readonly ProgressTracker _freightProgressTracker;
+        public ProgressTracker _passengerProgressTracker;
+        public ProgressTracker _freightProgressTracker;
         public bool IsProcessFinished => _passengerProgressTracker.IsFinished && _freightProgressTracker.IsFinished;
+
         public event Action OnProcessComplete;
         
-        private readonly float _baseLoadManualRate;
         private TrainConsistModel _train;
+        private float _baseLoadManualRate;
         
-        public StationMasterModel(StationModel stationModel, StationMasterType stationMasterType, TrainConsistModel train)
+        public StationMasterModel(ServiceInfo serviceInfo, StationMasterType stationMasterType)
         {
-            _baseLoadManualRate = stationModel.baseLoadManualRate;
-
             switch (stationMasterType)
             {
                 case StationMasterType.DepartingStationMaster:
-                    _passengerProgressTracker = new ProgressTracker(new LoadProgress(train.maxPassengerLoad, LoadMode.Loading), stationModel.baseLoadAutoRate);
-                    _freightProgressTracker = new ProgressTracker(new LoadProgress(train.maxFreightLoad, LoadMode.Loading), stationModel.baseLoadAutoRate);
+                    Initialize(serviceInfo.TrainConsist, serviceInfo.RouteModel.departureStation, LoadMode.Loading);
                     break;
                 case StationMasterType.ArrivingStationMaster:
-                    _passengerProgressTracker = new ProgressTracker(new LoadProgress(train.maxPassengerLoad, LoadMode.Unloading), stationModel.baseLoadAutoRate);
-                    _freightProgressTracker = new ProgressTracker(new LoadProgress(train.maxFreightLoad, LoadMode.Unloading), stationModel.baseLoadAutoRate);
+                    Initialize(serviceInfo.TrainConsist, serviceInfo.RouteModel.arrivalStation, LoadMode.Unloading); 
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(stationMasterType), stationMasterType, null);
             }
-            
-            stationModel
+
+            _passengerProgressTracker.OnProgressComplete += CheckBothProcessesComplete;
+            _freightProgressTracker.OnProgressComplete += CheckBothProcessesComplete;
+        }
+        
+        private void Initialize(TrainConsistModel trainConsistModel, StationModel stationModel, LoadMode loadMode)
+        {
+            _passengerProgressTracker = new ProgressTracker(new LoadProgress(trainConsistModel.maxPassengerLoad, loadMode), stationModel.baseLoadAutoRate);
+            _freightProgressTracker = new ProgressTracker(new LoadProgress(trainConsistModel.maxFreightLoad, loadMode), stationModel.baseLoadAutoRate);
+            _baseLoadManualRate = stationModel.baseLoadManualRate;
+        }
+
+        private void CheckBothProcessesComplete()
+        {
+            if(IsProcessFinished)
+                OnProcessComplete?.Invoke();
         }
         
         public void StartProcess()

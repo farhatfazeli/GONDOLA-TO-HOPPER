@@ -72,15 +72,15 @@ namespace TrainGame.Model.TrainConsist
                 throw new System.ArgumentException("brakingCoefficient must be smaller than zero");
         }
 
-        public float CalculateBrakingDistance()
+        public float CalculateBrakingDelta()
         {
             float brakingForce = FunctionLibrary.TractionCalculator(_maxSpeed, _maxSpeed, _brakingCoefficient);
-            float brakingDistance = (_maxSpeed * _maxSpeed) / (2 * brakingForce);
+            float brakingDelta = (_maxSpeed * _maxSpeed) / (-2 * brakingForce);
             
-            if (brakingDistance < 0)
+            if (brakingDelta < 0)
                 throw new System.InvalidOperationException("Braking distance cannot be negative");
 
-            return brakingDistance;
+            return brakingDelta;
         }
     }
 }

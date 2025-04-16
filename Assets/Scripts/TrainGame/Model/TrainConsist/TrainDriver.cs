@@ -11,7 +11,7 @@ namespace TrainGame.Model.TrainConsist
         
         public bool IsTravelComplete => _travelProgress.IsFinished;
         
-        public event Action OnTravelComplete;
+        public event Action OnJourneyComplete;
         
         private readonly TrainEngine _engine;
 
@@ -20,7 +20,7 @@ namespace TrainGame.Model.TrainConsist
         public TrainDriver(TrainEngine engine, RouteModel routeModel)
         {
             _engine = engine;
-            _journeyProgress = new JourneyProgress(routeModel.distance, _engine.CalculateBrakingDistance());
+            _journeyProgress = new JourneyProgress(routeModel.distance, _engine.CalculateBrakingDelta());
             _journeyProgress.OnBrakingDistanceReached += StartBraking;
             _travelProgress = new ProgressTracker(_journeyProgress, engine.Speed);
         }
@@ -43,7 +43,7 @@ namespace TrainGame.Model.TrainConsist
             _travelProgress.Advance(deltaTime);
             _engine.Update(deltaTime);
             
-            if (IsTravelComplete) OnTravelComplete?.Invoke();
+            if (IsTravelComplete) OnJourneyComplete?.Invoke();
         }
     }
 }

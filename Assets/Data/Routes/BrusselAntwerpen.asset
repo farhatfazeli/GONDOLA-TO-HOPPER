@@ -15,7 +15,7 @@ MonoBehaviour:
   uuid: 8cadf393-f452-4ffd-8fdd-215697d3e71e
   departureStation: {fileID: 11400000, guid: 49b8c5cbfbdb9114db7166aa0d70e808, type: 2}
   arrivalStation: {fileID: 11400000, guid: b571f23a61e6c1b45b7b8d067d313b23, type: 2}
-  distance: 10
+  distance: 42000
   isBuiltAtStart: 1
   buildResourceType: 0
   buildResourceCost: 0

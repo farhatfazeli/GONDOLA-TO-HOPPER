@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0df60bd7a5fd4c419b4815c53313bd1, type: 3}
   m_Name: Brussel
   m_EditorClassIdentifier: 
-  stationName: Brussel
+  uuid: 9728244c-f960-49e5-9e05-f869f2a1223f
+  isBuiltAtStart: 0
+  buildResourceType: 0
+  buildResourceCost: 0
+  maxBuildPoints: 0
+  baseBuildAutoRate: 0
+  baseBuildManualRate: 0
+  baseLoadAutoRate: 1000
+  baseLoadManualRate: 1000

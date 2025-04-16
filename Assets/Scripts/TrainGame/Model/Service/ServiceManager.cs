@@ -56,7 +56,9 @@ namespace TrainGame.Model.Service
         {
             foreach (ServiceModel service in _repository.List)
             {
-                if (service.IsComplete) continue;
+                if (service.ServiceStatus == ServiceStatus.Finished ||
+                    service.ServiceStatus == ServiceStatus.WaitingInDepot)
+                    continue;
                 service.Update(deltaTime);
             }
         }

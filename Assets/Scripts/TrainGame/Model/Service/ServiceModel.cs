@@ -3,6 +3,7 @@ using Core.Utility;
 using TrainGame.Model.Route;
 using TrainGame.Model.Station;
 using TrainGame.Model.TrainConsist;
+using UnityEngine;
 
 namespace TrainGame.Model.Service
 {
@@ -11,7 +12,8 @@ namespace TrainGame.Model.Service
         WaitingInDepot,
         Loading,
         Travelling,
-        Unloading
+        Unloading,
+        Finished
     }
 
     public class ServiceModel : IIdentifiable, IModelObservable
@@ -25,31 +27,21 @@ namespace TrainGame.Model.Service
             get => _serviceStatus;
             private set
             {
-                _serviceStatus = value;
-                OnServiceStatusChanged?.Invoke(ServiceStatus);
+                _serviceStatus = value; 
+                OnModelChanged?.Invoke();
             }
         }
 
-        public readonly RouteModel RouteModel;
-        public readonly TrainConsistModel TrainConsist;
-        public readonly StationModel DepartureStationModel;
-        public readonly StationModel ArrivalStationModel;
+        public readonly ServiceInfo serviceInfo;
+        private ServiceStatus _serviceStatus;
         
-        public readonly StationMasterModel DepartureStationMasterModel;
-        public readonly StationMasterModel ArrivalStationMasterModel;
+        public readonly StationMasterModel departureStationMasterModel;
+        public readonly StationMasterModel arrivalStationMasterModel;
         public readonly TrainDriver trainDriver;
 
         // public DateTime departureTime;
         // public DateTime arrivalTime;
         
-        /// <summary>
-        /// Indicates that the service is complete when the train has finished unloading and returned to depot.
-        /// </summary>
-        public bool IsComplete => ServiceStatus == ServiceStatus.WaitingInDepot;
-
-        public event Action<ServiceStatus> OnServiceStatusChanged;
-
-        private ServiceStatus _serviceStatus;
 
         public ServiceModel(string name, RouteModel routeModel, TrainConsistModel trainConsist) : this(Guid.NewGuid().ToString(), name, routeModel, trainConsist)
         {
@@ -60,13 +52,12 @@ namespace TrainGame.Model.Service
             this.uuid = uuid;
             this.name = name;
             
-            RouteModel = routeModel;
-            TrainConsist = trainConsist;
-            DepartureStationModel = RouteModel.departureStation;
-            ArrivalStationModel = RouteModel.arrivalStation;
+            serviceInfo = new ServiceInfo(routeModel, trainConsist);
             
-            DepartureStationMasterModel = new StationMasterModel(DepartureStationModel, StationMasterType.DepartingStationMaster, trainConsist);
-            ArrivalStationMasterModel = new StationMasterModel(ArrivalStationModel, StationMasterType.ArrivingStationMaster, trainConsist);
+            ServiceStatus = ServiceStatus.WaitingInDepot;
+            
+            departureStationMasterModel = new StationMasterModel(serviceInfo, StationMasterType.DepartingStationMaster);
+            arrivalStationMasterModel = new StationMasterModel(serviceInfo, StationMasterType.ArrivingStationMaster);
             trainDriver = new TrainDriver(trainConsist.engine, routeModel);
             
             StartLoading();
@@ -75,40 +66,69 @@ namespace TrainGame.Model.Service
         /// <summary>
         /// Begins the loading phase at the departure station.
         /// </summary>
-        public void StartLoading()
+        private void StartLoading()
         {
-            if (ServiceStatus != ServiceStatus.WaitingInDepot) return;
+            if (ServiceStatus != ServiceStatus.WaitingInDepot)
+                throw new InvalidOperationException();
+            
             ServiceStatus = ServiceStatus.Loading;
-            DepartureStationMasterModel.StartProcess();
+            departureStationMasterModel.StartProcess();
+            
+            departureStationMasterModel.OnProcessComplete += OnLoadComplete;
+        }
+
+        private void OnLoadComplete()
+        {
+            StartJourney();
+            departureStationMasterModel.OnProcessComplete -= OnLoadComplete;
         }
 
         /// <summary>
         /// Transitions to the travel phase once loading is complete.
         /// </summary>
-        private void StartTravelling()
+        private void StartJourney()
         {
-            if (ServiceStatus != ServiceStatus.Loading) return;
-            if (!DepartureStationMasterModel.IsProcessFinished) return;
+            if (ServiceStatus != ServiceStatus.Loading)
+                throw new InvalidOperationException();
+            
             ServiceStatus = ServiceStatus.Travelling;
             trainDriver.StartDriving();
+
+            trainDriver.OnJourneyComplete += OnJourneyComplete;
+        }
+
+        private void OnJourneyComplete()
+        {
+            StartUnloading();
+            trainDriver.OnJourneyComplete -= OnJourneyComplete;
         }
 
         /// <summary>
         /// Begins the unloading phase at the arrival station once travel is complete.
         /// </summary>
-        public void StartUnloading()
+        private void StartUnloading()
         {
-            if (ServiceStatus != ServiceStatus.Travelling) return;
-            if (!trainDriver.IsTravelComplete) return;
+            if (ServiceStatus != ServiceStatus.Travelling) 
+                throw new InvalidOperationException();
+            
             ServiceStatus = ServiceStatus.Unloading;
-            ArrivalStationMasterModel.StartProcess();
+            arrivalStationMasterModel.StartProcess();
+            
+            arrivalStationMasterModel.OnProcessComplete += OnUnloadComplete;
         }
 
-        public void CompleteService()
+        private void OnUnloadComplete()
         {
-            if (ServiceStatus != ServiceStatus.Unloading) return;
-            if (!ArrivalStationMasterModel.IsProcessFinished) return;
-            ServiceStatus = ServiceStatus.WaitingInDepot;
+            CompleteService();
+            arrivalStationMasterModel.OnProcessComplete -= OnUnloadComplete;
+        }
+
+        private void CompleteService()
+        {
+            if (ServiceStatus != ServiceStatus.Unloading)
+                throw new InvalidOperationException();
+            
+            ServiceStatus = ServiceStatus.Finished;
         }
 
         /// <summary>
@@ -116,18 +136,21 @@ namespace TrainGame.Model.Service
         /// </summary>
         public void Update(float deltaTime)
         {
+            Debug.Log("ServiceStatus: " + ServiceStatus);
+            Debug.Log("Journey progress: " + trainDriver._travelProgress.Progress);
             switch (ServiceStatus)
             {
                 case ServiceStatus.Loading:
-                    DepartureStationMasterModel.Update(deltaTime);
+                    departureStationMasterModel.Update(deltaTime);
                     break;
                 case ServiceStatus.Travelling:
                     trainDriver.Update(deltaTime);
                     break;
                 case ServiceStatus.Unloading:
-                    ArrivalStationMasterModel.Update(deltaTime);
+                    arrivalStationMasterModel.Update(deltaTime);
                     break;
                 case ServiceStatus.WaitingInDepot:
+                case ServiceStatus.Finished:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

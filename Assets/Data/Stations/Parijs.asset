@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Parijs
   m_EditorClassIdentifier: 
   uuid: 41bf73a8-ab85-4a30-a5d1-49a3274b66e7
-  stationName: Parijs
-  buildCost: 0
-  basePassengerLoadRate: 0
-  baseFreightLoadRate: 0
+  isBuiltAtStart: 0
+  buildResourceType: 0
+  buildResourceCost: 0
+  maxBuildPoints: 0
+  baseBuildAutoRate: 0
+  baseBuildManualRate: 0
+  baseLoadAutoRate: 1000
+  baseLoadManualRate: 0

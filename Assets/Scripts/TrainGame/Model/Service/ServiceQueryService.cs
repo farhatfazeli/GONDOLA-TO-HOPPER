@@ -23,12 +23,7 @@ namespace TrainGame.Model.Service
 
         public HashSet<TrainConsistModel> GetTrainConsistsInService()
         {
-            return _repository.List.Select(x => x.TrainConsist).ToHashSet();
-        }
-
-        public HashSet<TrainConsistModel> GetTrainConsistsOnStandby()
-        {
-            return TrainConsistManager.I.AllTrainConsists.Except(GetTrainConsistsInService()).ToHashSet();
+            return _repository.List.Select(x => x.serviceInfo.TrainConsist).ToHashSet();
         }
     }
 }

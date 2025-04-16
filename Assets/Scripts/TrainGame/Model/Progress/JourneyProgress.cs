@@ -25,13 +25,17 @@ namespace TrainGame.Model.Progress
         private float _currentDistance;
 
         private float _endDistance;
-        public JourneyProgress(float endDistance, float brakingDistance)
+        public JourneyProgress(float endDistance, float brakingDelta)
         {
             if (endDistance <= 0)
                 throw new ArgumentException("End distance must be greater than zero.", nameof(endDistance));
 
             _endDistance = endDistance;
-            _brakingDistance = brakingDistance;
+            _brakingDistance = endDistance - brakingDelta;
+            
+            if (_brakingDistance > _endDistance)
+                throw new ArithmeticException("The braking distance must not exceed the end distance.");
+                
             _currentDistance = 0f;
         }
         

@@ -25,16 +25,16 @@ namespace TrainGame.View.ServiceLedgerView
             _serviceModel.OnModelChanged += RefreshView;
             RefreshView();
             
-            //temp code
-            _scheduledTrainItemManager.Initialize(serviceModel);
+            // temp code
+             _scheduledTrainItemManager.Initialize(serviceModel);
         }
 
         private void RefreshView()
         {
             trainNo.text = 133.ToString();
-            trainName.text = _serviceModel.TrainConsist.name;
-            departureStation.text = _serviceModel.RouteModel.departureStation.name;
-            arrivalStation.text = _serviceModel.RouteModel.arrivalStation.name;
+            trainName.text = _serviceModel.serviceInfo.TrainConsist.name;
+            departureStation.text = _serviceModel.serviceInfo.RouteModel.departureStation.name;
+            arrivalStation.text = _serviceModel.serviceInfo.RouteModel.arrivalStation.name;
             load.text = "Mixed";
             arrivalTime.text = "14:11";
             status.text = _serviceModel.ServiceStatus.ToString();
