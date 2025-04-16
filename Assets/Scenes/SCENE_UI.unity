@@ -1117,8 +1117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279a929e1c1a45f48ce2d4d2e0558bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serviceViewItemPrefab: {fileID: 0}
-  contentContainer: {fileID: 0}
+  serviceViewItemPrefab: {fileID: 2635174854296527134, guid: b5a4466afc906cb42ac546624c91ec38, type: 3}
+  contentContainer: {fileID: 1865993890}
 --- !u!114 &175038097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68fc06733c5d4d939c12f6fe6c87e762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serviceLedgerView: {fileID: 0}
+  serviceLedgerView: {fileID: 175038096}
 --- !u!1 &192189450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,6 +1741,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67011d2fa8f941e0adf2c9517a964725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  routeDropdownHandler: {fileID: 985197613}
+  trainDropdownHandler: {fileID: 803895821}
+  serviceLedgerController: {fileID: 175038097}
 --- !u!1 &381112253
 GameObject:
   m_ObjectHideFlags: 0
@@ -4716,6 +4719,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf7ba09975bf4042b2bfd9586bc7c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trainDropdown: {fileID: 803895818}
+  tractionPowerText: {fileID: 805580779}
+  maxSpeedText: {fileID: 827246771}
 --- !u!1 &805580777
 GameObject:
   m_ObjectHideFlags: 0
@@ -9646,7 +9652,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1865993890}
-  - component: {fileID: 1865993893}
   - component: {fileID: 1865993892}
   - component: {fileID: 1865993891}
   m_Layer: 5
@@ -9715,25 +9720,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1865993893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865993889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e1798b1774044bcafe767b783814e06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yardMarshallController: {fileID: 1649836025}
-  rollingStockItemPrefab: {fileID: 7019867617083321914, guid: 1ba5cdec5e8c2f74fa6088603a0ea4f5, type: 3}
-  contentContainer: {fileID: 1865993890}
-  rollingStockItems:
-  - {fileID: 7019867617083321914, guid: 1ba5cdec5e8c2f74fa6088603a0ea4f5, type: 3}
-  - {fileID: 7019867617083321914, guid: 1ba5cdec5e8c2f74fa6088603a0ea4f5, type: 3}
-  - {fileID: 7019867617083321914, guid: 1ba5cdec5e8c2f74fa6088603a0ea4f5, type: 3}
 --- !u!1 &1887337698
 GameObject:
   m_ObjectHideFlags: 0

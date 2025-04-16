@@ -1,15 +1,18 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Persistence;
 using TMPro;
 using TrainGame.Model.Route;
 using UnityEngine;
+using UnityEngine.ResourceManagement.Exceptions;
 
 namespace TrainGame.View.SchedulerView
 {
     public class RouteDropdownHandler : MonoBehaviour
     {
-        [Header("UI Elements")] public TMP_Dropdown routeDropdown;
+        [Header("UI Elements")]
+        public TMP_Dropdown routeDropdown;
         public TextMeshProUGUI routeDistance;
 
         private void Start()
@@ -29,22 +32,26 @@ namespace TrainGame.View.SchedulerView
 
         private void Initialize()
         {
-            PopulateDropdown();
-            RouteManager.I.OnRouteDictionaryUpdated += PopulateDropdown;
+            RefreshView();
+            RouteManager.I.OnRouteDictionaryUpdated += RefreshView;
+        }
 
+        private void RefreshView()
+        {
+            PopulateDropdown();
             SelectInitialRoute();
             UpdateDescription();
         }
 
         private void OnDisable()
         {
-            RouteManager.I.OnRouteDictionaryUpdated -= PopulateDropdown;
+            RouteManager.I.OnRouteDictionaryUpdated -= RefreshView;
         }
 
         public RouteModel GetSelectedRoute()
         {
-            if (routeDropdown.options.Count < 0)
-                return null;
+            if (routeDropdown.options.Count == 0)
+                throw new FieldAccessException();
 
             string routeName = routeDropdown.options[routeDropdown.value].text;
             return RouteManager.I.QueryService.GetRouteModelByName(routeName);
@@ -67,10 +74,10 @@ namespace TrainGame.View.SchedulerView
             AddNewRoutes(RouteManager.I.QueryService.GetBuiltRoutes());
         }
 
-        private void AddNewRoutes(List<RouteModel> ros)
+        private void AddNewRoutes(IReadOnlyCollection<RouteModel> ros)
         {
             routeDropdown.AddOptions(ros.Select(x => x.name).ToList());
-
+            
             routeDropdown.RefreshShownValue();
         }
 

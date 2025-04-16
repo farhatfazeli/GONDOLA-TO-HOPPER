@@ -22,7 +22,7 @@ namespace TrainGame.Model.Service
         /// <summary>
         /// Starts a new service for a given train using the provided route
         /// </summary>
-        public bool CreateService(RouteModel routeModel, TrainConsistModel trainConsist)
+        public ServiceModel CreateService(RouteModel routeModel, TrainConsistModel trainConsist)
         {
             if(routeModel == null || trainConsist == null) 
                 throw new ArgumentNullException(nameof(routeModel) +  "." + nameof(trainConsist));
@@ -36,7 +36,7 @@ namespace TrainGame.Model.Service
             
             _repository.Add(serviceModel);
 
-            return true;
+            return serviceModel;
         }
 
         // public bool FinishService(ServiceModel service)

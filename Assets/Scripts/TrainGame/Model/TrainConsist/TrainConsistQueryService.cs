@@ -16,5 +16,10 @@ namespace TrainGame.Model.TrainConsist
         {
             return _repository.List;
         }
+
+        public TrainConsistModel GetTrainConsistByName(string trainName)
+        {
+            return _repository.List.FirstOrDefault(x => x.name == trainName);
+        }
     }
 }

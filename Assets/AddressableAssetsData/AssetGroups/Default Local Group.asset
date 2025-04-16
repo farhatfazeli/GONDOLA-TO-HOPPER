@@ -45,12 +45,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Stations
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4b0a1c15ea43dbe4bbc650bbada9795f
-    m_Address: Empty
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Routes
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 524b6ccdedcb66046af4545fac5f0698
     m_Address: LiverpoolManchesterPassengerCarriage
     m_ReadOnly: 0
@@ -98,12 +92,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ccca910c9b233a44a94033db9768ce6e
-    m_Address: StocktonDarlington
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Routes
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cf70af8bd25226446a3d89ab6343c175
     m_Address: BrusselAntwerpen

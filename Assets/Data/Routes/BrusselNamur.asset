@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117fb7366c7c52d428be881ad99accac, type: 3}
   m_Name: BrusselNamur
   m_EditorClassIdentifier: 
-  routeName: Brussel - Namur
-  departureSoStation: {fileID: 11400000, guid: 49b8c5cbfbdb9114db7166aa0d70e808, type: 2}
-  arrivalSoStation: {fileID: 11400000, guid: 6d431a8b8791c51449f53500c5aa9d38, type: 2}
+  uuid: 42b9a27a-2b7a-4dad-8efb-7ddc5214d170
+  departureStation: {fileID: 11400000, guid: 49b8c5cbfbdb9114db7166aa0d70e808, type: 2}
+  arrivalStation: {fileID: 11400000, guid: 6d431a8b8791c51449f53500c5aa9d38, type: 2}
   distance: 55
-  resourceCost: 15000
-  landscapes: []
+  isBuiltAtStart: 0
+  buildResourceType: 0
+  buildResourceCost: 0
+  maxBuildPoints: 0
+  baseBuildAutoRate: 0
+  baseBuildManualRate: 0
+  sceneAsset: {fileID: 0}

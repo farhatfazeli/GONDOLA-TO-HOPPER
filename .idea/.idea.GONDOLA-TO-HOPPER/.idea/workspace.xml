@@ -114,10 +114,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14596">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19528">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="14596" />
+      <option name="pid" value="19528" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
         <list>
@@ -192,6 +192,7 @@
       <workItem from="1744373252510" duration="2580000" />
       <workItem from="1744628917926" duration="19103000" />
       <workItem from="1744702485286" duration="11942000" />
+      <workItem from="1744791517745" duration="6722000" />
     </task>
     <servers />
   </component>
@@ -223,6 +224,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/TrainGame/View/ServiceLedgerView/ServiceLedgerView.cs</url>
+          <line>12</line>
+          <properties documentPath="C:\REPOSITORIES\GONDOLA-TO-HOPPER\Assets\Scripts\TrainGame\View\ServiceLedgerView\ServiceLedgerView.cs" containingFunctionPresentation="Method 'AddServiceViewItem'">
+            <startOffsets>
+              <option value="382" />
+            </startOffsets>
+            <endOffsets>
+              <option value="451" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

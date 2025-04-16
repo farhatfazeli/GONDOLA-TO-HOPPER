@@ -33,6 +33,9 @@ namespace TrainGame.Model.Service
         public readonly RouteModel RouteModel;
         public readonly TrainConsistModel TrainConsist;
 
+        public DateTime departureTime;
+        public DateTime arrivalTime;
+        
         public readonly StationMaster departureStationMaster;
         public readonly StationMaster arrivalStationMaster;
         public readonly TrainDriver trainDriver;
