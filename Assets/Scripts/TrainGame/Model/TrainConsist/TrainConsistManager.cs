@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TrainGame.Model.RollingStock;
+using UnityEngine;
 
 namespace TrainGame.Model.TrainConsist
 {
@@ -28,7 +29,14 @@ namespace TrainGame.Model.TrainConsist
             
             TrainConsistModelFactory trainConsistModelFactory = new TrainConsistModelFactory();
             TrainConsistModel trainConsistModel = trainConsistModelFactory.CreateTrainConsist(trainName, rollingStockModels);
-                
+            
+            _repository.Add(trainConsistModel);
+
+            foreach (TrainConsistModel tcm in _repository.List.ToList())
+            {
+                Debug.Log(tcm.name);
+            }
+            
             return true;
         }
 

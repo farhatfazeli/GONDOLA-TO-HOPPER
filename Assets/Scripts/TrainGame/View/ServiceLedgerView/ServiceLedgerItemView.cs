@@ -6,13 +6,13 @@ namespace TrainGame.View.ServiceLedgerView
 {
     public class ServiceLedgerItemView : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI trainName;
         [SerializeField] private TextMeshProUGUI trainNo;
+        [SerializeField] private TextMeshProUGUI trainName;
         [SerializeField] private TextMeshProUGUI departureStation;
         [SerializeField] private TextMeshProUGUI arrivalStation;
-        [SerializeField] private TextMeshProUGUI passengerLoad;
-        [SerializeField] private TextMeshProUGUI freightLoad;
+        [SerializeField] private TextMeshProUGUI load;
         [SerializeField] private TextMeshProUGUI arrivalTime;
+        [SerializeField] private TextMeshProUGUI status;
         
         private ServiceModel _serviceModel;
         
@@ -25,13 +25,13 @@ namespace TrainGame.View.ServiceLedgerView
 
         private void RefreshView()
         {
-            trainName.text = _serviceModel.TrainConsist.name;
             trainNo.text = 133.ToString();
+            trainName.text = _serviceModel.TrainConsist.name;
             departureStation.text = _serviceModel.RouteModel.departureStation.name;
             arrivalStation.text = _serviceModel.RouteModel.arrivalStation.name;
-            passengerLoad.text = _serviceModel.TrainConsist.passengerLoad.ToString();
-            freightLoad.text = _serviceModel.TrainConsist.freightLoad.ToString();
+            load.text = "Mixed";
             arrivalTime.text = "14:11";
+            status.text = _serviceModel.ServiceStatus.ToString();
         }
     }
 }

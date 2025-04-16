@@ -22,6 +22,8 @@ namespace TrainGame.Model.Route
         {
             uuid = route.uuid;
             name = route.name;
+            departureStation = StationManager.I.QueryService.GetModel(route.departureStation);
+            arrivalStation = StationManager.I.QueryService.GetModel(route.arrivalStation);
             distance = route.distance;
 
             routeBuilder = new RouteBuilder(route);

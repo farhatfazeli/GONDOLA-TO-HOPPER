@@ -34,7 +34,7 @@ namespace TrainGame.View.SchedulerView
         private void Initialize()
         {
             RefreshView();
-            TrainConsistManager.I.OnTrainConsistListUpdated += RefreshView;
+            ServiceManager.I.OnServiceListUpdated += RefreshView;
         }
 
         private void RefreshView()
@@ -46,7 +46,7 @@ namespace TrainGame.View.SchedulerView
     
         private void OnDisable()
         {
-            TrainConsistManager.I.OnTrainConsistListUpdated -= RefreshView;
+            ServiceManager.I.OnServiceListUpdated -= RefreshView;
         }
         
         public TrainConsistModel GetSelectedTrain()
@@ -74,6 +74,8 @@ namespace TrainGame.View.SchedulerView
             trainDropdown.ClearOptions();
             
             AddNewTrains(ServiceManager.I.QueryService.GetTrainConsistsOnStandby());
+            
+            
         }
 
         private void AddNewTrains(IReadOnlyCollection<TrainConsistModel> trains)

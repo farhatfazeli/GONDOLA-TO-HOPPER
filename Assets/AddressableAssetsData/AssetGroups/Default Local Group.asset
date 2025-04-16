@@ -21,12 +21,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 31b5cdbf272f4d54a99e1eaf1504f6ad
-    m_Address: Stockton
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Stations
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3a839b43c00ff3440b07133b936c29a9
     m_Address: BrusselParijs
     m_ReadOnly: 0
@@ -50,12 +44,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 549346d637fc7b6468b9748dc8f82dcc
-    m_Address: Darlington
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Stations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d431a8b8791c51449f53500c5aa9d38
     m_Address: Namur
