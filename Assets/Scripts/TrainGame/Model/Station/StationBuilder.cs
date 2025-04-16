@@ -1,5 +1,5 @@
-﻿using ScriptableObjects;
-using TrainGame.Model.Builders;
+﻿using Core.Utility;
+using ScriptableObjects;
 using TrainGame.Model.Progress;
 
 namespace TrainGame.Model.Station

@@ -14,8 +14,6 @@ namespace TrainGame.Model.TrainConsist
         
         public event Action OnModelChanged;
         
-        public bool IsInService => ServiceManager.I.QueryService.IsTrainConsistInService(this);
-
         private List<RollingStockModel> _rollingStock;
         
         public TrainEngine engine;

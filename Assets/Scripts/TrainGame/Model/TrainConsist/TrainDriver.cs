@@ -6,8 +6,8 @@ namespace TrainGame.Model.TrainConsist
 {
     public class TrainDriver
     {
-        private readonly JourneyProgress _journeyProgress;
-        private readonly ProgressTracker _travelProgress;
+        public readonly JourneyProgress _journeyProgress;
+        public readonly ProgressTracker _travelProgress;
         
         public bool IsTravelComplete => _travelProgress.IsFinished;
         

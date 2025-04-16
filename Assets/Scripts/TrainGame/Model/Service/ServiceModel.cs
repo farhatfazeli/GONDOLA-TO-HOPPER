@@ -32,14 +32,16 @@ namespace TrainGame.Model.Service
 
         public readonly RouteModel RouteModel;
         public readonly TrainConsistModel TrainConsist;
-
-        public DateTime departureTime;
-        public DateTime arrivalTime;
+        public readonly StationModel DepartureStationModel;
+        public readonly StationModel ArrivalStationModel;
         
-        public readonly StationMaster departureStationMaster;
-        public readonly StationMaster arrivalStationMaster;
+        public readonly StationMasterModel DepartureStationMasterModel;
+        public readonly StationMasterModel ArrivalStationMasterModel;
         public readonly TrainDriver trainDriver;
 
+        // public DateTime departureTime;
+        // public DateTime arrivalTime;
+        
         /// <summary>
         /// Indicates that the service is complete when the train has finished unloading and returned to depot.
         /// </summary>
@@ -57,9 +59,17 @@ namespace TrainGame.Model.Service
         {
             this.uuid = uuid;
             this.name = name;
+            
             RouteModel = routeModel;
             TrainConsist = trainConsist;
+            DepartureStationModel = RouteModel.departureStation;
+            ArrivalStationModel = RouteModel.arrivalStation;
+            
+            DepartureStationMasterModel = new StationMasterModel(DepartureStationModel, StationMasterType.DepartingStationMaster, trainConsist);
+            ArrivalStationMasterModel = new StationMasterModel(ArrivalStationModel, StationMasterType.ArrivingStationMaster, trainConsist);
             trainDriver = new TrainDriver(trainConsist.engine, routeModel);
+            
+            StartLoading();
         }
 
         /// <summary>
@@ -69,7 +79,7 @@ namespace TrainGame.Model.Service
         {
             if (ServiceStatus != ServiceStatus.WaitingInDepot) return;
             ServiceStatus = ServiceStatus.Loading;
-            departureStationMaster.StartProcess();
+            DepartureStationMasterModel.StartProcess();
         }
 
         /// <summary>
@@ -78,7 +88,7 @@ namespace TrainGame.Model.Service
         private void StartTravelling()
         {
             if (ServiceStatus != ServiceStatus.Loading) return;
-            if (!departureStationMaster.IsProcessFinished) return;
+            if (!DepartureStationMasterModel.IsProcessFinished) return;
             ServiceStatus = ServiceStatus.Travelling;
             trainDriver.StartDriving();
         }
@@ -91,13 +101,13 @@ namespace TrainGame.Model.Service
             if (ServiceStatus != ServiceStatus.Travelling) return;
             if (!trainDriver.IsTravelComplete) return;
             ServiceStatus = ServiceStatus.Unloading;
-            arrivalStationMaster.StartProcess();
+            ArrivalStationMasterModel.StartProcess();
         }
 
         public void CompleteService()
         {
             if (ServiceStatus != ServiceStatus.Unloading) return;
-            if (!arrivalStationMaster.IsProcessFinished) return;
+            if (!ArrivalStationMasterModel.IsProcessFinished) return;
             ServiceStatus = ServiceStatus.WaitingInDepot;
         }
 
@@ -109,13 +119,13 @@ namespace TrainGame.Model.Service
             switch (ServiceStatus)
             {
                 case ServiceStatus.Loading:
-                    departureStationMaster.Update(deltaTime);
+                    DepartureStationMasterModel.Update(deltaTime);
                     break;
                 case ServiceStatus.Travelling:
                     trainDriver.Update(deltaTime);
                     break;
                 case ServiceStatus.Unloading:
-                    arrivalStationMaster.Update(deltaTime);
+                    ArrivalStationMasterModel.Update(deltaTime);
                     break;
                 case ServiceStatus.WaitingInDepot:
                     break;

@@ -77,8 +77,8 @@ namespace TrainGame.Model.TrainConsist
             float brakingForce = FunctionLibrary.TractionCalculator(_maxSpeed, _maxSpeed, _brakingCoefficient);
             float brakingDistance = (_maxSpeed * _maxSpeed) / (2 * brakingForce);
             
-            // if (brakingDistance < 0)
-            //     throw new System.InvalidOperationException("Braking distance cannot be negative");
+            if (brakingDistance < 0)
+                throw new System.InvalidOperationException("Braking distance cannot be negative");
 
             return brakingDistance;
         }

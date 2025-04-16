@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Core.Utility;
 using ScriptableObjects;
-using TrainGame.Model.Builders;
 
 namespace TrainGame.Model.Station
 {
@@ -15,8 +14,9 @@ namespace TrainGame.Model.Station
         public float freightLoadRate;
 
         public readonly StationBuilder stationBuilder;
-        public readonly List<StationMaster> stationMaster;
 
+        public float baseLoadAutoRate;
+        public float baseLoadManualRate;
 
         public StationModel(SO_Station station)
         {
@@ -24,7 +24,9 @@ namespace TrainGame.Model.Station
             name = station.name;
 
             stationBuilder = new StationBuilder(station);
-            stationMaster = new List<StationMaster>();
+            
+            baseLoadAutoRate = station.baseLoadAutoRate;
+            baseLoadManualRate = station.baseLoadManualRate;
         }
 
         public event Action OnModelChanged;

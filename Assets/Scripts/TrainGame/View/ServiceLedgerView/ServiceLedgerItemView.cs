@@ -14,6 +14,9 @@ namespace TrainGame.View.ServiceLedgerView
         [SerializeField] private TextMeshProUGUI arrivalTime;
         [SerializeField] private TextMeshProUGUI status;
         
+        //temp code
+        [SerializeField] private ScheduledTrainItemManager _scheduledTrainItemManager;
+        
         private ServiceModel _serviceModel;
         
         public void Initialize(ServiceModel serviceModel)
@@ -21,6 +24,9 @@ namespace TrainGame.View.ServiceLedgerView
             _serviceModel = serviceModel;
             _serviceModel.OnModelChanged += RefreshView;
             RefreshView();
+            
+            //temp code
+            _scheduledTrainItemManager.Initialize(serviceModel);
         }
 
         private void RefreshView()

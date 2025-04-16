@@ -54,9 +54,9 @@ namespace TrainGame.Model.Service
         //
         public void UpdateServices(float deltaTime)
         {
-            foreach (ServiceModel service in _repository.List.ToList())
+            foreach (ServiceModel service in _repository.List)
             {
-                if (service.IsComplete) return;
+                if (service.IsComplete) continue;
                 service.Update(deltaTime);
             }
         }
