@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.328
+    m_Value: 0.357
   smoothness:
     m_OverrideState: 1
     m_Value: 0.442
@@ -46,19 +46,19 @@ MonoBehaviour:
     m_Value: 92
   redOutGreenIn:
     m_OverrideState: 1
-    m_Value: 5
+    m_Value: 12
   redOutBlueIn:
     m_OverrideState: 1
     m_Value: 11
   greenOutRedIn:
     m_OverrideState: 1
-    m_Value: -3
+    m_Value: 5
   greenOutGreenIn:
-    m_OverrideState: 0
-    m_Value: 100
+    m_OverrideState: 1
+    m_Value: 102
   greenOutBlueIn:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 2
   blueOutRedIn:
     m_OverrideState: 0
     m_Value: 0
@@ -86,6 +86,29 @@ MonoBehaviour:
   - {fileID: -4721268807048483696}
   - {fileID: 8357340614384103486}
   - {fileID: -739704653483907315}
+  - {fileID: 6572446631661024309}
+--- !u!114 &6572446631661024309
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70afe9e12c7a7ed47911bb608a23a8ff, type: 3}
+  m_Name: SplitToning
+  m_EditorClassIdentifier: 
+  active: 1
+  shadows:
+    m_OverrideState: 1
+    m_Value: {r: 0.4056604, g: 0.32003668, b: 0.23153257, a: 1}
+  highlights:
+    m_OverrideState: 1
+    m_Value: {r: 0.5900676, g: 0.6199288, b: 0.6415094, a: 1}
+  balance:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &6645269441169759243
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -107,10 +130,10 @@ MonoBehaviour:
     m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.045
+    m_Value: 0.08
   clamp:
-    m_OverrideState: 0
-    m_Value: 0.0858
+    m_OverrideState: 1
+    m_Value: 0.052
 --- !u!114 &8357340614384103486
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -129,7 +152,7 @@ MonoBehaviour:
     m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: -10.2
+    m_Value: -21
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 0.9811321, g: 0.91171235, b: 0.9333898, a: 1}
@@ -138,7 +161,7 @@ MonoBehaviour:
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: -13.8
+    m_Value: -14.6
 --- !u!114 &8539495530420893587
 MonoBehaviour:
   m_ObjectHideFlags: 3
