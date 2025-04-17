@@ -438,7 +438,6 @@ MonoBehaviour:
     - {fileID: 3052733939941584465, guid: 190935b4050e115488896aa6b9226e6c, type: 3}
     - {fileID: 6036684824846332061, guid: b605226ca2d3e494b917c1c787fb21c4, type: 3}
     amount: 6
-    scatterAtGroundLevel: 0
   offsetX: 0
   offsetY: 0
   cam: {fileID: 2014424804}
@@ -616,7 +615,7 @@ SpriteRenderer:
   m_Size: {x: 25.6, y: 14.390001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &625927075
@@ -1595,7 +1594,7 @@ SpriteRenderer:
   m_Size: {x: 25.6, y: 14.390001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1902155138
@@ -2031,7 +2030,7 @@ SpriteRenderer:
   m_Size: {x: 25.6, y: 14.390001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2123916673 stripped
