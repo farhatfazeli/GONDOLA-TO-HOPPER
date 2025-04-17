@@ -27,8 +27,9 @@ namespace TrainGame.Model.Progress
                 throw new ArgumentException("Max load must be greater than or equal to zero.", nameof(maxLoad));
 
             Max = maxLoad;
-            Current = 0f;
             _loadMode = loadMode;
+
+            Current = 0f;
         }
         
         public void UpdateProgress(float amount)
@@ -39,19 +40,9 @@ namespace TrainGame.Model.Progress
         /// <summary>
         /// Increases the current load by a given amount.
         /// </summary>
-        public void HandleLoading(float amount)
+        private void HandleLoading(float amount)
         {
-            switch (_loadMode)
-            {
-                case LoadMode.Loading:
-                    Set(Current + amount);
-                    break;
-                case LoadMode.Unloading:
-                    Set(Current - amount);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            Set(Current + amount);
         }
         
         /// <summary>

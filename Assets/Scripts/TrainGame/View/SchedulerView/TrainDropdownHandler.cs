@@ -52,7 +52,7 @@ namespace TrainGame.View.SchedulerView
         public TrainConsistModel GetSelectedTrain()
         {
             if (trainDropdown.options.Count == 0)
-                throw new FieldAccessException();
+                throw new FieldAccessException("Attempted to get selected train from empty dropdown");
             
             string trainName = trainDropdown.options[trainDropdown.value].text;
             return TrainConsistManager.I.QueryService.GetTrainConsistByName(trainName);

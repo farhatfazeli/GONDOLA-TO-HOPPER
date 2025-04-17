@@ -1,4 +1,5 @@
-﻿using TrainGame.Model.Service;
+﻿using TrainGame.Controller;
+using TrainGame.Model.Service;
 using UnityEngine;
 
 namespace TrainGame.View.ServiceLedgerView
@@ -8,10 +9,10 @@ namespace TrainGame.View.ServiceLedgerView
         [SerializeField] private GameObject serviceViewItemPrefab;
         [SerializeField] private RectTransform contentContainer;
         
-        public void AddServiceViewItem(ServiceModel serviceModel)
+        public void AddServiceViewItem(ServiceModel serviceModel, ServiceLedgerController serviceLedgerController)
         {
             GameObject go = Instantiate(serviceViewItemPrefab, contentContainer);
-            go.GetComponent<ServiceLedgerItemView>().Initialize(serviceModel);
+            go.GetComponent<ServiceLedgerItemView>().Initialize(serviceModel, serviceLedgerController);
         }
     }
 }

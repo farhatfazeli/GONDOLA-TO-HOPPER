@@ -1,18 +1,38 @@
 ﻿using System;
+using Core.Persistence;
+using Core.Utility;
 using TrainGame.Controller;
 using UnityEngine;
 
 namespace TrainGame
 {
-    public class UIStateManager : MonoBehaviour
+    public class UIStateManager : PersistentSingleton<UIStateManager>
     {
-        [SerializeField] private UIPanelController panelController;
+        private UIPanelController panelController;
 
         private UIState _previousState = UIState.None;
         private UIState _currentState = UIState.None;
 
-        private void Awake()
+        private UIState _lastYardLandscapeState = UIState.YardView;
+
+        private void Start()
         {
+            base.Awake();
+            StartCoroutine(WaitAndLoad());
+        }
+        
+        private System.Collections.IEnumerator WaitAndLoad()
+        {
+            // Wait until RailwayDirector is initialized.
+            while (!RailwayDirector.I.IsInitialized)
+                yield return null;
+            
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            panelController = FindFirstObjectByType<UIPanelController>();
             GoToState(UIState.MainView);
         }
 
@@ -50,6 +70,24 @@ namespace TrainGame
             _currentState = newState;
         }
 
+        public void OnYardLandscapeToggleClicked()
+        {
+            if (_currentState != UIState.YardView && _currentState != UIState.LandscapeView)
+            {
+                GoToState(_lastYardLandscapeState);
+            }
+            else if (_currentState == UIState.YardView)
+            {
+                GoToState(UIState.LandscapeView);
+                _lastYardLandscapeState = UIState.LandscapeView;
+            }
+            else if (_currentState == UIState.LandscapeView)
+            {
+                GoToState(UIState.YardView);
+                _lastYardLandscapeState = UIState.YardView;
+            }
+        }
+
         public void OnYardButtonClicked()
         {
             GoToState(UIState.YardView);
@@ -60,7 +98,7 @@ namespace TrainGame
             GoToState(UIState.LandscapeView);
         }
 
-        public void OnPlannerButtonClicked()
+        public void OnSchedulerButtonClicked()
         {
             GoToState(UIState.PlannerView);
         }

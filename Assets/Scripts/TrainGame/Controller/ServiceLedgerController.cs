@@ -14,7 +14,12 @@ namespace TrainGame.Controller
             if (serviceLedgerView == null)
                 throw new ArgumentNullException(serviceModel.name, "Service model is null");
             
-            serviceLedgerView.AddServiceViewItem(serviceModel);
+            serviceLedgerView.AddServiceViewItem(serviceModel, this);
+        }
+
+        public void WatchServiceInLandscape(ServiceModel serviceModel)
+        {
+            Debug.Log($"Watching service in {serviceModel.name}");
         }
     }
 }

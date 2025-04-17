@@ -16,7 +16,7 @@ namespace TrainGame.Model.TrainConsist
         
         private List<RollingStockModel> _rollingStock;
         
-        public TrainEngine engine;
+        public TrainEngine trainEngine;
 
         public List<RollingStockModel> RollingStock
         {
@@ -35,6 +35,8 @@ namespace TrainGame.Model.TrainConsist
         public float maxFreightLoad;
         
         private float TotalCurrentLoad => passengerLoad + freightLoad; // Always up-to-date
+
+        public float travelDistance => trainEngine.Position;
         
         public TrainConsistModel(string name, List<RollingStockModel> rollingStock) : this(Guid.NewGuid().ToString(),
             name, rollingStock)
@@ -61,7 +63,7 @@ namespace TrainGame.Model.TrainConsist
             if(maxPassengerLoad + maxFreightLoad == 0)
                 throw new InvalidOperationException("Train must have at least one wagon");
 
-            engine = CreateTrainEngine();
+            trainEngine = CreateTrainEngine();
         }
         
         private TrainEngine CreateTrainEngine()

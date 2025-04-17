@@ -1,4 +1,5 @@
 using Core.Utility;
+using TrainGame.Model.Progress;
 using UnityEngine;
 
 namespace TrainGame.Model.TrainConsist
@@ -6,8 +7,9 @@ namespace TrainGame.Model.TrainConsist
     public class TrainEngine
     {
         // Train state variables
-        public float Speed { get; private set; } = 0f;
-        public float Acceleration { get; private set; } = 0f;
+        public float Position { get; private set; }
+        public float Speed { get; private set; }
+        public float Acceleration { get; private set; }
         private float TotalMass => _locomotiveMass + _load; // Total mass of the train
         
         private float _load; // Load of the train
@@ -44,6 +46,8 @@ namespace TrainGame.Model.TrainConsist
             
             Speed += Acceleration * deltaTime;
             Speed = Mathf.Clamp(Speed, 0, _maxSpeed);
+            
+            Position += Speed * deltaTime;
         }
 
         public void SetAccelerationMode(bool isAccelerating)

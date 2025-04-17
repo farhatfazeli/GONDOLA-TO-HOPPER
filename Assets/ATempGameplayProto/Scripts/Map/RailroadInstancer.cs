@@ -65,6 +65,6 @@ public class RailroadInstancer : MonoBehaviour
     {
         // Calculate the index of the list based on the progression amount
         _currentIndex = Mathf.FloorToInt(f * _instances.Count);
-        Debug.Log(_currentIndex);
+        // Debug.Log(_currentIndex);
     }
 }
