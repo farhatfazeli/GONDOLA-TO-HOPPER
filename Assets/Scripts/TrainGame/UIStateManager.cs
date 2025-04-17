@@ -2,6 +2,7 @@
 using Core.Persistence;
 using Core.Utility;
 using TrainGame.Controller;
+using TrainGame.View.CentralMenuView;
 using UnityEngine;
 
 namespace TrainGame
@@ -13,7 +14,7 @@ namespace TrainGame
         private UIState _previousState = UIState.None;
         private UIState _currentState = UIState.None;
 
-        private UIState _lastYardLandscapeState = UIState.YardView;
+        private ToggleTabViewEnum _toggleTabViewEnum = ToggleTabViewEnum.YardView;
 
         private void Start()
         {
@@ -70,21 +71,53 @@ namespace TrainGame
             _currentState = newState;
         }
 
+        public UIState GetUIState()
+        {
+            return _currentState;
+        }
+
+        public ToggleTabViewEnum GetToggleTabViewEnum()
+        {
+            return _toggleTabViewEnum;
+        }
+
         public void OnYardLandscapeToggleClicked()
         {
             if (_currentState != UIState.YardView && _currentState != UIState.LandscapeView)
             {
-                GoToState(_lastYardLandscapeState);
+                GoToState(GetToggleTabState());
             }
-            else if (_currentState == UIState.YardView)
+            else
             {
-                GoToState(UIState.LandscapeView);
-                _lastYardLandscapeState = UIState.LandscapeView;
+                GoToState(ToggleToggleTabState());
             }
-            else if (_currentState == UIState.LandscapeView)
+        }
+
+        public UIState ToggleToggleTabState()
+        {
+            switch (_toggleTabViewEnum)
             {
-                GoToState(UIState.YardView);
-                _lastYardLandscapeState = UIState.YardView;
+                case ToggleTabViewEnum.YardView:
+                    _toggleTabViewEnum = ToggleTabViewEnum.LandscapeView;
+                    return UIState.LandscapeView;
+                case ToggleTabViewEnum.LandscapeView:
+                    _toggleTabViewEnum = ToggleTabViewEnum.YardView;
+                    return UIState.YardView;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        public UIState GetToggleTabState()
+        {
+            switch (_toggleTabViewEnum)
+            {
+                case ToggleTabViewEnum.YardView:
+                    return  UIState.YardView;
+                case ToggleTabViewEnum.LandscapeView:
+                    return  UIState.LandscapeView;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 

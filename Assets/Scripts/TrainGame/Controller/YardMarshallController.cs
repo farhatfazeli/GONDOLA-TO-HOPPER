@@ -13,8 +13,10 @@ namespace TrainGame.Controller
 {
     public class YardMarshallController : MonoBehaviour
     {
-        [Header("Yard panel")]
-        [SerializeField] private RectTransform yardPanel;
+        [Header("Yard panels")]
+        [SerializeField] private RectTransform yardViewPanel;
+
+        [SerializeField] private RectTransform yardMarshallPanel;
         
         [Header("Yard Marshall list")]
         [SerializeField] private YardMarshallItemListView yardMarshallItemListView;
@@ -33,14 +35,14 @@ namespace TrainGame.Controller
         
         public void OnActivate()
         {
-            yardPanel.gameObject.SetActive(true);
+            yardViewPanel.gameObject.SetActive(true);
             LoadYardScene();
             StartCoroutine(WaitAndDo());
         }
         
         public void OnDeactivate()
         {
-            yardPanel.gameObject.SetActive(false);
+            yardViewPanel.gameObject.SetActive(false);
             UnloadYardScene();
         }
 
