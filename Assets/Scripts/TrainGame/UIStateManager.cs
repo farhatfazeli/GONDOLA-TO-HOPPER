@@ -61,7 +61,7 @@ namespace TrainGame
                     panelController.GoToMapView();
                     break;
                 case UIState.JournalView:
-                    panelController.GoToJournalView();
+                    panelController.GoToJournalStationView();
                     break;
                 case UIState.None:
                 default:

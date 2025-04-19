@@ -195,7 +195,8 @@
       <workItem from="1744628917926" duration="19103000" />
       <workItem from="1744702485286" duration="11942000" />
       <workItem from="1744791517745" duration="26786000" />
-      <workItem from="1744873307714" duration="20072000" />
+      <workItem from="1744873307714" duration="21170000" />
+      <workItem from="1745043276900" duration="5725000" />
     </task>
     <servers />
   </component>
@@ -211,25 +212,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TrainGame/View/YardView/YardMarshallItemView.cs</url>
-          <line>45</line>
-          <properties documentPath="C:\REPOSITORIES\GONDOLA-TO-HOPPER\Assets\Scripts\TrainGame\View\YardView\YardMarshallItemView.cs" containingFunctionPresentation="Method 'OnSelectButtonClicked'">
-            <startOffsets>
-              <option value="1388" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1451" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

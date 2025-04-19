@@ -13,7 +13,9 @@ namespace TrainGame.Controller
         [SerializeField] private LandscapeController landscapeController;
         [SerializeField] private RectTransform schedulerView;
         [SerializeField] private MapController mapController;
-        [SerializeField] private RectTransform journalView;
+        [SerializeField] private RectTransform journalBackground;
+        [SerializeField] private RectTransform journalStationView;
+        [SerializeField] private RectTransform journalRouteView;
         
         public void GoToMainView()
         {
@@ -40,9 +42,18 @@ namespace TrainGame.Controller
             mapController.OnActivate();
         }
 
-        public void GoToJournalView()
+        public void GoToJournalStationView()
         {
-            journalView.gameObject.SetActive(true);
+            journalRouteView.gameObject.SetActive(false);
+            journalBackground.gameObject.SetActive(true);
+            journalStationView.gameObject.SetActive(true);
+        }
+        
+        public void GoToJournalRouteView()
+        {
+            journalStationView.gameObject.SetActive(false);
+            journalRouteView.gameObject.SetActive(true);
+            journalRouteView.gameObject.SetActive(true);
         }
         
         public void CleanView()
@@ -52,7 +63,9 @@ namespace TrainGame.Controller
             landscapeController.OnDeactivate();
             schedulerView.gameObject.SetActive(false);
             mapController.OnDeactivate();
-            journalView.gameObject.SetActive(false);
+            journalBackground.gameObject.SetActive(false);
+            journalStationView.gameObject.SetActive(false);
+            journalRouteView.gameObject.SetActive(false);
         }
     }
 }
