@@ -7,7 +7,6 @@ public class Parallax : MonoBehaviour
     [SerializeField] float parallaxFactor;
     public static event System.Action<Parallax> OnLooped;
 
-    public int id; 
 
     void Start()
     {
