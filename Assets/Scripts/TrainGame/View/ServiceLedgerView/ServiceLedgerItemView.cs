@@ -1,6 +1,8 @@
 ﻿using TMPro;
+using TrainGame.Controller;
 using TrainGame.Model.Service;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TrainGame.View.ServiceLedgerView
 {
@@ -13,13 +15,15 @@ namespace TrainGame.View.ServiceLedgerView
         [SerializeField] private TextMeshProUGUI load;
         [SerializeField] private TextMeshProUGUI arrivalTime;
         [SerializeField] private TextMeshProUGUI status;
+
+        [SerializeField] private Button watchServiceInLandscape;
         
         //temp code
         [SerializeField] private ScheduledTrainItemManager _scheduledTrainItemManager;
         
         private ServiceModel _serviceModel;
         
-        public void Initialize(ServiceModel serviceModel)
+        public void Initialize(ServiceModel serviceModel, ServiceLedgerController serviceLedgerController)
         {
             _serviceModel = serviceModel;
             _serviceModel.OnModelChanged += RefreshView;
@@ -27,6 +31,8 @@ namespace TrainGame.View.ServiceLedgerView
             
             // temp code
              _scheduledTrainItemManager.Initialize(serviceModel);
+             
+             watchServiceInLandscape.onClick.AddListener(() => serviceLedgerController.WatchServiceInLandscape(serviceModel));
         }
 
         private void RefreshView()

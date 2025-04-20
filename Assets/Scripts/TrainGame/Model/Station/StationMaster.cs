@@ -57,8 +57,8 @@ namespace TrainGame.Model.Station
         public void StartProcess()
         {
             if(IsProcessFinished) return;
-            _passengerProgressTracker.Start();
-            _freightProgressTracker.Start();
+            _passengerProgressTracker.StartAuto();
+            _freightProgressTracker.StartAuto();
         }
 
         public void ManualProcess()

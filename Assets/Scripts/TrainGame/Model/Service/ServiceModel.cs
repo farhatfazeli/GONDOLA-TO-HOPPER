@@ -58,7 +58,7 @@ namespace TrainGame.Model.Service
             
             departureStationMasterModel = new StationMasterModel(serviceInfo, StationMasterType.DepartingStationMaster);
             arrivalStationMasterModel = new StationMasterModel(serviceInfo, StationMasterType.ArrivingStationMaster);
-            trainDriver = new TrainDriver(trainConsist.engine, routeModel);
+            trainDriver = new TrainDriver(trainConsist.trainEngine, routeModel);
             
             StartLoading();
         }
@@ -68,6 +68,7 @@ namespace TrainGame.Model.Service
         /// </summary>
         private void StartLoading()
         {
+            Debug.Log("Starting loading...");
             if (ServiceStatus != ServiceStatus.WaitingInDepot)
                 throw new InvalidOperationException();
             
@@ -79,6 +80,7 @@ namespace TrainGame.Model.Service
 
         private void OnLoadComplete()
         {
+            Debug.Log("OnLoadComplete");
             StartJourney();
             departureStationMasterModel.OnProcessComplete -= OnLoadComplete;
         }
@@ -88,6 +90,7 @@ namespace TrainGame.Model.Service
         /// </summary>
         private void StartJourney()
         {
+            Debug.Log("Starting journey...");
             if (ServiceStatus != ServiceStatus.Loading)
                 throw new InvalidOperationException();
             
@@ -99,6 +102,7 @@ namespace TrainGame.Model.Service
 
         private void OnJourneyComplete()
         {
+            Debug.Log("OnJourneyComplete");
             StartUnloading();
             trainDriver.OnJourneyComplete -= OnJourneyComplete;
         }
@@ -108,6 +112,7 @@ namespace TrainGame.Model.Service
         /// </summary>
         private void StartUnloading()
         {
+            Debug.Log("Starting unloading...");
             if (ServiceStatus != ServiceStatus.Travelling) 
                 throw new InvalidOperationException();
             
@@ -119,12 +124,14 @@ namespace TrainGame.Model.Service
 
         private void OnUnloadComplete()
         {
+            Debug.Log("OnUnloadComplete");
             CompleteService();
             arrivalStationMasterModel.OnProcessComplete -= OnUnloadComplete;
         }
 
         private void CompleteService()
         {
+            Debug.Log("CompleteService");
             if (ServiceStatus != ServiceStatus.Unloading)
                 throw new InvalidOperationException();
             
@@ -136,8 +143,6 @@ namespace TrainGame.Model.Service
         /// </summary>
         public void Update(float deltaTime)
         {
-            Debug.Log("ServiceStatus: " + ServiceStatus);
-            Debug.Log("Journey progress: " + trainDriver._travelProgress.Progress);
             switch (ServiceStatus)
             {
                 case ServiceStatus.Loading:

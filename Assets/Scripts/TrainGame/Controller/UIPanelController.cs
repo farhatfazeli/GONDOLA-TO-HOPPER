@@ -1,4 +1,5 @@
 ﻿using System;
+using TrainGame.View.CentralMenuView;
 using TrainGame.View.UIView;
 using UnityEngine;
 
@@ -10,13 +11,12 @@ namespace TrainGame.Controller
         [SerializeField] private RectTransform mainView;
         [SerializeField] private YardMarshallController yardMarshallController;
         [SerializeField] private LandscapeController landscapeController;
-        [SerializeField] private RectTransform plannerView;
+        [SerializeField] private RectTransform schedulerView;
         [SerializeField] private MapController mapController;
-        [SerializeField] private RectTransform journalView;
+        [SerializeField] private RectTransform journalBackground;
+        [SerializeField] private RectTransform journalStationView;
+        [SerializeField] private RectTransform journalRouteView;
         
-        [SerializeField] private TabHandler landscapeTab;
-        [SerializeField] private TabHandler yardTab;
-
         public void GoToMainView()
         {
             mainView.gameObject.SetActive(true);
@@ -25,18 +25,16 @@ namespace TrainGame.Controller
         public void GoToYardView()
         {
             yardMarshallController.OnActivate();
-            landscapeTab.Deactivate();
         }
         
         public void GoToLandscapeView()
         {
             landscapeController.OnActivate();
-            yardTab.Deactivate();
         }
 
         public void GoToPlannerView()
         {
-            plannerView.gameObject.SetActive(true);
+            schedulerView.gameObject.SetActive(true);
         }
 
         public void GoToMapView()
@@ -44,9 +42,18 @@ namespace TrainGame.Controller
             mapController.OnActivate();
         }
 
-        public void GoToJournalView()
+        public void GoToJournalStationView()
         {
-            journalView.gameObject.SetActive(true);
+            journalRouteView.gameObject.SetActive(false);
+            journalBackground.gameObject.SetActive(true);
+            journalStationView.gameObject.SetActive(true);
+        }
+        
+        public void GoToJournalRouteView()
+        {
+            journalStationView.gameObject.SetActive(false);
+            journalRouteView.gameObject.SetActive(true);
+            journalRouteView.gameObject.SetActive(true);
         }
         
         public void CleanView()
@@ -54,9 +61,11 @@ namespace TrainGame.Controller
             mainView.gameObject.SetActive(false);
             yardMarshallController.OnDeactivate();
             landscapeController.OnDeactivate();
-            plannerView.gameObject.SetActive(false);
+            schedulerView.gameObject.SetActive(false);
             mapController.OnDeactivate();
-            journalView.gameObject.SetActive(false);
+            journalBackground.gameObject.SetActive(false);
+            journalStationView.gameObject.SetActive(false);
+            journalRouteView.gameObject.SetActive(false);
         }
     }
 }

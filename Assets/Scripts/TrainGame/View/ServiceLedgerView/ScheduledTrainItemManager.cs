@@ -44,7 +44,7 @@ namespace TrainGame.View.ServiceLedgerView
         private void UpdateProgressSliders()
         {
             loadProgressSlider.value = _serviceModel.departureStationMasterModel._passengerProgressTracker.Progress;
-            travelProgressSlider.value = _serviceModel.trainDriver._travelProgress.Progress;
+            travelProgressSlider.value = _serviceModel.trainDriver._journeyProgressTracker.Progress;
             unloadProgressSlider.value = _serviceModel.arrivalStationMasterModel._passengerProgressTracker.Progress;
         }
         

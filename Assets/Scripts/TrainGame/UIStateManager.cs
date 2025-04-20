@@ -1,18 +1,39 @@
 ﻿using System;
+using Core.Persistence;
+using Core.Utility;
 using TrainGame.Controller;
+using TrainGame.View.CentralMenuView;
 using UnityEngine;
 
 namespace TrainGame
 {
-    public class UIStateManager : MonoBehaviour
+    public class UIStateManager : PersistentSingleton<UIStateManager>
     {
-        [SerializeField] private UIPanelController panelController;
+        private UIPanelController panelController;
 
         private UIState _previousState = UIState.None;
         private UIState _currentState = UIState.None;
 
-        private void Awake()
+        private ToggleTabViewEnum _toggleTabViewEnum = ToggleTabViewEnum.YardView;
+
+        private void Start()
         {
+            base.Awake();
+            StartCoroutine(WaitAndLoad());
+        }
+        
+        private System.Collections.IEnumerator WaitAndLoad()
+        {
+            // Wait until RailwayDirector is initialized.
+            while (!RailwayDirector.I.IsInitialized)
+                yield return null;
+            
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            panelController = FindFirstObjectByType<UIPanelController>();
             GoToState(UIState.MainView);
         }
 
@@ -40,7 +61,7 @@ namespace TrainGame
                     panelController.GoToMapView();
                     break;
                 case UIState.JournalView:
-                    panelController.GoToJournalView();
+                    panelController.GoToJournalStationView();
                     break;
                 case UIState.None:
                 default:
@@ -48,6 +69,56 @@ namespace TrainGame
             }
 
             _currentState = newState;
+        }
+
+        public UIState GetUIState()
+        {
+            return _currentState;
+        }
+
+        public ToggleTabViewEnum GetToggleTabViewEnum()
+        {
+            return _toggleTabViewEnum;
+        }
+
+        public void OnYardLandscapeToggleClicked()
+        {
+            if (_currentState != UIState.YardView && _currentState != UIState.LandscapeView)
+            {
+                GoToState(GetToggleTabState());
+            }
+            else
+            {
+                GoToState(ToggleToggleTabState());
+            }
+        }
+
+        public UIState ToggleToggleTabState()
+        {
+            switch (_toggleTabViewEnum)
+            {
+                case ToggleTabViewEnum.YardView:
+                    _toggleTabViewEnum = ToggleTabViewEnum.LandscapeView;
+                    return UIState.LandscapeView;
+                case ToggleTabViewEnum.LandscapeView:
+                    _toggleTabViewEnum = ToggleTabViewEnum.YardView;
+                    return UIState.YardView;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        public UIState GetToggleTabState()
+        {
+            switch (_toggleTabViewEnum)
+            {
+                case ToggleTabViewEnum.YardView:
+                    return  UIState.YardView;
+                case ToggleTabViewEnum.LandscapeView:
+                    return  UIState.LandscapeView;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         public void OnYardButtonClicked()
@@ -60,7 +131,7 @@ namespace TrainGame
             GoToState(UIState.LandscapeView);
         }
 
-        public void OnPlannerButtonClicked()
+        public void OnSchedulerButtonClicked()
         {
             GoToState(UIState.PlannerView);
         }

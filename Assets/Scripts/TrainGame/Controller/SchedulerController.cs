@@ -24,6 +24,8 @@ namespace TrainGame.Controller
             ServiceModel serviceModel = ServiceManager.I.CreateService(routeModel, trainConsistModel);
             
             serviceLedgerController.AddScheduledService(serviceModel);
+            
+            UIStateManager.I.OnCloseWindowButtonClicked();
         }
     }
 }

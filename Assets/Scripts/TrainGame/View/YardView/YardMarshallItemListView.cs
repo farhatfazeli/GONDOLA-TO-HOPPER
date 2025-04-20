@@ -18,21 +18,30 @@ namespace TrainGame.View.YardView
         
         public void Populate()
         {
-            
-            // Clear existing items (optional)
-            foreach (Transform child in contentContainer)
-            {
-                Destroy(child.gameObject);
-            }
+            ClearContentContainer();
 
             // Create a UI entry for each RollingStockModel
             foreach (var rollingStockModel in RollingStockManager.I.QueryService.GetModels())
             {
-                var itemGo = Instantiate(rollingStockItemPrefab, contentContainer);
-                rollingStockItems.Add(itemGo);
-                // Suppose the prefab has a script that sets UI text/images
-                var itemUI = itemGo.GetComponent<YardMarshallItemView>();
-                itemUI.Initialize(yardMarshallController, rollingStockModel, RollingStockManager.I.QueryService.GetSo(rollingStockModel));
+                CreateContentItem(rollingStockModel);
+            }
+        }
+
+        private void CreateContentItem(RollingStockModel rollingStockModel)
+        {
+            var itemGo = Instantiate(rollingStockItemPrefab, contentContainer);
+            rollingStockItems.Add(itemGo);
+            // Suppose the prefab has a script that sets UI text/images
+            var itemUI = itemGo.GetComponent<YardMarshallItemView>();
+            itemUI.Initialize(yardMarshallController, rollingStockModel, RollingStockManager.I.QueryService.GetSo(rollingStockModel));
+        }
+
+
+        private void ClearContentContainer()
+        {
+            foreach (Transform child in contentContainer)
+            {
+                Destroy(child.gameObject);
             }
         }
     }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TrainGame.Model.Progress
 {
-    public class JourneyProgress : IProgressTarget
+    public class DriveProgress : IProgressTarget
     {
         public float Current {
             get => _currentDistance;
@@ -24,8 +24,8 @@ namespace TrainGame.Model.Progress
         
         private float _currentDistance;
 
-        private float _endDistance;
-        public JourneyProgress(float endDistance, float brakingDelta)
+        private readonly float _endDistance;
+        public DriveProgress(float endDistance, float brakingDelta)
         {
             if (endDistance <= 0)
                 throw new ArgumentException("End distance must be greater than zero.", nameof(endDistance));
@@ -37,6 +37,8 @@ namespace TrainGame.Model.Progress
                 throw new ArithmeticException("The braking distance must not exceed the end distance.");
                 
             _currentDistance = 0f;
+            
+            Debug.Log("New DriveProgress: Ending distance: " + _endDistance +  ", Braking distance: " + _brakingDistance);
         }
         
         public void UpdateProgress(float amount)

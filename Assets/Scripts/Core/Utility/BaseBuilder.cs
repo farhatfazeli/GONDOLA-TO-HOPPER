@@ -27,7 +27,7 @@ namespace Core.Utility
         public void StartBuild()
         {
             if (IsBuilt) return;
-            constructionProgressTracker.Start();
+            constructionProgressTracker.StartAuto();
         }
 
         public void ManualBuild()
@@ -50,7 +50,7 @@ namespace Core.Utility
 
         public void SetBuilt()
         {
-            constructionProgressTracker.Finish();
+            constructionProgressTracker.ForceFinish();
             OnBuildComplete?.Invoke();
         }
 
