@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Planet_Locomotive_Sprite_0: 1574009898817398622
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

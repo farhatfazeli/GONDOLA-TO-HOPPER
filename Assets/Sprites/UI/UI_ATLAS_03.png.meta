@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 988cf09aefa58f14e80878bbbd46d240
+guid: b4d6a4ebbde7d664eb5720b091b18c95
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7682082707150506732
-    second: Rocket_Locomotive_Sprite_0
+      213: -6472062852173978182
+    second: UI_ATLAS_03_0
+  - first:
+      213: -3713090889101676367
+    second: UI_ATLAS_03_1
+  - first:
+      213: -8442688556948905331
+    second: UI_ATLAS_03_2
+  - first:
+      213: 844780294368423299
+    second: UI_ATLAS_03_3
+  - first:
+      213: 8239742808199526475
+    second: UI_ATLAS_03_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rocket_Locomotive_Sprite_0
+      name: UI_ATLAS_03_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 0
-        width: 763
-        height: 939
+        x: 22
+        y: 322
+        width: 1481
+        height: 1097
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cea80ee458d3c9a60800000000000000
-      internalID: 7682082707150506732
+      spriteID: ab52b2c502d9e26a0800000000000000
+      internalID: -6472062852173978182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_ATLAS_03_1
+      rect:
+        serializedVersion: 2
+        x: 1514
+        y: 2
+        width: 734
+        height: 1433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b0fa585283787cc0800000000000000
+      internalID: -3713090889101676367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_ATLAS_03_2
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 36
+        width: 432
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d822ecd1d7b85da80800000000000000
+      internalID: -8442688556948905331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_ATLAS_03_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 228
+        width: 214
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d641fa33349bb00800000000000000
+      internalID: 844780294368423299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_ATLAS_03_4
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 39
+        width: 583
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b48ff439d62795270800000000000000
+      internalID: 8239742808199526475
       vertices: []
       indices: 
       edges: []
@@ -134,8 +234,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Rocket_Locomotive_Sprite_0: 7682082707150506732
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
