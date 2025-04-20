@@ -18,15 +18,15 @@ namespace TrainGame.Model.Station
         public float baseLoadAutoRate;
         public float baseLoadManualRate;
 
-        public StationModel(SO_Station station)
+        public StationModel(SO_Station soStation)
         {
-            uuid = station.uuid;
-            name = station.name;
+            uuid = soStation.uuid;
+            name = soStation.name;
 
-            stationBuilder = new StationBuilder(station);
+            stationBuilder = new StationBuilder(soStation, this);
             
-            baseLoadAutoRate = station.baseLoadAutoRate;
-            baseLoadManualRate = station.baseLoadManualRate;
+            baseLoadAutoRate = soStation.baseLoadAutoRate;
+            baseLoadManualRate = soStation.baseLoadManualRate;
         }
 
         public event Action OnModelChanged;

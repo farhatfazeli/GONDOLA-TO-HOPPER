@@ -1,9 +1,18 @@
 ﻿using System;
 using TrainGame.Model.Progress;
 using TrainGame.Model.RollingStock;
+using TrainGame.Model.Station;
 
 namespace Core.Utility
 {
+    public enum BuildState
+    {
+        Built,
+        UnderConstruction,
+        NotBuilt,
+        NotAvailableForBuilding
+    }
+    
     public abstract class BuilderBase
     {
         protected readonly ProgressTracker constructionProgressTracker;

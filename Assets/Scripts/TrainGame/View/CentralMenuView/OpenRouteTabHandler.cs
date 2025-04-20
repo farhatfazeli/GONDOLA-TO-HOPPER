@@ -7,12 +7,12 @@ namespace TrainGame.View.CentralMenuView
     public class OpenRouteTabHandler : MonoBehaviour
     {
         [SerializeField] private Button openRouteTabButton;
-        [SerializeField] private UIPanelController uiPanelController;
+        [SerializeField] private JournalController journalController;
 
 
         private void Start()
         {
-            openRouteTabButton.onClick.AddListener(() => uiPanelController.GoToJournalRouteView());
+            openRouteTabButton.onClick.AddListener(() => journalController.GoToStationView());
         }
     }
 }

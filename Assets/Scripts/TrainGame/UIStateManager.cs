@@ -9,10 +9,12 @@ namespace TrainGame
 {
     public class UIStateManager : PersistentSingleton<UIStateManager>
     {
-        private UIPanelController panelController;
+        private MainController mainController;
+        
+        private JournalController journalController;
 
         private UIState _previousState = UIState.None;
-        private UIState _currentState = UIState.None;
+        private UIState _currentState = UIState.MainView;
 
         private ToggleTabViewEnum _toggleTabViewEnum = ToggleTabViewEnum.YardView;
 
@@ -33,35 +35,38 @@ namespace TrainGame
 
         private void Initialize()
         {
-            panelController = FindFirstObjectByType<UIPanelController>();
+            mainController = FindFirstObjectByType<MainController>();
+            journalController = FindFirstObjectByType<JournalController>();
             GoToState(UIState.MainView);
         }
 
         private void GoToState(UIState newState)
         {
             _previousState = _currentState;
+
+            ExitPreviousState(_previousState);
             
-            panelController.CleanView();
+            mainController.CleanView();
             
             switch (newState)
             {
                 case UIState.MainView:
-                    panelController.GoToMainView();
+                    mainController.GoToMainView();
                     break;
                 case UIState.YardView:
-                    panelController.GoToYardView();
+                    mainController.GoToYardView();
                     break;
                 case UIState.LandscapeView:
-                    panelController.GoToLandscapeView();
+                    mainController.GoToLandscapeView();
                     break;
                 case UIState.PlannerView:
-                    panelController.GoToPlannerView();
+                    mainController.GoToPlannerView();
                     break;
                 case UIState.MapView:
-                    panelController.GoToMapView();
+                    mainController.GoToMapView();
                     break;
                 case UIState.JournalView:
-                    panelController.GoToJournalStationView();
+                    journalController.OnActivateView();
                     break;
                 case UIState.None:
                 default:
@@ -69,6 +74,18 @@ namespace TrainGame
             }
 
             _currentState = newState;
+        }
+
+        private void ExitPreviousState(UIState previousState)
+        {
+            switch (previousState)
+            {
+                case UIState.JournalView:
+                    journalController.OnDeactivateView();
+                    break;
+                case UIState.None:
+                    throw new ArgumentOutOfRangeException(nameof(previousState), previousState, null);
+            }
         }
 
         public UIState GetUIState()

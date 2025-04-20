@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace TrainGame.View.JournalView
 {
-    public class JournalStationItemView
+    public class JournalStationItemView : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI stationName;
         [SerializeField] private TextMeshProUGUI stationStatus;

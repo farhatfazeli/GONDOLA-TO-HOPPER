@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ScriptableObjects;
+using TrainGame.Model.Route;
 using UnityEngine;
 
 namespace TrainGame.Model.Station
@@ -26,6 +27,11 @@ namespace TrainGame.Model.Station
         public HashSet<StationModel> GetModels()
         {
             return _repository.GetModels().ToHashSet();
+        }
+
+        public bool IsStationConnected(StationModel stationModel)
+        {
+            return RouteManager.I.QueryService.GetRoutesToStation(stationModel).Any(routeModel => routeModel.routeBuilder.IsBuilt);
         }
     }
 }

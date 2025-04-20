@@ -8,11 +8,11 @@ namespace TrainGame.View.CentralMenuView
     public class OpenStationTabHandler : MonoBehaviour
     {
         [SerializeField] private Button openStationTabButton;
-        [SerializeField] private UIPanelController uiPanelController;
+        [SerializeField] private JournalController journalController;
 
         private void Start()
         {
-            openStationTabButton.onClick.AddListener(() => uiPanelController.GoToJournalStationView());
+            openStationTabButton.onClick.AddListener(() => journalController.GoToStationView());
         }
     }
 }
