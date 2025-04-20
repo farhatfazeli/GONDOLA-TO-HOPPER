@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Core.Utility;
 using ScriptableObjects;
 using TrainGame.Model.Route;
 using UnityEngine;
@@ -29,6 +30,16 @@ namespace TrainGame.Model.Station
             return _repository.GetModels().ToHashSet();
         }
 
+        public HashSet<StationModel> GetStationsByBuildState(BuildState buildState)
+        {
+            return GetModels().Where(x => x.stationBuilder.GetStationBuildState() == buildState).ToHashSet();
+        }
+        
+        public HashSet<StationModel> GetStationsNotInBuildState(BuildState buildState)
+        {
+            return GetModels().Except(GetStationsByBuildState(buildState)).ToHashSet();
+        } 
+        
         public static bool IsStationConnected(StationModel stationModel)
         {
             return RouteManager.I.QueryService.GetRoutesToStation(stationModel).Any(routeModel => routeModel.routeBuilder.IsBuilt);

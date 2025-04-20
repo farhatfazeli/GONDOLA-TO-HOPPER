@@ -26,6 +26,9 @@ namespace TrainGame.Model.Station
         
         public BuildState GetStationBuildState()
         {
+            if (IsBuilt)
+                return BuildState.Built;
+            
             if (!StationQueryService.IsStationConnected(_stationModel))
                 return BuildState.NotAvailableForBuilding;
 

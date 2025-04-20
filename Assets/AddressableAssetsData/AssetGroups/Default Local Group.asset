@@ -15,11 +15,23 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 6589f22f5dc489e4e8ae0d614b6bb56f
   m_SerializeEntries:
+  - m_GUID: 1933a8242a7dd7b41be08990500e31fa
+    m_Address: Assets/Data/Stations/Mechelen.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stations
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2664f0ba073d80449ac5310bc2905376
     m_Address: Crampton
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32d62746405e6c44791efb69cb1a151b
+    m_Address: Assets/Data/Stations/Gent.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3a839b43c00ff3440b07133b936c29a9
     m_Address: Assets/Data/Routes/BrusselParijs.asset
@@ -34,7 +46,7 @@ MonoBehaviour:
     - Others
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 49b8c5cbfbdb9114db7166aa0d70e808
-    m_Address: Brussel
+    m_Address: Assets/Data/Stations/Brussel.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
@@ -45,8 +57,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5251cb233e27cf44289906c4d98ede21
+    m_Address: Assets/Data/Stations/Luik.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stations
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d431a8b8791c51449f53500c5aa9d38
-    m_Address: Assets/Data/Stations/Namur.asset
+    m_Address: Assets/Data/Stations/Namen.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7aa00bd55be3c0f4e81c29cc2d57f1ec
+    m_Address: Assets/Data/Stations/Leuven.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
@@ -75,8 +99,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b01d7e82d213a904686aee0373618304
+    m_Address: Assets/Data/Stations/Bergen.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stations
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b571f23a61e6c1b45b7b8d067d313b23
     m_Address: Assets/Data/Stations/Antwerpen.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bbe6e76fe7b64b243babc6bf11e6b4e4
+    m_Address: Assets/Data/Stations/Oostende.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations

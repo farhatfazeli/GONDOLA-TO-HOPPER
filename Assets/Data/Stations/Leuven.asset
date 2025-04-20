@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0df60bd7a5fd4c419b4815c53313bd1, type: 3}
-  m_Name: Antwerpen
+  m_Name: Leuven
   m_EditorClassIdentifier: 
-  uuid: 0fc0048a-1fae-4949-bb13-7abcd2bb84c8
+  uuid: 19997623-8c73-4ac0-80aa-bfb9929b6bae
   baseLoadAutoRate: 1000
   baseLoadManualRate: 0
-  isBuiltAtStart: 1
-  buildResourceType: 1
-  buildResourceCost: 500
-  maxBuildPoints: 10
+  isBuiltAtStart: 0
+  buildResourceType: 0
+  buildResourceCost: 0
+  maxBuildPoints: 8
   baseBuildAutoRate: 0
   baseBuildManualRate: 0

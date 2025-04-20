@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using System.ComponentModel;
+using Core.Utility;
+using TMPro;
 using TrainGame.Controller;
 using TrainGame.Model.Station;
 using UnityEngine;
@@ -8,13 +10,19 @@ namespace TrainGame.View.JournalView
 {
     public class JournalStationItemView : MonoBehaviour
     {
+        [SerializeField] private Image background;
+        
         [SerializeField] private TextMeshProUGUI stationName;
-        [SerializeField] private TextMeshProUGUI stationStatus;
-
+        
+        [Header("Build UI elements")]
+        [SerializeField] private TextMeshProUGUI stationBuildState;
         [SerializeField] private TextMeshProUGUI stationBuildPrice;
         [SerializeField] private TextMeshProUGUI stationBuildProgress;
 
         [SerializeField] private Button buildStationButton;
+        
+        [Header ("Visual options")]
+        [SerializeField] private Color _unavailableColor;
         
         private StationModel _stationModel;
 
@@ -31,10 +39,34 @@ namespace TrainGame.View.JournalView
         private void RefreshView()
         {
             stationName.text = _stationModel.name;
-            stationStatus.text = _stationModel.stationBuilder.IsBuilt ? "Built" : "Not built";
+
+            HandleBuildState();
 
             stationBuildPrice.text = "0";
             stationBuildProgress.text = _stationModel.stationBuilder.BuildProgress.ToString();
+        }
+
+        private void HandleBuildState()
+        {
+            BuildState buildState = _stationModel.stationBuilder.GetStationBuildState();
+            SetBackground(buildState);
+            stationBuildState.text = buildState switch
+            {
+                BuildState.Built => "Built",
+                BuildState.NotBuilt => "Not Built",
+                BuildState.UnderConstruction => "Under Construction",
+                BuildState.NotAvailableForBuilding => "Not Available For Building",
+                _ => throw new InvalidEnumArgumentException(buildState.ToString(), (int)buildState, typeof(BuildState))
+            };
+        }
+
+        private void SetBackground(BuildState buildState)
+        {
+            background.color = buildState switch
+            {
+                BuildState.NotAvailableForBuilding => _unavailableColor,
+                _ => Color.white
+            };
         }
     }
 }
