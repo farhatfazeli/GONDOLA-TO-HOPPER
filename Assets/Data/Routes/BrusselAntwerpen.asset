@@ -18,8 +18,8 @@ MonoBehaviour:
   distance: 42000
   isBuiltAtStart: 1
   buildResourceType: 0
-  buildResourceCost: 0
-  maxBuildPoints: 0
+  buildResourceCost: 11
+  maxBuildPoints: 11
   baseBuildAutoRate: 0
   baseBuildManualRate: 0
   sceneAsset: {fileID: 102900000, guid: 684e7480460dd3645a5cd2ee98680c73, type: 3}

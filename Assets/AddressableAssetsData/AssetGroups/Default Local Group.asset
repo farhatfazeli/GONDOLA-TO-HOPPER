@@ -22,7 +22,7 @@ MonoBehaviour:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3a839b43c00ff3440b07133b936c29a9
-    m_Address: BrusselParijs
+    m_Address: Assets/Data/Routes/BrusselParijs.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Routes
@@ -46,7 +46,7 @@ MonoBehaviour:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d431a8b8791c51449f53500c5aa9d38
-    m_Address: Namur
+    m_Address: Assets/Data/Stations/Namur.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
@@ -76,7 +76,7 @@ MonoBehaviour:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b571f23a61e6c1b45b7b8d067d313b23
-    m_Address: Antwerpen
+    m_Address: Assets/Data/Stations/Antwerpen.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
@@ -100,7 +100,7 @@ MonoBehaviour:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e1975760ad86aa940aed010a067c473b
-    m_Address: Parijs
+    m_Address: Assets/Data/Stations/Parijs.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations

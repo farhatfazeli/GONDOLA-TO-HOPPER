@@ -2,6 +2,7 @@
 using Core.Utility;
 using ScriptableObjects;
 using TrainGame.Model.Station;
+using UnityEngine;
 
 namespace TrainGame.Model.Route
 {
@@ -17,15 +18,17 @@ namespace TrainGame.Model.Route
 
         public readonly RouteBuilder routeBuilder;
 
-        public RouteModel(SO_Route route)
+        public RouteModel(SO_Route soRoute)
         {
-            uuid = route.uuid;
-            name = route.name;
-            departureStation = StationManager.I.QueryService.GetModel(route.departureStation);
-            arrivalStation = StationManager.I.QueryService.GetModel(route.arrivalStation);
-            distance = route.distance;
-
-            routeBuilder = new RouteBuilder(route);
+            uuid = soRoute.uuid;
+            name = soRoute.name;
+            departureStation = StationManager.I.QueryService.GetModel(soRoute.departureStation);
+            arrivalStation = StationManager.I.QueryService.GetModel(soRoute.arrivalStation);
+            distance = soRoute.distance;
+            
+            Debug.Log("RouteModel initializing routeBuilder");
+            Debug.Log("soRoute:" + soRoute.name + " soRoute maxBuildPoints: " + soRoute.maxBuildPoints);
+            routeBuilder = new RouteBuilder(this, soRoute);
         }
 
         public event Action OnModelChanged;

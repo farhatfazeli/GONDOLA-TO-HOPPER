@@ -6,15 +6,24 @@ namespace TrainGame.Model.Route
 {
     public class RouteBuilder : BuilderBase
     {
-        public RouteBuilder(SO_Route route)
-            : base(new ConstructionProgress(route.maxBuildPoints),
-                route.baseBuildAutoRate,
-                route.buildResourceType,
-                route.buildResourceCost,
-                route.baseBuildManualRate)
+        private readonly RouteModel _routeModel;
+        public RouteBuilder(RouteModel routeModel, SO_Route soRoute)
+            : base(soRoute.maxBuildPoints,
+                soRoute.baseBuildAutoRate,
+                soRoute.buildResourceType,
+                soRoute.buildResourceCost,
+                soRoute.baseBuildManualRate)
         {
-            if (route.isBuiltAtStart)
+            if (soRoute.isBuiltAtStart)
                 SetBuilt();
+        }
+        
+        public BuildState GetRouteBuildState()
+        {
+            if (!RouteQueryService.IsRouteDepartingStationBuilt(_routeModel))
+                return BuildState.NotAvailableForBuilding;
+
+            return GetBuildState();
         }
     }
 }

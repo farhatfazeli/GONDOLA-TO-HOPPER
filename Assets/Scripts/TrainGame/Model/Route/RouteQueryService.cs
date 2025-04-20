@@ -42,5 +42,10 @@ namespace TrainGame.Model.Route
         {
             return _repository.GetModels().Where(x => x.arrivalStation == stationModel).ToHashSet();
         }
+
+        public static bool IsRouteDepartingStationBuilt(RouteModel routeModel)
+        {
+            return routeModel.departureStation.stationBuilder.IsBuilt;
+        }
     }
 }

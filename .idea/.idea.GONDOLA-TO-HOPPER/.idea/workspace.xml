@@ -26,12 +26,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Utility/PersistentSingleton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/SaveManagerEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TrainGame/Model/Station/StationMaster.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/REPOSITORIES/GONDOLA-TO-HOPPER/Assets/Scripts/TrainGame/Model/TrainConsist/TrainEngine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/REPOSITORIES/GONDOLA-TO-HOPPER/Assets/Scripts/TrainGame/Model/TrainConsist/TrainEngine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/REPOSITORIES/GONDOLA-TO-HOPPER/Assets/Scripts/TrainGame/Model/TrainConsist/TrainEngine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/REPOSITORIES/GONDOLA-TO-HOPPER/Assets/Scripts/TrainGame/Model/TrainConsist/TrainEngine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/REPOSITORIES/GONDOLA-TO-HOPPER/Assets/Scripts/TrainGame/Model/TrainConsist/TrainEngine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/REPOSITORIES/GONDOLA-TO-HOPPER/Assets/Scripts/TrainGame/Model/TrainConsist/TrainEngine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation/Editor/SkinningModule/UI/WeightPainterPanel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables/Runtime/AddressablesImpl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables/Runtime/ResourceManager/ResourceProviders/AssetBundleProvider.cs" root0="SKIP_HIGHLIGHTING" />
@@ -61,6 +55,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Tests/Editor/TMP/TMP_EditorTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Tests/Editor/UGUI/Canvas/AssertionFailureOnOutputVertexCount.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Tests/Editor/UGUI/EventSystem/InterceptedEventsPreviewTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2a2d93466686437ab24c9fdcfa07ab5c1f2200/70/37dfc8af/LayoutDataStore.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -118,13 +113,15 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6872">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="6872" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -197,7 +194,7 @@
       <workItem from="1744791517745" duration="26786000" />
       <workItem from="1744873307714" duration="21170000" />
       <workItem from="1745043276900" duration="8878000" />
-      <workItem from="1745132873703" duration="2971000" />
+      <workItem from="1745132873703" duration="10838000" />
     </task>
     <servers />
   </component>
@@ -213,6 +210,13 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/Assets/Scripts/Core/Utility/BaseBuilder.cs" line="20">
+        <watch expression="IsBuilt" />
+      </inline-watch>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

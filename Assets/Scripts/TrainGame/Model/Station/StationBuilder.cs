@@ -2,14 +2,15 @@
 using Core.Utility;
 using ScriptableObjects;
 using TrainGame.Model.Progress;
+using UnityEngine;
 
 namespace TrainGame.Model.Station
 {
     public class StationBuilder : BuilderBase
     {
-        private StationModel _stationModel;
-        public StationBuilder(SO_Station soStation, StationModel stationModel)
-            : base(new ConstructionProgress(soStation.maxBuildPoints),
+        private readonly StationModel _stationModel;
+        public StationBuilder(StationModel stationModel, SO_Station soStation)
+            : base(soStation.maxBuildPoints,
                 soStation.baseBuildAutoRate,
                 soStation.buildResourceType,
                 soStation.buildResourceCost,
@@ -18,20 +19,17 @@ namespace TrainGame.Model.Station
             _stationModel = stationModel;
             if (soStation.isBuiltAtStart)
                 SetBuilt();
+            
+            Debug.Log("In station builder constructor: buildprogress = " + BuildProgress);
+            Debug.Log("Is build finished in constructor?: " + IsBuilt);
         }
         
-        public BuildState GetBuildState()
+        public BuildState GetStationBuildState()
         {
-            if (!StationManager.I.QueryService.IsStationConnected(_stationModel))
+            if (!StationQueryService.IsStationConnected(_stationModel))
                 return BuildState.NotAvailableForBuilding;
 
-            return BuildProgress switch
-            {
-                >= 1f => BuildState.Built,
-                >  0f => BuildState.UnderConstruction,
-                0f    => BuildState.NotBuilt,  // exact match
-                _     => throw new InvalidEnumArgumentException("Invalid build progress")
-            };
+            return GetBuildState();
         }
     }
 }

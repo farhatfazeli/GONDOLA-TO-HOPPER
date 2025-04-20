@@ -20,6 +20,7 @@ namespace TrainGame.View.JournalView
 
         public void Initialize(StationModel stationModel, JournalController journalController)
         {
+            Debug.Log("Initializing station item" + stationModel.name);
             _stationModel = stationModel;
             _stationModel.OnModelChanged += RefreshView;
             RefreshView();

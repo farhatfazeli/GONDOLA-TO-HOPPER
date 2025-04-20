@@ -1,7 +1,9 @@
 ﻿using System;
+using System.ComponentModel;
 using TrainGame.Model.Progress;
 using TrainGame.Model.RollingStock;
 using TrainGame.Model.Station;
+using UnityEngine;
 
 namespace Core.Utility
 {
@@ -25,12 +27,25 @@ namespace Core.Utility
         protected readonly int buildResourceCost;
         protected readonly int baseBuildManualRate;
 
-        protected BuilderBase(ConstructionProgress progress, int baseBuildAutoRate, LoadType buildResourceType, int buildResourceCost, int baseBuildManualRate)
+        protected BuilderBase(int maxBuildPoints, int baseBuildAutoRate, LoadType buildResourceType, int buildResourceCost, int baseBuildManualRate)
         {
-            constructionProgressTracker = new ProgressTracker(progress, baseBuildAutoRate);
+            Debug.Log("BuilderBase called");
+            ConstructionProgress constructionProgress = new ConstructionProgress(maxBuildPoints);
+            constructionProgressTracker = new ProgressTracker(constructionProgress, baseBuildAutoRate);
             this.buildResourceType = buildResourceType;
             this.buildResourceCost = buildResourceCost;
             this.baseBuildManualRate = baseBuildManualRate;
+        }
+
+        protected BuildState GetBuildState()
+        {
+            return BuildProgress switch
+            {
+                >= 1f => BuildState.Built,
+                >  0f => BuildState.UnderConstruction,
+                0f    => BuildState.NotBuilt,  // exact match
+                _     => throw new InvalidEnumArgumentException("Invalid build progress")
+            };
         }
 
         public void StartBuild()

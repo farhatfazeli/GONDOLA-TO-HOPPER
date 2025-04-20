@@ -12,7 +12,7 @@ namespace TrainGame.View.CentralMenuView
 
         private void Start()
         {
-            openRouteTabButton.onClick.AddListener(() => journalController.GoToStationView());
+            openRouteTabButton.onClick.AddListener(() => journalController.GoToRouteView());
         }
     }
 }

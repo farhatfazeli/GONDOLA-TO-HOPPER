@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using TrainGame.Model.Station;
 using TrainGame.View;
 using TrainGame.View.JournalView;
@@ -9,6 +11,7 @@ namespace TrainGame.Controller
     {
         [SerializeField] private JournalPanelHandler journalPanelHandler;
         [SerializeField] private JournalStationView journalStationView;
+
         public void BuildStation(StationModel stationModel)
         {
             

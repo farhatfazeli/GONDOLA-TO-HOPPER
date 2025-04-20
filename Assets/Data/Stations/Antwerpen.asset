@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uuid: 0fc0048a-1fae-4949-bb13-7abcd2bb84c8
   isBuiltAtStart: 0
-  buildResourceType: 0
-  buildResourceCost: 0
-  maxBuildPoints: 0
+  buildResourceType: 1
+  buildResourceCost: 500
+  maxBuildPoints: 10
   baseBuildAutoRate: 0
   baseBuildManualRate: 0
   baseLoadAutoRate: 1000

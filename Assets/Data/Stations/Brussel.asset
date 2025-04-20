@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Brussel
   m_EditorClassIdentifier: 
   uuid: 9728244c-f960-49e5-9e05-f869f2a1223f
-  isBuiltAtStart: 0
+  isBuiltAtStart: 1
   buildResourceType: 0
-  buildResourceCost: 0
-  maxBuildPoints: 0
+  buildResourceCost: 1000
+  maxBuildPoints: 9
   baseBuildAutoRate: 0
   baseBuildManualRate: 0
   baseLoadAutoRate: 1000

@@ -13,7 +13,8 @@ namespace TrainGame.Model.Progress
         
         public ConstructionProgress(float maxBuildPoints)
         {
-            if (maxBuildPoints < 0)
+            Debug.Log("maxBuildPoints: " + maxBuildPoints);
+            if (maxBuildPoints <= 0)
                 throw new System.ArgumentException("Max construction progress must be greater than or equal to zero.", nameof(maxBuildPoints));
             Max = maxBuildPoints;
             Current = 0f;

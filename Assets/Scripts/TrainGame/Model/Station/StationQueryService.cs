@@ -29,7 +29,7 @@ namespace TrainGame.Model.Station
             return _repository.GetModels().ToHashSet();
         }
 
-        public bool IsStationConnected(StationModel stationModel)
+        public static bool IsStationConnected(StationModel stationModel)
         {
             return RouteManager.I.QueryService.GetRoutesToStation(stationModel).Any(routeModel => routeModel.routeBuilder.IsBuilt);
         }

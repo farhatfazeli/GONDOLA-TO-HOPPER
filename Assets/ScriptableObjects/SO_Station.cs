@@ -8,6 +8,10 @@ namespace ScriptableObjects
     public class SO_Station : ScriptableObject
     {
         public string uuid;
+
+        [Header("Load settings")]
+        public float baseLoadAutoRate;
+        public float baseLoadManualRate;
         
         [Header("Build settings")] 
         public bool isBuiltAtStart;
@@ -16,10 +20,6 @@ namespace ScriptableObjects
         public int maxBuildPoints;
         public int baseBuildAutoRate;
         public int baseBuildManualRate;
-
-        [Header("Load settings")]
-        public float baseLoadAutoRate;
-        public float baseLoadManualRate;
         
         // OnValidate is called in the editor whenever the asset is modified.
         private void OnValidate()
