@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TrainGame.Model.Route;
 using TrainGame.Model.Station;
 using TrainGame.View;
 using TrainGame.View.JournalView;
@@ -11,8 +12,14 @@ namespace TrainGame.Controller
     {
         [SerializeField] private JournalPanelHandler journalPanelHandler;
         [SerializeField] private JournalStationView journalStationView;
+        [SerializeField] private JournalRouteView journalRouteView;
 
         public void BuildStation(StationModel stationModel)
+        {
+            
+        }
+
+        public void BuildRoute(RouteModel routeModel)
         {
             
         }
@@ -35,12 +42,18 @@ namespace TrainGame.Controller
 
         public void GoToRouteView()
         {
+            PopulateRouteView();
             journalPanelHandler.GoToJournalRouteView();
         }
 
         private void PopulateStationView()
         {
             journalStationView.Populate(this);
+        }
+
+        private void PopulateRouteView()
+        {
+            journalRouteView.Populate(this);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Core.Utility;
 using ScriptableObjects;
 using TrainGame.Model.Station;
 
@@ -36,6 +37,11 @@ namespace TrainGame.Model.Route
         public HashSet<RouteModel> GetModels()
         {
             return _repository.GetModels().ToHashSet();
+        }
+
+        public HashSet<RouteModel> GetRoutesByBuildState(BuildState buildState)
+        {
+            return GetModels().Where(x=>x.routeBuilder.GetRouteBuildState() == buildState).ToHashSet();
         }
 
         public HashSet<RouteModel> GetRoutesToStation(StationModel stationModel)

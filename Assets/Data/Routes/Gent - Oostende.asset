@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 117fb7366c7c52d428be881ad99accac, type: 3}
-  m_Name: BrusselAntwerpen
+  m_Name: Gent - Oostende
   m_EditorClassIdentifier: 
-  uuid: 8cadf393-f452-4ffd-8fdd-215697d3e71e
-  departureStation: {fileID: 11400000, guid: 49b8c5cbfbdb9114db7166aa0d70e808, type: 2}
-  arrivalStation: {fileID: 11400000, guid: b571f23a61e6c1b45b7b8d067d313b23, type: 2}
+  uuid: 511cf410-d905-4359-9048-35101f8e290c
+  departureStation: {fileID: 11400000, guid: 32d62746405e6c44791efb69cb1a151b, type: 2}
+  arrivalStation: {fileID: 11400000, guid: bbe6e76fe7b64b243babc6bf11e6b4e4, type: 2}
   distance: 42000
-  isBuiltAtStart: 1
+  isBuiltAtStart: 0
   buildResourceType: 0
   buildResourceCost: 11
   maxBuildPoints: 11

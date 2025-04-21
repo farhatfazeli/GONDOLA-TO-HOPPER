@@ -29,7 +29,6 @@ namespace Core.Utility
 
         protected BuilderBase(int maxBuildPoints, int baseBuildAutoRate, LoadType buildResourceType, int buildResourceCost, int baseBuildManualRate)
         {
-            Debug.Log("BuilderBase called");
             ConstructionProgress constructionProgress = new ConstructionProgress(maxBuildPoints);
             constructionProgressTracker = new ProgressTracker(constructionProgress, baseBuildAutoRate);
             this.buildResourceType = buildResourceType;

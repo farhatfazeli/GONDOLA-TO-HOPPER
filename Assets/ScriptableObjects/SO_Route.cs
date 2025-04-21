@@ -34,7 +34,7 @@ namespace ScriptableObjects
             if (string.IsNullOrEmpty(uuid))
             {
                 uuid = Guid.NewGuid().ToString();
-            }
+            } 
         }
     }
 }

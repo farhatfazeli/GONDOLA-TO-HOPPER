@@ -15,11 +15,29 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 6589f22f5dc489e4e8ae0d614b6bb56f
   m_SerializeEntries:
+  - m_GUID: 0d8ab59d2138cf3438a064bc9c73a4e2
+    m_Address: Assets/Data/Stations/Kortrijk.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 174ba3e4d0c9f6b42bac419f8a353db5
+    m_Address: Assets/Data/Routes/Mechelen - Antwerpen.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Routes
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1933a8242a7dd7b41be08990500e31fa
     m_Address: Assets/Data/Stations/Mechelen.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2331186e79a2f4443a6b60f791160a2b
+    m_Address: Assets/Data/Routes/Tubeke - Zinnik.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Routes
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2664f0ba073d80449ac5310bc2905376
     m_Address: Crampton
@@ -27,17 +45,17 @@ MonoBehaviour:
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 29edf99c055fd9b4eaf28ab64117a4cb
+    m_Address: Assets/Data/Stations/Tubeke.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stations
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 32d62746405e6c44791efb69cb1a151b
     m_Address: Assets/Data/Stations/Gent.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3a839b43c00ff3440b07133b936c29a9
-    m_Address: Assets/Data/Routes/BrusselParijs.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Routes
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3ace9ad828d66fb4a8ab7736c5b21a96
     m_Address: System
@@ -63,17 +81,29 @@ MonoBehaviour:
     m_SerializedLabels:
     - Stations
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6d431a8b8791c51449f53500c5aa9d38
-    m_Address: Assets/Data/Stations/Namen.asset
+  - m_GUID: 688cbec3f95052a4daa29da051511f86
+    m_Address: Assets/Data/Routes/Dendermonde - Gent.asset
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Stations
+    - Routes
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71aa8d9dde512b44a948be9bf483b59f
+    m_Address: Assets/Data/Routes/Brussel - Leuven.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Routes
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7aa00bd55be3c0f4e81c29cc2d57f1ec
     m_Address: Assets/Data/Stations/Leuven.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c6eaa3e7c337cc49b5ddb176bc7f5ca
+    m_Address: Assets/Data/Routes/Brussel - Mechelen.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Routes
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 86b31559c545e224a856d399036bd33e
     m_Address: GameParameters
@@ -87,6 +117,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ee4896af8c933b4dbceccdc9ead607e
+    m_Address: Assets/Data/Routes/Gent - Kortrijk.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Routes
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a1ef94ebdf6f7c343aafe1520c8abe3c
     m_Address: ChaldronCoalHopper
     m_ReadOnly: 0
@@ -98,6 +134,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ae6fe5cae30f9124aa70ed07c29312de
+    m_Address: Assets/Data/Routes/Mechelen - Dendermonde.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Routes
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b01d7e82d213a904686aee0373618304
     m_Address: Assets/Data/Stations/Bergen.asset
@@ -117,11 +159,23 @@ MonoBehaviour:
     m_SerializedLabels:
     - Stations
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cf70af8bd25226446a3d89ab6343c175
-    m_Address: BrusselAntwerpen
+  - m_GUID: bd3e98973b85f334cb2c2c645544a66e
+    m_Address: Assets/Data/Stations/Zinnik.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c21e499396bc83341a3e27375f69addd
+    m_Address: Assets/Data/Routes/Zinnik - Bergen.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Routes
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cae99e376929ed44f8b79f7961aa0260
+    m_Address: Assets/Data/Stations/Dendermonde.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d011f2becac07bb48abfa64bed0154d2
     m_Address: LocomotionNr1
@@ -135,14 +189,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e1975760ad86aa940aed010a067c473b
-    m_Address: Assets/Data/Stations/Parijs.asset
+  - m_GUID: da060b0a8f48c5748a40b24f4c81aea2
+    m_Address: Assets/Data/Routes/Gent - Oostende.asset
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Stations
+    - Routes
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f1e62f28f4e0e434a8a028803ffc3f8d
-    m_Address: BrusselNamur
+  - m_GUID: e38e42ac5bbc4e847a3d9b4469de8824
+    m_Address: Assets/Data/Routes/Brussel - Tubeke.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Routes
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e58f79529c978184d9b48e0491b37a95
+    m_Address: Assets/Data/Routes/Leuven - Luik.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - Routes

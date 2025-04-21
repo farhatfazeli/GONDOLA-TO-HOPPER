@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 117fb7366c7c52d428be881ad99accac, type: 3}
-  m_Name: BrusselParijs
+  m_Name: Dendermonde - Gent
   m_EditorClassIdentifier: 
-  uuid: e603c8da-fcf8-49b2-bb37-df865ef93297
-  departureStation: {fileID: 11400000, guid: 49b8c5cbfbdb9114db7166aa0d70e808, type: 2}
-  arrivalStation: {fileID: 11400000, guid: e1975760ad86aa940aed010a067c473b, type: 2}
-  distance: 50
+  uuid: 7f059067-5059-428f-8e43-e304ac4b6f14
+  departureStation: {fileID: 11400000, guid: cae99e376929ed44f8b79f7961aa0260, type: 2}
+  arrivalStation: {fileID: 11400000, guid: 32d62746405e6c44791efb69cb1a151b, type: 2}
+  distance: 42000
   isBuiltAtStart: 0
   buildResourceType: 0
-  buildResourceCost: 13
-  maxBuildPoints: 13
+  buildResourceCost: 11
+  maxBuildPoints: 11
   baseBuildAutoRate: 0
   baseBuildManualRate: 0
-  sceneAsset: {fileID: 0}
+  sceneAsset: {fileID: 102900000, guid: 684e7480460dd3645a5cd2ee98680c73, type: 3}

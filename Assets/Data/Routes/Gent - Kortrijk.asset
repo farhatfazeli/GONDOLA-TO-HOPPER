@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 117fb7366c7c52d428be881ad99accac, type: 3}
-  m_Name: BrusselNamur
+  m_Name: Gent - Kortrijk
   m_EditorClassIdentifier: 
-  uuid: 42b9a27a-2b7a-4dad-8efb-7ddc5214d170
-  departureStation: {fileID: 11400000, guid: 49b8c5cbfbdb9114db7166aa0d70e808, type: 2}
-  arrivalStation: {fileID: 11400000, guid: 6d431a8b8791c51449f53500c5aa9d38, type: 2}
-  distance: 78000
+  uuid: c2828403-cf16-4f41-907b-45006ce2b7eb
+  departureStation: {fileID: 11400000, guid: 32d62746405e6c44791efb69cb1a151b, type: 2}
+  arrivalStation: {fileID: 11400000, guid: bbe6e76fe7b64b243babc6bf11e6b4e4, type: 2}
+  distance: 42000
   isBuiltAtStart: 0
   buildResourceType: 0
-  buildResourceCost: 12
-  maxBuildPoints: 12
+  buildResourceCost: 11
+  maxBuildPoints: 11
   baseBuildAutoRate: 0
   baseBuildManualRate: 0
-  sceneAsset: {fileID: 0}
+  sceneAsset: {fileID: 102900000, guid: 684e7480460dd3645a5cd2ee98680c73, type: 3}

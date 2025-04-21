@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117fb7366c7c52d428be881ad99accac, type: 3}
+  m_Name: Brussel - Leuven
+  m_EditorClassIdentifier: 
+  uuid: 057f4f3b-dcfc-4367-b64a-fe9da1ec26fd
+  departureStation: {fileID: 11400000, guid: 49b8c5cbfbdb9114db7166aa0d70e808, type: 2}
+  arrivalStation: {fileID: 11400000, guid: 7aa00bd55be3c0f4e81c29cc2d57f1ec, type: 2}
+  distance: 42000
+  isBuiltAtStart: 0
+  buildResourceType: 0
+  buildResourceCost: 11
+  maxBuildPoints: 11
+  baseBuildAutoRate: 0
+  baseBuildManualRate: 0
+  sceneAsset: {fileID: 102900000, guid: 684e7480460dd3645a5cd2ee98680c73, type: 3}

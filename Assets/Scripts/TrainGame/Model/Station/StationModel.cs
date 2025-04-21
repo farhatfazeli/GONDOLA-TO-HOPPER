@@ -23,9 +23,7 @@ namespace TrainGame.Model.Station
         {
             uuid = soStation.uuid;
             name = soStation.name;
-
-            Debug.Log("StationModel initializing stationBuilder");
-
+            
             stationBuilder = new StationBuilder(this,soStation);
             
             baseLoadAutoRate = soStation.baseLoadAutoRate;

@@ -1,8 +1,5 @@
-﻿using System.ComponentModel;
-using Core.Utility;
+﻿using Core.Utility;
 using ScriptableObjects;
-using TrainGame.Model.Progress;
-using UnityEngine;
 
 namespace TrainGame.Model.Station
 {
@@ -19,9 +16,6 @@ namespace TrainGame.Model.Station
             _stationModel = stationModel;
             if (soStation.isBuiltAtStart)
                 SetBuilt();
-            
-            Debug.Log("In station builder constructor: buildprogress = " + BuildProgress);
-            Debug.Log("Is build finished in constructor?: " + IsBuilt);
         }
         
         public BuildState GetStationBuildState()

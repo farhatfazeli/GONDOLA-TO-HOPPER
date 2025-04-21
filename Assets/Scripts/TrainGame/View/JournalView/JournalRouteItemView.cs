@@ -2,54 +2,55 @@
 using Core.Utility;
 using TMPro;
 using TrainGame.Controller;
+using TrainGame.Model.Route;
 using TrainGame.Model.Station;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace TrainGame.View.JournalView
 {
-    public class JournalStationItemView : MonoBehaviour
+    public class JournalRouteItemView : MonoBehaviour
     {
         [SerializeField] private Image background;
         
-        [SerializeField] private TextMeshProUGUI stationName;
+        [SerializeField] private TextMeshProUGUI routeName;
         
         [Header("Build UI elements")]
-        [SerializeField] private TextMeshProUGUI stationBuildState;
-        [SerializeField] private TextMeshProUGUI stationBuildPrice;
-        [SerializeField] private TextMeshProUGUI stationBuildProgress;
+        [SerializeField] private TextMeshProUGUI routeBuildState;
+        [SerializeField] private TextMeshProUGUI routeBuildPrice;
+        [SerializeField] private TextMeshProUGUI routeBuildProgress;
 
-        [SerializeField] private Button buildStationButton;
+        [SerializeField] private Button buildRouteButton;
         
         [Header ("Visual options")]
         [SerializeField] private Color _unavailableColor;
         
-        private StationModel _stationModel;
+        private RouteModel _routeModel;
 
-        public void Initialize(StationModel stationModel, JournalController journalController)
+        public void Initialize(RouteModel routeModel, JournalController journalController)
         {
-            _stationModel = stationModel;
-            _stationModel.OnModelChanged += RefreshView;
+            _routeModel = routeModel;
+            _routeModel.OnModelChanged += RefreshView;
             RefreshView();
             
-            buildStationButton.onClick.AddListener(() => journalController.BuildStation(_stationModel));
+            buildRouteButton.onClick.AddListener(() => journalController.BuildRoute(_routeModel));
         }
 
         private void RefreshView()
         {
-            stationName.text = _stationModel.name;
+            routeName.text = _routeModel.name;
 
             HandleBuildState();
 
-            stationBuildPrice.text = "0";
-            stationBuildProgress.text = _stationModel.stationBuilder.BuildProgress.ToString();
+            routeBuildPrice.text = "0";
+            routeBuildProgress.text = _routeModel.routeBuilder.BuildProgress.ToString();
         }
 
         private void HandleBuildState()
         {
-            BuildState buildState = _stationModel.stationBuilder.GetStationBuildState();
+            BuildState buildState = _routeModel.routeBuilder.GetRouteBuildState();
             SetBackground(buildState);
-            stationBuildState.text = buildState switch
+            routeBuildState.text = buildState switch
             {
                 BuildState.Built => "Built",
                 BuildState.NotBuilt => "Not Built",

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1927a68e75cc5e44d90fd5c1a33f72cc
+guid: c0fdca4e53fdc4e46b7c7e3b39c19329
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Baskerville No2
+  - Libre Caslon Text
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
