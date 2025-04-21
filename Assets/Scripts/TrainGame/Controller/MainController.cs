@@ -21,7 +21,7 @@ namespace TrainGame.Controller
         
         public void GoToYardView()
         {
-            yardMarshallController.OnActivate();
+            yardMarshallController.OnActivateView();
         }
         
         public void GoToLandscapeView()
@@ -42,7 +42,7 @@ namespace TrainGame.Controller
         public void CleanView()
         {
             mainView.gameObject.SetActive(false);
-            yardMarshallController.OnDeactivate();
+            yardMarshallController.OnDeactivateView();
             landscapeController.OnDeactivate();
             schedulerView.gameObject.SetActive(false);
             mapController.OnDeactivate();

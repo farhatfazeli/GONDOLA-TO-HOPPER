@@ -11,15 +11,21 @@ using UnityEngine.SceneManagement;
 
 namespace TrainGame.Controller
 {
+    public enum YardMarshallFilter
+    {
+        Locomotives,
+        PassengerWagons,
+        FreightWagons
+    }
+    
     public class YardMarshallController : MonoBehaviour
     {
         [Header("Yard panels")]
         [SerializeField] private RectTransform yardViewPanel;
-
         [SerializeField] private RectTransform yardMarshallPanel;
         
         [Header("Yard Marshall list")]
-        [SerializeField] private YardMarshallItemListView yardMarshallItemListView;
+        [SerializeField] private YardMarshallView yardMarshallView;
 
         [Header("Train consist details")]
         [SerializeField]private TMP_InputField trainNumberInput;
@@ -33,16 +39,18 @@ namespace TrainGame.Controller
             remove => _yardMarshallModel.OnTrainConsistChanged -= value;
         }
         
-        public void OnActivate()
+        public void OnActivateView()
         {
             yardViewPanel.gameObject.SetActive(true);
+            yardMarshallPanel.gameObject.SetActive(true);
             LoadYardScene();
             StartCoroutine(WaitAndDo());
         }
         
-        public void OnDeactivate()
+        public void OnDeactivateView()
         {
             yardViewPanel.gameObject.SetActive(false);
+            yardMarshallPanel.gameObject.SetActive(false);
             UnloadYardScene();
         }
 
@@ -67,15 +75,20 @@ namespace TrainGame.Controller
                 yield return null;
             } while (!RailwayDirector.I.IsInitialized || !SaveManager.I.IsLoadPhaseOver);
             
-            yardMarshallItemListView.Populate();
+            PopulateView(YardMarshallFilter.Locomotives);
             
         }
         
         private void OnYardSceneLoaded()
         {
+            YardWTFView yardWtfView = FindFirstObjectByType<YardWTFView>();
             YardView yardView = FindFirstObjectByType<YardView>();
-            YardMarshallView yardMarshallView = FindFirstObjectByType<YardMarshallView>();
-            yardView.Initialize(this, yardMarshallView);
+            yardWtfView.Initialize(this, yardView);
+        }
+
+        public void PopulateView(YardMarshallFilter filter)
+        {
+            yardMarshallView.Populate(filter, this);
         }
         
         public void PurchaseRollingStock(RollingStockModel rollingStockModel)
@@ -102,11 +115,6 @@ namespace TrainGame.Controller
         public void ResetTrainConsist()
         {
             _yardMarshallModel.Reset();
-        }
-
-        public void ShowYardPanel()
-        {
-            
         }
     }
 }

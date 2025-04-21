@@ -72,6 +72,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Tests/Editor/UGUI/EventSystem/InterceptedEventsPreviewTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/20a025bba6874f73adca28fec451f63846ae00/3e/c5932daf/List`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2a2d93466686437ab24c9fdcfa07ab5c1f2200/70/37dfc8af/LayoutDataStore.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5306fc7f280e4c0ca4c13d5faf5415701d400/e0/0d874245/YardView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -213,7 +214,7 @@
       <workItem from="1744873307714" duration="21170000" />
       <workItem from="1745043276900" duration="8878000" />
       <workItem from="1745132873703" duration="16923000" />
-      <workItem from="1745241841130" duration="7904000" />
+      <workItem from="1745241841130" duration="10400000" />
     </task>
     <servers />
   </component>
