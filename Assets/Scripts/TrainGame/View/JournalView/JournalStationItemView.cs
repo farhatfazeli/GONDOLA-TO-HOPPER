@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using Core.Utility;
 using TMPro;
 using TrainGame.Controller;
@@ -19,6 +20,7 @@ namespace TrainGame.View.JournalView
         [SerializeField] private TextMeshProUGUI stationBuildPrice;
         [SerializeField] private TextMeshProUGUI stationBuildProgress;
 
+        [Header("Interaction UI elements")]
         [SerializeField] private Button buildStationButton;
         
         [Header ("Visual options")]
@@ -66,6 +68,11 @@ namespace TrainGame.View.JournalView
                 BuildState.NotAvailableForBuilding => _unavailableColor,
                 _ => Color.white
             };
+        }
+
+        private void OnDestroy()
+        {
+            buildStationButton.onClick.RemoveAllListeners();
         }
     }
 }

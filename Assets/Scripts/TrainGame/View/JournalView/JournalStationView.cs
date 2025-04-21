@@ -49,6 +49,8 @@ namespace TrainGame.View.JournalView
             {
                 Destroy(child.gameObject);
             }
+            
+            journalStationItems.Clear();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ScriptableObjects;
+using TrainGame.Controller;
 using UnityEngine;
 
 namespace TrainGame.Model.RollingStock
@@ -36,6 +37,26 @@ namespace TrainGame.Model.RollingStock
         public GameObject GetViewPrefab(RollingStockModel rollingStockModel)
         {
             return _repository.GetSo(rollingStockModel).viewGo;
+        }
+        
+        public HashSet<LocomotiveModel> GetLocomotiveModels()
+        {
+            return GetModels().Where(x => x.Type == RollingStockType.Locomotive).Cast<LocomotiveModel>().ToHashSet();
+        }
+
+        public HashSet<WagonModel> GetWagonModels()
+        {
+            return GetModels().Where(x => x.Type == RollingStockType.Wagon).Cast<WagonModel>().ToHashSet();
+        }
+
+        public HashSet<WagonModel> GetPassengerWagonModels()
+        {
+            return GetWagonModels().Where(x=> x.loadType == LoadType.Passengers).ToHashSet();
+        }
+        
+        public HashSet<WagonModel> GetFreightWagonModels()
+        {
+            return GetWagonModels().Where(x=> x.loadType == LoadType.Freight).ToHashSet();
         }
     }
 }

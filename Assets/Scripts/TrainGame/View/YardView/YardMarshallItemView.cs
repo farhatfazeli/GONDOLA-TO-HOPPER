@@ -1,4 +1,5 @@
-﻿using ScriptableObjects;
+﻿using System;
+using ScriptableObjects;
 using TMPro;
 using TrainGame.Controller;
 using TrainGame.Model.RollingStock;
@@ -9,46 +10,66 @@ namespace TrainGame.View.YardView
 {
     public class YardMarshallItemView : MonoBehaviour
     {
-        private YardMarshallController _yardMarshallController;
-        private RollingStockModel _rollingStockModel;
-        public SO_RollingStock soRollingStock;
-    
+        
         [Header("UI Elements")]
-        public Image itemImage;
-        public TextMeshProUGUI itemDescription;
-        public Button selectButton;
-        public Button purchaseButton;
+        [SerializeField] private Image background;
+        [SerializeField] private Image itemImage;
+        [SerializeField] private TextMeshProUGUI itemName;
+        [SerializeField] private TextMeshProUGUI itemAvailability;
+        [SerializeField] private TextMeshProUGUI itemPrice;
+
+        [Header("Interaction UI elements")]
+        [SerializeField] private Button selectButton;
+        [SerializeField] private Button purchaseButton;
+
+        [Header("Visual options")] 
+        [SerializeField] private Sprite locomotiveBackground;
+        [SerializeField] private Sprite passengerWagonBackground;
+        [SerializeField] private Sprite freightWagonBackground;
         
+        private RollingStockModel _rollingStockModel;
+        private YardMarshallFilter _filter;
         
-        
-        public void Initialize(YardMarshallController ymc, RollingStockModel ro, SO_RollingStock so)
+        public void Initialize(RollingStockModel ro, YardMarshallController ymc, YardMarshallFilter filter)
         {
-            _yardMarshallController = ymc;
             _rollingStockModel = ro;
-            soRollingStock = so;
-            itemImage.sprite = soRollingStock.yardSprite;
-            _rollingStockModel.OnModelChanged += UpdateView;
-            UpdateView();
+            _filter = filter;
+            _rollingStockModel.OnModelChanged += RefreshView;
+            RefreshView();
+            
+            HandleBackground();
+            
+            itemImage.sprite = RollingStockManager.I.QueryService.GetSo(ro).yardSprite;
+            
+            selectButton.onClick.AddListener(() => ymc.SelectRollingStock(ro));
+            purchaseButton.onClick.AddListener(() => ymc.PurchaseRollingStock(ro));
         }
         
-        private void UpdateView()
+        private void RefreshView()
         {
-            HandleDescriptionText();
+            HandleAvailabilityText();
         }
-        
-        private void HandleDescriptionText()
+
+        private void HandleBackground()
         {
-            itemDescription.text = $"{_rollingStockModel.name} ({_rollingStockModel.AvailableAmount}/{_rollingStockModel.FleetAmount})";
+            background.sprite = _filter switch
+            {
+                YardMarshallFilter.Locomotives => locomotiveBackground,
+                YardMarshallFilter.PassengerWagons => passengerWagonBackground,
+                YardMarshallFilter.FreightWagons => freightWagonBackground,
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
-        
-        public void OnSelectButtonClicked()
+
+        private void HandleAvailabilityText()
         {
-            _yardMarshallController.SelectRollingStock(_rollingStockModel);
+            itemAvailability.text = $"{_rollingStockModel.AvailableAmount}/{_rollingStockModel.FleetAmount})";
         }
-        
-        public void OnPurchaseButtonClicked()
+
+        private void OnDestroy()
         {
-            _yardMarshallController.PurchaseRollingStock(_rollingStockModel);
+            selectButton.onClick.RemoveAllListeners();
+            purchaseButton.onClick.RemoveAllListeners();
         }
     }
 }
