@@ -14,9 +14,9 @@ namespace TrainGame.Model.Route
             _repository = repository;
         }
         
-        public List<RouteModel> GetBuiltRoutes()
+        public HashSet<RouteModel> GetBuiltRoutes()
         {
-            return _repository.GetModels().Where(x => x.routeBuilder.IsBuilt).ToList();
+            return GetRoutesByBuildState(BuildState.Built);
         }
 
         public RouteModel GetRouteModelByName(string name)

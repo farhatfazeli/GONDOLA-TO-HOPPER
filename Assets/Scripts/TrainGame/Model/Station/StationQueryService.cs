@@ -20,6 +20,16 @@ namespace TrainGame.Model.Station
             return _repository.GetSo(model);
         }
 
+        public HashSet<StationModel> GetBuiltStations()
+        {
+            return GetStationsByBuildState(BuildState.Built);
+        }
+        
+        public StationModel GetStationModelByName(string name)
+        {
+            return _repository.GetModels().FirstOrDefault(x => x.name == name);
+        }
+
         public StationModel GetModel(SO_Station so)
         {
             return _repository.GetModel(so);

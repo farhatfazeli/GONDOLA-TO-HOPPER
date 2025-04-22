@@ -17,7 +17,7 @@ namespace Core.Persistence
     
         public bool IsLoadPhaseOver { get; private set; }
 
-        protected void Start()
+        protected override void Awake()
         {
             base.Awake();
             _dataService = new FileDataService(new JsonSerializer());
@@ -61,7 +61,6 @@ namespace Core.Persistence
             {
                 saveable.LoadFromSaveData(saveData);
             }
-        
             IsLoadPhaseOver = true;
         }
     }

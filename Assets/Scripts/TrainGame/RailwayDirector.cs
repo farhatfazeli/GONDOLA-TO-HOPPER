@@ -6,6 +6,7 @@ using ScriptableObjects;
 using TrainGame.Infrastructure;
 using TrainGame.Infrastructure.Loaders;
 using TrainGame.Infrastructure.SaveHelpers;
+using TrainGame.Model.Resource;
 using TrainGame.Model.RollingStock;
 using TrainGame.Model.Route;
 using TrainGame.Model.Service;
@@ -41,6 +42,8 @@ namespace TrainGame
 
         private static Task CreateManagers()
         {
+            _ = ResourceManager.I;
+            _ = TimeManager.I;
             _ = RollingStockManager.I;
             _ = RouteManager.I;
             _ = ServiceManager.I;

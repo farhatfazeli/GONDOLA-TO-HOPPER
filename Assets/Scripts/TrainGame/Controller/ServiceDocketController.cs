@@ -8,13 +8,23 @@ using UnityEngine;
 
 namespace TrainGame.Controller
 {
-    public class SchedulerController : MonoBehaviour
+    public class ServiceDocketController : MonoBehaviour
     {
         [SerializeField] private RouteDropdownHandler routeDropdownHandler;
+        [SerializeField] private DepartingStationDropdownHandler departingStationDropdownHandler;
         
         [SerializeField] private TrainDropdownHandler trainDropdownHandler;
         
         [SerializeField] private ServiceLedgerController serviceLedgerController;
+
+        public void OnActivateView()
+        {
+        }
+
+        public void OnDeactivateView()
+        {
+            
+        } 
 
         public void ScheduleService()
         {
@@ -26,6 +36,11 @@ namespace TrainGame.Controller
             serviceLedgerController.AddScheduledService(serviceModel);
             
             UIStateManager.I.OnCloseWindowButtonClicked();
+        }
+
+        private void UpdateArrivalStationDropdown()
+        {
+            
         }
     }
 }

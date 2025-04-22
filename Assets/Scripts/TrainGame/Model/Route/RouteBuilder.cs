@@ -21,13 +21,6 @@ namespace TrainGame.Model.Route
         
         public BuildState GetRouteBuildState()
         {
-            if (_routeModel.name == "Tubeke - Zinnik")
-            {
-                Debug.Log("What the fuck: " + _routeModel.name);
-                Debug.Log("Build state: " +  IsBuilt);
-                Debug.Log("Build state: " + GetBuildState());
-            }
-            
             if (IsBuilt)
                 return BuildState.Built;
             

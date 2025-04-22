@@ -233,23 +233,6 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/TrainGame/Model/Route/RouteQueryService.cs</url>
-          <line>53</line>
-          <properties documentPath="C:\REPOSITORIES\GONDOLA-TO-HOPPER\Assets\Scripts\TrainGame\Model\Route\RouteQueryService.cs" containingFunctionPresentation="Method 'IsRouteDepartingStationBuilt'">
-            <startOffsets>
-              <option value="1582" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1640" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <inline-watch fileUrl="file://$PROJECT_DIR$/Assets/Scripts/Core/Utility/BaseBuilder.cs" line="20">
         <watch expression="IsBuilt" />
