@@ -28,6 +28,8 @@ namespace ScriptableObjects
         public Color32 achievedColor = new Color32(0xF6, 0xFF, 0xAA, 0xFF);
         public Color32 availableColor = new Color32(0xFE, 0xFF, 0xF6, 0xFF);
         public Color32 unavailableColor = new Color32(0x7F, 0x7F, 0x7F, 0xFF);
+
+        public float resourceAnimationTick = 0.1f;
     
         [Header("Save settings")]
         public string saveFileName = "save";

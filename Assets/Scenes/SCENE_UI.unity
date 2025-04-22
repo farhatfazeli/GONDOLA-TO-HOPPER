@@ -15964,6 +15964,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1784850553}
+  - component: {fileID: 1784850554}
   m_Layer: 0
   m_Name: PassengerResource
   m_TagString: Untagged
@@ -15992,6 +15993,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1784850554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784850552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a3b97720244b1d9cd6a142ca6a7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _passengerResource: {fileID: 1642675742}
+  time: 0.1
 --- !u!1 &1790396165
 GameObject:
   m_ObjectHideFlags: 0
