@@ -32,6 +32,7 @@ MonoBehaviour:
   unavailableColor:
     serializedVersion: 2
     rgba: 4286545791
+  resourceAnimationTick: 0.01
   saveFileName: save
   fileExtension: json
   yardScene: SCENE_Yard

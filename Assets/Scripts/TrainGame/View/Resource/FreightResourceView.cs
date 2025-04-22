@@ -6,9 +6,9 @@ using UnityEngine;
 
 namespace TrainGame.View.Resource
 {
-    public class PassengerResourceView : MonoBehaviour
+    public class FreightResourceView : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI _passengerResource;
+        [SerializeField] private TextMeshProUGUI _freightResource;
 
         private float _time;
 
@@ -20,8 +20,8 @@ namespace TrainGame.View.Resource
         {
             _time = SO_GameParameters.I.resourceAnimationTick;
             
-            _previousValue = ResourceManager.I.passengerResource;
-            ResourceManager.I.OnPassengerResourceUpdated += RefreshView;
+            _previousValue = ResourceManager.I.freightResource;
+            ResourceManager.I.OnFreightResourceUpdated += RefreshView;
 
             SetResourceText();
         }
@@ -38,13 +38,13 @@ namespace TrainGame.View.Resource
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.K))
+            if (Input.GetKeyDown(KeyCode.I))
             {
-                ResourceManager.I.GainPassengerResource(50);
+                ResourceManager.I.GainFreightResource(50);
             }
-            else if (Input.GetKeyDown(KeyCode.L))
+            else if (Input.GetKeyDown(KeyCode.O))
             {
-                ResourceManager.I.SpendPassengerResource(30);
+                ResourceManager.I.SpendFreightResource(30);
             }
         }
 
@@ -89,7 +89,7 @@ namespace TrainGame.View.Resource
                     }
                     
                     SetResourceText();
-
+                    
                     yield return wait;
                 }
             }
@@ -97,7 +97,7 @@ namespace TrainGame.View.Resource
 
         private void SetResourceText()
         {
-            _passengerResource.SetText(_previousValue.ToString());
+            _freightResource.SetText(_previousValue.ToString());
         }
     }
 }

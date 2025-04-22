@@ -68,7 +68,7 @@ public class Depot
     public void Purchase()
     {
         if (depotState == DepotState.Unavailable) return;
-        if(ResourceManager.SpendResources(0, purchaseCost))
+        if(ResosurceManager.SpendResources(0, purchaseCost))
         {
             AddToDepot();
         }

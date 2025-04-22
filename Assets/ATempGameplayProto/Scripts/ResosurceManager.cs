@@ -3,7 +3,7 @@ using Core.Persistence;
 using TMPro;
 using UnityEngine;
 
-public class ResourceManager : MonoBehaviour, ISaveable
+public class ResosurceManager : MonoBehaviour, ISaveable
 {
     [Header("UI References")]
     public TextMeshProUGUI passengerKmAmountText;

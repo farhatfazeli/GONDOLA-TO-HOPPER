@@ -2,11 +2,11 @@
 
 namespace Core.Utility
 {
-    public class BaseResource
+    public abstract class BaseResource
     {
-        private float _value;
+        protected int _value;
         
-        public float value
+        public int value
         {
             get => _value;
             set
@@ -16,6 +16,11 @@ namespace Core.Utility
             }
         }
 
-        public event Action<float> OnValueChanged =  delegate { };
+        public event Action<int> OnValueChanged =  delegate { };
+
+        public BaseResource(int startValue)
+        {
+            _value = startValue;
+        }
     }
 }
