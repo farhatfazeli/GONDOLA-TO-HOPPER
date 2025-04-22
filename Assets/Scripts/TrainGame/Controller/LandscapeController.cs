@@ -10,14 +10,14 @@ namespace TrainGame.Controller
     {
         [SerializeField] private RectTransform landscapePanel;
         
-        public void OnActivate()
+        public void OnActivateView()
         {
             landscapePanel.gameObject.SetActive(true);
             LoadLandscapeScene();
             StartCoroutine(WaitAndDo());
         }
 
-        public void OnDeactivate()
+        public void OnDeactivateView()
         {
             landscapePanel.gameObject.SetActive(false);
             UnloadLandscapeScene();

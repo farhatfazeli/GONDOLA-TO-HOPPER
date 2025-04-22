@@ -12,6 +12,8 @@ namespace TrainGame
         private MainController mainController;
         private JournalController journalController;
         private ServiceDocketController serviceDocketController;
+        private YardMarshallController yardMarshallController;
+        private LandscapeController landscapeController;
 
         private UIState _previousState = UIState.None;
         private UIState _currentState = UIState.MainView;
@@ -38,6 +40,8 @@ namespace TrainGame
             mainController = FindFirstObjectByType<MainController>();
             journalController = FindFirstObjectByType<JournalController>();
             serviceDocketController = FindFirstObjectByType<ServiceDocketController>();
+            yardMarshallController = FindFirstObjectByType<YardMarshallController>();
+            landscapeController = FindFirstObjectByType<LandscapeController>();
             GoToState(UIState.YardView);
         }
 
@@ -45,7 +49,7 @@ namespace TrainGame
         {
             _previousState = _currentState;
 
-            ExitPreviousState(_previousState);
+            ExitPreviousState(_previousState, newState);
             
             mainController.CleanView();
             
@@ -55,10 +59,10 @@ namespace TrainGame
                     mainController.GoToMainView();
                     break;
                 case UIState.YardView:
-                    mainController.GoToYardView();
+                    yardMarshallController.OnActivateView();
                     break;
                 case UIState.LandscapeView:
-                    mainController.GoToLandscapeView();
+                    landscapeController.OnActivateView();
                     break;
                 case UIState.ServiceDocketView:
                     serviceDocketController.OnActivateView();
@@ -77,10 +81,18 @@ namespace TrainGame
             _currentState = newState;
         }
 
-        private void ExitPreviousState(UIState previousState)
+        private void ExitPreviousState(UIState previousState, UIState newState)
         {
             switch (previousState)
             {
+                case UIState.LandscapeView:
+                    if (newState == UIState.YardView)
+                        landscapeController.OnDeactivateView();
+                    break;
+                case UIState.YardView:
+                    if(newState == UIState.LandscapeView)
+                        yardMarshallController.OnDeactivateView();
+                    break;
                 case UIState.ServiceDocketView:
                     serviceDocketController.OnDeactivateView();
                     break;
