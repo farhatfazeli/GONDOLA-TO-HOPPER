@@ -54,5 +54,14 @@ namespace TrainGame.Model.Station
         {
             return RouteManager.I.QueryService.GetRoutesToStation(stationModel).Any(routeModel => routeModel.routeBuilder.IsBuilt);
         }
+
+        public HashSet<StationModel> GetConnectedStations(StationModel stationModel, BuildState buildState)
+        {
+            return RouteManager.I.QueryService.
+                GetRoutesFromStation(stationModel, BuildState.Built).
+                Select(x => x.arrivalStation).
+                Where(x => x.stationBuilder.GetStationBuildState() == buildState).
+                ToHashSet();
+        }
     }
 }

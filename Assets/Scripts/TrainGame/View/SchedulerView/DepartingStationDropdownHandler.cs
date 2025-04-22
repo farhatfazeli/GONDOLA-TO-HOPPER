@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Core.Persistence;
 using TMPro;
-using TrainGame.Model.Route;
 using TrainGame.Model.Station;
 using UnityEngine;
 
@@ -12,12 +11,6 @@ namespace TrainGame.View.SchedulerView
     public class DepartingStationDropdownHandler : MonoBehaviour
     {
         [SerializeField] private TMP_Dropdown departingStationDropdown;
-
-        // public event Action<int> OnDropDownValueChanged
-        // {
-        //     // add => departingStationDropdown.onValueChanged.AddListener(value);
-        //     // remove =>departingStationDropdown.onValueChanged -= value;
-        // }
         
         private void RefreshView()
         {
@@ -52,7 +45,7 @@ namespace TrainGame.View.SchedulerView
             StationManager.I.OnStationDictionaryUpdated -= RefreshView;
         }
 
-        public StationModel GetSelectedRoute()
+        public StationModel GetSelectedStation()
         {
             if (departingStationDropdown.options.Count == 0)
                 throw new FieldAccessException();

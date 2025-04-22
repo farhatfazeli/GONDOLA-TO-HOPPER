@@ -81,9 +81,9 @@ namespace TrainGame.Controller
         
         private void OnYardSceneLoaded()
         {
-            YardWTFView yardWtfView = FindFirstObjectByType<YardWTFView>();
-            YardView yardView = FindFirstObjectByType<YardView>();
-            yardWtfView.Initialize(this, yardView);
+            //YardWTFView yardWtfView = FindFirstObjectByType<YardWTFView>();
+            //YardView yardView = FindFirstObjectByType<YardView>();
+            //yardWtfView.Initialize(this, yardView);
         }
 
         public void PopulateView(YardMarshallFilter filter)

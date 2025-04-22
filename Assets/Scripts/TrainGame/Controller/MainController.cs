@@ -11,7 +11,6 @@ namespace TrainGame.Controller
         [SerializeField] private RectTransform mainView;
         [SerializeField] private YardMarshallController yardMarshallController;
         [SerializeField] private LandscapeController landscapeController;
-        [SerializeField] private RectTransform schedulerView;
         [SerializeField] private MapController mapController;
         
         public void GoToMainView()
@@ -29,11 +28,6 @@ namespace TrainGame.Controller
             landscapeController.OnActivate();
         }
 
-        public void GoToPlannerView()
-        {
-            schedulerView.gameObject.SetActive(true);
-        }
-
         public void GoToMapView()
         {
             mapController.OnActivate();
@@ -44,7 +38,6 @@ namespace TrainGame.Controller
             mainView.gameObject.SetActive(false);
             yardMarshallController.OnDeactivateView();
             landscapeController.OnDeactivate();
-            schedulerView.gameObject.SetActive(false);
             mapController.OnDeactivate();
         }
     }

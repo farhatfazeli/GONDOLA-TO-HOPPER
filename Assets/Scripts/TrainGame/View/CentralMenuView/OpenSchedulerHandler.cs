@@ -10,7 +10,7 @@ namespace TrainGame.View.CentralMenuView
 
         private void Start()
         {
-            openSchedulerButton.onClick.AddListener(() => UIStateManager.I.OnSchedulerButtonClicked());
+            openSchedulerButton.onClick.AddListener(() => UIStateManager.I.OnServiceDocketButtonClicked());
         }
     }
 }

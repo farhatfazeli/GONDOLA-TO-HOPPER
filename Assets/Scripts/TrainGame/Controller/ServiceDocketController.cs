@@ -10,6 +10,8 @@ namespace TrainGame.Controller
 {
     public class ServiceDocketController : MonoBehaviour
     {
+        [SerializeField] private RectTransform serviceDocketView;
+
         [SerializeField] private RouteDropdownHandler routeDropdownHandler;
         [SerializeField] private DepartingStationDropdownHandler departingStationDropdownHandler;
         
@@ -19,11 +21,12 @@ namespace TrainGame.Controller
 
         public void OnActivateView()
         {
+            serviceDocketView.gameObject.SetActive(true);
         }
 
         public void OnDeactivateView()
         {
-            
+            serviceDocketView.gameObject.SetActive(false);
         } 
 
         public void ScheduleService()

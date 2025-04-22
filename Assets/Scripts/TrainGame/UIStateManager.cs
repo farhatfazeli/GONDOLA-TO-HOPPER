@@ -10,8 +10,8 @@ namespace TrainGame
     public class UIStateManager : PersistentSingleton<UIStateManager>
     {
         private MainController mainController;
-        
         private JournalController journalController;
+        private ServiceDocketController serviceDocketController;
 
         private UIState _previousState = UIState.None;
         private UIState _currentState = UIState.MainView;
@@ -37,7 +37,8 @@ namespace TrainGame
         {
             mainController = FindFirstObjectByType<MainController>();
             journalController = FindFirstObjectByType<JournalController>();
-            GoToState(UIState.MainView);
+            serviceDocketController = FindFirstObjectByType<ServiceDocketController>();
+            GoToState(UIState.YardView);
         }
 
         private void GoToState(UIState newState)
@@ -59,8 +60,8 @@ namespace TrainGame
                 case UIState.LandscapeView:
                     mainController.GoToLandscapeView();
                     break;
-                case UIState.PlannerView:
-                    mainController.GoToPlannerView();
+                case UIState.ServiceDocketView:
+                    serviceDocketController.OnActivateView();
                     break;
                 case UIState.MapView:
                     mainController.GoToMapView();
@@ -80,6 +81,9 @@ namespace TrainGame
         {
             switch (previousState)
             {
+                case UIState.ServiceDocketView:
+                    serviceDocketController.OnDeactivateView();
+                    break;
                 case UIState.JournalView:
                     journalController.OnDeactivateView();
                     break;
@@ -148,9 +152,9 @@ namespace TrainGame
             GoToState(UIState.LandscapeView);
         }
 
-        public void OnSchedulerButtonClicked()
+        public void OnServiceDocketButtonClicked()
         {
-            GoToState(UIState.PlannerView);
+            GoToState(UIState.ServiceDocketView);
         }
 
         public void OnMapButtonClicked()
@@ -175,7 +179,7 @@ namespace TrainGame
         MainView,
         YardView,
         LandscapeView,
-        PlannerView,
+        ServiceDocketView,
         MapView,
         JournalView
     }
