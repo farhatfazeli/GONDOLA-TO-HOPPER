@@ -7,8 +7,8 @@ namespace TrainGame.Model.RollingStock
     public abstract class RollingStockModel : IIdentifiable, IModelObservable
     {
         public string uuid { get; protected set; }
-        public string name { get; protected set;}
-        
+        public string name { get; protected set; }
+
         public event Action OnModelChanged;
 
         public abstract RollingStockType Type { get; }
@@ -16,6 +16,7 @@ namespace TrainGame.Model.RollingStock
         public int mass;
 
         private int _availableAmount;
+
         public int AvailableAmount
         {
             get => _availableAmount;
@@ -25,8 +26,9 @@ namespace TrainGame.Model.RollingStock
                 OnModelChanged?.Invoke();
             }
         }
-        
+
         private int _fleetAmount;
+
         public int FleetAmount
         {
             get => _fleetAmount;
@@ -36,7 +38,13 @@ namespace TrainGame.Model.RollingStock
                 OnModelChanged?.Invoke();
             }
         }
-        
+
         public int purchaseCost;
-    }
+
+        public void PurchaseRollingStock()
+        {
+            AvailableAmount += 1;
+            FleetAmount += 1;
+        }
+}
 }

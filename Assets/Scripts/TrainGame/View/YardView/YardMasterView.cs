@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TrainGame.View.YardView
 {
-    public class YardWTFView : MonoBehaviour
+    public class YardMasterView : MonoBehaviour
     {
         private YardView _yardView;
         

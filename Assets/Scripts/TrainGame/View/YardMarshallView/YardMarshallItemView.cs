@@ -13,6 +13,7 @@ namespace TrainGame.View.YardView
         
         [Header("UI Elements")]
         [SerializeField] private Image background;
+        [SerializeField] private Image priceBackground;
         [SerializeField] private Image itemImage;
         [SerializeField] private TextMeshProUGUI itemName;
         [SerializeField] private TextMeshProUGUI itemAvailability;
@@ -26,6 +27,9 @@ namespace TrainGame.View.YardView
         [SerializeField] private Sprite locomotiveBackground;
         [SerializeField] private Sprite passengerWagonBackground;
         [SerializeField] private Sprite freightWagonBackground;
+        [SerializeField] private Sprite locomotivePriceBackground;
+        [SerializeField] private Sprite passengerWagonPriceBackground;
+        [SerializeField] private Sprite freightWagonPriceBackground;
         
         private RollingStockModel _rollingStockModel;
         private YardMarshallFilter _filter;
@@ -36,7 +40,8 @@ namespace TrainGame.View.YardView
             _filter = filter;
             _rollingStockModel.OnModelChanged += RefreshView;
             RefreshView();
-            
+
+            HandleFixedDetails();
             HandleBackground();
             
             itemImage.sprite = RollingStockManager.I.QueryService.GetSo(ro).yardSprite;
@@ -50,6 +55,12 @@ namespace TrainGame.View.YardView
             HandleAvailabilityText();
         }
 
+        private void HandleFixedDetails()
+        {
+            itemName.text = _rollingStockModel.name;
+            itemPrice.text = _rollingStockModel.purchaseCost.ToString("N0");
+        }
+        
         private void HandleBackground()
         {
             background.sprite = _filter switch
@@ -59,11 +70,19 @@ namespace TrainGame.View.YardView
                 YardMarshallFilter.FreightWagons => freightWagonBackground,
                 _ => throw new ArgumentOutOfRangeException()
             };
+
+            priceBackground.sprite = _filter switch
+            {
+                YardMarshallFilter.Locomotives => locomotivePriceBackground,
+                YardMarshallFilter.PassengerWagons => passengerWagonPriceBackground,
+                YardMarshallFilter.FreightWagons => freightWagonPriceBackground,
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
 
         private void HandleAvailabilityText()
         {
-            itemAvailability.text = $"{_rollingStockModel.AvailableAmount}/{_rollingStockModel.FleetAmount})";
+            itemAvailability.text = $"({_rollingStockModel.AvailableAmount}/{_rollingStockModel.FleetAmount})";
         }
 
         private void OnDestroy()

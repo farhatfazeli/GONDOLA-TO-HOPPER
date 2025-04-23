@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 370775890}
   - component: {fileID: 370775891}
   m_Layer: 0
-  m_Name: YardMarshallView
+  m_Name: YardMasterView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -430,11 +430,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 370775888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58563a4c171f4c3a8ea63707e9def496, type: 3}
+  m_Script: {fileID: 11500000, guid: b8d9cd9ea1cc6c646b7ad310cddb296b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yardAnchorTransform: {fileID: 1554291719}
-  entranceTransform: {fileID: 872982307}
 --- !u!1 &568174174
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,7 +878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 872982307}
   m_Layer: 0
-  m_Name: SpawnPoint
+  m_Name: Entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -895,7 +893,7 @@ Transform:
   m_GameObject: {fileID: 872982306}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.53, y: -5.54, z: 0}
+  m_LocalPosition: {x: -20.14, y: 0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1068,12 +1066,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3057029410936638268, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3057029410936638268, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3057029410936638268, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3057029410936638268, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.93
       objectReference: {fileID: 0}
     - target: {fileID: 3057029410936638268, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.2200003
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 3057029410936638268, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1113,7 +1123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3705464545893284872, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1280,7 +1290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1554291719}
   m_Layer: 0
-  m_Name: FirstCarAnchor
+  m_Name: YardAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1295,7 +1305,7 @@ Transform:
   m_GameObject: {fileID: 1554291718}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.21, y: -5.54, z: 0}
+  m_LocalPosition: {x: 10.03, y: 0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1406,8 +1416,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ff07dc9add45f3ab4e210982ebfe69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yardAnchorTransform: {fileID: 0}
-  entranceTransform: {fileID: 0}
+  yardAnchorTransform: {fileID: 1554291719}
+  entranceTransform: {fileID: 872982307}
 --- !u!1 &1852880207
 GameObject:
   m_ObjectHideFlags: 0

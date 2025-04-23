@@ -40,11 +40,11 @@ namespace TrainGame.View.Resource
         {
             if (Input.GetKeyDown(KeyCode.K))
             {
-                ResourceManager.I.GainPassengerResource(50);
+                ResourceManager.I.GainResource(50, ResourceType.Passengers);
             }
             else if (Input.GetKeyDown(KeyCode.L))
             {
-                ResourceManager.I.SpendPassengerResource(30);
+                ResourceManager.I.SpendResource(30,  ResourceType.Passengers);
             }
         }
 

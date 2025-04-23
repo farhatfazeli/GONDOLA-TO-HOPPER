@@ -2,6 +2,12 @@
 
 namespace TrainGame.Model.Resource
 {
+    public enum ResourceType
+    {
+        Passengers,
+        Freight
+    }
+    
     public class ResourceManager
     {
         public int passengerResource => _passengerResource.value;
@@ -22,7 +28,7 @@ namespace TrainGame.Model.Resource
         private readonly PassengerResource _passengerResource;
         private readonly FreightResource _freightResource;
 
-        public void GainPassengerResource(int value)
+        public void GainResource(int value, ResourceType resourceType)
         {
             switch (value)
             {
@@ -31,12 +37,22 @@ namespace TrainGame.Model.Resource
                 case 0:
                     return;
                 default:
-                    _passengerResource.value += value;
+                    switch (resourceType)
+                    {
+                        case ResourceType.Passengers:
+                            _passengerResource.value += value;
+                            break;
+                        case ResourceType.Freight:
+                            _freightResource.value += value;
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(resourceType), resourceType, null);
+                    }
                     break;
             }
         }
 
-        public void SpendPassengerResource(int value)
+        public void SpendResource(int value, ResourceType resourceType)
         {
             switch (value)
             {
@@ -45,39 +61,38 @@ namespace TrainGame.Model.Resource
                 case 0:
                     return;
                 default:
-                    _passengerResource.value -= value;
+                    switch (resourceType)
+                    {
+                        case ResourceType.Passengers:
+                            _passengerResource.value -= value;
+                            break;
+                        case ResourceType.Freight:
+                            _freightResource.value -= value;
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(resourceType), resourceType, null);
+                    }
                     break;
             }
         }
 
-        public void GainFreightResource(int value)
+        public bool CheckResourceSpend(int value, ResourceType resourceType)
         {
-            switch (value)
+            switch (value)            
             {
                 case < 0:
                     throw new ArithmeticException();
                 case 0:
-                    return;
+                    return true;
                 default:
-                    _freightResource.value += value;
-                    break;
+                    return resourceType switch
+                    {
+                        ResourceType.Passengers => _passengerResource.value >= value,
+                        ResourceType.Freight => _freightResource.value >= value,
+                        _ => throw new ArgumentOutOfRangeException(nameof(resourceType), resourceType, null)
+                    };
             }
         }
-
-        public void SpendFreightResource(int value)
-        {
-            switch (value)
-            {
-                case < 0:
-                    throw new ArithmeticException();
-                case 0:
-                    return;
-                default:
-                    _freightResource.value -= value;
-                    break;
-            }
-        }
-        
         
         private static ResourceManager instance;
         public static ResourceManager I => instance ??= new ResourceManager();

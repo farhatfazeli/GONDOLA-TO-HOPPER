@@ -39,12 +39,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Routes
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2664f0ba073d80449ac5310bc2905376
-    m_Address: Crampton
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - RollingStock
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 29edf99c055fd9b4eaf28ab64117a4cb
     m_Address: Assets/Data/Stations/Tubeke.asset
     m_ReadOnly: 0
@@ -112,7 +106,7 @@ MonoBehaviour:
     - Others
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9048346324d9e9c439ff869d5ed78750
-    m_Address: StephensonsRocket
+    m_Address: Rocket
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
@@ -176,12 +170,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d011f2becac07bb48abfa64bed0154d2
-    m_Address: LocomotionNr1
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d5617e2ee53a8c448b924829489282ce
     m_Address: LeBelge

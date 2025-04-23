@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f339655e056f3b34187f565ab4b1b77a, type: 3}
-  m_Name: LeBelge
+  m_Name: Planet
   m_EditorClassIdentifier: 
-  uuid: 3cea25e2-3ee0-40b1-a239-07bf81a0c324
+  uuid: b4eded26-8a60-451a-a077-dcc985f9c25f
   mass: 1000
   research:
     researchState: 1
@@ -21,8 +21,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d011f2becac07bb48abfa64bed0154d2, type: 2}
   startingAmount: 0
   purchaseCost: 0
-  yardSprite: {fileID: 6955117975734209732, guid: 9a3df68ca4d01e64ab84e83951b549dc, type: 3}
-  researchSprite: {fileID: 6955117975734209732, guid: 9a3df68ca4d01e64ab84e83951b549dc, type: 3}
+  yardSprite: {fileID: 1574009898817398622, guid: cf0cf0954eeceab4e9e7b845a3bd2e84, type: 3}
+  researchSprite: {fileID: 1574009898817398622, guid: cf0cf0954eeceab4e9e7b845a3bd2e84, type: 3}
   viewGo: {fileID: 3705464545893284872, guid: 9ff3e8575811ca243b50b506653856d0, type: 3}
   maxSpeed: 10
   tractionCoefficient: 12000

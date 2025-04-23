@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Core.Persistence;
 using ScriptableObjects;
 using TMPro;
+using TrainGame.Model.Resource;
 using TrainGame.Model.RollingStock;
 using TrainGame.Model.Yard;
 using TrainGame.View.YardView;
@@ -76,14 +77,13 @@ namespace TrainGame.Controller
             } while (!RailwayDirector.I.IsInitialized || !SaveManager.I.IsLoadPhaseOver);
             
             PopulateView(YardMarshallFilter.Locomotives);
-            
         }
         
         private void OnYardSceneLoaded()
         {
-            //YardWTFView yardWtfView = FindFirstObjectByType<YardWTFView>();
-            //YardView yardView = FindFirstObjectByType<YardView>();
-            //yardWtfView.Initialize(this, yardView);
+            YardMasterView yardMasterView = FindFirstObjectByType<YardMasterView>();
+            YardView yardView = FindFirstObjectByType<YardView>();
+            yardMasterView.Initialize(this, yardView);
         }
 
         public void PopulateView(YardMarshallFilter filter)
@@ -93,7 +93,10 @@ namespace TrainGame.Controller
         
         public void PurchaseRollingStock(RollingStockModel rollingStockModel)
         {
-
+            if (ResourceManager.I.CheckResourceSpend(rollingStockModel.purchaseCost, ResourceType.Passengers))
+            {
+                rollingStockModel.PurchaseRollingStock();
+            }
         }
         
         public void SelectRollingStock(RollingStockModel rollingStockModel)
