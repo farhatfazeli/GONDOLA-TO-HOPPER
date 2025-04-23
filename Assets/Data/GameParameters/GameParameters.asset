@@ -38,4 +38,4 @@ MonoBehaviour:
   yardScene: SCENE_Yard
   landscapeScene: SCENE_R2_BrusselsNamur
   mapScene: SCENE_Map
-  driveSpeed: 5
+  driveSpeed: 1

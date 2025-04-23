@@ -704,6 +704,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 172181467789055038, guid: 231b3d0e6147e8d40b42bba399b6d91e, type: 3}
+      propertyPath: wheels.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 172181467789055038, guid: 231b3d0e6147e8d40b42bba399b6d91e, type: 3}
+      propertyPath: 'wheels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 98026194526529362}
+    - target: {fileID: 172181467789055038, guid: 231b3d0e6147e8d40b42bba399b6d91e, type: 3}
+      propertyPath: 'wheels.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7620530518372775317}
+    - target: {fileID: 172181467789055038, guid: 231b3d0e6147e8d40b42bba399b6d91e, type: 3}
+      propertyPath: 'wheels.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1895650806902938618}
+    - target: {fileID: 172181467789055038, guid: 231b3d0e6147e8d40b42bba399b6d91e, type: 3}
+      propertyPath: 'wheels.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2144808923746328349}
+    - target: {fileID: 172181467789055038, guid: 231b3d0e6147e8d40b42bba399b6d91e, type: 3}
+      propertyPath: 'wheels.Array.data[4]'
+      value: 
+      objectReference: {fileID: 532261647304850778}
     - target: {fileID: 4699101429539209377, guid: 231b3d0e6147e8d40b42bba399b6d91e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.46

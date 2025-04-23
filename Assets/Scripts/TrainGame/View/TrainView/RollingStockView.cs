@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using TrainGame.Model.RollingStock;
 using UnityEngine;
 
@@ -7,8 +9,13 @@ namespace TrainGame.View.TrainView
     {
         public Transform frontCoupler;
         public Transform rearCoupler;
+
+        public List<Transform> wheels;
         
         private RollingStockModel _rollingStockModel;
+
+        private float _currentPosition;
+        private float _previousPosition;
         
         public RollingStockView Initialize(RollingStockModel rollingStockModel)
         {
@@ -23,6 +30,28 @@ namespace TrainGame.View.TrainView
             transform.position += new Vector3(targetX - frontCoupler.position.x, 0, 0);
             
             return this;    
+        }
+
+        private void Update()
+        {
+            _currentPosition = transform.position.x;
+            RotateWheels(_currentPosition - _previousPosition);
+            _previousPosition = _currentPosition;
+        }
+
+        private void RotateWheels(float distance)
+        {
+            foreach (Transform wheel in wheels)
+            {
+                RotateWheel(wheel, distance);
+            }
+        }
+
+        private void RotateWheel(Transform wheelTransform, float distance)
+        {
+            Debug.Log("Wheel name: "  + wheelTransform.name + " radius: " + wheelTransform.position.y);
+            float angle = distance * 360 / (2 * Mathf.PI * wheelTransform.position.y);
+            wheelTransform.rotation = Quaternion.Euler(0, 0, -angle) * wheelTransform.rotation;
         }
     }
 }
