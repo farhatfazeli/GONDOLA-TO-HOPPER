@@ -95,6 +95,7 @@ namespace TrainGame.Controller
         {
             if (ResourceManager.I.CheckResourceSpend(rollingStockModel.purchaseCost, ResourceType.Passengers))
             {
+                ResourceManager.I.SpendResource(rollingStockModel.purchaseCost, ResourceType.Passengers);
                 rollingStockModel.PurchaseRollingStock();
             }
         }

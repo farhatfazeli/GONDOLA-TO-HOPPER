@@ -2,6 +2,7 @@
 using TMPro;
 using TrainGame.Model.Route;
 using TrainGame.Model.Service;
+using TrainGame.Model.Station;
 using TrainGame.Model.TrainConsist;
 using TrainGame.View.SchedulerView;
 using UnityEngine;
@@ -11,9 +12,9 @@ namespace TrainGame.Controller
     public class ServiceDocketController : MonoBehaviour
     {
         [SerializeField] private RectTransform serviceDocketView;
-
-        [SerializeField] private RouteDropdownHandler routeDropdownHandler;
+        
         [SerializeField] private DepartingStationDropdownHandler departingStationDropdownHandler;
+        [SerializeField] private ArrivalStationDropdownHandler arrivalStationDropdownHandler;
         
         [SerializeField] private TrainDropdownHandler trainDropdownHandler;
         
@@ -31,19 +32,23 @@ namespace TrainGame.Controller
 
         public void ScheduleService()
         {
-            RouteModel routeModel = routeDropdownHandler.GetSelectedRoute();
+
+            
             TrainConsistModel trainConsistModel = trainDropdownHandler.GetSelectedTrain();
             
-            ServiceModel serviceModel = ServiceManager.I.CreateService(routeModel, trainConsistModel);
+            ServiceModel serviceModel = ServiceManager.I.CreateService(GetSelectedRoute(), trainConsistModel);
             
             serviceLedgerController.AddScheduledService(serviceModel);
             
             UIStateManager.I.OnCloseWindowButtonClicked();
         }
 
-        private void UpdateArrivalStationDropdown()
+        private RouteModel GetSelectedRoute()
         {
+            StationModel departureStation = departingStationDropdownHandler.GetSelectedStation();
+            StationModel arrivalStation = arrivalStationDropdownHandler.GetSelectedStation();
             
+            return RouteManager.I.QueryService.GetRouteBetweenStations(departureStation, arrivalStation);
         }
     }
 }

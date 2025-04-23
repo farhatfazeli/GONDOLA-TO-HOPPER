@@ -58,5 +58,10 @@ namespace TrainGame.Model.Route
         {
             return routeModel.departureStation.stationBuilder.IsBuilt;
         }
+
+        public RouteModel GetRouteBetweenStations(StationModel stationModel1, StationModel stationModel2)
+        {
+            return _repository.GetModels().Where(x => x.departureStation == stationModel1).First(x => x.arrivalStation == stationModel2);
+        }
     }
 }
