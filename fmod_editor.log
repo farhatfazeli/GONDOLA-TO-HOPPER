@@ -14,6 +14,119 @@
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/FMOD/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000017A764FF588, queue head = 0000017B460C8168, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017A764FF588
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/FMOD/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     filename = Assets/StreamingAssets/FMOD/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3805312
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000017A76501FB8, queue head = 0000017B460C8168, queue count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 6176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSound                     :     filename = Assets/StreamingAssets/FMOD/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B45106480
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000017A76500308, queue head = 0000017B460C8168, queue count = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = Assets/StreamingAssets/FMOD/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000017A764FF8E8, queue head = 0000017B460C8168, queue count = 2
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='GTH - (18) Harpe (arpèges)', format=5, channels=2, frequency=48000, lengthbytes=585152, lengthpcm=2185750, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.291870.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017A764FF588
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017A76501FB8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/FMOD/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3805312
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 6176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B45106700
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='GTH - (2) Vlns I & II, Altos (harm), Marimba (trem 1)', format=5, channels=2, frequency=48000, lengthbytes=488704, lengthpcm=2185750, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.051300.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017A76501FB8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017A76500308
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/FMOD/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3805312
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 6176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B45106840
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='GTH - (1) Petite Flûte', format=5, channels=2, frequency=48000, lengthbytes=509760, lengthpcm=2185750, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.206726.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017A76500308
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000017A764FF8E8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/FMOD/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3805312
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 6176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000017B815DA570
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Petits trains, A', format=5, channels=2, frequency=48000, lengthbytes=587840, lengthpcm=2417664, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.133935.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000017A764FF8E8
+[LOG] SoundI::release                          : Petits trains, A (0000017A764FF8E8)
+[LOG] SoundI::release                          :     Petits trains, A (00000179DE1382F8)
+[LOG] SoundI::release                          :     Petits trains, A (0000017A76501598)
+[LOG] SoundI::release                          : GTH - (1) Petite Flûte (0000017A76500308)
+[LOG] SoundI::release                          :     GTH - (1) Petite Flûte (00000179DE136DD8)
+[LOG] SoundI::release                          :     GTH - (1) Petite Flûte (0000017A76502678)
+[LOG] SoundI::release                          : GTH - (2) Vlns I & II, Altos (harm), Marimba (trem 1) (0000017A76501FB8)
+[LOG] SoundI::release                          :     GTH - (2) Vlns I & II, Altos (harm), Marimba (trem 1) (00000179DE10F2D8)
+[LOG] SoundI::release                          :     GTH - (2) Vlns I & II, Altos (harm), Marimba (trem 1) (0000017A764FFFA8)
+[LOG] SoundI::release                          : GTH - (18) Harpe (arpèges) (0000017A764FF588)
+[LOG] SoundI::release                          :     GTH - (18) Harpe (arpèges) (00000179DE10D738)
+[LOG] SoundI::release                          :     GTH - (18) Harpe (arpèges) (0000017A764FFA98)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 3805312
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 6176
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000314466F008
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFAD2965B90
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFAD2965B50
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFAD2965C70
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFAD2965D30
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017BAC92F298
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='SIFFLET de train_SIFFLET de train', format=5, channels=2, frequency=48000, lengthbytes=73344, lengthpcm=335893, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.244906.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 3805312
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 6176
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000314466F008
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFAD2965B90
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFAD2965B50
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFAD2965C70
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFAD2965D30
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017BAC930528
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='PASSAGE A NIVEAU_PASSAGE à niveau', format=5, channels=2, frequency=48000, lengthbytes=65248, lengthpcm=216000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.107352.
+[LOG] SoundI::release                          :  (0000017BAF4CF4E8)
+[LOG] SoundI::release                          :     SIFFLET de train_SIFFLET de train (00000179DE1382F8)
+[LOG] SoundI::release                          :  (0000017BAF4CF658)
+[LOG] SoundI::release                          :     PASSAGE A NIVEAU_PASSAGE à niveau (00000179DE138498)
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
@@ -21,3 +134,5 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.

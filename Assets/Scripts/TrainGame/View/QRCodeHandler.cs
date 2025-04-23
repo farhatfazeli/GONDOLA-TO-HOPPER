@@ -29,6 +29,7 @@ namespace TrainGame.View
                     _isVisible = !_isVisible;
                     _safety = false;
                     Debug.Log("Going to show QR Code");
+                    AudioManager.I.PlayTrainCrossing();
                     float targetAlpha = _isVisible ? 1f : 0f;
                     qrCodeImage.CrossFadeAlpha(targetAlpha, fadeInTime, true);
                 }

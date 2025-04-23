@@ -4,6 +4,7 @@ using Core.Utility;
 using TrainGame.Controller;
 using TrainGame.View.CentralMenuView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TrainGame
 {
@@ -25,11 +26,22 @@ namespace TrainGame
             base.Awake();
             StartCoroutine(WaitAndLoad());
         }
-        
+
+        // private void OnEnable()
+        // {
+        //     SceneManager.sceneLoaded += OnSceneLoaded;
+        // }
+        //
+        // private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        // {
+        //     if (scene.buildIndex == 1)
+        //         StartCoroutine(WaitAndLoad());
+        // }
+
         private System.Collections.IEnumerator WaitAndLoad()
         {
             // Wait until RailwayDirector is initialized.
-            while (!RailwayDirector.I.IsInitialized)
+            while (!RailwayDirector.I.IsInitialized || SceneManager.GetActiveScene() ==  SceneManager.GetSceneByBuildIndex(0))
                 yield return null;
             
             Initialize();
