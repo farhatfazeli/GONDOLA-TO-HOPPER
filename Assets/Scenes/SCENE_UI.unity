@@ -5188,7 +5188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &580298940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6032,6 +6032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainView: {fileID: 109370901}
   mapController: {fileID: 205236358}
+  qrCodePanel: {fileID: 580298940}
 --- !u!1 &625945140
 GameObject:
   m_ObjectHideFlags: 0

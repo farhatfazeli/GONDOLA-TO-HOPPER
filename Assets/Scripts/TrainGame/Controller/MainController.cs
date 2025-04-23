@@ -10,7 +10,14 @@ namespace TrainGame.Controller
         [Header("Controllers")]
         [SerializeField] private RectTransform mainView;
         [SerializeField] private MapController mapController;
-        
+        [SerializeField] private RectTransform qrCodePanel;
+
+        private void Start()
+        {
+            qrCodePanel.gameObject.SetActive(true);
+        }
+
+
         public void GoToMainView()
         {
             mainView.gameObject.SetActive(true);
