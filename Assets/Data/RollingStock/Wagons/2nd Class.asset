@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69777b9f3ea4bb281a19684cd610520, type: 3}
-  m_Name: ChaldronCoalHopper
+  m_Name: 2nd Class
   m_EditorClassIdentifier: 
-  uuid: f7e5ae5e-6a79-41fd-a55b-c801bdfabcfd
+  uuid: 3eceaa23-0412-4501-a028-91e1745874e2
   mass: 10000
   research:
     researchState: 1
@@ -20,8 +20,8 @@ MonoBehaviour:
     previousResearch:
     - {fileID: 11400000, guid: d011f2becac07bb48abfa64bed0154d2, type: 2}
   startingAmount: 0
-  purchaseCost: 0
-  yardSprite: {fileID: -3107203369821235118, guid: edb6a483e91138e4b88132697a6beec7, type: 3}
-  researchSprite: {fileID: 0}
-  viewGo: {fileID: 6856482329568204092, guid: c1ff02c5a378c7147997fc7c3e3f721e, type: 3}
-  loadType: 1
+  purchaseCost: 1320
+  yardSprite: {fileID: -7650101152573404376, guid: c2e8984165917924f9a8e1a85289690f, type: 3}
+  researchSprite: {fileID: -7650101152573404376, guid: c2e8984165917924f9a8e1a85289690f, type: 3}
+  viewGo: {fileID: 5609491404953425084, guid: 6ebe181747ed21b4db5ea22eb1b42841, type: 3}
+  loadType: 0

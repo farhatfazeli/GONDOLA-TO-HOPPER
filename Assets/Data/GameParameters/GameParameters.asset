@@ -38,4 +38,4 @@ MonoBehaviour:
   yardScene: SCENE_Yard
   landscapeScene: Mechelen-Antwerpen
   mapScene: SCENE_Map
-  driveSpeed: 1
+  driveSpeed: 10
