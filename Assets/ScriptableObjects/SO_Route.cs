@@ -25,9 +25,9 @@ namespace ScriptableObjects
         public int maxBuildPoints;
         public int baseBuildAutoRate;
         public int baseBuildManualRate;
-
-        [Header("Scene settings")]
-        public SceneAsset sceneAsset;
+        //
+        // [Header("Scene settings")]
+        // public SceneAsset sceneAsset;
         
         private void OnValidate()
         {

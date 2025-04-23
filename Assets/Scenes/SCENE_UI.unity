@@ -20324,10 +20324,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2084006326}
+  - component: {fileID: 2084006327}
   - component: {fileID: 2084006325}
   - component: {fileID: 2084006324}
   - component: {fileID: 2084006323}
-  - component: {fileID: 2084006327}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged

@@ -36,6 +36,6 @@ MonoBehaviour:
   saveFileName: save
   fileExtension: json
   yardScene: SCENE_Yard
-  landscapeScene: SCENE_R2_BrusselsNamur
+  landscapeScene: Mechelen-Antwerpen
   mapScene: SCENE_Map
   driveSpeed: 1
