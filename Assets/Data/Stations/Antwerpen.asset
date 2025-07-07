@@ -17,7 +17,7 @@ MonoBehaviour:
   baseLoadManualRate: 0
   isBuiltAtStart: 1
   buildResourceType: 1
-  buildResourceCost: 500
+  buildResourceCost: 24690
   maxBuildPoints: 10
-  baseBuildAutoRate: 0
+  baseBuildAutoRate: 1
   baseBuildManualRate: 0

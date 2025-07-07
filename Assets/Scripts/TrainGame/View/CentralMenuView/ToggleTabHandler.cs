@@ -21,9 +21,15 @@ namespace TrainGame.View.CentralMenuView
         {
             tabButton.onClick.AddListener(() =>
             {
+                PlayTravelTheme();
                 UIStateManager.I.OnYardLandscapeToggleClicked();
                 RefreshView();
             });
+        }
+
+        private void PlayTravelTheme()
+        {
+            AudioManager.I.PlayTravelTheme();
         }
 
         private void RefreshView()

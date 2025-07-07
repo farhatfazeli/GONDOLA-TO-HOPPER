@@ -18,9 +18,6 @@ namespace TrainGame.View.ServiceLedgerView
 
         [SerializeField] private Button watchServiceInLandscape;
         
-        //temp code
-        [SerializeField] private ScheduledTrainItemManager _scheduledTrainItemManager;
-        
         private ServiceModel _serviceModel;
         
         public void Initialize(ServiceModel serviceModel, ServiceLedgerController serviceLedgerController)
@@ -28,9 +25,6 @@ namespace TrainGame.View.ServiceLedgerView
             _serviceModel = serviceModel;
             _serviceModel.OnModelChanged += RefreshView;
             RefreshView();
-            
-            // temp code
-             _scheduledTrainItemManager.Initialize(serviceModel);
              
              watchServiceInLandscape.onClick.AddListener(() => serviceLedgerController.WatchServiceInLandscape(serviceModel));
         }

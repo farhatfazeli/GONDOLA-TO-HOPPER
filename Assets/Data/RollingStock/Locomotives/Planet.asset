@@ -15,12 +15,11 @@ MonoBehaviour:
   uuid: b4eded26-8a60-451a-a077-dcc985f9c25f
   mass: 1000
   research:
-    researchState: 1
+    researchState: 0
     unlockCost: 0
-    previousResearch:
-    - {fileID: 11400000, guid: d011f2becac07bb48abfa64bed0154d2, type: 2}
+    previousResearch: []
   startingAmount: 0
-  purchaseCost: 0
+  purchaseCost: 1000
   yardSprite: {fileID: 1574009898817398622, guid: cf0cf0954eeceab4e9e7b845a3bd2e84, type: 3}
   researchSprite: {fileID: 1574009898817398622, guid: cf0cf0954eeceab4e9e7b845a3bd2e84, type: 3}
   viewGo: {fileID: 7703529256749872682, guid: f4396f9c3dc509241b3bfa046bbf646a, type: 3}

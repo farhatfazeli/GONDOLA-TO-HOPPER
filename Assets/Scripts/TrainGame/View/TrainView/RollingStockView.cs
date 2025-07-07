@@ -49,7 +49,6 @@ namespace TrainGame.View.TrainView
 
         private void RotateWheel(Transform wheelTransform, float distance)
         {
-            Debug.Log("Wheel name: "  + wheelTransform.name + " radius: " + wheelTransform.position.y);
             float angle = distance * 360 / (2 * Mathf.PI * wheelTransform.position.y);
             wheelTransform.rotation = Quaternion.Euler(0, 0, -angle) * wheelTransform.rotation;
         }

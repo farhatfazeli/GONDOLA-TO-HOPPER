@@ -10,14 +10,14 @@ namespace TrainGame.Controller
         [Header("Map panel")]
         [SerializeField] private RectTransform mapPanel;
         
-        public void OnActivate()
+        public void OnActivateView()
         {
             mapPanel.gameObject.SetActive(true);
             LoadMapScene();
             StartCoroutine(WaitAndDo());
         }
         
-        public void OnDeactivate()
+        public void OnDeactivateView()
         {
             mapPanel.gameObject.SetActive(false);
             UnloadMapScene();

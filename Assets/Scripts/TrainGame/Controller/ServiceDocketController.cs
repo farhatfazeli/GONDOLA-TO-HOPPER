@@ -32,8 +32,6 @@ namespace TrainGame.Controller
 
         public void ScheduleService()
         {
-
-            
             TrainConsistModel trainConsistModel = trainDropdownHandler.GetSelectedTrain();
             
             ServiceModel serviceModel = ServiceManager.I.CreateService(GetSelectedRoute(), trainConsistModel);

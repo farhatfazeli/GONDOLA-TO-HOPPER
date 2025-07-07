@@ -15,6 +15,7 @@ namespace TrainGame
         private ServiceDocketController serviceDocketController;
         private YardMarshallController yardMarshallController;
         private LandscapeController landscapeController;
+        private MapController mapController;
 
         private UIState _previousState = UIState.None;
         private UIState _currentState = UIState.MainView;
@@ -54,6 +55,7 @@ namespace TrainGame
             serviceDocketController = FindFirstObjectByType<ServiceDocketController>();
             yardMarshallController = FindFirstObjectByType<YardMarshallController>();
             landscapeController = FindFirstObjectByType<LandscapeController>();
+            mapController = FindFirstObjectByType<MapController>();
             GoToState(UIState.YardView);
         }
 
@@ -80,7 +82,7 @@ namespace TrainGame
                     serviceDocketController.OnActivateView();
                     break;
                 case UIState.MapView:
-                    mainController.GoToMapView();
+                    mapController.OnActivateView();
                     break;
                 case UIState.JournalView:
                     journalController.OnActivateView();
@@ -102,14 +104,21 @@ namespace TrainGame
                         landscapeController.OnDeactivateView();
                     break;
                 case UIState.YardView:
-                    if(newState == UIState.LandscapeView)
+                    if (newState == UIState.LandscapeView)
+                    {
                         yardMarshallController.OnDeactivateView();
+                    }
                     break;
-                case UIState.ServiceDocketView:
+                case UIState.MapView:
+                    mapController.OnDeactivateView();
+                    break;
+                case UIState.ServiceDocketView:{}
                     serviceDocketController.OnDeactivateView();
+                    yardMarshallController.OnDeactivateView();
                     break;
                 case UIState.JournalView:
                     journalController.OnDeactivateView();
+                    yardMarshallController.OnDeactivateView();
                     break;
                 case UIState.None:
                     throw new ArgumentOutOfRangeException(nameof(previousState), previousState, null);

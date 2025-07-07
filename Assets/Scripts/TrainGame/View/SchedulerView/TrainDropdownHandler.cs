@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Core.Persistence;
 using TMPro;
+using TrainGame.Model.RollingStock;
 using TrainGame.Model.Service;
 using TrainGame.Model.TrainConsist;
 using UnityEngine;
@@ -34,6 +35,7 @@ namespace TrainGame.View.SchedulerView
         private void Initialize()
         {
             RefreshView();
+            TrainConsistManager.I.OnTrainConsistListUpdated += RefreshView;
             ServiceManager.I.OnServiceListUpdated += RefreshView;
         }
 
@@ -46,6 +48,7 @@ namespace TrainGame.View.SchedulerView
     
         private void OnDisable()
         {
+            TrainConsistManager.I.OnTrainConsistListUpdated -= RefreshView;
             ServiceManager.I.OnServiceListUpdated -= RefreshView;
         }
         
@@ -72,6 +75,11 @@ namespace TrainGame.View.SchedulerView
         private void PopulateDropdown()
         {
             trainDropdown.ClearOptions();
+
+            foreach (var train in TrainConsistManager.I.QueryService.GetAllTrainConsists())
+            {
+                Debug.Log("Train name" + train.name + " train in service: " + ServiceManager.I.QueryService.IsTrainConsistInService(train));
+            }
             
             AddNewTrains(TrainConsistManager.I.QueryService.GetTrainConsistsOnStandby());
             

@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 704ab3bfb9d6b9b4ebf5e8c7a14500ca
+guid: 54e7abe2f7ffafc4389fd773e11f8674
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4260472032625056770
-    second: Planet_Locomotive_SpriteWHEELS_0
-  - first:
-      213: -3162036479347653720
-    second: Planet_Locomotive_SpriteWHEELS_1
-  - first:
-      213: -68907685334012614
-    second: Planet_Locomotive_SpriteWHEELS_2
+      213: -5234724945985469004
+    second: yardstaticbackground_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -78,6 +72,19 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Win64
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -119,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Planet_Locomotive_SpriteWHEELS_0
+      name: yardstaticbackground_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 539
-        width: 247
-        height: 257
+        x: 0
+        y: 0
+        width: 1333
+        height: 443
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,52 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20c5a10adbc302b30800000000000000
-      internalID: 4260472032625056770
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Planet_Locomotive_SpriteWHEELS_1
-      rect:
-        serializedVersion: 2
-        x: 401
-        y: 569
-        width: 906
-        height: 548
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a308a143903e14d0800000000000000
-      internalID: -3162036479347653720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Planet_Locomotive_SpriteWHEELS_2
-      rect:
-        serializedVersion: 2
-        x: 385
-        y: 326
-        width: 1031
-        height: 186
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a3d2f5543d03b0ff0800000000000000
-      internalID: -68907685334012614
+      spriteID: 4b509a975658a57b0800000000000000
+      internalID: -5234724945985469004
       vertices: []
       indices: 
       edges: []
@@ -188,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -198,9 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Planet_Locomotive_SpriteWHEELS_0: 4260472032625056770
-      Planet_Locomotive_SpriteWHEELS_1: -3162036479347653720
-      Planet_Locomotive_SpriteWHEELS_2: -68907685334012614
+      yardstaticbackground_0: -5234724945985469004
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

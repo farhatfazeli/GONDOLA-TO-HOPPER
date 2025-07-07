@@ -23,5 +23,5 @@ MonoBehaviour:
   purchaseCost: 680
   yardSprite: {fileID: 3553991457183706345, guid: 3379917e54ca2a24b8b9588b0d4730ce, type: 3}
   researchSprite: {fileID: 3553991457183706345, guid: 3379917e54ca2a24b8b9588b0d4730ce, type: 3}
-  viewGo: {fileID: 6856482329568204092, guid: c1ff02c5a378c7147997fc7c3e3f721e, type: 3}
+  viewGo: {fileID: 5609491404953425084, guid: 62210c0e0c08f5044934d9a80b3e32b4, type: 3}
   loadType: 1

@@ -15,9 +15,9 @@ MonoBehaviour:
   uuid: 0a4598d1-04bf-4e8f-a54b-337b4e9a7419
   baseLoadAutoRate: 1000
   baseLoadManualRate: 0
-  isBuiltAtStart: 0
-  buildResourceType: 0
-  buildResourceCost: 5
-  maxBuildPoints: 7
-  baseBuildAutoRate: 0
+  isBuiltAtStart: 1
+  buildResourceType: 1
+  buildResourceCost: 26760
+  maxBuildPoints: 10
+  baseBuildAutoRate: 1
   baseBuildManualRate: 0

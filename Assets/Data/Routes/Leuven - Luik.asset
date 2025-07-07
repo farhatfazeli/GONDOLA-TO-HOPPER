@@ -17,9 +17,8 @@ MonoBehaviour:
   arrivalStation: {fileID: 11400000, guid: 5251cb233e27cf44289906c4d98ede21, type: 2}
   distance: 42000
   isBuiltAtStart: 0
-  buildResourceType: 0
-  buildResourceCost: 11
-  maxBuildPoints: 11
-  baseBuildAutoRate: 0
+  buildResourceType: 1
+  buildResourceCost: 17010
+  maxBuildPoints: 10
+  baseBuildAutoRate: 1
   baseBuildManualRate: 0
-  sceneAsset: {fileID: 102900000, guid: 684e7480460dd3645a5cd2ee98680c73, type: 3}

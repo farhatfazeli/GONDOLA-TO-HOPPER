@@ -10,6 +10,8 @@ namespace TrainGame
         public AudioSource mainLoop;
         public AudioSource trainWhistle;
         public AudioSource trainCrossing;
+        public AudioSource travelTheme;
+        public AudioSource travelFlute;
 
         public void PlayTrainWhistle()
         {
@@ -19,6 +21,13 @@ namespace TrainGame
         public void PlayTrainCrossing()
         {
             trainCrossing.Play();
+        }
+
+        public void PlayTravelTheme()
+        {
+            mainLoop.Stop();
+            travelTheme.Play();
+            travelFlute.Play();
         }
     }
 }

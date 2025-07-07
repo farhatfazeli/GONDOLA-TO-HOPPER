@@ -64,7 +64,7 @@ MonoBehaviour:
     - Stations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 524b6ccdedcb66046af4545fac5f0698
-    m_Address: LiverpoolManchesterPassengerCarriage
+    m_Address: 1st Class
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
@@ -118,13 +118,13 @@ MonoBehaviour:
     - Routes
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a1ef94ebdf6f7c343aafe1520c8abe3c
-    m_Address: ChaldronCoalHopper
+    m_Address: Freight Wagon
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ade0dca7506b828428deed990024f148
-    m_Address: LiverpoolManchesterPassengerCattleCarriage
+    m_Address: 2nd Class
     m_ReadOnly: 0
     m_SerializedLabels:
     - RollingStock
@@ -146,6 +146,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb1211c7d011f854880ad751574571a6
+    m_Address: Assets/Data/RollingStock/Locomotives/Planet.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RollingStock
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bbe6e76fe7b64b243babc6bf11e6b4e4
     m_Address: Assets/Data/Stations/Oostende.asset
