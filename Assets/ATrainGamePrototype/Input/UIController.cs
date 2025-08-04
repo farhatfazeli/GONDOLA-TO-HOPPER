@@ -11,6 +11,7 @@ namespace ATrainGamePrototype.Input
         [SerializeField] private EventSystem _eventSystem;
         [SerializeField] private RegulatorHandler _regulatorHandler;
         [SerializeField] private WhistleHandler _whistleHandler;
+        [SerializeField] private FireboxDoorHandler _fireboxDoorHandler;
     
         private bool _stateActive;
         private TrainUIInputMap _map;
@@ -29,6 +30,7 @@ namespace ATrainGamePrototype.Input
             map.MouseHold += OnMouseHold;
             map.MouseMoveDelta += _regulatorHandler.OnMouseMoveDelta;
             map.MouseMoveDelta += _whistleHandler.OnMouseMoveDelta;
+            map.MouseMoveDelta += _fireboxDoorHandler.OnMouseMoveDelta;
             map.EnablePlayerActions();
             _map = map;
             _stateActive = true;
@@ -51,6 +53,7 @@ namespace ATrainGamePrototype.Input
                         _interactiveUIElements.Add(_IUIElement);
                         _IUIElement.IsSelected = true;
                         _IUIElement.OnMousePress();
+                        break;
                     }
                     break;
                 case false:
@@ -85,6 +88,7 @@ namespace ATrainGamePrototype.Input
             _map.MouseHold -= OnMouseHold;
             _map.MouseMoveDelta -= _regulatorHandler.OnMouseMoveDelta;
             _map.MouseMoveDelta -= _whistleHandler.OnMouseMoveDelta;
+            _map.MouseMoveDelta -= _fireboxDoorHandler.OnMouseMoveDelta;
             _map.DisablePlayerActions();
             _stateActive = false;
         }
