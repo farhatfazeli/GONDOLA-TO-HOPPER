@@ -57,13 +57,13 @@ public class ResosurceManager : MonoBehaviour, ISaveable
     private void Update()
     {
         //if u presesd
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            //add 1 to the passenger km
-            PassengerKm += 1;
-            //update the UI
-            UpdateResourceUI();
-        }
+        // if (Input.GetKeyDown(KeyCode.U))
+        // {
+        //     //add 1 to the passenger km
+        //     PassengerKm += 1;
+        //     //update the UI
+        //     UpdateResourceUI();
+        // }
     }
     
     private void OnDestroy()

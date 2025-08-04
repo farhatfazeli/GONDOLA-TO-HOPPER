@@ -38,14 +38,14 @@ namespace TrainGame.View.Resource
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                ResourceManager.I.GainResource(50, ResourceType.Freight);
-            }
-            else if (Input.GetKeyDown(KeyCode.O))
-            {
-                ResourceManager.I.GainResource(30, ResourceType.Freight);
-            }
+            // if (Input.GetKeyDown(KeyCode.I))
+            // {
+            //     ResourceManager.I.GainResource(50, ResourceType.Freight);
+            // }
+            // else if (Input.GetKeyDown(KeyCode.O))
+            // {
+            //     ResourceManager.I.GainResource(30, ResourceType.Freight);
+            // }
         }
 
         private IEnumerator animateResource(int newValue)

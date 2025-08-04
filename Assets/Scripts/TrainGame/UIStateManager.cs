@@ -65,7 +65,7 @@ namespace TrainGame
 
             ExitPreviousState(_previousState, newState);
             
-            mainController.CleanView();
+            // mainController.CleanView();
             
             switch (newState)
             {

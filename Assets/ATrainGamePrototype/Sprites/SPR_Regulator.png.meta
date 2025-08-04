@@ -1,10 +1,28 @@
 fileFormatVersion: 2
-guid: 6d1f1e9e7c59ae64388cee456a5662c7
+guid: 7942dccedb0935143a5561d847d3d6be
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5548511708589685212
-    second: QR_SHOWANDTELL_0
+      213: -5422789653792982088
+    second: SPR_Regulator_0
+  - first:
+      213: 4392079683215142680
+    second: SPR_Regulator_1
+  - first:
+      213: -7061685916729379377
+    second: SPR_Regulator_2
+  - first:
+      213: -6889259875501189038
+    second: SPR_Regulator_3
+  - first:
+      213: -19881191853625855
+    second: SPR_Regulator_4
+  - first:
+      213: 2475188816816806101
+    second: SPR_Regulator_5
+  - first:
+      213: -5700858317360039388
+    second: SPR_Regulator_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,19 +102,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Win64
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,23 +131,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: QR_SHOWANDTELL_0
+      name: SPR_Regulator_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 2560
-        height: 1440
+        y: 437
+        width: 277
+        height: 438
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd9759e6006400d40800000000000000
-      internalID: 5548511708589685212
+      spriteID: 81faf3f933dc3fc30800000000000000
+      internalID: 4392079683215142680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_Regulator_2
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 0
+        width: 628
+        height: 879
+      alignment: 9
+      pivot: {x: 0.2480805, y: 0.7580183}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc577f9b21adffd90800000000000000
+      internalID: -7061685916729379377
       vertices: []
       indices: 
       edges: []
@@ -151,7 +178,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3685a2877ccb5a7429ce9f85066a7c20
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +188,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      QR_SHOWANDTELL_0: 5548511708589685212
+      SPR_Regulator_1: 4392079683215142680
+      SPR_Regulator_2: -7061685916729379377
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

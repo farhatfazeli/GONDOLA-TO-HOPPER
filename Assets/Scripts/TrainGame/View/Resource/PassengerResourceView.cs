@@ -36,17 +36,17 @@ namespace TrainGame.View.Resource
             _animationCoroutine = StartCoroutine(animateResource(newValue));
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                ResourceManager.I.GainResource(50, ResourceType.Passengers);
-            }
-            else if (Input.GetKeyDown(KeyCode.L))
-            {
-                ResourceManager.I.SpendResource(30,  ResourceType.Passengers);
-            }
-        }
+        // private void Update()
+        // {
+        //     if (Input.GetKeyDown(KeyCode.K))
+        //     {
+        //         ResourceManager.I.GainResource(50, ResourceType.Passengers);
+        //     }
+        //     else if (Input.GetKeyDown(KeyCode.L))
+        //     {
+        //         ResourceManager.I.SpendResource(30,  ResourceType.Passengers);
+        //     }
+        // }
 
         private IEnumerator animateResource(int newValue)
         {

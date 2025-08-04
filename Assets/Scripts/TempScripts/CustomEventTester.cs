@@ -13,27 +13,27 @@ namespace TempScripts
 
         private void Update()
         {
-            if (!Input.GetKeyDown(KeyCode.Space)) return;
-            switch (_counter)
-            {
-                case 1:
-                    firstEventToTest.Raise();
-                    Debug.Log("First event raised");
-                    _counter++;
-                    break;
-                case 2:
-                    secondEventToTest.Raise();
-                    Debug.Log("Second event raised");
-                    _counter++;
-                    break;
-                case 3:
-                    thirdEventToTest.Raise();
-                    Debug.Log("Third event raised");
-                    break;
-                default:
-                    Debug.Log("No more events to raise");
-                    break;
-            }
+            // if (!Input.GetKeyDown(KeyCode.Space)) return;
+            // switch (_counter)
+            // {
+            //     case 1:
+            //         firstEventToTest.Raise();
+            //         Debug.Log("First event raised");
+            //         _counter++;
+            //         break;
+            //     case 2:
+            //         secondEventToTest.Raise();
+            //         Debug.Log("Second event raised");
+            //         _counter++;
+            //         break;
+            //     case 3:
+            //         thirdEventToTest.Raise();
+            //         Debug.Log("Third event raised");
+            //         break;
+            //     default:
+            //         Debug.Log("No more events to raise");
+            //         break;
+            // }
         }
     }
 }

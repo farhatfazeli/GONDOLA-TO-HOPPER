@@ -94,7 +94,7 @@ MonoBehaviour:
   CameraDistance: 10
   DeadZoneDepth: 0
   Composition:
-    ScreenPosition: {x: 0, y: 0.26}
+    ScreenPosition: {x: 0, y: 0.3}
     DeadZone:
       Enabled: 1
       Size: {x: 0, y: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6928860377299753795}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
   m_Name: 
@@ -135,6 +135,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5032946547572716763}
     m_Modifications:
+    - target: {fileID: 4292666066989414075, guid: c09717f9a4b4dc6428ee6eb9a10f31f4, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292666066989414075, guid: c09717f9a4b4dc6428ee6eb9a10f31f4, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.12156863
+      objectReference: {fileID: 0}
     - target: {fileID: 5200320589454980495, guid: c09717f9a4b4dc6428ee6eb9a10f31f4, type: 3}
       propertyPath: m_Name
       value: Fog
@@ -145,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6147246585327371096, guid: c09717f9a4b4dc6428ee6eb9a10f31f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.44
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 6147246585327371096, guid: c09717f9a4b4dc6428ee6eb9a10f31f4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -179,6 +187,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8099165034441097191, guid: c09717f9a4b4dc6428ee6eb9a10f31f4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099165034441097191, guid: c09717f9a4b4dc6428ee6eb9a10f31f4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 96ba53e792cc66345a0b3fa696327265, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -241,6 +257,58 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 2080337204919090643, guid: a225b3356fba43c45bb0126f82c5d779, type: 3}
+      propertyPath: VelocityModule.x.scalar
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080337204919090643, guid: a225b3356fba43c45bb0126f82c5d779, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080337204919090643, guid: a225b3356fba43c45bb0126f82c5d779, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080337204919090643, guid: a225b3356fba43c45bb0126f82c5d779, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.77604806
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080337204919090643, guid: a225b3356fba43c45bb0126f82c5d779, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.8584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080337204919090643, guid: a225b3356fba43c45bb0126f82c5d779, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.77345145
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080337204919090643, guid: a225b3356fba43c45bb0126f82c5d779, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.621796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080337204919090643, guid: a225b3356fba43c45bb0126f82c5d779, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.7600719
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080337204919090643, guid: a225b3356fba43c45bb0126f82c5d779, type: 3}
+      propertyPath: InitialModule.startSize.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080337204919090643, guid: a225b3356fba43c45bb0126f82c5d779, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080337204919090643, guid: a225b3356fba43c45bb0126f82c5d779, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652418188159898193, guid: a225b3356fba43c45bb0126f82c5d779, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652418188159898193, guid: a225b3356fba43c45bb0126f82c5d779, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aa14e9acb30c33145b3a4e58b41b4675, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -34,15 +34,32 @@ namespace TrainGame.Model.TrainConsist
         // Update the train's physics and return the delta position
         public void Update(float deltaTime)
         {
-            if (Speed <= 0 && _targetAcceleration <= 0) return;
+            // if (Speed <= 0 && _targetAcceleration <= 0) return;
             HandlePhysics(deltaTime);
         }
 
         private void HandlePhysics(float deltaTime)
         {
-            float coefficient = _targetAcceleration > 0 ? _tractionCoefficient : _brakingCoefficient;
+            float coefficient = _targetAcceleration >= 0 ? _tractionCoefficient * _targetAcceleration : _brakingCoefficient;
             float tractionForce = FunctionLibrary.TractionCalculator(Speed, _maxSpeed, coefficient);
-            Acceleration = tractionForce / TotalMass;
+            tractionForce = tractionForce > 1 ? tractionForce : 0;
+
+            float rollingResistance = Speed > 0 ? 0.002f * 9.81f * TotalMass : 0;
+            //0.5f * AirDensity * DragCoefficient * FrontalArea * Speed * Speed;
+            float airDrag = 0.5f * 1.225f * 1.5f * 6 * Speed * Speed;
+            float gradientResistance = Mathf.Sin(0) * 9.81f * TotalMass;
+            
+            rollingResistance = rollingResistance > 1 ? rollingResistance : 0;
+            airDrag = airDrag > 1 ? airDrag : 0;
+            gradientResistance = gradientResistance > 1 ? gradientResistance : 0;
+            
+            // Debug.Log("TractionForce: " + tractionForce);
+            // Debug.Log("RollingResistance: " + rollingResistance);
+            // Debug.Log("AirDrag: " + airDrag);
+            // Debug.Log("GradientResistance: " + gradientResistance);
+            
+            Acceleration = (tractionForce - (rollingResistance + airDrag + gradientResistance)) / TotalMass;
+            
             
             Speed += Acceleration * deltaTime;
             Speed = Mathf.Clamp(Speed, 0, _maxSpeed);
@@ -50,6 +67,10 @@ namespace TrainGame.Model.TrainConsist
             Position += Speed * deltaTime;
         }
 
+        public void SetAcceleration(float normalisedAcceleration) {
+            _targetAcceleration = normalisedAcceleration;
+        }
+        
         public void SetAccelerationMode(bool isAccelerating)
         {
             _targetAcceleration = isAccelerating ? 1f : -1f;
